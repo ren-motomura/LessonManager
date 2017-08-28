@@ -1,0 +1,3 @@
+[submodule "LessonManager/lesson-manager-protobuf"]
+	path = LessonManager/lesson-manager-protobuf
+	url = https://github.com/ren-motomura/lesson-manager-protobuf
