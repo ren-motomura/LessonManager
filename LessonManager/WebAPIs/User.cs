@@ -12,7 +12,7 @@ namespace LessonManager.WebAPIs
 {
     class User
     {
-        public static Task<Task<Models.User>> Create(string name, string emailAddress, string password)
+        public static Task<Models.User> Create(string name, string emailAddress, string password)
         {
             var req = new CreateUserRequest();
             req.Name = name;
@@ -26,18 +26,15 @@ namespace LessonManager.WebAPIs
                 {
                     var responseMessage = t.Result;
                     var responseDataStream = new MemoryStream((int)responseMessage.Content.Headers.ContentLength); // long から int への cast は避けるべきだが...
-                    return responseMessage.Content.CopyToAsync(responseDataStream)
-                    .ContinueWith((t2) =>
-                    {
-                        var res = CreateUserResponse.Parser.ParseFrom(responseDataStream.ToArray());
+                    responseMessage.Content.CopyToAsync(responseDataStream).Wait();
+                    var res = CreateUserResponse.Parser.ParseFrom(responseDataStream.ToArray());
 
-                        var user = new Models.User();
-                        user.Id = res.Id;
-                        user.Name = res.Name;
-                        user.EmailAddress = res.EmailAddress;
+                    var user = new Models.User();
+                    user.Id = res.Id;
+                    user.Name = res.Name;
+                    user.EmailAddress = res.EmailAddress;
 
-                        return user;
-                    });
+                    return user;
                 });
         }
     }

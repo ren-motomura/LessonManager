@@ -22,8 +22,8 @@ namespace LessonManager.Commands
         public void Execute(object parameter)
         {
             var task = WebAPIs.User.Create("sample太郎", "sample@example.com", "password");
-            task.Wait(); task.Result.Wait();
-            var user = task.Result.Result;
+            task.Wait();
+            var user = task.Result;
 
             var message = "ID: " + user.Id.ToString() + ", Name: " + user.Name + ", EmailAddress: " + user.EmailAddress;
 
