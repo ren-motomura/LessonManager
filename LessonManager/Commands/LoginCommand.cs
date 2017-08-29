@@ -21,13 +21,12 @@ namespace LessonManager.Commands
 
         public void Execute(object parameter)
         {
-            var task = WebAPIs.User.Create("sample太郎", "sample@example.com", "password");
-            task.Wait();
-            var user = task.Result;
-
-            var message = "ID: " + user.Id.ToString() + ", Name: " + user.Name + ", EmailAddress: " + user.EmailAddress;
-
-            MessageBox.Show(message);
+            WebAPIs.User.Create("sample太郎", "sample@example.com", "password").ContinueWith((t) =>
+            {
+                var user = t.Result;
+                var message = "ID: " + user.Id.ToString() + ", Name: " + user.Name + ", EmailAddress: " + user.EmailAddress;
+                MessageBox.Show(message);
+            });
         }
     }
 }

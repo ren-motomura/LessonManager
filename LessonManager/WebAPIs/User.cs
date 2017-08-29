@@ -12,7 +12,7 @@ namespace LessonManager.WebAPIs
 {
     class User
     {
-        public static Task<Models.User> Create(string name, string emailAddress, string password)
+        public static async Task<Models.User> Create(string name, string emailAddress, string password)
         {
             var req = new CreateUserRequest();
             req.Name = name;
@@ -21,21 +21,17 @@ namespace LessonManager.WebAPIs
 
             var reqData = req.ToByteArray();
 
-            return Client.Instance.Request("CreateUser", reqData)
-                .ContinueWith((t) =>
-                {
-                    var responseMessage = t.Result;
-                    var responseDataStream = new MemoryStream((int)responseMessage.Content.Headers.ContentLength); // long から int への cast は避けるべきだが...
-                    responseMessage.Content.CopyToAsync(responseDataStream).Wait();
-                    var res = CreateUserResponse.Parser.ParseFrom(responseDataStream.ToArray());
+            var responseMessage = await Client.Instance.Request("CreateUser", reqData).ConfigureAwait(false);
+            var responseDataStream = new MemoryStream((int)responseMessage.Content.Headers.ContentLength); // long から int への cast は避けるべきだが...
+            await responseMessage.Content.CopyToAsync(responseDataStream).ConfigureAwait(false);
+            var res = CreateUserResponse.Parser.ParseFrom(responseDataStream.ToArray());
 
-                    var user = new Models.User();
-                    user.Id = res.Id;
-                    user.Name = res.Name;
-                    user.EmailAddress = res.EmailAddress;
+            var user = new Models.User();
+            user.Id = res.Id;
+            user.Name = res.Name;
+            user.EmailAddress = res.EmailAddress;
 
-                    return user;
-                });
+            return user;
         }
     }
 }

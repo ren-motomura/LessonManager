@@ -29,7 +29,7 @@ namespace LessonManager.WebAPIs
             client.BaseAddress = new Uri(host);
         }
 
-        public Task<HttpResponseMessage> Request(string funcName, byte[] data)
+        public async Task<HttpResponseMessage> Request(string funcName, byte[] data)
         {
             var cli = client;
             var req = new HttpRequestMessage(HttpMethod.Post, "");
@@ -37,12 +37,7 @@ namespace LessonManager.WebAPIs
             // TODO: session
             req.Content = new ByteArrayContent(data);
 
-            return cli.SendAsync(req)
-                .ContinueWith((t) =>
-                {
-                    return t.Result;
-                });
-
+            return await cli.SendAsync(req);
         }
     }
 }
