@@ -60,6 +60,9 @@
     <Compile Include="Protobufs\All.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />
     <Compile Include="WebAPIs\Client.cs" />
+    <Compile Include="WebAPIs\FailData.cs" />
+    <Compile Include="WebAPIs\Result.cs" />
+    <Compile Include="WebAPIs\Session.cs" />
     <Compile Include="WebAPIs\User.cs" />
     <Page Include="Views\MainView.xaml">
       <Generator>MSBuild:Compile</Generator>

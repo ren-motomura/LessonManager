@@ -29,10 +29,10 @@ namespace Protobufs {
             "c3BvbnNlEg8KB3N1Y2Nlc3MYASABKAgiSQoRQ3JlYXRlVXNlclJlcXVlc3QS",
             "DAoEbmFtZRgBIAEoCRIUCgxlbWFpbEFkZHJlc3MYAiABKAkSEAoIcGFzc3dv",
             "cmQYAyABKAkiRAoSQ3JlYXRlVXNlclJlc3BvbnNlEgoKAmlkGAEgASgDEgwK",
-            "BG5hbWUYAiABKAkSFAoMZW1haWxBZGRyZXNzGAMgASgJKmwKCUVycm9yVHlw",
-            "ZRIaChZJTlZBTElEX1JFUVVFU1RfRk9STUFUEAASEgoOVVNFUl9OT1RfRk9V",
-            "TkQQARIUChBJTlZBTElEX1BBU1NXT1JEEAISGQoVSU5URVJOQUxfU0VSVkVS",
-            "X0VSUk9SEANiBnByb3RvMw=="));
+            "BG5hbWUYAiABKAkSFAoMZW1haWxBZGRyZXNzGAMgASgJKoQBCglFcnJvclR5",
+            "cGUSGgoWSU5WQUxJRF9SRVFVRVNUX0ZPUk1BVBAAEhIKDlVTRVJfTk9UX0ZP",
+            "VU5EEAESFAoQSU5WQUxJRF9QQVNTV09SRBACEhkKFUlOVEVSTkFMX1NFUlZF",
+            "Ul9FUlJPUhADEhYKElVTRVJfQUxSRUFEWV9FWElTVBAEYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Protobufs.ErrorType), }, new pbr::GeneratedClrTypeInfo[] {
@@ -52,6 +52,7 @@ namespace Protobufs {
     [pbr::OriginalName("USER_NOT_FOUND")] UserNotFound = 1,
     [pbr::OriginalName("INVALID_PASSWORD")] InvalidPassword = 2,
     [pbr::OriginalName("INTERNAL_SERVER_ERROR")] InternalServerError = 3,
+    [pbr::OriginalName("USER_ALREADY_EXIST")] UserAlreadyExist = 4,
   }
 
   #endregion

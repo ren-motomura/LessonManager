@@ -8,6 +8,8 @@ namespace LessonManager.Models
 {
     public class User
     {
+        public static User CurrentUser;
+
         public long Id { get; set; }
         public string Name { get; set; }
         public string EmailAddress { get; set; }

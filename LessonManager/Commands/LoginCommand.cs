@@ -21,10 +21,19 @@ namespace LessonManager.Commands
 
         public void Execute(object parameter)
         {
-            WebAPIs.User.Create("sample太郎", "sample@example.com", "password").ContinueWith((t) =>
+            WebAPIs.Session.Create("sample@example.com", "password").ContinueWith((t) =>
             {
-                var user = t.Result;
-                var message = "ID: " + user.Id.ToString() + ", Name: " + user.Name + ", EmailAddress: " + user.EmailAddress;
+                string message;
+                Result<Boolean> result = t.Result;
+                if (result.IsSuccess)
+                {
+                    message = result.SuccessData.ToString();
+                }
+                else
+                {
+                    var failData = result.FailData;
+                    message = "Fail! Status: " + failData.Status.ToString() + ", ErrorType: " + failData.Body.ErrorType.ToString();
+                }
                 MessageBox.Show(message);
             });
         }

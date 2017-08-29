@@ -4,48 +4,41 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using LessonManager.Models;
 using Protobufs;
 using Google.Protobuf;
 
 namespace LessonManager.WebAPIs
 {
-    class User
+    class Session
     {
-        public static async Task<Result<Models.User>> Create(string name, string emailAddress, string password)
+        public static async Task<Result<Boolean>> Create(string emailAddress, string password)
         {
-            var req = new CreateUserRequest();
-            req.Name = name;
+            var req = new CreateSessionRequest();
             req.EmailAddress = emailAddress;
             req.Password = password;
 
             var reqData = req.ToByteArray();
 
-            var responseMessage = await Client.Instance.Request("CreateUser", reqData).ConfigureAwait(false);
+            var responseMessage = await Client.Instance.Request("CreateSession", reqData).ConfigureAwait(false);
             var responseDataStream = new MemoryStream((int)responseMessage.Content.Headers.ContentLength); // long から int への cast は避けるべきだが...
             await responseMessage.Content.CopyToAsync(responseDataStream).ConfigureAwait(false);
 
             if (!responseMessage.IsSuccessStatusCode)
             {
-                return new Result<Models.User>(
+                return new Result<Boolean>(
                     false,
-                    null,
+                    false,
                     new FailData(
                         responseMessage.StatusCode, ErrorResponse.Parser.ParseFrom(responseDataStream.ToArray())
                     )
                 );
             }
 
-            var res = CreateUserResponse.Parser.ParseFrom(responseDataStream.ToArray());
+            var res = CreateSessionResponse.Parser.ParseFrom(responseDataStream.ToArray());
 
-            var user = new Models.User();
-            user.Id = res.Id;
-            user.Name = res.Name;
-            user.EmailAddress = res.EmailAddress;
-
-            return new Result<Models.User>(
-                false,
-                user,
+            return new Result<Boolean>(
+                true,
+                true,
                 null
             );
         }
