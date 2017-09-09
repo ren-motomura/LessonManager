@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using LessonManager.Commands;
+using LessonManager.Models;
 
 namespace LessonManager.ViewModels
 {
@@ -12,8 +13,10 @@ namespace LessonManager.ViewModels
         public MainViewModel()
         {
             this.LoginCommand = new LoginCommand();
+            this.Company = new Company();
         }
 
         public LoginCommand LoginCommand { get; set; }
+        public Company Company { get; set; }
     }
 }

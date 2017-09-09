@@ -21,7 +21,8 @@ namespace LessonManager.Commands
 
         public void Execute(object parameter)
         {
-            WebAPIs.Session.Create("sample@example.com", "password").ContinueWith((t) =>
+            Models.Company company = parameter as Models.Company;
+            WebAPIs.Session.Create(company.EmailAddress, company.Password).ContinueWith((t) =>
             {
                 string message;
                 Result<Boolean> result = t.Result;

@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace LessonManager.Models
 {
-    public class User
+    public class Company
     {
-        public static User CurrentUser;
+        public static Company CurrentCompany;
 
         public long Id { get; set; }
         public string Name { get; set; }

@@ -63,7 +63,7 @@
     <Compile Include="WebAPIs\FailData.cs" />
     <Compile Include="WebAPIs\Result.cs" />
     <Compile Include="WebAPIs\Session.cs" />
-    <Compile Include="WebAPIs\User.cs" />
+    <Compile Include="WebAPIs\Company.cs" />
     <Page Include="Views\MainView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -73,7 +73,7 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Commands\LoginCommand.cs" />
-    <Compile Include="Models\User.cs" />
+    <Compile Include="Models\Company.cs" />
     <Compile Include="Views\MainView.xaml.cs">
       <DependentUpon>MainView.xaml</DependentUpon>
       <SubType>Code</SubType>

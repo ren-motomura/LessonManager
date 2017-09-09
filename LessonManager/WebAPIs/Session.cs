@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Net.Http;
 using Protobufs;
 using Google.Protobuf;
 
@@ -19,7 +20,18 @@ namespace LessonManager.WebAPIs
 
             var reqData = req.ToByteArray();
 
-            var responseMessage = await Client.Instance.Request("CreateSession", reqData).ConfigureAwait(false);
+
+            HttpResponseMessage responseMessage;
+            try
+            {
+                responseMessage = await Client.Instance.Request("CreateSession", reqData).ConfigureAwait(false);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+                throw;
+            }
+
             var responseDataStream = new MemoryStream((int)responseMessage.Content.Headers.ContentLength); // long から int への cast は避けるべきだが...
             await responseMessage.Content.CopyToAsync(responseDataStream).ConfigureAwait(false);
 

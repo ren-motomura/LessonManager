@@ -37,7 +37,16 @@ namespace LessonManager.WebAPIs
             // TODO: session
             req.Content = new ByteArrayContent(data);
 
-            return await cli.SendAsync(req);
+            var responseMessage = await cli.SendAsync(req);
+
+            IEnumerable<string> cookies;
+            if (responseMessage.Headers.TryGetValues("Set-Cookie", out cookies))
+            {
+                client.DefaultRequestHeaders.Remove("Cookie");
+                client.DefaultRequestHeaders.Add("Cookie", cookies.First());
+            }
+
+            return responseMessage;
         }
     }
 }
