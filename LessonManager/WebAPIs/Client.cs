@@ -25,7 +25,7 @@ namespace LessonManager.WebAPIs
 
         private Client()
         {
-            client = new HttpClient();
+            client = new HttpClient { Timeout = TimeSpan.FromMilliseconds(5000) };
             client.BaseAddress = new Uri(host);
         }
 

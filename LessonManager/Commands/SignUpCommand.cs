@@ -53,7 +53,7 @@ namespace LessonManager.Commands
                 {
                     if (result.FailData.Body.ErrorType == Protobufs.ErrorType.AlreadyExist)
                     {
-                        SnackbarMessageQueue.Instance().Enqueue("そのメールアドレスは既に使わrています");
+                        SnackbarMessageQueue.Instance().Enqueue("そのメールアドレスは既に使われています");
                     }
                     else
                     {
