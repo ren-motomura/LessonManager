@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using LessonManager.Models;
 using Protobufs;
 using Google.Protobuf;
+using LessonManager.Utils;
 
 namespace LessonManager.WebAPIs
 {
@@ -39,12 +40,13 @@ namespace LessonManager.WebAPIs
             var res = CreateCompanyResponse.Parser.ParseFrom(responseDataStream.ToArray());
 
             var company = new Models.Company();
-            company.Id = res.Id;
-            company.Name = res.Name;
-            company.EmailAddress = res.EmailAddress;
+            company.Id = res.Company.Id;
+            company.Name = res.Company.Name;
+            company.EmailAddress = res.Company.EmailAddress;
+            company.CreatedAt = Time.TimestampToDateTime(res.Company.CreatedAt);
 
             return new Result<Models.Company>(
-                false,
+                true,
                 company,
                 null
             );

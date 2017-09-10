@@ -10,7 +10,7 @@ using LessonManager.WebAPIs;
 
 namespace LessonManager.Commands
 {
-    class LoginCommand : ICommand
+    class CreateCompanyCommand : ICommand
     {
         public event EventHandler CanExecuteChanged;
 
@@ -22,10 +22,10 @@ namespace LessonManager.Commands
         public void Execute(object parameter)
         {
             Models.Company company = parameter as Models.Company;
-            WebAPIs.Session.Create(company.EmailAddress, company.Password).ContinueWith((t) =>
+            WebAPIs.Company.Create(company.Name, company.EmailAddress, company.Password).ContinueWith((t) =>
             {
                 string message;
-                Result<Boolean> result = t.Result;
+                Result<Models.Company> result = t.Result;
                 if (result.IsSuccess)
                 {
                     message = result.SuccessData.ToString();

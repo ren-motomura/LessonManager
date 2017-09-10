@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Windows.Controls.Primitives;
 
 namespace LessonManager
 {
@@ -23,6 +24,20 @@ namespace LessonManager
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void UIElement_OnPreviewMouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+        {
+            //until we had a StaysOpen glag to Drawer, this will help with scroll bars
+            var dependencyObject = Mouse.Captured as DependencyObject;
+            while (dependencyObject != null)
+            {
+                if (dependencyObject is ScrollBar) return;
+                dependencyObject = VisualTreeHelper.GetParent(dependencyObject);
+            }
+
+            MenuToggleButton.IsChecked = false;
+
         }
     }
 }

@@ -4,33 +4,64 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:LessonManager"
+        xmlns:domain="clr-namespace:LessonManager.Views.Domain"
         xmlns:vm="clr-namespace:LessonManager.ViewModels"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        Background="{DynamicResource MaterialDesignPaper}"
+        TextElement.FontWeight="Medium"
+        TextElement.FontSize="14"
+        FontFamily="pack://application:,,,/MaterialDesignThemes.Wpf;component/Resources/Roboto/#Roboto"
+        Title="MainWindow" Height="800" Width="1100">
     <Window.DataContext>
         <vm:MainViewModel/>
     </Window.DataContext>
-    <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
-        </Grid.RowDefinitions>
 
-        <TextBlock Text="email" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0, -50, 0, 0" Grid.Row="0"/>
-        <TextBox Text="{Binding Company.EmailAddress}" HorizontalAlignment="Center" Height="23" TextWrapping="Wrap" VerticalAlignment="Center" Width="240" Grid.Row="0"/>
+    <materialDesign:DrawerHost IsLeftDrawerOpen="{Binding ElementName=MenuToggleButton, Path=IsChecked}">
+        <materialDesign:DrawerHost.LeftDrawerContent>
+            <DockPanel MinWidth="212">
+                <ToggleButton Style="{StaticResource MaterialDesignHamburgerToggleButton}" 
+                                    DockPanel.Dock="Top"
+                                    HorizontalAlignment="Right" Margin="16"
+                                    IsChecked="{Binding ElementName=MenuToggleButton, Path=IsChecked, Mode=TwoWay}" />
+                <ListBox x:Name="MenuItems" Margin="0 16 0 16" SelectedIndex="0"                         
+                         ItemsSource="{Binding MenuItems}"
+                         PreviewMouseLeftButtonUp="UIElement_OnPreviewMouseLeftButtonUp"
+                         IsSynchronizedWithCurrentItem="True">
+                    <ListBox.ItemTemplate>
+                        <DataTemplate DataType="domain:MenuItem">
+                            <TextBlock Text="{Binding Name}" Margin="32 0 32 0" />
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+            </DockPanel>
+        </materialDesign:DrawerHost.LeftDrawerContent>
+        <DockPanel>
+            <materialDesign:ColorZone Padding="16" materialDesign:ShadowAssist.ShadowDepth="Depth2"
+                                            Mode="PrimaryMid" DockPanel.Dock="Top">
+                <DockPanel>
+                    <ToggleButton DockPanel.Dock="Left" Style="{DynamicResource MaterialDesignHamburgerToggleButton}" x:Name="MenuToggleButton" />
+                    <materialDesign:PopupBox DockPanel.Dock="Right" PlacementMode="BottomAndAlignRightEdges" StaysOpen="False">
+                        <StackPanel>
+                            <Button Content="設定"/>
+                            <Button Content="サインアウト" Command="{Binding SignOutCommand}"/>
+                        </StackPanel>
+                    </materialDesign:PopupBox>
+                    <TextBlock VerticalAlignment="Center" Margin="16 0 0 0">Lesson Manager</TextBlock>
+                </DockPanel>
+            </materialDesign:ColorZone>
 
-        <TextBlock Text="password" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0, -50, 0, 0" Grid.Row="1"/>
-        <TextBox Text="{Binding Company.Password}" HorizontalAlignment="Center" Height="22" TextWrapping="Wrap" VerticalAlignment="Center" Width="240" Grid.Row="1"/>
+            <Grid>
+                <ScrollViewer 
+                     HorizontalScrollBarVisibility="{Binding ElementName=MenuItems, Path=SelectedItem.HorizontalScrollBarVisibilityRequirement}"
+                     VerticalScrollBarVisibility="{Binding ElementName=MenuItems, Path=SelectedItem.VerticalScrollBarVisibilityRequirement}" 
+                     Padding="{Binding ElementName=MenuItems, Path=SelectedItem.MarginRequirement}">
+                    <ContentControl Content="{Binding ElementName=MenuItems, Path=SelectedItem.Content}" />
+                </ScrollViewer>
 
-        <Button
-            Content="Login"
-            HorizontalAlignment="Center"
-            Margin="0,30,0,0" Width="75" Height="20"
-            VerticalAlignment="Center"
-            Command="{Binding Path=LoginCommand}"
-            CommandParameter="{Binding Path=Company}"
-            Grid.Row="2">
-        </Button>
-    </Grid>
+                <materialDesign:Snackbar MessageQueue="{materialDesign:MessageQueue}" x:Name="MainSnackbar"/>
+            </Grid>
+        </DockPanel>
+    </materialDesign:DrawerHost>
 </Window>

@@ -24,45 +24,48 @@ namespace Protobufs {
           string.Concat(
             "CglhbGwucHJvdG8SCXByb3RvYnVmcyJJCg1FcnJvclJlc3BvbnNlEicKCWVy",
             "cm9yVHlwZRgBIAEoDjIULnByb3RvYnVmcy5FcnJvclR5cGUSDwoHbWVzc2Fn",
-            "ZRgCIAEoCSI+ChRDcmVhdGVTZXNzaW9uUmVxdWVzdBIUCgxlbWFpbEFkZHJl",
-            "c3MYASABKAkSEAoIcGFzc3dvcmQYAiABKAkiKAoVQ3JlYXRlU2Vzc2lvblJl",
-            "c3BvbnNlEg8KB3N1Y2Nlc3MYASABKAgiTAoUQ3JlYXRlQ29tcGFueVJlcXVl",
-            "c3QSDAoEbmFtZRgBIAEoCRIUCgxlbWFpbEFkZHJlc3MYAiABKAkSEAoIcGFz",
-            "c3dvcmQYAyABKAkiWgoVQ3JlYXRlQ29tcGFueVJlc3BvbnNlEgoKAmlkGAEg",
-            "ASgFEgwKBG5hbWUYAiABKAkSFAoMZW1haWxBZGRyZXNzGAMgASgJEhEKCWNy",
-            "ZWF0ZWRBdBgEIAEoAyI1CgZTdHVkaW8SCgoCaWQYASABKAUSDAoEbmFtZRgC",
-            "IAEoCRIRCgljcmVhdGVkQXQYBCABKAMiIwoTQ3JlYXRlU3R1ZGlvUmVxdWVz",
-            "dBIMCgRuYW1lGAIgASgJIjkKFENyZWF0ZVN0dWRpb1Jlc3BvbnNlEiEKBnN0",
-            "dWRpbxgBIAEoCzIRLnByb3RvYnVmcy5TdHVkaW8iIQoTRGVsZXRlU3R1ZGlv",
-            "UmVxdWVzdBIKCgJpZBgBIAEoBSInChREZWxldGVTdHVkaW9SZXNwb25zZRIP",
-            "CgdzdWNjZXNzGAEgASgIIjQKBVN0YWZmEgoKAmlkGAEgASgFEgwKBG5hbWUY",
-            "AiABKAkSEQoJY3JlYXRlZEF0GAQgASgDIiIKEkNyZWF0ZVN0YWZmUmVxdWVz",
-            "dBIMCgRuYW1lGAIgASgJIjYKE0NyZWF0ZVN0YWZmUmVzcG9uc2USHwoFc3Rh",
-            "ZmYYASABKAsyEC5wcm90b2J1ZnMuU3RhZmYiIAoSRGVsZXRlU3RhZmZSZXF1",
-            "ZXN0EgoKAmlkGAEgASgFIiYKE0RlbGV0ZVN0YWZmUmVzcG9uc2USDwoHc3Vj",
-            "Y2VzcxgBIAEoCCIiCgRDYXJkEgoKAmlkGAEgASgJEg4KBmNyZWRpdBgCIAEo",
-            "BSJYCghDdXN0b21lchIKCgJpZBgBIAEoBRIMCgRuYW1lGAIgASgJEhMKC2Rl",
-            "c2NyaXB0aW9uGAMgASgJEh0KBGNhcmQYBCABKAsyDy5wcm90b2J1ZnMuQ2Fy",
-            "ZCJZChVDcmVhdGVDdXN0b21lclJlcXVlc3QSDAoEbmFtZRgBIAEoCRITCgtk",
-            "ZXNjcmlwdGlvbhgCIAEoCRIdCgRjYXJkGAMgASgLMg8ucHJvdG9idWZzLkNh",
-            "cmQiPwoWQ3JlYXRlQ3VzdG9tZXJSZXNwb25zZRIlCghjdXN0b21lchgBIAEo",
-            "CzITLnByb3RvYnVmcy5DdXN0b21lciIjChVEZWxldGVDdXN0b21lclJlcXVl",
-            "c3QSCgoCaWQYASABKAUiKQoWRGVsZXRlQ3VzdG9tZXJSZXNwb25zZRIPCgdz",
-            "dWNjZXNzGAEgASgIIk0KGFNldENhcmRPbkN1c3RvbWVyUmVxdWVzdBISCgpj",
-            "dXN0b21lcklkGAEgASgFEh0KBGNhcmQYAiABKAsyDy5wcm90b2J1ZnMuQ2Fy",
-            "ZCJCChlTZXRDYXJkT25DdXN0b21lclJlc3BvbnNlEiUKCGN1c3RvbWVyGAEg",
-            "ASgLMhMucHJvdG9idWZzLkN1c3RvbWVyKokBCglFcnJvclR5cGUSGgoWSU5W",
-            "QUxJRF9SRVFVRVNUX0ZPUk1BVBAAEg0KCU5PVF9GT1VORBABEhEKDUFMUkVB",
-            "RFlfRVhJU1QQAhIUChBJTlZBTElEX1BBU1NXT1JEEAMSGQoVSU5URVJOQUxf",
-            "U0VSVkVSX0VSUk9SEAQSDQoJRk9SQklEREVOEAViBnByb3RvMw=="));
+            "ZRgCIAEoCSJMCgdDb21wYW55EgoKAmlkGAEgASgFEgwKBG5hbWUYAiABKAkS",
+            "FAoMZW1haWxBZGRyZXNzGAMgASgJEhEKCWNyZWF0ZWRBdBgEIAEoAyI+ChRD",
+            "cmVhdGVTZXNzaW9uUmVxdWVzdBIUCgxlbWFpbEFkZHJlc3MYASABKAkSEAoI",
+            "cGFzc3dvcmQYAiABKAkiPAoVQ3JlYXRlU2Vzc2lvblJlc3BvbnNlEiMKB2Nv",
+            "bXBhbnkYASABKAsyEi5wcm90b2J1ZnMuQ29tcGFueSJMChRDcmVhdGVDb21w",
+            "YW55UmVxdWVzdBIMCgRuYW1lGAEgASgJEhQKDGVtYWlsQWRkcmVzcxgCIAEo",
+            "CRIQCghwYXNzd29yZBgDIAEoCSI8ChVDcmVhdGVDb21wYW55UmVzcG9uc2US",
+            "IwoHY29tcGFueRgBIAEoCzISLnByb3RvYnVmcy5Db21wYW55IjUKBlN0dWRp",
+            "bxIKCgJpZBgBIAEoBRIMCgRuYW1lGAIgASgJEhEKCWNyZWF0ZWRBdBgEIAEo",
+            "AyIjChNDcmVhdGVTdHVkaW9SZXF1ZXN0EgwKBG5hbWUYAiABKAkiOQoUQ3Jl",
+            "YXRlU3R1ZGlvUmVzcG9uc2USIQoGc3R1ZGlvGAEgASgLMhEucHJvdG9idWZz",
+            "LlN0dWRpbyIhChNEZWxldGVTdHVkaW9SZXF1ZXN0EgoKAmlkGAEgASgFIicK",
+            "FERlbGV0ZVN0dWRpb1Jlc3BvbnNlEg8KB3N1Y2Nlc3MYASABKAgiNAoFU3Rh",
+            "ZmYSCgoCaWQYASABKAUSDAoEbmFtZRgCIAEoCRIRCgljcmVhdGVkQXQYBCAB",
+            "KAMiIgoSQ3JlYXRlU3RhZmZSZXF1ZXN0EgwKBG5hbWUYAiABKAkiNgoTQ3Jl",
+            "YXRlU3RhZmZSZXNwb25zZRIfCgVzdGFmZhgBIAEoCzIQLnByb3RvYnVmcy5T",
+            "dGFmZiIgChJEZWxldGVTdGFmZlJlcXVlc3QSCgoCaWQYASABKAUiJgoTRGVs",
+            "ZXRlU3RhZmZSZXNwb25zZRIPCgdzdWNjZXNzGAEgASgIIiIKBENhcmQSCgoC",
+            "aWQYASABKAkSDgoGY3JlZGl0GAIgASgFIlgKCEN1c3RvbWVyEgoKAmlkGAEg",
+            "ASgFEgwKBG5hbWUYAiABKAkSEwoLZGVzY3JpcHRpb24YAyABKAkSHQoEY2Fy",
+            "ZBgEIAEoCzIPLnByb3RvYnVmcy5DYXJkIlkKFUNyZWF0ZUN1c3RvbWVyUmVx",
+            "dWVzdBIMCgRuYW1lGAEgASgJEhMKC2Rlc2NyaXB0aW9uGAIgASgJEh0KBGNh",
+            "cmQYAyABKAsyDy5wcm90b2J1ZnMuQ2FyZCI/ChZDcmVhdGVDdXN0b21lclJl",
+            "c3BvbnNlEiUKCGN1c3RvbWVyGAEgASgLMhMucHJvdG9idWZzLkN1c3RvbWVy",
+            "IiMKFURlbGV0ZUN1c3RvbWVyUmVxdWVzdBIKCgJpZBgBIAEoBSIpChZEZWxl",
+            "dGVDdXN0b21lclJlc3BvbnNlEg8KB3N1Y2Nlc3MYASABKAgiTQoYU2V0Q2Fy",
+            "ZE9uQ3VzdG9tZXJSZXF1ZXN0EhIKCmN1c3RvbWVySWQYASABKAUSHQoEY2Fy",
+            "ZBgCIAEoCzIPLnByb3RvYnVmcy5DYXJkIkIKGVNldENhcmRPbkN1c3RvbWVy",
+            "UmVzcG9uc2USJQoIY3VzdG9tZXIYASABKAsyEy5wcm90b2J1ZnMuQ3VzdG9t",
+            "ZXIqiQEKCUVycm9yVHlwZRIaChZJTlZBTElEX1JFUVVFU1RfRk9STUFUEAAS",
+            "DQoJTk9UX0ZPVU5EEAESEQoNQUxSRUFEWV9FWElTVBACEhQKEElOVkFMSURf",
+            "UEFTU1dPUkQQAxIZChVJTlRFUk5BTF9TRVJWRVJfRVJST1IQBBINCglGT1JC",
+            "SURERU4QBWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Protobufs.ErrorType), }, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::Protobufs.ErrorResponse), global::Protobufs.ErrorResponse.Parser, new[]{ "ErrorType", "Message" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Protobufs.Company), global::Protobufs.Company.Parser, new[]{ "Id", "Name", "EmailAddress", "CreatedAt" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Protobufs.CreateSessionRequest), global::Protobufs.CreateSessionRequest.Parser, new[]{ "EmailAddress", "Password" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Protobufs.CreateSessionResponse), global::Protobufs.CreateSessionResponse.Parser, new[]{ "Success" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Protobufs.CreateSessionResponse), global::Protobufs.CreateSessionResponse.Parser, new[]{ "Company" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Protobufs.CreateCompanyRequest), global::Protobufs.CreateCompanyRequest.Parser, new[]{ "Name", "EmailAddress", "Password" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Protobufs.CreateCompanyResponse), global::Protobufs.CreateCompanyResponse.Parser, new[]{ "Id", "Name", "EmailAddress", "CreatedAt" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Protobufs.CreateCompanyResponse), global::Protobufs.CreateCompanyResponse.Parser, new[]{ "Company" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Protobufs.Studio), global::Protobufs.Studio.Parser, new[]{ "Id", "Name", "CreatedAt" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Protobufs.CreateStudioRequest), global::Protobufs.CreateStudioRequest.Parser, new[]{ "Name" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Protobufs.CreateStudioResponse), global::Protobufs.CreateStudioResponse.Parser, new[]{ "Studio" }, null, null, null),
@@ -244,6 +247,207 @@ namespace Protobufs {
 
   }
 
+  public sealed partial class Company : pb::IMessage<Company> {
+    private static readonly pb::MessageParser<Company> _parser = new pb::MessageParser<Company>(() => new Company());
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<Company> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Protobufs.AllReflection.Descriptor.MessageTypes[1]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public Company() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public Company(Company other) : this() {
+      id_ = other.id_;
+      name_ = other.name_;
+      emailAddress_ = other.emailAddress_;
+      createdAt_ = other.createdAt_;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public Company Clone() {
+      return new Company(this);
+    }
+
+    /// <summary>Field number for the "id" field.</summary>
+    public const int IdFieldNumber = 1;
+    private int id_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int Id {
+      get { return id_; }
+      set {
+        id_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "name" field.</summary>
+    public const int NameFieldNumber = 2;
+    private string name_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string Name {
+      get { return name_; }
+      set {
+        name_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "emailAddress" field.</summary>
+    public const int EmailAddressFieldNumber = 3;
+    private string emailAddress_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string EmailAddress {
+      get { return emailAddress_; }
+      set {
+        emailAddress_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "createdAt" field.</summary>
+    public const int CreatedAtFieldNumber = 4;
+    private long createdAt_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public long CreatedAt {
+      get { return createdAt_; }
+      set {
+        createdAt_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as Company);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(Company other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (Id != other.Id) return false;
+      if (Name != other.Name) return false;
+      if (EmailAddress != other.EmailAddress) return false;
+      if (CreatedAt != other.CreatedAt) return false;
+      return true;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (Id != 0) hash ^= Id.GetHashCode();
+      if (Name.Length != 0) hash ^= Name.GetHashCode();
+      if (EmailAddress.Length != 0) hash ^= EmailAddress.GetHashCode();
+      if (CreatedAt != 0L) hash ^= CreatedAt.GetHashCode();
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (Id != 0) {
+        output.WriteRawTag(8);
+        output.WriteInt32(Id);
+      }
+      if (Name.Length != 0) {
+        output.WriteRawTag(18);
+        output.WriteString(Name);
+      }
+      if (EmailAddress.Length != 0) {
+        output.WriteRawTag(26);
+        output.WriteString(EmailAddress);
+      }
+      if (CreatedAt != 0L) {
+        output.WriteRawTag(32);
+        output.WriteInt64(CreatedAt);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (Id != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Id);
+      }
+      if (Name.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Name);
+      }
+      if (EmailAddress.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(EmailAddress);
+      }
+      if (CreatedAt != 0L) {
+        size += 1 + pb::CodedOutputStream.ComputeInt64Size(CreatedAt);
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(Company other) {
+      if (other == null) {
+        return;
+      }
+      if (other.Id != 0) {
+        Id = other.Id;
+      }
+      if (other.Name.Length != 0) {
+        Name = other.Name;
+      }
+      if (other.EmailAddress.Length != 0) {
+        EmailAddress = other.EmailAddress;
+      }
+      if (other.CreatedAt != 0L) {
+        CreatedAt = other.CreatedAt;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            input.SkipLastField();
+            break;
+          case 8: {
+            Id = input.ReadInt32();
+            break;
+          }
+          case 18: {
+            Name = input.ReadString();
+            break;
+          }
+          case 26: {
+            EmailAddress = input.ReadString();
+            break;
+          }
+          case 32: {
+            CreatedAt = input.ReadInt64();
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
   public sealed partial class CreateSessionRequest : pb::IMessage<CreateSessionRequest> {
     private static readonly pb::MessageParser<CreateSessionRequest> _parser = new pb::MessageParser<CreateSessionRequest>(() => new CreateSessionRequest());
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -251,7 +455,7 @@ namespace Protobufs {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Protobufs.AllReflection.Descriptor.MessageTypes[1]; }
+      get { return global::Protobufs.AllReflection.Descriptor.MessageTypes[2]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -396,7 +600,7 @@ namespace Protobufs {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Protobufs.AllReflection.Descriptor.MessageTypes[2]; }
+      get { return global::Protobufs.AllReflection.Descriptor.MessageTypes[3]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -413,7 +617,7 @@ namespace Protobufs {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public CreateSessionResponse(CreateSessionResponse other) : this() {
-      success_ = other.success_;
+      Company = other.company_ != null ? other.Company.Clone() : null;
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -421,14 +625,14 @@ namespace Protobufs {
       return new CreateSessionResponse(this);
     }
 
-    /// <summary>Field number for the "success" field.</summary>
-    public const int SuccessFieldNumber = 1;
-    private bool success_;
+    /// <summary>Field number for the "company" field.</summary>
+    public const int CompanyFieldNumber = 1;
+    private global::Protobufs.Company company_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool Success {
-      get { return success_; }
+    public global::Protobufs.Company Company {
+      get { return company_; }
       set {
-        success_ = value;
+        company_ = value;
       }
     }
 
@@ -445,14 +649,14 @@ namespace Protobufs {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (Success != other.Success) return false;
+      if (!object.Equals(Company, other.Company)) return false;
       return true;
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
-      if (Success != false) hash ^= Success.GetHashCode();
+      if (company_ != null) hash ^= Company.GetHashCode();
       return hash;
     }
 
@@ -463,17 +667,17 @@ namespace Protobufs {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
-      if (Success != false) {
-        output.WriteRawTag(8);
-        output.WriteBool(Success);
+      if (company_ != null) {
+        output.WriteRawTag(10);
+        output.WriteMessage(Company);
       }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
-      if (Success != false) {
-        size += 1 + 1;
+      if (company_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Company);
       }
       return size;
     }
@@ -483,8 +687,11 @@ namespace Protobufs {
       if (other == null) {
         return;
       }
-      if (other.Success != false) {
-        Success = other.Success;
+      if (other.company_ != null) {
+        if (company_ == null) {
+          company_ = new global::Protobufs.Company();
+        }
+        Company.MergeFrom(other.Company);
       }
     }
 
@@ -496,8 +703,11 @@ namespace Protobufs {
           default:
             input.SkipLastField();
             break;
-          case 8: {
-            Success = input.ReadBool();
+          case 10: {
+            if (company_ == null) {
+              company_ = new global::Protobufs.Company();
+            }
+            input.ReadMessage(company_);
             break;
           }
         }
@@ -513,7 +723,7 @@ namespace Protobufs {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Protobufs.AllReflection.Descriptor.MessageTypes[3]; }
+      get { return global::Protobufs.AllReflection.Descriptor.MessageTypes[4]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -686,7 +896,7 @@ namespace Protobufs {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Protobufs.AllReflection.Descriptor.MessageTypes[4]; }
+      get { return global::Protobufs.AllReflection.Descriptor.MessageTypes[5]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -703,10 +913,7 @@ namespace Protobufs {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public CreateCompanyResponse(CreateCompanyResponse other) : this() {
-      id_ = other.id_;
-      name_ = other.name_;
-      emailAddress_ = other.emailAddress_;
-      createdAt_ = other.createdAt_;
+      Company = other.company_ != null ? other.Company.Clone() : null;
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -714,47 +921,14 @@ namespace Protobufs {
       return new CreateCompanyResponse(this);
     }
 
-    /// <summary>Field number for the "id" field.</summary>
-    public const int IdFieldNumber = 1;
-    private int id_;
+    /// <summary>Field number for the "company" field.</summary>
+    public const int CompanyFieldNumber = 1;
+    private global::Protobufs.Company company_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public int Id {
-      get { return id_; }
+    public global::Protobufs.Company Company {
+      get { return company_; }
       set {
-        id_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "name" field.</summary>
-    public const int NameFieldNumber = 2;
-    private string name_ = "";
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public string Name {
-      get { return name_; }
-      set {
-        name_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-      }
-    }
-
-    /// <summary>Field number for the "emailAddress" field.</summary>
-    public const int EmailAddressFieldNumber = 3;
-    private string emailAddress_ = "";
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public string EmailAddress {
-      get { return emailAddress_; }
-      set {
-        emailAddress_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-      }
-    }
-
-    /// <summary>Field number for the "createdAt" field.</summary>
-    public const int CreatedAtFieldNumber = 4;
-    private long createdAt_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public long CreatedAt {
-      get { return createdAt_; }
-      set {
-        createdAt_ = value;
+        company_ = value;
       }
     }
 
@@ -771,20 +945,14 @@ namespace Protobufs {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (Id != other.Id) return false;
-      if (Name != other.Name) return false;
-      if (EmailAddress != other.EmailAddress) return false;
-      if (CreatedAt != other.CreatedAt) return false;
+      if (!object.Equals(Company, other.Company)) return false;
       return true;
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
-      if (Id != 0) hash ^= Id.GetHashCode();
-      if (Name.Length != 0) hash ^= Name.GetHashCode();
-      if (EmailAddress.Length != 0) hash ^= EmailAddress.GetHashCode();
-      if (CreatedAt != 0L) hash ^= CreatedAt.GetHashCode();
+      if (company_ != null) hash ^= Company.GetHashCode();
       return hash;
     }
 
@@ -795,38 +963,17 @@ namespace Protobufs {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
-      if (Id != 0) {
-        output.WriteRawTag(8);
-        output.WriteInt32(Id);
-      }
-      if (Name.Length != 0) {
-        output.WriteRawTag(18);
-        output.WriteString(Name);
-      }
-      if (EmailAddress.Length != 0) {
-        output.WriteRawTag(26);
-        output.WriteString(EmailAddress);
-      }
-      if (CreatedAt != 0L) {
-        output.WriteRawTag(32);
-        output.WriteInt64(CreatedAt);
+      if (company_ != null) {
+        output.WriteRawTag(10);
+        output.WriteMessage(Company);
       }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
-      if (Id != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Id);
-      }
-      if (Name.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(Name);
-      }
-      if (EmailAddress.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(EmailAddress);
-      }
-      if (CreatedAt != 0L) {
-        size += 1 + pb::CodedOutputStream.ComputeInt64Size(CreatedAt);
+      if (company_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Company);
       }
       return size;
     }
@@ -836,17 +983,11 @@ namespace Protobufs {
       if (other == null) {
         return;
       }
-      if (other.Id != 0) {
-        Id = other.Id;
-      }
-      if (other.Name.Length != 0) {
-        Name = other.Name;
-      }
-      if (other.EmailAddress.Length != 0) {
-        EmailAddress = other.EmailAddress;
-      }
-      if (other.CreatedAt != 0L) {
-        CreatedAt = other.CreatedAt;
+      if (other.company_ != null) {
+        if (company_ == null) {
+          company_ = new global::Protobufs.Company();
+        }
+        Company.MergeFrom(other.Company);
       }
     }
 
@@ -858,20 +999,11 @@ namespace Protobufs {
           default:
             input.SkipLastField();
             break;
-          case 8: {
-            Id = input.ReadInt32();
-            break;
-          }
-          case 18: {
-            Name = input.ReadString();
-            break;
-          }
-          case 26: {
-            EmailAddress = input.ReadString();
-            break;
-          }
-          case 32: {
-            CreatedAt = input.ReadInt64();
+          case 10: {
+            if (company_ == null) {
+              company_ = new global::Protobufs.Company();
+            }
+            input.ReadMessage(company_);
             break;
           }
         }
@@ -887,7 +1019,7 @@ namespace Protobufs {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Protobufs.AllReflection.Descriptor.MessageTypes[5]; }
+      get { return global::Protobufs.AllReflection.Descriptor.MessageTypes[6]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1060,7 +1192,7 @@ namespace Protobufs {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Protobufs.AllReflection.Descriptor.MessageTypes[6]; }
+      get { return global::Protobufs.AllReflection.Descriptor.MessageTypes[7]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1177,7 +1309,7 @@ namespace Protobufs {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Protobufs.AllReflection.Descriptor.MessageTypes[7]; }
+      get { return global::Protobufs.AllReflection.Descriptor.MessageTypes[8]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1300,7 +1432,7 @@ namespace Protobufs {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Protobufs.AllReflection.Descriptor.MessageTypes[8]; }
+      get { return global::Protobufs.AllReflection.Descriptor.MessageTypes[9]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1417,7 +1549,7 @@ namespace Protobufs {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Protobufs.AllReflection.Descriptor.MessageTypes[9]; }
+      get { return global::Protobufs.AllReflection.Descriptor.MessageTypes[10]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1534,7 +1666,7 @@ namespace Protobufs {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Protobufs.AllReflection.Descriptor.MessageTypes[10]; }
+      get { return global::Protobufs.AllReflection.Descriptor.MessageTypes[11]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1707,7 +1839,7 @@ namespace Protobufs {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Protobufs.AllReflection.Descriptor.MessageTypes[11]; }
+      get { return global::Protobufs.AllReflection.Descriptor.MessageTypes[12]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1824,7 +1956,7 @@ namespace Protobufs {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Protobufs.AllReflection.Descriptor.MessageTypes[12]; }
+      get { return global::Protobufs.AllReflection.Descriptor.MessageTypes[13]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1947,7 +2079,7 @@ namespace Protobufs {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Protobufs.AllReflection.Descriptor.MessageTypes[13]; }
+      get { return global::Protobufs.AllReflection.Descriptor.MessageTypes[14]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2064,7 +2196,7 @@ namespace Protobufs {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Protobufs.AllReflection.Descriptor.MessageTypes[14]; }
+      get { return global::Protobufs.AllReflection.Descriptor.MessageTypes[15]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2181,7 +2313,7 @@ namespace Protobufs {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Protobufs.AllReflection.Descriptor.MessageTypes[15]; }
+      get { return global::Protobufs.AllReflection.Descriptor.MessageTypes[16]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2326,7 +2458,7 @@ namespace Protobufs {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Protobufs.AllReflection.Descriptor.MessageTypes[16]; }
+      get { return global::Protobufs.AllReflection.Descriptor.MessageTypes[17]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2533,7 +2665,7 @@ namespace Protobufs {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Protobufs.AllReflection.Descriptor.MessageTypes[17]; }
+      get { return global::Protobufs.AllReflection.Descriptor.MessageTypes[18]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2712,7 +2844,7 @@ namespace Protobufs {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Protobufs.AllReflection.Descriptor.MessageTypes[18]; }
+      get { return global::Protobufs.AllReflection.Descriptor.MessageTypes[19]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2835,7 +2967,7 @@ namespace Protobufs {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Protobufs.AllReflection.Descriptor.MessageTypes[19]; }
+      get { return global::Protobufs.AllReflection.Descriptor.MessageTypes[20]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2952,7 +3084,7 @@ namespace Protobufs {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Protobufs.AllReflection.Descriptor.MessageTypes[20]; }
+      get { return global::Protobufs.AllReflection.Descriptor.MessageTypes[21]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -3069,7 +3201,7 @@ namespace Protobufs {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Protobufs.AllReflection.Descriptor.MessageTypes[21]; }
+      get { return global::Protobufs.AllReflection.Descriptor.MessageTypes[22]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -3220,7 +3352,7 @@ namespace Protobufs {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Protobufs.AllReflection.Descriptor.MessageTypes[22]; }
+      get { return global::Protobufs.AllReflection.Descriptor.MessageTypes[23]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

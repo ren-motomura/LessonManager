@@ -7,12 +7,13 @@ using System.Threading.Tasks;
 using System.Net.Http;
 using Protobufs;
 using Google.Protobuf;
+using LessonManager.Utils;
 
 namespace LessonManager.WebAPIs
 {
     class Session
     {
-        public static async Task<Result<Boolean>> Create(string emailAddress, string password)
+        public static async Task<Result<Models.Company>> Create(string emailAddress, string password)
         {
             var req = new CreateSessionRequest();
             req.EmailAddress = emailAddress;
@@ -37,9 +38,9 @@ namespace LessonManager.WebAPIs
 
             if (!responseMessage.IsSuccessStatusCode)
             {
-                return new Result<Boolean>(
+                return new Result<Models.Company>(
                     false,
-                    false,
+                    null,
                     new FailData(
                         responseMessage.StatusCode, ErrorResponse.Parser.ParseFrom(responseDataStream.ToArray())
                     )
@@ -48,11 +49,22 @@ namespace LessonManager.WebAPIs
 
             var res = CreateSessionResponse.Parser.ParseFrom(responseDataStream.ToArray());
 
-            return new Result<Boolean>(
+            var company = new Models.Company();
+            company.Id = res.Company.Id;
+            company.Name = res.Company.Name;
+            company.EmailAddress = res.Company.EmailAddress;
+            company.CreatedAt = Time.TimestampToDateTime(res.Company.CreatedAt);
+
+            return new Result<Models.Company>(
                 true,
-                true,
+                company,
                 null
             );
+        }
+
+        public static void Remove()
+        {
+            Client.Instance.RemoveSession();
         }
     }
 }

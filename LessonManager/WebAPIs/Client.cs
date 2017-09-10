@@ -48,5 +48,10 @@ namespace LessonManager.WebAPIs
 
             return responseMessage;
         }
+
+        public void RemoveSession()
+        {
+            client.DefaultRequestHeaders.Remove("Cookie");
+        }
     }
 }
