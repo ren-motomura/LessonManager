@@ -60,7 +60,7 @@
                     <ContentControl Content="{Binding ElementName=MenuItems, Path=SelectedItem.Content}" />
                 </ScrollViewer>
 
-                <materialDesign:Snackbar MessageQueue="{materialDesign:MessageQueue}" x:Name="MainSnackbar"/>
+                <materialDesign:Snackbar MessageQueue="{Binding SnackbarMessageQueue}" x:Name="MainSnackbar"/>
             </Grid>
         </DockPanel>
     </materialDesign:DrawerHost>

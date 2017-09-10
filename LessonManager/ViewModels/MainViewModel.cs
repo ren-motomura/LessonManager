@@ -46,6 +46,7 @@ namespace LessonManager.ViewModels
             };
 
             SignOutCommand = new SignOutCommand();
+            SnackbarMessageQueue = SnackbarMessageQueue.Instance();
         }
 
         private List<MenuItem> menuItems_;
@@ -66,5 +67,6 @@ namespace LessonManager.ViewModels
         private List<MenuItem> menuItemsWhenAuthorized_ { get; set; }
 
         public SignOutCommand SignOutCommand { get; set; }
+        public SnackbarMessageQueue SnackbarMessageQueue { get; set; }
     }
 }

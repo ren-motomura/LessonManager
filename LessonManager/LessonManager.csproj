@@ -75,6 +75,7 @@
     <Compile Include="Commands\CreateCompanyCommand.cs" />
     <Compile Include="Commands\SignInCommand.cs" />
     <Compile Include="Commands\SignOutCommand.cs" />
+    <Compile Include="Models\SnackbarMessageQueue.cs" />
     <Compile Include="Models\Studio.cs" />
     <Compile Include="Protobufs\All.cs" />
     <Compile Include="Utils\Time.cs" />

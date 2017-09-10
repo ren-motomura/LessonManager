@@ -21,16 +21,20 @@ namespace LessonManager.WebAPIs
 
             var reqData = req.ToByteArray();
 
-
             HttpResponseMessage responseMessage;
             try
             {
                 responseMessage = await Client.Instance.Request("CreateSession", reqData).ConfigureAwait(false);
             }
-            catch (Exception ex)
+            catch (HttpRequestException ex)
             {
-                Console.WriteLine(ex);
-                throw;
+                return new Result<Models.Company>(
+                    false,
+                    null,
+                    new FailData( // TODO: エラーの作り方を考え直したほうが良いかも
+                        System.Net.HttpStatusCode.InternalServerError, new ErrorResponse()
+                    )
+                );
             }
 
             var responseDataStream = new MemoryStream((int)responseMessage.Content.Headers.ContentLength); // long から int への cast は避けるべきだが...

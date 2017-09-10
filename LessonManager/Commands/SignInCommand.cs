@@ -41,7 +41,18 @@ namespace LessonManager.Commands
                 }
                 else
                 {
-                    // TODO: エラーメッセージを表示
+                    if (result.FailData.Status == System.Net.HttpStatusCode.NotFound)
+                    {
+                        SnackbarMessageQueue.Instance().Enqueue("メールアドレスが見つかりませんでした");
+                    }
+                    else if (result.FailData.Body.ErrorType == Protobufs.ErrorType.InvalidPassword)
+                    {
+                        SnackbarMessageQueue.Instance().Enqueue("パスワードが間違っています");
+                    }
+                    else
+                    {
+                        SnackbarMessageQueue.Instance().Enqueue("不明なエラー");
+                    }
                 }
             });
         }
