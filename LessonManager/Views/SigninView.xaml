@@ -56,7 +56,11 @@
                                      Margin="0 12 0 0" Text="{Binding SignUpParameter.Password, Mode=TwoWay}"/>
                             <TextBox materialDesign:HintAssist.Hint="Re-Enter Password" materialDesign:HintAssist.IsFloating="True"
                                      Margin="0 12 0 0" Text="{Binding SignUpParameter.Password2, Mode=TwoWay}"/>
-                            <Button Margin="0 20 0 12" Style="{StaticResource MaterialDesignRaisedAccentButton}">サインアップ</Button>
+                            <Button Margin="0 20 0 12" Style="{StaticResource MaterialDesignRaisedAccentButton}"
+                                Command="{Binding SignUpCommand}"
+                                CommandParameter="{Binding SignUpParameter}">
+                                サインアップ
+                            </Button>
                         </StackPanel>
                     </materialDesign:Card>
                 </StackPanel>

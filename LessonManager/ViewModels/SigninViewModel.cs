@@ -18,16 +18,18 @@ namespace LessonManager.ViewModels
         }
 
         public SignInCommand.Parameter SignInParameter { get; set; }
-        public Parameter SignUpParameter { get; set; }
+        public SignUpCommand.Parameter SignUpParameter { get; set; }
         public Parameter ResetPasswordParameter { get; set; }
         public SignInCommand SignInCommand { get; set; }
+        public SignUpCommand SignUpCommand { get; set; }
 
         public SigninViewModel()
         {
             SignInParameter = new SignInCommand.Parameter();
-            SignUpParameter = new Parameter();
+            SignUpParameter = new SignUpCommand.Parameter();
             ResetPasswordParameter = new Parameter();
             SignInCommand = new SignInCommand();
+            SignUpCommand = new SignUpCommand();
         }
     }
 }
