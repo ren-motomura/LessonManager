@@ -31,32 +31,34 @@ namespace Protobufs {
             "bXBhbnkYASABKAsyEi5wcm90b2J1ZnMuQ29tcGFueSJMChRDcmVhdGVDb21w",
             "YW55UmVxdWVzdBIMCgRuYW1lGAEgASgJEhQKDGVtYWlsQWRkcmVzcxgCIAEo",
             "CRIQCghwYXNzd29yZBgDIAEoCSI8ChVDcmVhdGVDb21wYW55UmVzcG9uc2US",
-            "IwoHY29tcGFueRgBIAEoCzISLnByb3RvYnVmcy5Db21wYW55IjUKBlN0dWRp",
-            "bxIKCgJpZBgBIAEoBRIMCgRuYW1lGAIgASgJEhEKCWNyZWF0ZWRBdBgEIAEo",
-            "AyIjChNDcmVhdGVTdHVkaW9SZXF1ZXN0EgwKBG5hbWUYAiABKAkiOQoUQ3Jl",
-            "YXRlU3R1ZGlvUmVzcG9uc2USIQoGc3R1ZGlvGAEgASgLMhEucHJvdG9idWZz",
-            "LlN0dWRpbyIhChNEZWxldGVTdHVkaW9SZXF1ZXN0EgoKAmlkGAEgASgFIicK",
-            "FERlbGV0ZVN0dWRpb1Jlc3BvbnNlEg8KB3N1Y2Nlc3MYASABKAgiNAoFU3Rh",
-            "ZmYSCgoCaWQYASABKAUSDAoEbmFtZRgCIAEoCRIRCgljcmVhdGVkQXQYBCAB",
-            "KAMiIgoSQ3JlYXRlU3RhZmZSZXF1ZXN0EgwKBG5hbWUYAiABKAkiNgoTQ3Jl",
-            "YXRlU3RhZmZSZXNwb25zZRIfCgVzdGFmZhgBIAEoCzIQLnByb3RvYnVmcy5T",
-            "dGFmZiIgChJEZWxldGVTdGFmZlJlcXVlc3QSCgoCaWQYASABKAUiJgoTRGVs",
-            "ZXRlU3RhZmZSZXNwb25zZRIPCgdzdWNjZXNzGAEgASgIIiIKBENhcmQSCgoC",
-            "aWQYASABKAkSDgoGY3JlZGl0GAIgASgFIlgKCEN1c3RvbWVyEgoKAmlkGAEg",
-            "ASgFEgwKBG5hbWUYAiABKAkSEwoLZGVzY3JpcHRpb24YAyABKAkSHQoEY2Fy",
-            "ZBgEIAEoCzIPLnByb3RvYnVmcy5DYXJkIlkKFUNyZWF0ZUN1c3RvbWVyUmVx",
-            "dWVzdBIMCgRuYW1lGAEgASgJEhMKC2Rlc2NyaXB0aW9uGAIgASgJEh0KBGNh",
-            "cmQYAyABKAsyDy5wcm90b2J1ZnMuQ2FyZCI/ChZDcmVhdGVDdXN0b21lclJl",
-            "c3BvbnNlEiUKCGN1c3RvbWVyGAEgASgLMhMucHJvdG9idWZzLkN1c3RvbWVy",
-            "IiMKFURlbGV0ZUN1c3RvbWVyUmVxdWVzdBIKCgJpZBgBIAEoBSIpChZEZWxl",
-            "dGVDdXN0b21lclJlc3BvbnNlEg8KB3N1Y2Nlc3MYASABKAgiTQoYU2V0Q2Fy",
-            "ZE9uQ3VzdG9tZXJSZXF1ZXN0EhIKCmN1c3RvbWVySWQYASABKAUSHQoEY2Fy",
-            "ZBgCIAEoCzIPLnByb3RvYnVmcy5DYXJkIkIKGVNldENhcmRPbkN1c3RvbWVy",
-            "UmVzcG9uc2USJQoIY3VzdG9tZXIYASABKAsyEy5wcm90b2J1ZnMuQ3VzdG9t",
-            "ZXIqiQEKCUVycm9yVHlwZRIaChZJTlZBTElEX1JFUVVFU1RfRk9STUFUEAAS",
-            "DQoJTk9UX0ZPVU5EEAESEQoNQUxSRUFEWV9FWElTVBACEhQKEElOVkFMSURf",
-            "UEFTU1dPUkQQAxIZChVJTlRFUk5BTF9TRVJWRVJfRVJST1IQBBINCglGT1JC",
-            "SURERU4QBWIGcHJvdG8z"));
+            "IwoHY29tcGFueRgBIAEoCzISLnByb3RvYnVmcy5Db21wYW55IlsKBlN0dWRp",
+            "bxIKCgJpZBgBIAEoBRIMCgRuYW1lGAIgASgJEg8KB2FkZHJlc3MYAyABKAkS",
+            "EwoLcGhvbmVOdW1iZXIYBCABKAkSEQoJY3JlYXRlZEF0GAUgASgDIkkKE0Ny",
+            "ZWF0ZVN0dWRpb1JlcXVlc3QSDAoEbmFtZRgBIAEoCRIPCgdhZGRyZXNzGAIg",
+            "ASgJEhMKC3Bob25lTnVtYmVyGAMgASgJIjkKFENyZWF0ZVN0dWRpb1Jlc3Bv",
+            "bnNlEiEKBnN0dWRpbxgBIAEoCzIRLnByb3RvYnVmcy5TdHVkaW8iIQoTRGVs",
+            "ZXRlU3R1ZGlvUmVxdWVzdBIKCgJpZBgBIAEoBSInChREZWxldGVTdHVkaW9S",
+            "ZXNwb25zZRIPCgdzdWNjZXNzGAEgASgIIjQKBVN0YWZmEgoKAmlkGAEgASgF",
+            "EgwKBG5hbWUYAiABKAkSEQoJY3JlYXRlZEF0GAQgASgDIiIKEkNyZWF0ZVN0",
+            "YWZmUmVxdWVzdBIMCgRuYW1lGAIgASgJIjYKE0NyZWF0ZVN0YWZmUmVzcG9u",
+            "c2USHwoFc3RhZmYYASABKAsyEC5wcm90b2J1ZnMuU3RhZmYiIAoSRGVsZXRl",
+            "U3RhZmZSZXF1ZXN0EgoKAmlkGAEgASgFIiYKE0RlbGV0ZVN0YWZmUmVzcG9u",
+            "c2USDwoHc3VjY2VzcxgBIAEoCCIiCgRDYXJkEgoKAmlkGAEgASgJEg4KBmNy",
+            "ZWRpdBgCIAEoBSJYCghDdXN0b21lchIKCgJpZBgBIAEoBRIMCgRuYW1lGAIg",
+            "ASgJEhMKC2Rlc2NyaXB0aW9uGAMgASgJEh0KBGNhcmQYBCABKAsyDy5wcm90",
+            "b2J1ZnMuQ2FyZCJZChVDcmVhdGVDdXN0b21lclJlcXVlc3QSDAoEbmFtZRgB",
+            "IAEoCRITCgtkZXNjcmlwdGlvbhgCIAEoCRIdCgRjYXJkGAMgASgLMg8ucHJv",
+            "dG9idWZzLkNhcmQiPwoWQ3JlYXRlQ3VzdG9tZXJSZXNwb25zZRIlCghjdXN0",
+            "b21lchgBIAEoCzITLnByb3RvYnVmcy5DdXN0b21lciIjChVEZWxldGVDdXN0",
+            "b21lclJlcXVlc3QSCgoCaWQYASABKAUiKQoWRGVsZXRlQ3VzdG9tZXJSZXNw",
+            "b25zZRIPCgdzdWNjZXNzGAEgASgIIk0KGFNldENhcmRPbkN1c3RvbWVyUmVx",
+            "dWVzdBISCgpjdXN0b21lcklkGAEgASgFEh0KBGNhcmQYAiABKAsyDy5wcm90",
+            "b2J1ZnMuQ2FyZCJCChlTZXRDYXJkT25DdXN0b21lclJlc3BvbnNlEiUKCGN1",
+            "c3RvbWVyGAEgASgLMhMucHJvdG9idWZzLkN1c3RvbWVyKokBCglFcnJvclR5",
+            "cGUSGgoWSU5WQUxJRF9SRVFVRVNUX0ZPUk1BVBAAEg0KCU5PVF9GT1VORBAB",
+            "EhEKDUFMUkVBRFlfRVhJU1QQAhIUChBJTlZBTElEX1BBU1NXT1JEEAMSGQoV",
+            "SU5URVJOQUxfU0VSVkVSX0VSUk9SEAQSDQoJRk9SQklEREVOEAViBnByb3Rv",
+            "Mw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Protobufs.ErrorType), }, new pbr::GeneratedClrTypeInfo[] {
@@ -66,8 +68,8 @@ namespace Protobufs {
             new pbr::GeneratedClrTypeInfo(typeof(global::Protobufs.CreateSessionResponse), global::Protobufs.CreateSessionResponse.Parser, new[]{ "Company" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Protobufs.CreateCompanyRequest), global::Protobufs.CreateCompanyRequest.Parser, new[]{ "Name", "EmailAddress", "Password" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Protobufs.CreateCompanyResponse), global::Protobufs.CreateCompanyResponse.Parser, new[]{ "Company" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Protobufs.Studio), global::Protobufs.Studio.Parser, new[]{ "Id", "Name", "CreatedAt" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Protobufs.CreateStudioRequest), global::Protobufs.CreateStudioRequest.Parser, new[]{ "Name" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Protobufs.Studio), global::Protobufs.Studio.Parser, new[]{ "Id", "Name", "Address", "PhoneNumber", "CreatedAt" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Protobufs.CreateStudioRequest), global::Protobufs.CreateStudioRequest.Parser, new[]{ "Name", "Address", "PhoneNumber" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Protobufs.CreateStudioResponse), global::Protobufs.CreateStudioResponse.Parser, new[]{ "Studio" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Protobufs.DeleteStudioRequest), global::Protobufs.DeleteStudioRequest.Parser, new[]{ "Id" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Protobufs.DeleteStudioResponse), global::Protobufs.DeleteStudioResponse.Parser, new[]{ "Success" }, null, null, null),
@@ -1038,6 +1040,8 @@ namespace Protobufs {
     public Studio(Studio other) : this() {
       id_ = other.id_;
       name_ = other.name_;
+      address_ = other.address_;
+      phoneNumber_ = other.phoneNumber_;
       createdAt_ = other.createdAt_;
     }
 
@@ -1068,8 +1072,30 @@ namespace Protobufs {
       }
     }
 
+    /// <summary>Field number for the "address" field.</summary>
+    public const int AddressFieldNumber = 3;
+    private string address_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string Address {
+      get { return address_; }
+      set {
+        address_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "phoneNumber" field.</summary>
+    public const int PhoneNumberFieldNumber = 4;
+    private string phoneNumber_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string PhoneNumber {
+      get { return phoneNumber_; }
+      set {
+        phoneNumber_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
     /// <summary>Field number for the "createdAt" field.</summary>
-    public const int CreatedAtFieldNumber = 4;
+    public const int CreatedAtFieldNumber = 5;
     private long createdAt_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public long CreatedAt {
@@ -1094,6 +1120,8 @@ namespace Protobufs {
       }
       if (Id != other.Id) return false;
       if (Name != other.Name) return false;
+      if (Address != other.Address) return false;
+      if (PhoneNumber != other.PhoneNumber) return false;
       if (CreatedAt != other.CreatedAt) return false;
       return true;
     }
@@ -1103,6 +1131,8 @@ namespace Protobufs {
       int hash = 1;
       if (Id != 0) hash ^= Id.GetHashCode();
       if (Name.Length != 0) hash ^= Name.GetHashCode();
+      if (Address.Length != 0) hash ^= Address.GetHashCode();
+      if (PhoneNumber.Length != 0) hash ^= PhoneNumber.GetHashCode();
       if (CreatedAt != 0L) hash ^= CreatedAt.GetHashCode();
       return hash;
     }
@@ -1122,8 +1152,16 @@ namespace Protobufs {
         output.WriteRawTag(18);
         output.WriteString(Name);
       }
+      if (Address.Length != 0) {
+        output.WriteRawTag(26);
+        output.WriteString(Address);
+      }
+      if (PhoneNumber.Length != 0) {
+        output.WriteRawTag(34);
+        output.WriteString(PhoneNumber);
+      }
       if (CreatedAt != 0L) {
-        output.WriteRawTag(32);
+        output.WriteRawTag(40);
         output.WriteInt64(CreatedAt);
       }
     }
@@ -1136,6 +1174,12 @@ namespace Protobufs {
       }
       if (Name.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Name);
+      }
+      if (Address.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Address);
+      }
+      if (PhoneNumber.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(PhoneNumber);
       }
       if (CreatedAt != 0L) {
         size += 1 + pb::CodedOutputStream.ComputeInt64Size(CreatedAt);
@@ -1153,6 +1197,12 @@ namespace Protobufs {
       }
       if (other.Name.Length != 0) {
         Name = other.Name;
+      }
+      if (other.Address.Length != 0) {
+        Address = other.Address;
+      }
+      if (other.PhoneNumber.Length != 0) {
+        PhoneNumber = other.PhoneNumber;
       }
       if (other.CreatedAt != 0L) {
         CreatedAt = other.CreatedAt;
@@ -1175,7 +1225,15 @@ namespace Protobufs {
             Name = input.ReadString();
             break;
           }
-          case 32: {
+          case 26: {
+            Address = input.ReadString();
+            break;
+          }
+          case 34: {
+            PhoneNumber = input.ReadString();
+            break;
+          }
+          case 40: {
             CreatedAt = input.ReadInt64();
             break;
           }
@@ -1210,6 +1268,8 @@ namespace Protobufs {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public CreateStudioRequest(CreateStudioRequest other) : this() {
       name_ = other.name_;
+      address_ = other.address_;
+      phoneNumber_ = other.phoneNumber_;
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1218,13 +1278,35 @@ namespace Protobufs {
     }
 
     /// <summary>Field number for the "name" field.</summary>
-    public const int NameFieldNumber = 2;
+    public const int NameFieldNumber = 1;
     private string name_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public string Name {
       get { return name_; }
       set {
         name_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "address" field.</summary>
+    public const int AddressFieldNumber = 2;
+    private string address_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string Address {
+      get { return address_; }
+      set {
+        address_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "phoneNumber" field.</summary>
+    public const int PhoneNumberFieldNumber = 3;
+    private string phoneNumber_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string PhoneNumber {
+      get { return phoneNumber_; }
+      set {
+        phoneNumber_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
       }
     }
 
@@ -1242,6 +1324,8 @@ namespace Protobufs {
         return true;
       }
       if (Name != other.Name) return false;
+      if (Address != other.Address) return false;
+      if (PhoneNumber != other.PhoneNumber) return false;
       return true;
     }
 
@@ -1249,6 +1333,8 @@ namespace Protobufs {
     public override int GetHashCode() {
       int hash = 1;
       if (Name.Length != 0) hash ^= Name.GetHashCode();
+      if (Address.Length != 0) hash ^= Address.GetHashCode();
+      if (PhoneNumber.Length != 0) hash ^= PhoneNumber.GetHashCode();
       return hash;
     }
 
@@ -1260,8 +1346,16 @@ namespace Protobufs {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
       if (Name.Length != 0) {
-        output.WriteRawTag(18);
+        output.WriteRawTag(10);
         output.WriteString(Name);
+      }
+      if (Address.Length != 0) {
+        output.WriteRawTag(18);
+        output.WriteString(Address);
+      }
+      if (PhoneNumber.Length != 0) {
+        output.WriteRawTag(26);
+        output.WriteString(PhoneNumber);
       }
     }
 
@@ -1270,6 +1364,12 @@ namespace Protobufs {
       int size = 0;
       if (Name.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Name);
+      }
+      if (Address.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Address);
+      }
+      if (PhoneNumber.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(PhoneNumber);
       }
       return size;
     }
@@ -1282,6 +1382,12 @@ namespace Protobufs {
       if (other.Name.Length != 0) {
         Name = other.Name;
       }
+      if (other.Address.Length != 0) {
+        Address = other.Address;
+      }
+      if (other.PhoneNumber.Length != 0) {
+        PhoneNumber = other.PhoneNumber;
+      }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1292,8 +1398,16 @@ namespace Protobufs {
           default:
             input.SkipLastField();
             break;
-          case 18: {
+          case 10: {
             Name = input.ReadString();
+            break;
+          }
+          case 18: {
+            Address = input.ReadString();
+            break;
+          }
+          case 26: {
+            PhoneNumber = input.ReadString();
             break;
           }
         }

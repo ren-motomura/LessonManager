@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.ComponentModel;
 using LessonManager.Models;
+using LessonManager.Commands;
 
 namespace LessonManager.ViewModels
 {
@@ -26,6 +27,8 @@ namespace LessonManager.ViewModels
                 }
             }
         }
+
+        public DelegateCommand CreateOrUpdateStudioCommand { get; set; }
 
         public StudiosViewModel()
         {
@@ -48,6 +51,43 @@ namespace LessonManager.ViewModels
                 }
             );
             studios_ = builder.ToImmutable();
+
+            CreateOrUpdateStudioCommand = new DelegateCommand();
+            CreateOrUpdateStudioCommand.ExecuteHandler = CreateOrUpdateStudioExecute;
+        }
+
+        private void CreateOrUpdateStudioExecute(object parameter)
+        {
+            var s = parameter as Models.Studio;
+            var targetStudio = Studios.Find(st => st == s);
+            if (targetStudio == null) return;
+
+            if (targetStudio.ID == 0)
+            {
+                WebAPIs.Studio.Create(targetStudio.Name, targetStudio.Address, targetStudio.PhoneNumber).ContinueWith(t =>
+                {
+                    WebAPIs.Result<Models.Studio> result = t.Result;
+                    if (result.IsSuccess)
+                    {
+                        targetStudio.ID = result.SuccessData.ID;
+                        SnackbarMessageQueue.Instance().Enqueue("スタジオを新たに作成しました");
+                    }
+                    else
+                    {
+                        if (result.FailData.Body.ErrorType == Protobufs.ErrorType.AlreadyExist)
+                        {
+                            SnackbarMessageQueue.Instance().Enqueue("その名前は既に使われています");
+                        }
+                        else
+                        {
+                            SnackbarMessageQueue.Instance().Enqueue("不明なエラー");
+                        }
+                    }
+                });
+            }
+            else
+            {
+            }
         }
     }
 }

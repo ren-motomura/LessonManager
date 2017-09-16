@@ -46,46 +46,56 @@
             </i:Interaction.Behaviors>
             <ListBox.ItemTemplate>
                 <DataTemplate DataType="m:Studio">
-                        <Grid Width="300">
-                            <Grid.RowDefinitions>
-                                <RowDefinition Height="140"/>
-                                <RowDefinition Height="*"/>
-                                <RowDefinition Height="Auto"/>
-                            </Grid.RowDefinitions>
+                    <Grid Width="300">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="140"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
 
-                            <materialDesign:ColorZone Grid.Row="0" Mode="PrimaryLight" VerticalAlignment="Stretch">
-                                <materialDesign:PackIcon Kind="FileImage" Width="50" Height="50" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-                            </materialDesign:ColorZone>
+                        <materialDesign:ColorZone Grid.Row="0" Mode="PrimaryLight" VerticalAlignment="Stretch">
+                            <materialDesign:PackIcon Kind="FileImage" Width="50" Height="50" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                        </materialDesign:ColorZone>
 
-                            <Button Grid.Row="0" Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" 
-                                    HorizontalAlignment="Right" VerticalAlignment="Bottom"
-                                    Margin="0 0 20 -20"
-                                    ToolTip="画像を設定します">
-                                <materialDesign:PackIcon Kind="Upload" />
+                        <Button Grid.Row="0" Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" 
+                                HorizontalAlignment="Right" VerticalAlignment="Bottom"
+                                Margin="0 0 20 -20"
+                                ToolTip="画像を設定します">
+                            <materialDesign:PackIcon Kind="Upload" />
+                        </Button>
+                        <Button Grid.Row="0" Style="{StaticResource MaterialDesignToolButton}" 
+                                HorizontalAlignment="Left" VerticalAlignment="Top"
+                                ToolTip="このスタジオを削除します"
+                                Click="RemoveStudioButton_Click"
+                                Tag="{Binding}">
+                            <materialDesign:PackIcon Kind="Close"/>
+                        </Button>
+
+                        <StackPanel Grid.Row="1" Margin="8 24 8 0">
+                            <TextBox materialDesign:HintAssist.Hint="名称" materialDesign:HintAssist.IsFloating="True"
+                                         Margin="0 12 0 0" Text="{Binding Name, Mode=TwoWay}"/>
+                            <TextBox materialDesign:HintAssist.Hint="住所" materialDesign:HintAssist.IsFloating="True"
+                                         Margin="0 12 0 0" Text="{Binding Address, Mode=TwoWay}"/>
+                            <TextBox materialDesign:HintAssist.Hint="電話番号" materialDesign:HintAssist.IsFloating="True"
+                                         Margin="0 12 0 0" Text="{Binding PhoneNumber, Mode=TwoWay}"/>
+                        </StackPanel>
+
+                        <StackPanel HorizontalAlignment="Right" Grid.Row="2" Orientation="Horizontal" Margin="8">
+                            <Button Style="{StaticResource MaterialDesignToolButton}" Width="30" Padding="2 0 2 0">
+                                <Button.Command>
+                                    <Binding Path="DataContext.CreateOrUpdateStudioCommand">
+                                        <Binding.RelativeSource>
+                                            <RelativeSource Mode="FindAncestor" AncestorType="{x:Type UserControl}"/>
+                                        </Binding.RelativeSource>
+                                    </Binding>
+                                </Button.Command>
+                                <Button.CommandParameter>
+                                    <Binding/>
+                                </Button.CommandParameter>
+                            <materialDesign:PackIcon Kind="ContentSave" ToolTip="スタジオ情報をサーバーに保存します"/>
                             </Button>
-                            <Button Grid.Row="0" Style="{StaticResource MaterialDesignToolButton}" 
-                                    HorizontalAlignment="Left" VerticalAlignment="Top"
-                                    ToolTip="このスタジオを削除します"
-                                    Click="RemoveStudioButton_Click"
-                                    Tag="{Binding}">
-                                <materialDesign:PackIcon Kind="Close"/>
-                            </Button>
-
-                            <StackPanel Grid.Row="1" Margin="8 24 8 0">
-                                <TextBox materialDesign:HintAssist.Hint="名称" materialDesign:HintAssist.IsFloating="True"
-                                             Margin="0 12 0 0" Text="{Binding Name, Mode=TwoWay}"/>
-                                <TextBox materialDesign:HintAssist.Hint="住所" materialDesign:HintAssist.IsFloating="True"
-                                             Margin="0 12 0 0" Text="{Binding Address, Mode=TwoWay}"/>
-                                <TextBox materialDesign:HintAssist.Hint="電話番号" materialDesign:HintAssist.IsFloating="True"
-                                             Margin="0 12 0 0" Text="{Binding PhoneNumber, Mode=TwoWay}"/>
-                            </StackPanel>
-
-                            <StackPanel HorizontalAlignment="Right" Grid.Row="2" Orientation="Horizontal" Margin="8">
-                                <Button Style="{StaticResource MaterialDesignToolButton}" Width="30" Padding="2 0 2 0">
-                                    <materialDesign:PackIcon Kind="ContentSave" ToolTip="スタジオ情報をサーバーに保存します"/>
-                                </Button>
-                            </StackPanel>
-                        </Grid>
+                        </StackPanel>
+                    </Grid>
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
