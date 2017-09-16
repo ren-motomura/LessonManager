@@ -18,6 +18,10 @@ namespace LessonManager.Models
                 ChangeCurrentCompanyEvent?.Invoke(currentCompany_);
             }
         }
+        public static bool IsSignedIn()
+        {
+            return currentCompany_ != null;
+        }
 
         public long Id { get; set; }
         public string Name { get; set; }

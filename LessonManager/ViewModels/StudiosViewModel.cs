@@ -32,28 +32,38 @@ namespace LessonManager.ViewModels
 
         public StudiosViewModel()
         {
-            // TODO: サーバーから取得する
-            var builder = ImmutableList.CreateBuilder<Studio>();
-            builder.Add(
-                new Studio
-                {
-                    Name = "サードダンススクール",
-                    Address = "東京都杉並区西荻北３丁目２０−２ オタニビル 4F",
-                    PhoneNumber = "03-3301-7071"
-                }
-            );
-            builder.Add(
-                new Studio
-                {
-                    Name = "サードダンススクール",
-                    Address = "東京都杉並区西荻北３丁目２０−２ オタニビル 4F",
-                    PhoneNumber = "03-3301-7071"
-                }
-            );
-            studios_ = builder.ToImmutable();
-
+            studios_ = new List<Studio>().ToImmutableList();
             CreateOrUpdateStudioCommand = new DelegateCommand();
             CreateOrUpdateStudioCommand.ExecuteHandler = CreateOrUpdateStudioExecute;
+
+            Models.Company.ChangeCurrentCompanyEvent += (c) =>
+            {
+                LoadStudios();
+            };
+        }
+
+        public void LoadStudios()
+        {
+            if (!Models.Company.IsSignedIn())
+            {
+                Studios = new List<Studio>().ToImmutableList();
+                return;
+            }
+
+            WebAPIs.Studio.GetAll().ContinueWith(t =>
+            {
+                var result = t.Result;
+                if (result.IsSuccess)
+                {
+                    Studios = result.SuccessData.ToImmutableList();
+                }
+                else
+                {
+                    // TODO
+                    SnackbarMessageQueue.Instance().Enqueue(String.Format("失敗したみたい {0:D}", result.FailData.Status));
+                }
+            });
+
         }
 
         private void CreateOrUpdateStudioExecute(object parameter)
@@ -66,7 +76,7 @@ namespace LessonManager.ViewModels
             {
                 WebAPIs.Studio.Create(targetStudio.Name, targetStudio.Address, targetStudio.PhoneNumber).ContinueWith(t =>
                 {
-                    WebAPIs.Result<Models.Studio> result = t.Result;
+                    var result = t.Result;
                     if (result.IsSuccess)
                     {
                         targetStudio.ID = result.SuccessData.ID;
