@@ -35,6 +35,7 @@ namespace LessonManager.WebAPIs
                 studio.Name = s.Name;
                 studio.Address = s.Address;
                 studio.PhoneNumber = s.PhoneNumber;
+                studio.ImageLink = s.ImageLink;
                 return studio;
             }).ToList();
 
@@ -45,12 +46,13 @@ namespace LessonManager.WebAPIs
             );
         }
 
-        public static async Task<Result<Models.Studio>> Create(string name, string address, string phoneNumber)
+        public static async Task<Result<Models.Studio>> Create(string name, string address, string phoneNumber, string imageLink)
         {
             var req = new CreateStudioRequest();
             req.Name = name;
             req.Address = address;
             req.PhoneNumber = phoneNumber;
+            req.ImageLink = imageLink;
 
             var reqData = req.ToByteArray();
 
@@ -76,6 +78,7 @@ namespace LessonManager.WebAPIs
             studio.Name = res.Studio.Name;
             studio.Address = res.Studio.Address;
             studio.PhoneNumber = res.Studio.PhoneNumber;
+            studio.ImageLink = res.Studio.ImageLink;
 
             return new Result<Models.Studio>(
                 true,

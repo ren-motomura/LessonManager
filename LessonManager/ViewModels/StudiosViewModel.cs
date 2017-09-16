@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Linq;
@@ -12,41 +13,99 @@ namespace LessonManager.ViewModels
 {
     class StudiosViewModel : INotifyPropertyChanged
     {
-        public event PropertyChangedEventHandler PropertyChanged;
+        public class StudioAndImage : INotifyPropertyChanged
+        {
+            public StudioAndImage(Studio s)
+            {
+                Studio = s;
+                s.PropertyChanged += (object sender, PropertyChangedEventArgs args) =>
+                {
+                    PropertyChanged(this, args);
+                };
+            }
+            public Studio Studio { get; set; }
 
-        private ImmutableList<Studio> studios_;
-        public ImmutableList<Studio> Studios {
-            get { return studios_; }
+            public event PropertyChangedEventHandler PropertyChanged;
+
+            private Views.Domain.ImagePlaceHolder imagePlaceHolder_;
+            private System.Windows.Controls.Image image_;
+            public System.Windows.FrameworkElement ImageControl // UIスレッドからしか呼んではいけない
+            {
+                get
+                {
+                    if (Studio.ImageLink != null && Studio.ImageLink != "")
+                    {
+                        if (image_ != null && (image_.Source as System.Windows.Media.Imaging.BitmapImage).UriSource.ToString() == Studio.ImageLink)
+                        {
+                            return image_;
+                        }
+                        else
+                        {
+                            image_ = new System.Windows.Controls.Image();
+                            var bitmapImage = new System.Windows.Media.Imaging.BitmapImage();
+                            bitmapImage.BeginInit();
+                            bitmapImage.UriSource = new Uri(Studio.ImageLink);
+                            bitmapImage.EndInit();
+                            image_.Source = bitmapImage;
+                            image_.VerticalAlignment = System.Windows.VerticalAlignment.Center;
+                            image_.HorizontalAlignment = System.Windows.HorizontalAlignment.Center;
+                            image_.Stretch = System.Windows.Media.Stretch.UniformToFill;
+                            return image_;
+                        }
+                        
+                    }
+                    else
+                    {
+                        return imagePlaceHolder_ == null ? imagePlaceHolder_ = new Views.Domain.ImagePlaceHolder()
+                                                         : imagePlaceHolder_;
+                    }
+                }
+            }
+        }
+
+        public event PropertyChangedEventHandler PropertyChanged;
+        public void RaisePropertyChanged()
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(null));
+        }
+
+        private ImmutableList<StudioAndImage> studioAndImages_;
+        public ImmutableList<StudioAndImage> StudioAndImages {
+            get { return studioAndImages_; }
             set
             {
-                var orgCount = studios_.Count;
-                studios_ = value;
-                if (studios_.Count != orgCount) // 数が変わったときだけ発火する
+                var orgCount = studioAndImages_.Count;
+                studioAndImages_ = value;
+                if (studioAndImages_.Count != orgCount) // 数が変わったときだけ発火する
                 {
-                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(null));
+                    RaisePropertyChanged();
                 }
             }
         }
 
         public DelegateCommand CreateOrUpdateStudioCommand { get; set; }
+        public DelegateCommand UploadImageCommand { get; set; }
 
         public StudiosViewModel()
         {
-            studios_ = new List<Studio>().ToImmutableList();
+            studioAndImages_ = new List<StudioAndImage>().ToImmutableList();
             CreateOrUpdateStudioCommand = new DelegateCommand();
             CreateOrUpdateStudioCommand.ExecuteHandler = CreateOrUpdateStudioExecute;
 
+            UploadImageCommand = new DelegateCommand();
+            UploadImageCommand.ExecuteHandler = UploadImageExecute;
+
             Models.Company.ChangeCurrentCompanyEvent += (c) =>
             {
-                LoadStudios();
+                LoadStudioAndImages();
             };
         }
 
-        public void LoadStudios()
+        public void LoadStudioAndImages()
         {
             if (!Models.Company.IsSignedIn())
             {
-                Studios = new List<Studio>().ToImmutableList();
+                StudioAndImages = new List<StudioAndImage>().ToImmutableList();
                 return;
             }
 
@@ -55,7 +114,12 @@ namespace LessonManager.ViewModels
                 var result = t.Result;
                 if (result.IsSuccess)
                 {
-                    Studios = result.SuccessData.ToImmutableList();
+                    var builder = ImmutableList.CreateBuilder<StudioAndImage>();
+                    result.SuccessData.ForEach((s) =>
+                    {
+                        builder.Add(new StudioAndImage(s));
+                    });
+                    StudioAndImages = builder.ToImmutableList();
                 }
                 else
                 {
@@ -69,12 +133,12 @@ namespace LessonManager.ViewModels
         private void CreateOrUpdateStudioExecute(object parameter)
         {
             var s = parameter as Models.Studio;
-            var targetStudio = Studios.Find(st => st == s);
+            var targetStudio = StudioAndImages.Find(st => st.Studio == s)?.Studio;
             if (targetStudio == null) return;
 
             if (targetStudio.ID == 0)
             {
-                WebAPIs.Studio.Create(targetStudio.Name, targetStudio.Address, targetStudio.PhoneNumber).ContinueWith(t =>
+                WebAPIs.Studio.Create(targetStudio.Name, targetStudio.Address, targetStudio.PhoneNumber, targetStudio.ImageLink).ContinueWith(t =>
                 {
                     var result = t.Result;
                     if (result.IsSuccess)
@@ -98,6 +162,25 @@ namespace LessonManager.ViewModels
             else
             {
             }
+        }
+
+        public class UploadImageParameter
+        {
+            public StudioAndImage StudioAndImage { get; set; }
+            public string FileName { get; set; }
+            public string ContentType { get; set; }
+        }
+
+        private void UploadImageExecute(object parameter)
+        {
+            var param = parameter as UploadImageParameter;
+
+            var fs = File.Open(param.FileName, FileMode.Open); // なかったらエラーになる
+            WebAPIs.Image.Upload(fs, param.ContentType).ContinueWith((t) =>
+            {
+                string imageLink = t.Result;
+                param.StudioAndImage.Studio.ImageLink = imageLink;
+            });
         }
     }
 }

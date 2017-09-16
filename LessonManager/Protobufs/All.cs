@@ -31,35 +31,36 @@ namespace Protobufs {
             "bXBhbnkYASABKAsyEi5wcm90b2J1ZnMuQ29tcGFueSJMChRDcmVhdGVDb21w",
             "YW55UmVxdWVzdBIMCgRuYW1lGAEgASgJEhQKDGVtYWlsQWRkcmVzcxgCIAEo",
             "CRIQCghwYXNzd29yZBgDIAEoCSI8ChVDcmVhdGVDb21wYW55UmVzcG9uc2US",
-            "IwoHY29tcGFueRgBIAEoCzISLnByb3RvYnVmcy5Db21wYW55IlsKBlN0dWRp",
+            "IwoHY29tcGFueRgBIAEoCzISLnByb3RvYnVmcy5Db21wYW55Im4KBlN0dWRp",
             "bxIKCgJpZBgBIAEoBRIMCgRuYW1lGAIgASgJEg8KB2FkZHJlc3MYAyABKAkS",
-            "EwoLcGhvbmVOdW1iZXIYBCABKAkSEQoJY3JlYXRlZEF0GAUgASgDIjsKFVNl",
-            "bGVjdFN0dWRpb3NSZXNwb25zZRIiCgdzdHVkaW9zGAEgAygLMhEucHJvdG9i",
-            "dWZzLlN0dWRpbyJJChNDcmVhdGVTdHVkaW9SZXF1ZXN0EgwKBG5hbWUYASAB",
-            "KAkSDwoHYWRkcmVzcxgCIAEoCRITCgtwaG9uZU51bWJlchgDIAEoCSI5ChRD",
-            "cmVhdGVTdHVkaW9SZXNwb25zZRIhCgZzdHVkaW8YASABKAsyES5wcm90b2J1",
-            "ZnMuU3R1ZGlvIiEKE0RlbGV0ZVN0dWRpb1JlcXVlc3QSCgoCaWQYASABKAUi",
-            "JwoURGVsZXRlU3R1ZGlvUmVzcG9uc2USDwoHc3VjY2VzcxgBIAEoCCI0CgVT",
-            "dGFmZhIKCgJpZBgBIAEoBRIMCgRuYW1lGAIgASgJEhEKCWNyZWF0ZWRBdBgE",
-            "IAEoAyIiChJDcmVhdGVTdGFmZlJlcXVlc3QSDAoEbmFtZRgCIAEoCSI2ChND",
-            "cmVhdGVTdGFmZlJlc3BvbnNlEh8KBXN0YWZmGAEgASgLMhAucHJvdG9idWZz",
-            "LlN0YWZmIiAKEkRlbGV0ZVN0YWZmUmVxdWVzdBIKCgJpZBgBIAEoBSImChNE",
-            "ZWxldGVTdGFmZlJlc3BvbnNlEg8KB3N1Y2Nlc3MYASABKAgiIgoEQ2FyZBIK",
-            "CgJpZBgBIAEoCRIOCgZjcmVkaXQYAiABKAUiWAoIQ3VzdG9tZXISCgoCaWQY",
-            "ASABKAUSDAoEbmFtZRgCIAEoCRITCgtkZXNjcmlwdGlvbhgDIAEoCRIdCgRj",
-            "YXJkGAQgASgLMg8ucHJvdG9idWZzLkNhcmQiWQoVQ3JlYXRlQ3VzdG9tZXJS",
-            "ZXF1ZXN0EgwKBG5hbWUYASABKAkSEwoLZGVzY3JpcHRpb24YAiABKAkSHQoE",
-            "Y2FyZBgDIAEoCzIPLnByb3RvYnVmcy5DYXJkIj8KFkNyZWF0ZUN1c3RvbWVy",
-            "UmVzcG9uc2USJQoIY3VzdG9tZXIYASABKAsyEy5wcm90b2J1ZnMuQ3VzdG9t",
-            "ZXIiIwoVRGVsZXRlQ3VzdG9tZXJSZXF1ZXN0EgoKAmlkGAEgASgFIikKFkRl",
-            "bGV0ZUN1c3RvbWVyUmVzcG9uc2USDwoHc3VjY2VzcxgBIAEoCCJNChhTZXRD",
-            "YXJkT25DdXN0b21lclJlcXVlc3QSEgoKY3VzdG9tZXJJZBgBIAEoBRIdCgRj",
-            "YXJkGAIgASgLMg8ucHJvdG9idWZzLkNhcmQiQgoZU2V0Q2FyZE9uQ3VzdG9t",
-            "ZXJSZXNwb25zZRIlCghjdXN0b21lchgBIAEoCzITLnByb3RvYnVmcy5DdXN0",
-            "b21lciqJAQoJRXJyb3JUeXBlEhoKFklOVkFMSURfUkVRVUVTVF9GT1JNQVQQ",
-            "ABINCglOT1RfRk9VTkQQARIRCg1BTFJFQURZX0VYSVNUEAISFAoQSU5WQUxJ",
-            "RF9QQVNTV09SRBADEhkKFUlOVEVSTkFMX1NFUlZFUl9FUlJPUhAEEg0KCUZP",
-            "UkJJRERFThAFYgZwcm90bzM="));
+            "EwoLcGhvbmVOdW1iZXIYBCABKAkSEQoJY3JlYXRlZEF0GAUgASgDEhEKCWlt",
+            "YWdlTGluaxgGIAEoCSI7ChVTZWxlY3RTdHVkaW9zUmVzcG9uc2USIgoHc3R1",
+            "ZGlvcxgBIAMoCzIRLnByb3RvYnVmcy5TdHVkaW8iXAoTQ3JlYXRlU3R1ZGlv",
+            "UmVxdWVzdBIMCgRuYW1lGAEgASgJEg8KB2FkZHJlc3MYAiABKAkSEwoLcGhv",
+            "bmVOdW1iZXIYAyABKAkSEQoJaW1hZ2VMaW5rGAQgASgJIjkKFENyZWF0ZVN0",
+            "dWRpb1Jlc3BvbnNlEiEKBnN0dWRpbxgBIAEoCzIRLnByb3RvYnVmcy5TdHVk",
+            "aW8iIQoTRGVsZXRlU3R1ZGlvUmVxdWVzdBIKCgJpZBgBIAEoBSInChREZWxl",
+            "dGVTdHVkaW9SZXNwb25zZRIPCgdzdWNjZXNzGAEgASgIIjQKBVN0YWZmEgoK",
+            "AmlkGAEgASgFEgwKBG5hbWUYAiABKAkSEQoJY3JlYXRlZEF0GAQgASgDIiIK",
+            "EkNyZWF0ZVN0YWZmUmVxdWVzdBIMCgRuYW1lGAIgASgJIjYKE0NyZWF0ZVN0",
+            "YWZmUmVzcG9uc2USHwoFc3RhZmYYASABKAsyEC5wcm90b2J1ZnMuU3RhZmYi",
+            "IAoSRGVsZXRlU3RhZmZSZXF1ZXN0EgoKAmlkGAEgASgFIiYKE0RlbGV0ZVN0",
+            "YWZmUmVzcG9uc2USDwoHc3VjY2VzcxgBIAEoCCIiCgRDYXJkEgoKAmlkGAEg",
+            "ASgJEg4KBmNyZWRpdBgCIAEoBSJYCghDdXN0b21lchIKCgJpZBgBIAEoBRIM",
+            "CgRuYW1lGAIgASgJEhMKC2Rlc2NyaXB0aW9uGAMgASgJEh0KBGNhcmQYBCAB",
+            "KAsyDy5wcm90b2J1ZnMuQ2FyZCJZChVDcmVhdGVDdXN0b21lclJlcXVlc3QS",
+            "DAoEbmFtZRgBIAEoCRITCgtkZXNjcmlwdGlvbhgCIAEoCRIdCgRjYXJkGAMg",
+            "ASgLMg8ucHJvdG9idWZzLkNhcmQiPwoWQ3JlYXRlQ3VzdG9tZXJSZXNwb25z",
+            "ZRIlCghjdXN0b21lchgBIAEoCzITLnByb3RvYnVmcy5DdXN0b21lciIjChVE",
+            "ZWxldGVDdXN0b21lclJlcXVlc3QSCgoCaWQYASABKAUiKQoWRGVsZXRlQ3Vz",
+            "dG9tZXJSZXNwb25zZRIPCgdzdWNjZXNzGAEgASgIIk0KGFNldENhcmRPbkN1",
+            "c3RvbWVyUmVxdWVzdBISCgpjdXN0b21lcklkGAEgASgFEh0KBGNhcmQYAiAB",
+            "KAsyDy5wcm90b2J1ZnMuQ2FyZCJCChlTZXRDYXJkT25DdXN0b21lclJlc3Bv",
+            "bnNlEiUKCGN1c3RvbWVyGAEgASgLMhMucHJvdG9idWZzLkN1c3RvbWVyKokB",
+            "CglFcnJvclR5cGUSGgoWSU5WQUxJRF9SRVFVRVNUX0ZPUk1BVBAAEg0KCU5P",
+            "VF9GT1VORBABEhEKDUFMUkVBRFlfRVhJU1QQAhIUChBJTlZBTElEX1BBU1NX",
+            "T1JEEAMSGQoVSU5URVJOQUxfU0VSVkVSX0VSUk9SEAQSDQoJRk9SQklEREVO",
+            "EAViBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Protobufs.ErrorType), }, new pbr::GeneratedClrTypeInfo[] {
@@ -69,9 +70,9 @@ namespace Protobufs {
             new pbr::GeneratedClrTypeInfo(typeof(global::Protobufs.CreateSessionResponse), global::Protobufs.CreateSessionResponse.Parser, new[]{ "Company" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Protobufs.CreateCompanyRequest), global::Protobufs.CreateCompanyRequest.Parser, new[]{ "Name", "EmailAddress", "Password" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Protobufs.CreateCompanyResponse), global::Protobufs.CreateCompanyResponse.Parser, new[]{ "Company" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Protobufs.Studio), global::Protobufs.Studio.Parser, new[]{ "Id", "Name", "Address", "PhoneNumber", "CreatedAt" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Protobufs.Studio), global::Protobufs.Studio.Parser, new[]{ "Id", "Name", "Address", "PhoneNumber", "CreatedAt", "ImageLink" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Protobufs.SelectStudiosResponse), global::Protobufs.SelectStudiosResponse.Parser, new[]{ "Studios" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Protobufs.CreateStudioRequest), global::Protobufs.CreateStudioRequest.Parser, new[]{ "Name", "Address", "PhoneNumber" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Protobufs.CreateStudioRequest), global::Protobufs.CreateStudioRequest.Parser, new[]{ "Name", "Address", "PhoneNumber", "ImageLink" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Protobufs.CreateStudioResponse), global::Protobufs.CreateStudioResponse.Parser, new[]{ "Studio" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Protobufs.DeleteStudioRequest), global::Protobufs.DeleteStudioRequest.Parser, new[]{ "Id" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Protobufs.DeleteStudioResponse), global::Protobufs.DeleteStudioResponse.Parser, new[]{ "Success" }, null, null, null),
@@ -1045,6 +1046,7 @@ namespace Protobufs {
       address_ = other.address_;
       phoneNumber_ = other.phoneNumber_;
       createdAt_ = other.createdAt_;
+      imageLink_ = other.imageLink_;
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1107,6 +1109,17 @@ namespace Protobufs {
       }
     }
 
+    /// <summary>Field number for the "imageLink" field.</summary>
+    public const int ImageLinkFieldNumber = 6;
+    private string imageLink_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string ImageLink {
+      get { return imageLink_; }
+      set {
+        imageLink_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as Studio);
@@ -1125,6 +1138,7 @@ namespace Protobufs {
       if (Address != other.Address) return false;
       if (PhoneNumber != other.PhoneNumber) return false;
       if (CreatedAt != other.CreatedAt) return false;
+      if (ImageLink != other.ImageLink) return false;
       return true;
     }
 
@@ -1136,6 +1150,7 @@ namespace Protobufs {
       if (Address.Length != 0) hash ^= Address.GetHashCode();
       if (PhoneNumber.Length != 0) hash ^= PhoneNumber.GetHashCode();
       if (CreatedAt != 0L) hash ^= CreatedAt.GetHashCode();
+      if (ImageLink.Length != 0) hash ^= ImageLink.GetHashCode();
       return hash;
     }
 
@@ -1166,6 +1181,10 @@ namespace Protobufs {
         output.WriteRawTag(40);
         output.WriteInt64(CreatedAt);
       }
+      if (ImageLink.Length != 0) {
+        output.WriteRawTag(50);
+        output.WriteString(ImageLink);
+      }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1185,6 +1204,9 @@ namespace Protobufs {
       }
       if (CreatedAt != 0L) {
         size += 1 + pb::CodedOutputStream.ComputeInt64Size(CreatedAt);
+      }
+      if (ImageLink.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(ImageLink);
       }
       return size;
     }
@@ -1208,6 +1230,9 @@ namespace Protobufs {
       }
       if (other.CreatedAt != 0L) {
         CreatedAt = other.CreatedAt;
+      }
+      if (other.ImageLink.Length != 0) {
+        ImageLink = other.ImageLink;
       }
     }
 
@@ -1237,6 +1262,10 @@ namespace Protobufs {
           }
           case 40: {
             CreatedAt = input.ReadInt64();
+            break;
+          }
+          case 50: {
+            ImageLink = input.ReadString();
             break;
           }
         }
@@ -1381,6 +1410,7 @@ namespace Protobufs {
       name_ = other.name_;
       address_ = other.address_;
       phoneNumber_ = other.phoneNumber_;
+      imageLink_ = other.imageLink_;
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1421,6 +1451,17 @@ namespace Protobufs {
       }
     }
 
+    /// <summary>Field number for the "imageLink" field.</summary>
+    public const int ImageLinkFieldNumber = 4;
+    private string imageLink_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string ImageLink {
+      get { return imageLink_; }
+      set {
+        imageLink_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as CreateStudioRequest);
@@ -1437,6 +1478,7 @@ namespace Protobufs {
       if (Name != other.Name) return false;
       if (Address != other.Address) return false;
       if (PhoneNumber != other.PhoneNumber) return false;
+      if (ImageLink != other.ImageLink) return false;
       return true;
     }
 
@@ -1446,6 +1488,7 @@ namespace Protobufs {
       if (Name.Length != 0) hash ^= Name.GetHashCode();
       if (Address.Length != 0) hash ^= Address.GetHashCode();
       if (PhoneNumber.Length != 0) hash ^= PhoneNumber.GetHashCode();
+      if (ImageLink.Length != 0) hash ^= ImageLink.GetHashCode();
       return hash;
     }
 
@@ -1468,6 +1511,10 @@ namespace Protobufs {
         output.WriteRawTag(26);
         output.WriteString(PhoneNumber);
       }
+      if (ImageLink.Length != 0) {
+        output.WriteRawTag(34);
+        output.WriteString(ImageLink);
+      }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1481,6 +1528,9 @@ namespace Protobufs {
       }
       if (PhoneNumber.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(PhoneNumber);
+      }
+      if (ImageLink.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(ImageLink);
       }
       return size;
     }
@@ -1498,6 +1548,9 @@ namespace Protobufs {
       }
       if (other.PhoneNumber.Length != 0) {
         PhoneNumber = other.PhoneNumber;
+      }
+      if (other.ImageLink.Length != 0) {
+        ImageLink = other.ImageLink;
       }
     }
 
@@ -1519,6 +1572,10 @@ namespace Protobufs {
           }
           case 26: {
             PhoneNumber = input.ReadString();
+            break;
+          }
+          case 34: {
+            ImageLink = input.ReadString();
             break;
           }
         }

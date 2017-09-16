@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -33,13 +34,39 @@ namespace LessonManager.Views
             var button = sender as Button;
             var studio = button.Tag as Studio;
             StudiosViewModel vm = DataContext as StudiosViewModel;
-            vm.Studios = vm.Studios.Remove(studio);
+            vm.StudioAndImages = vm.StudioAndImages.RemoveAll((s) =>
+            {
+                return s.Studio == studio;
+            });
         }
 
         public void AddStudioButton_Click(object sender, RoutedEventArgs e)
         {
             StudiosViewModel vm = DataContext as StudiosViewModel;
-            vm.Studios = vm.Studios.Add(new Studio());
+            vm.StudioAndImages = vm.StudioAndImages.Add(new StudiosViewModel.StudioAndImage(new Studio()));
+        }
+
+        public void UploadImageButton_Click(object sender, RoutedEventArgs e)
+        {
+            var dialog = new Microsoft.Win32.OpenFileDialog();
+            dialog.Title = "画像を選択する";
+            dialog.Filter = "Image File (*.jpg, *.jpeg, *.png) | *.jpg; *.jpeg; *.png";
+            if (dialog.ShowDialog() == true)
+            {
+                var button = sender as System.Windows.Controls.Button;
+                var studioAndImage = button.Tag as StudiosViewModel.StudioAndImage;
+                var fileName = dialog.FileName;
+
+                string contentType = Regex.IsMatch(fileName, "jpe?g$") ? "image/jpeg" : "image/png";
+
+                var param = new StudiosViewModel.UploadImageParameter();
+                param.StudioAndImage = studioAndImage;
+                param.FileName = fileName;
+                param.ContentType = contentType;
+
+                StudiosViewModel vm = DataContext as StudiosViewModel;
+                vm.UploadImageCommand.Execute(param);
+            }
         }
     }
 }
