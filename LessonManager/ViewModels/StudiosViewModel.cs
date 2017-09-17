@@ -99,7 +99,7 @@ namespace LessonManager.ViewModels
         {
             studioAndImages_ = new List<StudioAndImage>().ToImmutableList();
             CreateOrUpdateStudioCommand = new DelegateCommand();
-            CreateOrUpdateStudioCommand.ExecuteHandler = CreateOrUpdateStudioExecute;
+            CreateOrUpdateStudioCommand.ExecuteHandler = CreateOrUpdateStudioExecuteConfirm;
 
             UploadImageCommand = new DelegateCommand();
             UploadImageCommand.ExecuteHandler = UploadImageExecute;
@@ -139,7 +139,7 @@ namespace LessonManager.ViewModels
 
         }
 
-        private void CreateOrUpdateStudioExecute(object parameter)
+        private async void CreateOrUpdateStudioExecuteConfirm(object parameter)
         {
             var s = parameter as Models.Studio;
             var targetStudio = StudioAndImages.Find(st => st.Studio == s)?.Studio;
@@ -147,56 +147,86 @@ namespace LessonManager.ViewModels
 
             if (targetStudio.ID == 0)
             {
-                WebAPIs.Studio.Create(targetStudio.Name, targetStudio.Address, targetStudio.PhoneNumber, targetStudio.ImageLink).ContinueWith(t =>
+                var view = new Views.Domain.ConfirmCreateStudio();
+
+                object result = await MaterialDesignThemes.Wpf.DialogHost.Show(view);
+                if ((bool)result)
                 {
-                    var result = t.Result;
-                    if (result.IsSuccess)
-                    {
-                        targetStudio.ID = result.SuccessData.ID;
-                        SnackbarMessageQueue.Instance().Enqueue("スタジオを新たに作成しました");
-                    }
-                    else
-                    {
-                        if (result.FailData.Body.ErrorType == Protobufs.ErrorType.AlreadyExist)
-                        {
-                            SnackbarMessageQueue.Instance().Enqueue("その名前は既に使われています");
-                        }
-                        else
-                        {
-                            SnackbarMessageQueue.Instance().Enqueue("不明なエラー");
-                        }
-                    }
-                });
+                    CreateStudio(targetStudio);
+                }
+                else
+                {
+                    SnackbarMessageQueue.Instance().Enqueue("キャンセルしました");
+                }
             }
             else
             {
-                WebAPIs.Studio.Update(targetStudio.ID, targetStudio.Address, targetStudio.PhoneNumber, targetStudio.ImageLink).ContinueWith(t =>
+                var view = new Views.Domain.ConfirmUpdateStudio();
+
+                object result = await MaterialDesignThemes.Wpf.DialogHost.Show(view);
+                if ((bool)result)
                 {
-                    var result = t.Result;
-                    if (result.IsSuccess)
+                    UpdateStudio(targetStudio);
+                }
+                else
+                {
+                    SnackbarMessageQueue.Instance().Enqueue("キャンセルしました");
+                }
+            }
+        }
+
+        private void CreateStudio(Studio targetStudio)
+        {
+            WebAPIs.Studio.Create(targetStudio.Name, targetStudio.Address, targetStudio.PhoneNumber, targetStudio.ImageLink).ContinueWith(t =>
+            {
+                var result = t.Result;
+                if (result.IsSuccess)
+                {
+                    targetStudio.ID = result.SuccessData.ID;
+                    SnackbarMessageQueue.Instance().Enqueue("スタジオを新たに作成しました");
+                }
+                else
+                {
+                    if (result.FailData.Body.ErrorType == Protobufs.ErrorType.AlreadyExist)
                     {
-                        var newStudio = result.SuccessData;
-                        var builder = ImmutableList.CreateBuilder<StudioAndImage>();
-                        StudioAndImages.ForEach(sai =>
-                        {
-                            if (sai.Studio.ID == newStudio.ID)
-                            {
-                                builder.Add(new StudioAndImage(newStudio)); // 差し替え
-                            }
-                            else
-                            {
-                                builder.Add(sai);
-                            }
-                        });
-                        StudioAndImages = builder.ToImmutable();
-                        SnackbarMessageQueue.Instance().Enqueue("スタジオ情報を更新しました");
+                        SnackbarMessageQueue.Instance().Enqueue("その名前は既に使われています");
                     }
                     else
                     {
                         SnackbarMessageQueue.Instance().Enqueue("不明なエラー");
                     }
-                });
-            }
+                }
+            });
+        }
+
+        private void UpdateStudio(Studio targetStudio)
+        {
+            WebAPIs.Studio.Update(targetStudio.ID, targetStudio.Address, targetStudio.PhoneNumber, targetStudio.ImageLink).ContinueWith(t =>
+            {
+                var result = t.Result;
+                if (result.IsSuccess)
+                {
+                    var newStudio = result.SuccessData;
+                    var builder = ImmutableList.CreateBuilder<StudioAndImage>();
+                    StudioAndImages.ForEach(sai =>
+                    {
+                        if (sai.Studio.ID == newStudio.ID)
+                        {
+                            builder.Add(new StudioAndImage(newStudio)); // 差し替え
+                        }
+                        else
+                        {
+                            builder.Add(sai);
+                        }
+                    });
+                    StudioAndImages = builder.ToImmutable();
+                    SnackbarMessageQueue.Instance().Enqueue("スタジオ情報を更新しました");
+                }
+                else
+                {
+                    SnackbarMessageQueue.Instance().Enqueue("不明なエラー");
+                }
+            });
         }
 
         public class UploadImageParameter

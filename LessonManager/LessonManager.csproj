@@ -117,6 +117,12 @@
     <Compile Include="ViewModels\SigninViewModel.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />
     <Compile Include="ViewModels\StudiosViewModel.cs" />
+    <Compile Include="Views\Domain\ConfirmCreateStudio.xaml.cs">
+      <DependentUpon>ConfirmCreateStudio.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Domain\ConfirmUpdateStudio.xaml.cs">
+      <DependentUpon>ConfirmUpdateStudio.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\Domain\MenuItem.cs" />
     <Compile Include="Views\Domain\ImagePlaceHolder.xaml.cs">
       <DependentUpon>ImagePlaceHolder.xaml</DependentUpon>
@@ -136,6 +142,14 @@
     <Compile Include="WebAPIs\Session.cs" />
     <Compile Include="WebAPIs\Company.cs" />
     <Compile Include="WebAPIs\Studio.cs" />
+    <Page Include="Views\Domain\ConfirmCreateStudio.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Domain\ConfirmUpdateStudio.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\Domain\ImagePlaceHolder.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

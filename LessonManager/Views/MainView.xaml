@@ -18,50 +18,52 @@
         <vm:MainViewModel/>
     </Window.DataContext>
 
-    <materialDesign:DrawerHost IsLeftDrawerOpen="{Binding ElementName=MenuToggleButton, Path=IsChecked}">
-        <materialDesign:DrawerHost.LeftDrawerContent>
-            <DockPanel MinWidth="212">
-                <ToggleButton Style="{StaticResource MaterialDesignHamburgerToggleButton}" 
-                                    DockPanel.Dock="Top"
-                                    HorizontalAlignment="Right" Margin="16"
-                                    IsChecked="{Binding ElementName=MenuToggleButton, Path=IsChecked, Mode=TwoWay}" />
-                <ListBox x:Name="MenuItems" Margin="0 16 0 16" SelectedIndex="0"                         
-                         ItemsSource="{Binding MenuItems}"
-                         PreviewMouseLeftButtonUp="UIElement_OnPreviewMouseLeftButtonUp"
-                         IsSynchronizedWithCurrentItem="True">
-                    <ListBox.ItemTemplate>
-                        <DataTemplate DataType="domain:MenuItem">
-                            <TextBlock Text="{Binding Name}" Margin="32 0 32 0" />
-                        </DataTemplate>
-                    </ListBox.ItemTemplate>
-                </ListBox>
-            </DockPanel>
-        </materialDesign:DrawerHost.LeftDrawerContent>
-        <DockPanel>
-            <materialDesign:ColorZone Padding="16" materialDesign:ShadowAssist.ShadowDepth="Depth2"
-                                            Mode="PrimaryMid" DockPanel.Dock="Top">
-                <DockPanel>
-                    <ToggleButton DockPanel.Dock="Left" Style="{DynamicResource MaterialDesignHamburgerToggleButton}" x:Name="MenuToggleButton" />
-                    <materialDesign:PopupBox DockPanel.Dock="Right" PlacementMode="BottomAndAlignRightEdges" StaysOpen="False">
-                        <StackPanel>
-                            <Button Content="設定"/>
-                            <Button Content="サインアウト" Command="{Binding SignOutCommand}"/>
-                        </StackPanel>
-                    </materialDesign:PopupBox>
-                    <TextBlock VerticalAlignment="Center" Margin="16 0 0 0">Lesson Manager</TextBlock>
+    <materialDesign:DialogHost>
+        <materialDesign:DrawerHost IsLeftDrawerOpen="{Binding ElementName=MenuToggleButton, Path=IsChecked}">
+            <materialDesign:DrawerHost.LeftDrawerContent>
+                <DockPanel MinWidth="212">
+                    <ToggleButton Style="{StaticResource MaterialDesignHamburgerToggleButton}" 
+                                        DockPanel.Dock="Top"
+                                        HorizontalAlignment="Right" Margin="16"
+                                        IsChecked="{Binding ElementName=MenuToggleButton, Path=IsChecked, Mode=TwoWay}" />
+                    <ListBox x:Name="MenuItems" Margin="0 16 0 16" SelectedIndex="0"                         
+                             ItemsSource="{Binding MenuItems}"
+                             PreviewMouseLeftButtonUp="UIElement_OnPreviewMouseLeftButtonUp"
+                             IsSynchronizedWithCurrentItem="True">
+                        <ListBox.ItemTemplate>
+                            <DataTemplate DataType="domain:MenuItem">
+                                <TextBlock Text="{Binding Name}" Margin="32 0 32 0" />
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                    </ListBox>
                 </DockPanel>
-            </materialDesign:ColorZone>
+            </materialDesign:DrawerHost.LeftDrawerContent>
+            <DockPanel>
+                <materialDesign:ColorZone Padding="16" materialDesign:ShadowAssist.ShadowDepth="Depth2"
+                                                Mode="PrimaryMid" DockPanel.Dock="Top">
+                    <DockPanel>
+                        <ToggleButton DockPanel.Dock="Left" Style="{DynamicResource MaterialDesignHamburgerToggleButton}" x:Name="MenuToggleButton" />
+                        <materialDesign:PopupBox DockPanel.Dock="Right" PlacementMode="BottomAndAlignRightEdges" StaysOpen="False">
+                            <StackPanel>
+                                <Button Content="設定"/>
+                                <Button Content="サインアウト" Command="{Binding SignOutCommand}"/>
+                            </StackPanel>
+                        </materialDesign:PopupBox>
+                        <TextBlock VerticalAlignment="Center" Margin="16 0 0 0">Lesson Manager</TextBlock>
+                    </DockPanel>
+                </materialDesign:ColorZone>
 
-            <Grid>
-                <ScrollViewer 
-                     HorizontalScrollBarVisibility="{Binding ElementName=MenuItems, Path=SelectedItem.HorizontalScrollBarVisibilityRequirement}"
-                     VerticalScrollBarVisibility="{Binding ElementName=MenuItems, Path=SelectedItem.VerticalScrollBarVisibilityRequirement}" 
-                     Padding="{Binding ElementName=MenuItems, Path=SelectedItem.MarginRequirement}">
-                    <ContentControl Content="{Binding ElementName=MenuItems, Path=SelectedItem.Content}" />
-                </ScrollViewer>
+                <Grid>
+                    <ScrollViewer 
+                         HorizontalScrollBarVisibility="{Binding ElementName=MenuItems, Path=SelectedItem.HorizontalScrollBarVisibilityRequirement}"
+                         VerticalScrollBarVisibility="{Binding ElementName=MenuItems, Path=SelectedItem.VerticalScrollBarVisibilityRequirement}" 
+                         Padding="{Binding ElementName=MenuItems, Path=SelectedItem.MarginRequirement}">
+                        <ContentControl Content="{Binding ElementName=MenuItems, Path=SelectedItem.Content}" />
+                    </ScrollViewer>
 
-                <materialDesign:Snackbar MessageQueue="{Binding SnackbarMessageQueue}" x:Name="MainSnackbar"/>
-            </Grid>
-        </DockPanel>
-    </materialDesign:DrawerHost>
+                    <materialDesign:Snackbar MessageQueue="{Binding SnackbarMessageQueue}" x:Name="MainSnackbar"/>
+                </Grid>
+            </DockPanel>
+        </materialDesign:DrawerHost>
+    </materialDesign:DialogHost>
 </Window>
