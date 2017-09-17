@@ -71,12 +71,15 @@ namespace LessonManager.ViewModels
                 Company = c;
             };
 
-            UploadImageCommand = new DelegateCommand { ExecuteHandler = UploadImageExecute };
-
             companyPropertyChangedEventHander = (object c, PropertyChangedEventArgs args) =>
             {
                 PropertyChanged?.Invoke(this, args);
             };
+
+            UploadImageCommand = new DelegateCommand { ExecuteHandler = UploadImageExecute };
+
+            ResetPasswordParam = new ResetPasswordParameter();
+            ResetPasswordCommand = new DelegateCommand { ExecuteHandler = ResetPasswordExecute };
         }
 
         public DelegateCommand UploadImageCommand { get; set; }
@@ -115,6 +118,38 @@ namespace LessonManager.ViewModels
                     });
                 });
             }
+        }
+
+        public DelegateCommand ResetPasswordCommand { get; set; }
+        public class ResetPasswordParameter
+        {
+            public string Password { get; set; }
+            public string Password2 { get; set; }
+        }
+        public ResetPasswordParameter ResetPasswordParam { get; set; }
+        private void ResetPasswordExecute(object parameter)
+        {
+            var param = parameter as ResetPasswordParameter;
+            if (param.Password != param.Password2)
+            {
+                SnackbarMessageQueue.Instance().Enqueue("二箇所のパスワードが一致していません");
+            }
+            PleaseWaitVisibility.Instance().IsVisible = true;
+            WebAPIs.Company.SetPassword(param.Password).ContinueWith((t) =>
+            {
+                var res = t.Result;
+
+                PleaseWaitVisibility.Instance().IsVisible = false;
+
+                if (res.IsSuccess)
+                {
+                    SnackbarMessageQueue.Instance().Enqueue("パスワードを再設定しました");
+                }
+                else
+                {
+                    SnackbarMessageQueue.Instance().Enqueue("パスワードの再設定に失敗しました");
+                }
+            });
         }
     }
 }
