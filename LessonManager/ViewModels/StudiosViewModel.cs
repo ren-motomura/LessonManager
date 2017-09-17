@@ -93,6 +93,7 @@ namespace LessonManager.ViewModels
         }
 
         public DelegateCommand CreateOrUpdateStudioCommand { get; set; }
+        public DelegateCommand DeleteStudioCommand { get; set; }
         public DelegateCommand UploadImageCommand { get; set; }
 
         public StudiosViewModel()
@@ -100,6 +101,9 @@ namespace LessonManager.ViewModels
             studioAndImages_ = new List<StudioAndImage>().ToImmutableList();
             CreateOrUpdateStudioCommand = new DelegateCommand();
             CreateOrUpdateStudioCommand.ExecuteHandler = CreateOrUpdateStudioExecuteConfirm;
+
+            DeleteStudioCommand = new DelegateCommand();
+            DeleteStudioCommand.ExecuteHandler = DeleteStudioExecuteConfirm;
 
             UploadImageCommand = new DelegateCommand();
             UploadImageCommand.ExecuteHandler = UploadImageExecute;
@@ -142,7 +146,7 @@ namespace LessonManager.ViewModels
         private async void CreateOrUpdateStudioExecuteConfirm(object parameter)
         {
             var s = parameter as Models.Studio;
-            var targetStudio = StudioAndImages.Find(st => st.Studio == s)?.Studio;
+            var targetStudio = StudioAndImages.Find(st => st.Studio.ID == s.ID)?.Studio;
             if (targetStudio == null) return;
 
             if (targetStudio.ID == 0)
@@ -177,8 +181,10 @@ namespace LessonManager.ViewModels
 
         private void CreateStudio(Studio targetStudio)
         {
+            PleaseWaitVisibility.Instance().IsVisible = true;
             WebAPIs.Studio.Create(targetStudio.Name, targetStudio.Address, targetStudio.PhoneNumber, targetStudio.ImageLink).ContinueWith(t =>
             {
+                PleaseWaitVisibility.Instance().IsVisible = false;
                 var result = t.Result;
                 if (result.IsSuccess)
                 {
@@ -201,26 +207,55 @@ namespace LessonManager.ViewModels
 
         private void UpdateStudio(Studio targetStudio)
         {
+            PleaseWaitVisibility.Instance().IsVisible = true;
             WebAPIs.Studio.Update(targetStudio.ID, targetStudio.Address, targetStudio.PhoneNumber, targetStudio.ImageLink).ContinueWith(t =>
             {
+                PleaseWaitVisibility.Instance().IsVisible = false;
                 var result = t.Result;
                 if (result.IsSuccess)
                 {
-                    var newStudio = result.SuccessData;
-                    var builder = ImmutableList.CreateBuilder<StudioAndImage>();
-                    StudioAndImages.ForEach(sai =>
-                    {
-                        if (sai.Studio.ID == newStudio.ID)
-                        {
-                            builder.Add(new StudioAndImage(newStudio)); // 差し替え
-                        }
-                        else
-                        {
-                            builder.Add(sai);
-                        }
-                    });
-                    StudioAndImages = builder.ToImmutable();
                     SnackbarMessageQueue.Instance().Enqueue("スタジオ情報を更新しました");
+                }
+                else
+                {
+                    SnackbarMessageQueue.Instance().Enqueue("不明なエラー");
+                }
+            });
+        }
+
+        private async void DeleteStudioExecuteConfirm(object parameter)
+        {
+            var s = parameter as Models.Studio;
+            var targetStudio = StudioAndImages.Find(st => st.Studio.ID == s.ID)?.Studio;
+            if (targetStudio == null) return;
+
+            var view = new Views.Domain.ConfirmDeleteStudio();
+
+            object result = await MaterialDesignThemes.Wpf.DialogHost.Show(view);
+            if ((bool)result)
+            {
+                DeleteStudio(targetStudio);
+            }
+            else
+            {
+                SnackbarMessageQueue.Instance().Enqueue("キャンセルしました");
+            }
+        }
+
+        private void DeleteStudio(Studio targetStudio)
+        {
+            PleaseWaitVisibility.Instance().IsVisible = true;
+            WebAPIs.Studio.Delete(targetStudio.ID).ContinueWith(t =>
+            {
+                PleaseWaitVisibility.Instance().IsVisible = false;
+                var result = t.Result;
+                if (result.IsSuccess)
+                {
+                    StudioAndImages = StudioAndImages.RemoveAll((s) =>
+                    {
+                        return s.Studio.ID == targetStudio.ID;
+                    });
+                    SnackbarMessageQueue.Instance().Enqueue("スタジオを削除しました");
                 }
                 else
                 {
@@ -238,11 +273,15 @@ namespace LessonManager.ViewModels
 
         private void UploadImageExecute(object parameter)
         {
+            PleaseWaitVisibility.Instance().IsVisible = true;
+
             var param = parameter as UploadImageParameter;
 
             var fs = File.Open(param.FileName, FileMode.Open); // なかったらエラーになる
             WebAPIs.Image.Upload(fs, param.ContentType).ContinueWith((t) =>
             {
+                PleaseWaitVisibility.Instance().IsVisible = false;
+
                 string imageLink = t.Result;
                 param.StudioAndImage.Studio.ImageLink = imageLink;
             });

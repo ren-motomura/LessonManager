@@ -1,4 +1,5 @@
-﻿using System.IO;
+﻿using System;
+using System.IO;
 using System.Threading.Tasks;
 using System.Collections.Generic;
 using LessonManager.Utils;
@@ -125,6 +126,35 @@ namespace LessonManager.WebAPIs
             return new Result<Models.Studio>(
                 true,
                 studio,
+                null
+            );
+        }
+
+        public static async Task<Result<bool>> Delete(int id)
+        {
+            var req = new DeleteStudioRequest();
+            req.Id = id;
+
+            var reqData = req.ToByteArray();
+
+            var responseMessage = await Client.Instance.Request("DeleteStudio", reqData).ConfigureAwait(false);
+            var responseDataStream = new MemoryStream((int)responseMessage.Content.Headers.ContentLength); // long から int への cast は避けるべきだが...
+            await responseMessage.Content.CopyToAsync(responseDataStream).ConfigureAwait(false);
+
+            if (!responseMessage.IsSuccessStatusCode)
+            {
+                return new Result<bool>(
+                    false,
+                    false,
+                    new FailData(
+                        responseMessage.StatusCode, ErrorResponse.Parser.ParseFrom(responseDataStream.ToArray())
+                    )
+                );
+            }
+
+            return new Result<bool>(
+                true,
+                true,
                 null
             );
         }

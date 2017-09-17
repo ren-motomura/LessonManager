@@ -110,15 +110,29 @@
     <Compile Include="Commands\SignInCommand.cs" />
     <Compile Include="Commands\SignOutCommand.cs" />
     <Compile Include="Commands\SignUpCommand.cs" />
+    <Compile Include="Models\PleaseWaitVisibility.cs" />
     <Compile Include="Models\SnackbarMessageQueue.cs" />
     <Compile Include="Models\Studio.cs" />
     <Compile Include="Protobufs\All.cs" />
     <Compile Include="Utils\Time.cs" />
+    <Compile Include="ViewModels\CompanyViewModel.cs" />
     <Compile Include="ViewModels\SigninViewModel.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />
     <Compile Include="ViewModels\StudiosViewModel.cs" />
+    <Compile Include="Views\CompanyView.xaml.cs">
+      <DependentUpon>CompanyView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Domain\CompanyImage.xaml.cs">
+      <DependentUpon>CompanyImage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Domain\CompanyImagePlaceHolder.xaml.cs">
+      <DependentUpon>CompanyImagePlaceHolder.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\Domain\ConfirmCreateStudio.xaml.cs">
       <DependentUpon>ConfirmCreateStudio.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Domain\ConfirmDeleteStudio.xaml.cs">
+      <DependentUpon>ConfirmDeleteStudio.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Domain\ConfirmUpdateStudio.xaml.cs">
       <DependentUpon>ConfirmUpdateStudio.xaml</DependentUpon>
@@ -128,6 +142,9 @@
       <DependentUpon>ImagePlaceHolder.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Domain\PasswordBoxHelper.cs" />
+    <Compile Include="Views\Domain\PleaseWait.xaml.cs">
+      <DependentUpon>PleaseWait.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\Domain\WheelScrollKillBehavior.cs" />
     <Compile Include="Views\SigninView.xaml.cs">
       <DependentUpon>SigninView.xaml</DependentUpon>
@@ -142,7 +159,23 @@
     <Compile Include="WebAPIs\Session.cs" />
     <Compile Include="WebAPIs\Company.cs" />
     <Compile Include="WebAPIs\Studio.cs" />
+    <Page Include="Views\CompanyView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Domain\CompanyImage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Domain\CompanyImagePlaceHolder.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\Domain\ConfirmCreateStudio.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Domain\ConfirmDeleteStudio.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -151,6 +184,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\Domain\ImagePlaceHolder.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Domain\PleaseWait.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -205,6 +242,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Material-design.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\background2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\background3.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

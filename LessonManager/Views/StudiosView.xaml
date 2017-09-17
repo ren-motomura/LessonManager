@@ -65,9 +65,17 @@
                         </Button>
                         <Button Grid.Row="0" Style="{StaticResource MaterialDesignToolButton}" 
                                 HorizontalAlignment="Left" VerticalAlignment="Top"
-                                ToolTip="このスタジオを削除します"
-                                Click="RemoveStudioButton_Click"
-                                Tag="{Binding Studio}">
+                                ToolTip="このスタジオを削除します">
+                            <Button.Command>
+                                <Binding Path="DataContext.DeleteStudioCommand">
+                                    <Binding.RelativeSource>
+                                        <RelativeSource Mode="FindAncestor" AncestorType="{x:Type UserControl}"/>
+                                    </Binding.RelativeSource>
+                                </Binding>
+                            </Button.Command>
+                            <Button.CommandParameter>
+                                <Binding Path="Studio"/>
+                            </Button.CommandParameter>
                             <materialDesign:PackIcon Kind="Close"/>
                         </Button>
 
@@ -92,7 +100,7 @@
                                 <Button.CommandParameter>
                                     <Binding Path="Studio"/>
                                 </Button.CommandParameter>
-                            <materialDesign:PackIcon Kind="ContentSave" ToolTip="スタジオ情報をサーバーに保存します"/>
+                                <materialDesign:PackIcon Kind="ContentSave" ToolTip="スタジオ情報をサーバーに保存します"/>
                             </Button>
                         </StackPanel>
                     </Grid>

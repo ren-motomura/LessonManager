@@ -19,6 +19,7 @@ namespace LessonManager.ViewModels
         {
             this.menuItemsWhenAuthorized_ = new List<MenuItem>
             {
+                new MenuItem("カンパニー設定", new CompanyView()),
                 new MenuItem("スタジオ管理", new StudiosView())
                 {
                     VerticalScrollBarVisibilityRequirement = System.Windows.Controls.ScrollBarVisibility.Auto
@@ -47,6 +48,8 @@ namespace LessonManager.ViewModels
 
             SignOutCommand = new SignOutCommand();
             SnackbarMessageQueue = SnackbarMessageQueue.Instance();
+
+            PleaseWaitVisibility = PleaseWaitVisibility.Instance();
         }
 
         private List<MenuItem> menuItems_;
@@ -68,5 +71,7 @@ namespace LessonManager.ViewModels
 
         public SignOutCommand SignOutCommand { get; set; }
         public SnackbarMessageQueue SnackbarMessageQueue { get; set; }
+
+        public PleaseWaitVisibility PleaseWaitVisibility { get; set; }
     }
 }

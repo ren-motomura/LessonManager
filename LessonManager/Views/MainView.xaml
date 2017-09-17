@@ -9,7 +9,6 @@
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
         TextElement.Foreground="{DynamicResource MaterialDesignBody}"
-        Background="{DynamicResource MaterialDesignPaper}"
         TextElement.FontWeight="Medium"
         TextElement.FontSize="14"
         FontFamily="pack://application:,,,/MaterialDesignThemes.Wpf;component/Resources/Roboto/#Roboto"
@@ -17,6 +16,9 @@
     <Window.DataContext>
         <vm:MainViewModel/>
     </Window.DataContext>
+    <Window.Background>
+        <ImageBrush ImageSource="../Resources/background2.png"/>
+    </Window.Background>
 
     <materialDesign:DialogHost>
         <materialDesign:DrawerHost IsLeftDrawerOpen="{Binding ElementName=MenuToggleButton, Path=IsChecked}">
@@ -38,32 +40,45 @@
                     </ListBox>
                 </DockPanel>
             </materialDesign:DrawerHost.LeftDrawerContent>
-            <DockPanel>
-                <materialDesign:ColorZone Padding="16" materialDesign:ShadowAssist.ShadowDepth="Depth2"
-                                                Mode="PrimaryMid" DockPanel.Dock="Top">
-                    <DockPanel>
-                        <ToggleButton DockPanel.Dock="Left" Style="{DynamicResource MaterialDesignHamburgerToggleButton}" x:Name="MenuToggleButton" />
-                        <materialDesign:PopupBox DockPanel.Dock="Right" PlacementMode="BottomAndAlignRightEdges" StaysOpen="False">
-                            <StackPanel>
-                                <Button Content="設定"/>
-                                <Button Content="サインアウト" Command="{Binding SignOutCommand}"/>
-                            </StackPanel>
-                        </materialDesign:PopupBox>
-                        <TextBlock VerticalAlignment="Center" Margin="16 0 0 0">Lesson Manager</TextBlock>
-                    </DockPanel>
-                </materialDesign:ColorZone>
+            <Grid>
+                <DockPanel>
+                    <materialDesign:ColorZone Padding="16" materialDesign:ShadowAssist.ShadowDepth="Depth2"
+                                                    Mode="PrimaryMid" DockPanel.Dock="Top">
+                        <DockPanel>
+                            <ToggleButton DockPanel.Dock="Left" Style="{DynamicResource MaterialDesignHamburgerToggleButton}" x:Name="MenuToggleButton" />
+                            <materialDesign:PopupBox DockPanel.Dock="Right" PlacementMode="BottomAndAlignRightEdges" StaysOpen="False">
+                                <StackPanel>
+                                    <Button Content="サインアウト" Command="{Binding SignOutCommand}"/>
+                                </StackPanel>
+                            </materialDesign:PopupBox>
+                            <TextBlock VerticalAlignment="Center" Margin="16 0 0 0">Lesson Manager</TextBlock>
+                        </DockPanel>
+                    </materialDesign:ColorZone>
 
-                <Grid>
-                    <ScrollViewer 
-                         HorizontalScrollBarVisibility="{Binding ElementName=MenuItems, Path=SelectedItem.HorizontalScrollBarVisibilityRequirement}"
-                         VerticalScrollBarVisibility="{Binding ElementName=MenuItems, Path=SelectedItem.VerticalScrollBarVisibilityRequirement}" 
-                         Padding="{Binding ElementName=MenuItems, Path=SelectedItem.MarginRequirement}">
-                        <ContentControl Content="{Binding ElementName=MenuItems, Path=SelectedItem.Content}" />
-                    </ScrollViewer>
+                    <Grid>
+                        <ScrollViewer 
+                             HorizontalScrollBarVisibility="{Binding ElementName=MenuItems, Path=SelectedItem.HorizontalScrollBarVisibilityRequirement}"
+                             VerticalScrollBarVisibility="{Binding ElementName=MenuItems, Path=SelectedItem.VerticalScrollBarVisibilityRequirement}" 
+                             Padding="{Binding ElementName=MenuItems, Path=SelectedItem.MarginRequirement}">
+                            <ContentControl Content="{Binding ElementName=MenuItems, Path=SelectedItem.Content}" />
+                        </ScrollViewer>
 
-                    <materialDesign:Snackbar MessageQueue="{Binding SnackbarMessageQueue}" x:Name="MainSnackbar"/>
+                        <materialDesign:Snackbar MessageQueue="{Binding SnackbarMessageQueue}" x:Name="MainSnackbar"/>
+                    </Grid>
+                </DockPanel>
+
+                <Grid DataContext="{Binding PleaseWaitVisibility}" Visibility="{Binding Visibility}">
+                    <Grid.Background>
+                        <SolidColorBrush Color="Black" Opacity="0.3"/>
+                    </Grid.Background>
+                    <materialDesign:Card Width="100" Height="Auto" VerticalAlignment="Center" HorizontalAlignment="Center">
+                        <StackPanel Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Center">
+                            <ProgressBar Style="{DynamicResource MaterialDesignCircularProgressBar}" Margin="16" IsIndeterminate="True" Value="0" />
+                            <TextBlock Margin="0 0 0 4">Please Wait</TextBlock>
+                        </StackPanel>
+                    </materialDesign:Card>
                 </Grid>
-            </DockPanel>
+            </Grid>
         </materialDesign:DrawerHost>
     </materialDesign:DialogHost>
 </Window>

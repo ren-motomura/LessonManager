@@ -29,17 +29,6 @@ namespace LessonManager.Views
             InitializeComponent();
         }
 
-        public void RemoveStudioButton_Click(object sender, RoutedEventArgs e)
-        {
-            var button = sender as Button;
-            var studio = button.Tag as Studio;
-            StudiosViewModel vm = DataContext as StudiosViewModel;
-            vm.StudioAndImages = vm.StudioAndImages.RemoveAll((s) =>
-            {
-                return s.Studio == studio;
-            });
-        }
-
         public void AddStudioButton_Click(object sender, RoutedEventArgs e)
         {
             StudiosViewModel vm = DataContext as StudiosViewModel;

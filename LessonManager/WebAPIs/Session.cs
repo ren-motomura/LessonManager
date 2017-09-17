@@ -58,6 +58,7 @@ namespace LessonManager.WebAPIs
             company.Name = res.Company.Name;
             company.EmailAddress = res.Company.EmailAddress;
             company.CreatedAt = Time.TimestampToDateTime(res.Company.CreatedAt);
+            company.ImageLink = res.Company.ImageLInk;
 
             return new Result<Models.Company>(
                 true,
