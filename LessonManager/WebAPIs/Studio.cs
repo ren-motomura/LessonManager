@@ -86,5 +86,47 @@ namespace LessonManager.WebAPIs
                 null
             );
         }
+
+        public static async Task<Result<Models.Studio>> Update(int id, string address, string phoneNumber, string imageLink)
+        {
+            var req = new UpdateStudioRequest();
+            req.Studio = new Protobufs.Studio();
+            req.Studio.Id = id;
+            req.Studio.Address = address;
+            req.Studio.PhoneNumber = phoneNumber;
+            req.Studio.ImageLink = imageLink;
+
+            var reqData = req.ToByteArray();
+
+            var responseMessage = await Client.Instance.Request("UpdateStudio", reqData).ConfigureAwait(false);
+            var responseDataStream = new MemoryStream((int)responseMessage.Content.Headers.ContentLength); // long から int への cast は避けるべきだが...
+            await responseMessage.Content.CopyToAsync(responseDataStream).ConfigureAwait(false);
+
+            if (!responseMessage.IsSuccessStatusCode)
+            {
+                return new Result<Models.Studio>(
+                    false,
+                    null,
+                    new FailData(
+                        responseMessage.StatusCode, ErrorResponse.Parser.ParseFrom(responseDataStream.ToArray())
+                    )
+                );
+            }
+
+            var res = UpdateStudioResponse.Parser.ParseFrom(responseDataStream.ToArray());
+
+            var studio = new Models.Studio();
+            studio.ID = res.Studio.Id;
+            studio.Name = res.Studio.Name;
+            studio.Address = res.Studio.Address;
+            studio.PhoneNumber = res.Studio.PhoneNumber;
+            studio.ImageLink = res.Studio.ImageLink;
+
+            return new Result<Models.Studio>(
+                true,
+                studio,
+                null
+            );
+        }
     }
 }

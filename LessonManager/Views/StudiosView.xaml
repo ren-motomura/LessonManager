@@ -73,7 +73,7 @@
 
                         <StackPanel Grid.Row="1" Margin="8 24 8 0">
                             <TextBox materialDesign:HintAssist.Hint="名称" materialDesign:HintAssist.IsFloating="True"
-                                         Margin="0 12 0 0" Text="{Binding Studio.Name, Mode=TwoWay}"/>
+                                         Margin="0 12 0 0" Text="{Binding Studio.Name, Mode=TwoWay}" IsReadOnly="{Binding IsNameReadOnly}"/>
                             <TextBox materialDesign:HintAssist.Hint="住所" materialDesign:HintAssist.IsFloating="True"
                                          Margin="0 12 0 0" Text="{Binding Studio.Address, Mode=TwoWay}"/>
                             <TextBox materialDesign:HintAssist.Hint="電話番号" materialDesign:HintAssist.IsFloating="True"

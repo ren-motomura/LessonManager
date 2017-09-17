@@ -121,6 +121,7 @@
     <Compile Include="Views\Domain\ImagePlaceHolder.xaml.cs">
       <DependentUpon>ImagePlaceHolder.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\Domain\PasswordBoxHelper.cs" />
     <Compile Include="Views\Domain\WheelScrollKillBehavior.cs" />
     <Compile Include="Views\SigninView.xaml.cs">
       <DependentUpon>SigninView.xaml</DependentUpon>
@@ -190,11 +191,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\sample.jpg">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

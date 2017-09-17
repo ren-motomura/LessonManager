@@ -30,6 +30,10 @@ namespace LessonManager.ViewModels
             ResetPasswordParameter = new Parameter();
             SignInCommand = new SignInCommand();
             SignUpCommand = new SignUpCommand();
+
+            // for debug
+            SignInParameter.EmailAddress = "sample@example.com";
+            SignInParameter.Password = "password";
         }
     }
 }

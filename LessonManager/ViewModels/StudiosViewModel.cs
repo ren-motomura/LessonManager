@@ -35,7 +35,7 @@ namespace LessonManager.ViewModels
                 {
                     if (Studio.ImageLink != null && Studio.ImageLink != "")
                     {
-                        if (image_ != null && (image_.Source as System.Windows.Media.Imaging.BitmapImage).UriSource.ToString() == Studio.ImageLink)
+                        if (image_ != null && image_.Source != null && (image_.Source as System.Windows.Media.Imaging.BitmapImage).UriSource.ToString() == Studio.ImageLink)
                         {
                             return image_;
                         }
@@ -61,6 +61,15 @@ namespace LessonManager.ViewModels
                     }
                 }
             }
+
+            public bool IsNameReadOnly
+            {
+                get
+                {
+                    return Studio.ID > 0;
+                }
+            }
+
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
@@ -161,6 +170,32 @@ namespace LessonManager.ViewModels
             }
             else
             {
+                WebAPIs.Studio.Update(targetStudio.ID, targetStudio.Address, targetStudio.PhoneNumber, targetStudio.ImageLink).ContinueWith(t =>
+                {
+                    var result = t.Result;
+                    if (result.IsSuccess)
+                    {
+                        var newStudio = result.SuccessData;
+                        var builder = ImmutableList.CreateBuilder<StudioAndImage>();
+                        StudioAndImages.ForEach(sai =>
+                        {
+                            if (sai.Studio.ID == newStudio.ID)
+                            {
+                                builder.Add(new StudioAndImage(newStudio)); // 差し替え
+                            }
+                            else
+                            {
+                                builder.Add(sai);
+                            }
+                        });
+                        StudioAndImages = builder.ToImmutable();
+                        SnackbarMessageQueue.Instance().Enqueue("スタジオ情報を更新しました");
+                    }
+                    else
+                    {
+                        SnackbarMessageQueue.Instance().Enqueue("不明なエラー");
+                    }
+                });
             }
         }
 
