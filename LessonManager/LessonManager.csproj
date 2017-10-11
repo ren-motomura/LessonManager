@@ -110,17 +110,24 @@
     <Compile Include="Commands\SignInCommand.cs" />
     <Compile Include="Commands\SignOutCommand.cs" />
     <Compile Include="Commands\SignUpCommand.cs" />
+    <Compile Include="Models\Customer.cs" />
     <Compile Include="Models\PleaseWaitVisibility.cs" />
     <Compile Include="Models\SnackbarMessageQueue.cs" />
+    <Compile Include="Models\Staff.cs" />
     <Compile Include="Models\Studio.cs" />
     <Compile Include="Protobufs\All.cs" />
     <Compile Include="Utils\Time.cs" />
     <Compile Include="ViewModels\CompanyViewModel.cs" />
+    <Compile Include="ViewModels\CustomersViewModel.cs" />
     <Compile Include="ViewModels\SigninViewModel.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />
+    <Compile Include="ViewModels\StaffsViewModel.cs" />
     <Compile Include="ViewModels\StudiosViewModel.cs" />
     <Compile Include="Views\CompanyView.xaml.cs">
       <DependentUpon>CompanyView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CustomersView.xaml.cs">
+      <DependentUpon>CustomersView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Domain\CompanyImage.xaml.cs">
       <DependentUpon>CompanyImage.xaml</DependentUpon>
@@ -128,14 +135,8 @@
     <Compile Include="Views\Domain\CompanyImagePlaceHolder.xaml.cs">
       <DependentUpon>CompanyImagePlaceHolder.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\Domain\ConfirmCreateStudio.xaml.cs">
-      <DependentUpon>ConfirmCreateStudio.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Domain\ConfirmDeleteStudio.xaml.cs">
-      <DependentUpon>ConfirmDeleteStudio.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Domain\ConfirmUpdateStudio.xaml.cs">
-      <DependentUpon>ConfirmUpdateStudio.xaml</DependentUpon>
+    <Compile Include="Views\Domain\ConfirmModal.xaml.cs">
+      <DependentUpon>ConfirmModal.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Domain\MenuItem.cs" />
     <Compile Include="Views\Domain\ImagePlaceHolder.xaml.cs">
@@ -149,6 +150,9 @@
     <Compile Include="Views\SigninView.xaml.cs">
       <DependentUpon>SigninView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\StaffsView.xaml.cs">
+      <DependentUpon>StaffsView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\StudiosView.xaml.cs">
       <DependentUpon>StudiosView.xaml</DependentUpon>
     </Compile>
@@ -158,8 +162,13 @@
     <Compile Include="WebAPIs\Result.cs" />
     <Compile Include="WebAPIs\Session.cs" />
     <Compile Include="WebAPIs\Company.cs" />
+    <Compile Include="WebAPIs\Staff.cs" />
     <Compile Include="WebAPIs\Studio.cs" />
     <Page Include="Views\CompanyView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\CustomersView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -171,15 +180,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\Domain\ConfirmCreateStudio.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Views\Domain\ConfirmDeleteStudio.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Views\Domain\ConfirmUpdateStudio.xaml">
+    <Page Include="Views\Domain\ConfirmModal.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -208,6 +209,10 @@
       <DependentUpon>MainView.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Views\StaffsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\StudiosView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

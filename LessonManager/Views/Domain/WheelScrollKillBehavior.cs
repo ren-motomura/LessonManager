@@ -10,7 +10,7 @@ using System.Windows;
 
 namespace LessonManager.Views.Domain
 {
-    class WheelScrollKillBehavior : Behavior<ListBox>
+    class WheelScrollKillBehavior : Behavior<DataGrid>
     {
         protected override void OnAttached()
         {

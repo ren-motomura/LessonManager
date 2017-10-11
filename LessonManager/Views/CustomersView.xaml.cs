@@ -13,14 +13,14 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace LessonManager.Views.Domain
+namespace LessonManager.Views
 {
     /// <summary>
-    /// ConfirmDeleteStudio.xaml の相互作用ロジック
+    /// CustomersView.xaml の相互作用ロジック
     /// </summary>
-    public partial class ConfirmDeleteStudio : UserControl
+    public partial class CustomersView : UserControl
     {
-        public ConfirmDeleteStudio()
+        public CustomersView()
         {
             InitializeComponent();
         }

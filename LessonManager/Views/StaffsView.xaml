@@ -1,13 +1,15 @@
-﻿<UserControl x:Class="LessonManager.Views.StudiosView"
+﻿<UserControl x:Class="LessonManager.Views.StaffsView"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:LessonManager.Views"
              xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
              xmlns:vm="clr-namespace:LessonManager.ViewModels"
              xmlns:m="clr-namespace:LessonManager.Models"
              xmlns:domain="clr-namespace:LessonManager.Views.Domain"
              xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+             xmlns:system="clr-namespace:System;assembly=mscorlib"
              mc:Ignorable="d" 
              d:DesignHeight="400" d:DesignWidth="1200">
     <UserControl.Resources>
@@ -22,7 +24,7 @@
         </ResourceDictionary>
     </UserControl.Resources>
     <UserControl.DataContext>
-        <vm:StudiosViewModel/>
+        <vm:StaffsViewModel/>
     </UserControl.DataContext>
     <Grid>
         <Grid.RowDefinitions>
@@ -30,18 +32,19 @@
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
         <Grid>
-            <TextBlock Style="{StaticResource MaterialDesignHeadlineTextBlock}" TextAlignment="Center" Margin="0 0 0 8">スタジオ管理</TextBlock>
+            <TextBlock Style="{StaticResource MaterialDesignHeadlineTextBlock}" TextAlignment="Center" Margin="0 0 0 8">スタッフ管理</TextBlock>
             <Border BorderBrush="{DynamicResource MaterialDesignDivider}" BorderThickness="0 0 0 1" />
             <Button Grid.Row="0" Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" 
                     HorizontalAlignment="Right" VerticalAlignment="Bottom"
                     Margin="0 0 20 -20"
-                    ToolTip="スタジオを追加します"
-                    Click="AddStudioButton_Click">
+                    ToolTip="スタッフを追加します"
+                    Command="{Binding AddStaffCommand}">
+                    <!-- TODO implement command -->
                 <materialDesign:PackIcon Kind="Plus" />
             </Button>
         </Grid>
         <ItemsControl
-            ItemsSource="{Binding StudioAndImages}"
+            ItemsSource="{Binding StaffAndImages}"
             Grid.Row="1"
             Margin="20"
             ScrollViewer.CanContentScroll="True"
@@ -53,62 +56,60 @@
             </ItemsControl.ItemsPanel>
             <ItemsControl.ItemTemplate>
                 <DataTemplate>
-                    <materialDesign:Card Width="300" Margin="4" Padding="0 -1">
-                        <Grid>
+                    <materialDesign:Card Margin="4 4 0 0" Padding="0 -1">
+                        <Grid Height="256" Width="200">
                             <Grid.RowDefinitions>
-                                <RowDefinition Height="168"/>
+                                <RowDefinition Height="141"/>
                                 <RowDefinition Height="*"/>
                                 <RowDefinition Height="Auto"/>
                             </Grid.RowDefinitions>
-
                             <ContentControl Content="{Binding ImageControl}"/>
-
                             <Button Grid.Row="0" Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" 
                                     HorizontalAlignment="Right" VerticalAlignment="Bottom"
                                     Margin="0 0 20 -20"
                                     ToolTip="画像を設定します"
-                                    Click="UploadImageButton_Click"
-                                    Tag="{Binding}">
-                                <materialDesign:PackIcon Kind="Upload" />
-                            </Button>
-                            <Button Grid.Row="0" Style="{StaticResource MaterialDesignToolButton}" 
-                                    HorizontalAlignment="Left" VerticalAlignment="Top"
-                                    ToolTip="このスタジオを削除します">
+                                    CommandParameter="{Binding}">
                                 <Button.Command>
-                                    <Binding Path="DataContext.DeleteStudioCommand">
+                                    <Binding Path="DataContext.UploadImageCommand">
                                         <Binding.RelativeSource>
                                             <RelativeSource Mode="FindAncestor" AncestorType="{x:Type UserControl}"/>
                                         </Binding.RelativeSource>
                                     </Binding>
                                 </Button.Command>
-                                <Button.CommandParameter>
-                                    <Binding Path="Studio"/>
-                                </Button.CommandParameter>
+                                <materialDesign:PackIcon Kind="Upload" />
+                            </Button>
+                            <Button Grid.Row="0" Style="{StaticResource MaterialDesignToolButton}" 
+                                    HorizontalAlignment="Left" VerticalAlignment="Top"
+                                    ToolTip="このスタッフを登録抹消します"
+                                    CommandParameter="{Binding Staff}">
+                                <Button.Command>
+                                    <Binding Path="DataContext.DeleteStaffCommand">
+                                        <Binding.RelativeSource>
+                                            <RelativeSource Mode="FindAncestor" AncestorType="{x:Type UserControl}"/>
+                                        </Binding.RelativeSource>
+                                    </Binding>
+                                </Button.Command>
                                 <materialDesign:PackIcon Kind="Close"/>
                             </Button>
 
-                            <StackPanel Grid.Row="1" Margin="8 24 8 0">
-                                <TextBox materialDesign:HintAssist.Hint="名称" materialDesign:HintAssist.IsFloating="True"
-                                             Margin="0 12 0 0" Text="{Binding Studio.Name, Mode=TwoWay}" IsReadOnly="{Binding IsNameReadOnly}"/>
-                                <TextBox materialDesign:HintAssist.Hint="住所" materialDesign:HintAssist.IsFloating="True"
-                                             Margin="0 12 0 0" Text="{Binding Studio.Address, Mode=TwoWay}"/>
-                                <TextBox materialDesign:HintAssist.Hint="電話番号" materialDesign:HintAssist.IsFloating="True"
-                                             Margin="0 12 0 0" Text="{Binding Studio.PhoneNumber, Mode=TwoWay}"/>
+                            <StackPanel Grid.Row="1" VerticalAlignment="Center" Margin="8">
+                                <TextBox materialDesign:HintAssist.Hint="氏名" materialDesign:HintAssist.IsFloating="True"
+                                             Margin="0 12 0 0" Text="{Binding Staff.Name}" IsReadOnly="{Binding IsNameReadOnly}"/>
                             </StackPanel>
 
                             <StackPanel HorizontalAlignment="Right" Grid.Row="2" Orientation="Horizontal" Margin="8">
                                 <Button Style="{StaticResource MaterialDesignToolButton}" Width="30" Padding="2 0 2 0">
                                     <Button.Command>
-                                        <Binding Path="DataContext.CreateOrUpdateStudioCommand">
+                                        <Binding Path="DataContext.CreateOrUpdateStaffCommand">
                                             <Binding.RelativeSource>
                                                 <RelativeSource Mode="FindAncestor" AncestorType="{x:Type UserControl}"/>
                                             </Binding.RelativeSource>
                                         </Binding>
                                     </Button.Command>
                                     <Button.CommandParameter>
-                                        <Binding Path="Studio"/>
+                                        <Binding Path="Staff"/>
                                     </Button.CommandParameter>
-                                    <materialDesign:PackIcon Kind="ContentSave" ToolTip="スタジオ情報をサーバーに保存します"/>
+                                    <materialDesign:PackIcon Kind="ContentSave" ToolTip="スタッフ情報をサーバーに保存します"/>
                                 </Button>
                             </StackPanel>
                         </Grid>

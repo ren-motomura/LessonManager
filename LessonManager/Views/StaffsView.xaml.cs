@@ -13,14 +13,14 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace LessonManager.Views.Domain
+namespace LessonManager.Views
 {
     /// <summary>
-    /// ConfirmUpdateStudio.xaml の相互作用ロジック
+    /// StaffsView.xaml の相互作用ロジック
     /// </summary>
-    public partial class ConfirmUpdateStudio : UserControl
+    public partial class StaffsView : UserControl
     {
-        public ConfirmUpdateStudio()
+        public StaffsView()
         {
             InitializeComponent();
         }

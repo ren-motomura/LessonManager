@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace LessonManager.Views.Domain
 {
     /// <summary>
-    /// ConfirmCreateStudio.xaml の相互作用ロジック
+    /// ConfirmModal.xaml の相互作用ロジック
     /// </summary>
-    public partial class ConfirmCreateStudio : UserControl
+    public partial class ConfirmModal : UserControl
     {
-        public ConfirmCreateStudio()
+        public ConfirmModal()
         {
             InitializeComponent();
         }
