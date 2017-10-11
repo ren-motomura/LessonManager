@@ -30,7 +30,7 @@ namespace LessonManager.ViewModels
                 },
                 new MenuItem("顧客管理", new CustomersView())
                 {
-                    VerticalScrollBarVisibilityRequirement = System.Windows.Controls.ScrollBarVisibility.Auto
+                    VerticalScrollBarVisibilityRequirement = System.Windows.Controls.ScrollBarVisibility.Disabled
                 }
             };
             this.menuItemsWhenUnauthorized_ = new List<MenuItem>

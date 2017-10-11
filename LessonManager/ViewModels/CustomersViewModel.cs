@@ -15,11 +15,14 @@ namespace LessonManager.ViewModels
         public CustomersViewModel()
         {
             var builder = ImmutableList.CreateBuilder<Customer>();
-            builder.Add(new Customer
+            for (int i = 0; i < 20; i++)
             {
-                Id = 1,
-                Name = "Name",
-            });
+                builder.Add(new Customer
+                {
+                    Id = 1,
+                    Name = "Name",
+                });
+            }
             Customers = builder.ToImmutable();
 
             AddCustomerCommand = new DelegateCommand();

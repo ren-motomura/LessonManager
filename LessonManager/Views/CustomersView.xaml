@@ -29,15 +29,12 @@
                 <materialDesign:PackIcon Kind="Plus" />
             </Button>
         </Grid>
-        <DataGrid Margin="20 40 20 0" ItemsSource="{Binding Customers}" CanUserSortColumns="True" CanUserAddRows="True" Grid.Row="1" AutoGenerateColumns="False">
-            <i:Interaction.Behaviors>
-                <domain:WheelScrollKillBehavior/>
-            </i:Interaction.Behaviors>
+        <DataGrid Margin="20 40 20 0" MaxHeight="560" ItemsSource="{Binding Customers}" CanUserSortColumns="True" CanUserAddRows="False" Grid.Row="1" AutoGenerateColumns="False" VerticalScrollBarVisibility="Visible">
             <DataGrid.Columns>
                 <DataGridTemplateColumn CanUserResize="False">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <Button Height="Auto" Style="{StaticResource MaterialDesignFlatButton}" CommandParameter="{Binding}">
+                            <Button Height="Auto" Style="{StaticResource MaterialDesignFlatButton}" CommandParameter="{Binding}" ToolTip="この顧客を削除します">
                                 <Button.Command>
                                     <Binding Path="DataContext.DeleteCustomerCommand">
                                         <Binding.RelativeSource>
