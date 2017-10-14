@@ -61,18 +61,20 @@ namespace Protobufs {
             "EC5wcm90b2J1ZnMuU3RhZmYiIgoEQ2FyZBIKCgJpZBgBIAEoCRIOCgZjcmVk",
             "aXQYAiABKAUiWAoIQ3VzdG9tZXISCgoCaWQYASABKAUSDAoEbmFtZRgCIAEo",
             "CRITCgtkZXNjcmlwdGlvbhgDIAEoCRIdCgRjYXJkGAQgASgLMg8ucHJvdG9i",
-            "dWZzLkNhcmQiWQoVQ3JlYXRlQ3VzdG9tZXJSZXF1ZXN0EgwKBG5hbWUYASAB",
-            "KAkSEwoLZGVzY3JpcHRpb24YAiABKAkSHQoEY2FyZBgDIAEoCzIPLnByb3Rv",
-            "YnVmcy5DYXJkIj8KFkNyZWF0ZUN1c3RvbWVyUmVzcG9uc2USJQoIY3VzdG9t",
-            "ZXIYASABKAsyEy5wcm90b2J1ZnMuQ3VzdG9tZXIiIwoVRGVsZXRlQ3VzdG9t",
-            "ZXJSZXF1ZXN0EgoKAmlkGAEgASgFIikKFkRlbGV0ZUN1c3RvbWVyUmVzcG9u",
-            "c2USDwoHc3VjY2VzcxgBIAEoCCJNChhTZXRDYXJkT25DdXN0b21lclJlcXVl",
-            "c3QSEgoKY3VzdG9tZXJJZBgBIAEoBRIdCgRjYXJkGAIgASgLMg8ucHJvdG9i",
-            "dWZzLkNhcmQiQgoZU2V0Q2FyZE9uQ3VzdG9tZXJSZXNwb25zZRIlCghjdXN0",
-            "b21lchgBIAEoCzITLnByb3RvYnVmcy5DdXN0b21lciqJAQoJRXJyb3JUeXBl",
-            "EhoKFklOVkFMSURfUkVRVUVTVF9GT1JNQVQQABINCglOT1RfRk9VTkQQARIR",
-            "Cg1BTFJFQURZX0VYSVNUEAISFAoQSU5WQUxJRF9QQVNTV09SRBADEhkKFUlO",
-            "VEVSTkFMX1NFUlZFUl9FUlJPUhAEEg0KCUZPUkJJRERFThAFYgZwcm90bzM="));
+            "dWZzLkNhcmQiQQoXU2VsZWN0Q3VzdG9tZXJzUmVzcG9uc2USJgoJY3VzdG9t",
+            "ZXJzGAEgAygLMhMucHJvdG9idWZzLkN1c3RvbWVyIlkKFUNyZWF0ZUN1c3Rv",
+            "bWVyUmVxdWVzdBIMCgRuYW1lGAEgASgJEhMKC2Rlc2NyaXB0aW9uGAIgASgJ",
+            "Eh0KBGNhcmQYAyABKAsyDy5wcm90b2J1ZnMuQ2FyZCI/ChZDcmVhdGVDdXN0",
+            "b21lclJlc3BvbnNlEiUKCGN1c3RvbWVyGAEgASgLMhMucHJvdG9idWZzLkN1",
+            "c3RvbWVyIiMKFURlbGV0ZUN1c3RvbWVyUmVxdWVzdBIKCgJpZBgBIAEoBSIp",
+            "ChZEZWxldGVDdXN0b21lclJlc3BvbnNlEg8KB3N1Y2Nlc3MYASABKAgiTQoY",
+            "U2V0Q2FyZE9uQ3VzdG9tZXJSZXF1ZXN0EhIKCmN1c3RvbWVySWQYASABKAUS",
+            "HQoEY2FyZBgCIAEoCzIPLnByb3RvYnVmcy5DYXJkIkIKGVNldENhcmRPbkN1",
+            "c3RvbWVyUmVzcG9uc2USJQoIY3VzdG9tZXIYASABKAsyEy5wcm90b2J1ZnMu",
+            "Q3VzdG9tZXIqiQEKCUVycm9yVHlwZRIaChZJTlZBTElEX1JFUVVFU1RfRk9S",
+            "TUFUEAASDQoJTk9UX0ZPVU5EEAESEQoNQUxSRUFEWV9FWElTVBACEhQKEElO",
+            "VkFMSURfUEFTU1dPUkQQAxIZChVJTlRFUk5BTF9TRVJWRVJfRVJST1IQBBIN",
+            "CglGT1JCSURERU4QBWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Protobufs.ErrorType), }, new pbr::GeneratedClrTypeInfo[] {
@@ -104,6 +106,7 @@ namespace Protobufs {
             new pbr::GeneratedClrTypeInfo(typeof(global::Protobufs.UpdateStaffResponse), global::Protobufs.UpdateStaffResponse.Parser, new[]{ "Staff" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Protobufs.Card), global::Protobufs.Card.Parser, new[]{ "Id", "Credit" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Protobufs.Customer), global::Protobufs.Customer.Parser, new[]{ "Id", "Name", "Description", "Card" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Protobufs.SelectCustomersResponse), global::Protobufs.SelectCustomersResponse.Parser, new[]{ "Customers" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Protobufs.CreateCustomerRequest), global::Protobufs.CreateCustomerRequest.Parser, new[]{ "Name", "Description", "Card" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Protobufs.CreateCustomerResponse), global::Protobufs.CreateCustomerResponse.Parser, new[]{ "Customer" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Protobufs.DeleteCustomerRequest), global::Protobufs.DeleteCustomerRequest.Parser, new[]{ "Id" }, null, null, null),
@@ -4126,6 +4129,115 @@ namespace Protobufs {
 
   }
 
+  public sealed partial class SelectCustomersResponse : pb::IMessage<SelectCustomersResponse> {
+    private static readonly pb::MessageParser<SelectCustomersResponse> _parser = new pb::MessageParser<SelectCustomersResponse>(() => new SelectCustomersResponse());
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<SelectCustomersResponse> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Protobufs.AllReflection.Descriptor.MessageTypes[28]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public SelectCustomersResponse() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public SelectCustomersResponse(SelectCustomersResponse other) : this() {
+      customers_ = other.customers_.Clone();
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public SelectCustomersResponse Clone() {
+      return new SelectCustomersResponse(this);
+    }
+
+    /// <summary>Field number for the "customers" field.</summary>
+    public const int CustomersFieldNumber = 1;
+    private static readonly pb::FieldCodec<global::Protobufs.Customer> _repeated_customers_codec
+        = pb::FieldCodec.ForMessage(10, global::Protobufs.Customer.Parser);
+    private readonly pbc::RepeatedField<global::Protobufs.Customer> customers_ = new pbc::RepeatedField<global::Protobufs.Customer>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public pbc::RepeatedField<global::Protobufs.Customer> Customers {
+      get { return customers_; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as SelectCustomersResponse);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(SelectCustomersResponse other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if(!customers_.Equals(other.customers_)) return false;
+      return true;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      hash ^= customers_.GetHashCode();
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      customers_.WriteTo(output, _repeated_customers_codec);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      size += customers_.CalculateSize(_repeated_customers_codec);
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(SelectCustomersResponse other) {
+      if (other == null) {
+        return;
+      }
+      customers_.Add(other.customers_);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            input.SkipLastField();
+            break;
+          case 10: {
+            customers_.AddEntriesFrom(input, _repeated_customers_codec);
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
   public sealed partial class CreateCustomerRequest : pb::IMessage<CreateCustomerRequest> {
     private static readonly pb::MessageParser<CreateCustomerRequest> _parser = new pb::MessageParser<CreateCustomerRequest>(() => new CreateCustomerRequest());
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -4133,7 +4245,7 @@ namespace Protobufs {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Protobufs.AllReflection.Descriptor.MessageTypes[28]; }
+      get { return global::Protobufs.AllReflection.Descriptor.MessageTypes[29]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -4312,7 +4424,7 @@ namespace Protobufs {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Protobufs.AllReflection.Descriptor.MessageTypes[29]; }
+      get { return global::Protobufs.AllReflection.Descriptor.MessageTypes[30]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -4435,7 +4547,7 @@ namespace Protobufs {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Protobufs.AllReflection.Descriptor.MessageTypes[30]; }
+      get { return global::Protobufs.AllReflection.Descriptor.MessageTypes[31]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -4552,7 +4664,7 @@ namespace Protobufs {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Protobufs.AllReflection.Descriptor.MessageTypes[31]; }
+      get { return global::Protobufs.AllReflection.Descriptor.MessageTypes[32]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -4669,7 +4781,7 @@ namespace Protobufs {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Protobufs.AllReflection.Descriptor.MessageTypes[32]; }
+      get { return global::Protobufs.AllReflection.Descriptor.MessageTypes[33]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -4820,7 +4932,7 @@ namespace Protobufs {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Protobufs.AllReflection.Descriptor.MessageTypes[33]; }
+      get { return global::Protobufs.AllReflection.Descriptor.MessageTypes[34]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

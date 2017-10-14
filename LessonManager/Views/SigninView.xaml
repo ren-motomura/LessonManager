@@ -22,8 +22,12 @@
                         <TextBlock Style="{StaticResource MaterialDesignHeadlineTextBlock}" TextAlignment="Center" Margin="0 0 0 0">Sign In</TextBlock>
                         <TextBox materialDesign:HintAssist.Hint="Email Address" materialDesign:HintAssist.IsFloating="True"
                                      Margin="0 12 0 0" Text="{Binding SignInParameter.EmailAddress, Mode=TwoWay}"/>
+                        <TextBox materialDesign:HintAssist.Hint="Password" materialDesign:HintAssist.IsFloating="True"
+                                     Margin="0 12 0 0" Text="{Binding SignInParameter.Password}"/>
+                        <!-- バインドにバグあり
                         <PasswordBox materialDesign:HintAssist.Hint="Password" materialDesign:HintAssist.IsFloating="True"
                                      Margin="0 12 0 0" domain:PasswordBoxHelper.Password="{Binding SignInParameter.Password}"/>
+                        -->
                         <Button Margin="0 20 0 12" Style="{StaticResource MaterialDesignRaisedAccentButton}"
                                 Command="{Binding SignInCommand}"
                                 CommandParameter="{Binding SignInParameter}">
@@ -52,10 +56,16 @@
                                      Margin="0 12 0 0" Text="{Binding SignUpParameter.Name, Mode=TwoWay}"/>
                             <TextBox materialDesign:HintAssist.Hint="Email Address" materialDesign:HintAssist.IsFloating="True"
                                      Margin="0 12 0 0" Text="{Binding SignUpParameter.EmailAddress, Mode=TwoWay}"/>
+                            <TextBox materialDesign:HintAssist.Hint="Password" materialDesign:HintAssist.IsFloating="True"
+                                     Margin="0 12 0 0" Text="{Binding SignUpParameter.Password}"/>
+                            <TextBox materialDesign:HintAssist.Hint="Re-Enter Password" materialDesign:HintAssist.IsFloating="True"
+                                     Margin="0 12 0 0" Text="{Binding SignUpParameter.Password2}"/>
+                            <!--
                             <PasswordBox materialDesign:HintAssist.Hint="Password" materialDesign:HintAssist.IsFloating="True"
                                      Margin="0 12 0 0" domain:PasswordBoxHelper.Password="{Binding SignUpParameter.Password}"/>
                             <PasswordBox materialDesign:HintAssist.Hint="Re-Enter Password" materialDesign:HintAssist.IsFloating="True"
                                      Margin="0 12 0 0" domain:PasswordBoxHelper.Password="{Binding SignUpParameter.Password2}"/>
+                            -->
                             <Button Margin="0 20 0 12" Style="{StaticResource MaterialDesignRaisedAccentButton}"
                                 Command="{Binding SignUpCommand}"
                                 CommandParameter="{Binding SignUpParameter}">

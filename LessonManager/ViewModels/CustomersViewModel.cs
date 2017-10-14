@@ -15,14 +15,6 @@ namespace LessonManager.ViewModels
         public CustomersViewModel()
         {
             var builder = ImmutableList.CreateBuilder<Customer>();
-            for (int i = 0; i < 20; i++)
-            {
-                builder.Add(new Customer
-                {
-                    Id = 1,
-                    Name = "Name",
-                });
-            }
             Customers = builder.ToImmutable();
 
             AddCustomerCommand = new DelegateCommand();
@@ -30,6 +22,38 @@ namespace LessonManager.ViewModels
 
             DeleteCustomerCommand = new DelegateCommand();
             DeleteCustomerCommand.ExecuteHandler = DeleteCustomerCommandExecute;
+
+            CreateOrUpdateCustomerCommand = new DelegateCommand();
+            CreateOrUpdateCustomerCommand.ExecuteHandler = CreateOrUpdateCustomerCommandExecute;
+
+            LoadCustomers();
+            Models.Company.ChangeCurrentCompanyEvent += (c) =>
+            {
+                LoadCustomers();
+            };
+        }
+
+        public void LoadCustomers()
+        {
+            if (!Models.Company.IsSignedIn())
+            {
+                Customers = new List<Customer>().ToImmutableList();
+                return;
+            }
+
+            WebAPIs.Customer.GetAll().ContinueWith(t =>
+            {
+                var result = t.Result;
+                if (result.IsSuccess)
+                {
+                    Customers = result.SuccessData.ToImmutableList();
+                }
+                else
+                {
+                    // TODO
+                    SnackbarMessageQueue.Instance().Enqueue(String.Format("失敗したみたい {0:D}", result.FailData.Status));
+                }
+            });
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
@@ -66,6 +90,57 @@ namespace LessonManager.ViewModels
         {
             var target = parameter as Customer;
             Customers = Customers.Remove(target);
+        }
+
+        public DelegateCommand CreateOrUpdateCustomerCommand { get; set; }
+        private async void CreateOrUpdateCustomerCommandExecute(object parameter)
+        {
+            var target = parameter as Customer;
+            if (target.ID == 0)
+            {
+                // Create
+                var view = new Views.Domain.ConfirmModal();
+                view.DataContext = "顧客情報を登録します。\nよろしいですか？";
+
+                object result = await MaterialDesignThemes.Wpf.DialogHost.Show(view);
+                if ((bool)result)
+                {
+                    CreateCustomer(target);
+                }
+                else
+                {
+                    SnackbarMessageQueue.Instance().Enqueue("キャンセルしました");
+                }
+            }
+            else
+            {
+                // Update
+            }
+        }
+        private void CreateCustomer(Customer customer)
+        {
+            PleaseWaitVisibility.Instance().IsVisible = true;
+            WebAPIs.Customer.Create(customer.Name, customer.Description).ContinueWith(t =>
+            {
+                PleaseWaitVisibility.Instance().IsVisible = false;
+                var result = t.Result;
+                if (result.IsSuccess)
+                {
+                    customer.ID = result.SuccessData.ID;
+                    SnackbarMessageQueue.Instance().Enqueue("顧客情報を新たに登録しました");
+                }
+                else
+                {
+                    if (result.FailData.Body.ErrorType == Protobufs.ErrorType.AlreadyExist)
+                    {
+                        SnackbarMessageQueue.Instance().Enqueue("その名前は既に使われています");
+                    }
+                    else
+                    {
+                        SnackbarMessageQueue.Instance().Enqueue("不明なエラー");
+                    }
+                }
+            });
         }
     }
 }

@@ -9,7 +9,7 @@
              xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
              xmlns:vm="clr-namespace:LessonManager.ViewModels"
              mc:Ignorable="d" 
-             d:DesignHeight="300" d:DesignWidth="300">
+             d:DesignHeight="300" d:DesignWidth="1000">
     <UserControl.DataContext>
         <vm:CustomersViewModel/>
     </UserControl.DataContext>
@@ -29,12 +29,12 @@
                 <materialDesign:PackIcon Kind="Plus" />
             </Button>
         </Grid>
-        <DataGrid Margin="20 40 20 0" MaxHeight="560" ItemsSource="{Binding Customers}" CanUserSortColumns="True" CanUserAddRows="False" Grid.Row="1" AutoGenerateColumns="False" VerticalScrollBarVisibility="Visible">
+        <DataGrid Margin="20 40 20 0" MaxHeight="560" ItemsSource="{Binding Customers}" CanUserSortColumns="False" CanUserAddRows="False" Grid.Row="1" AutoGenerateColumns="False" VerticalScrollBarVisibility="Visible">
             <DataGrid.Columns>
                 <DataGridTemplateColumn CanUserResize="False">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <Button Height="Auto" Style="{StaticResource MaterialDesignFlatButton}" CommandParameter="{Binding}" ToolTip="この顧客を削除します">
+                            <Button Height="Auto" Padding="0" Style="{StaticResource MaterialDesignFlatButton}" CommandParameter="{Binding}" ToolTip="この顧客を削除します">
                                 <Button.Command>
                                     <Binding Path="DataContext.DeleteCustomerCommand">
                                         <Binding.RelativeSource>
@@ -42,11 +42,7 @@
                                         </Binding.RelativeSource>
                                     </Binding>
                                 </Button.Command>
-                                <Button.Template>
-                                    <ControlTemplate TargetType="Button">
-                                        <materialDesign:PackIcon Kind="CloseCircle"/>
-                                    </ControlTemplate>
-                                </Button.Template>
+                                <materialDesign:PackIcon Kind="CloseCircle"/>
                             </Button>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
@@ -54,19 +50,42 @@
                 <DataGridTemplateColumn CanUserResize="False" Width="40">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <Button Height="Auto" Style="{StaticResource MaterialDesignFlatButton}">
-                                <Button.Template>
-                                    <ControlTemplate TargetType="Button">
-                                        <materialDesign:PackIcon Kind="ContentSave"/>
-                                    </ControlTemplate>
-                                </Button.Template>
+                            <Button Height="Auto" Padding="0" Style="{StaticResource MaterialDesignFlatButton}" CommandParameter="{Binding}" ToolTip="この顧客情報を保存します">
+                                <Button.Command>
+                                    <Binding Path="DataContext.CreateOrUpdateCustomerCommand">
+                                        <Binding.RelativeSource>
+                                            <RelativeSource Mode="FindAncestor" AncestorType="{x:Type UserControl}"/>
+                                        </Binding.RelativeSource>
+                                    </Binding>
+                                </Button.Command>
+                                <materialDesign:PackIcon Kind="ContentSave"/>
                             </Button>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
-                <DataGridTextColumn Header="ID" Binding="{Binding Id}" IsReadOnly="True"/>
+                <DataGridTextColumn Header="ID" Binding="{Binding ID}" IsReadOnly="True"/>
                 <DataGridTextColumn Header="名前" Binding="{Binding Name}"/>
                 <DataGridTextColumn Header="説明" Binding="{Binding Description}" Width="*"/>
+                <DataGridTemplateColumn CanUserResize="False" Width="40">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Height="Auto" Padding="0" Style="{StaticResource MaterialDesignFlatButton}" ToolTip="カードを登録します（顧客情報はサーバーに保存されます）">
+                                <materialDesign:PackIcon Kind="CreditCard"/>
+                            </Button>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTextColumn Header="カードID" Binding="{Binding CardId}" IsReadOnly="True"/>
+                <DataGridTemplateColumn CanUserResize="False" Width="40">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Height="Auto" Padding="0" Style="{StaticResource MaterialDesignFlatButton}" ToolTip="登録されているカードにクレジットを追加します（顧客情報はサーバーに保存されます）">
+                                <materialDesign:PackIcon Kind="CreditCardPlus"/>
+                            </Button>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTextColumn Header="カード残高" Binding="{Binding Credit}" IsReadOnly="True"/>
             </DataGrid.Columns>
         </DataGrid>
     </Grid>

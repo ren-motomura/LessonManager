@@ -12,7 +12,7 @@ namespace LessonManager.Models
         public event PropertyChangedEventHandler PropertyChanged;
 
         private long id_;
-        public long Id
+        public long ID
         {
             get { return id_; }
             set
@@ -53,15 +53,29 @@ namespace LessonManager.Models
             }
         }
 
-        private DateTime createdAt_;
-        public DateTime CreatedAt
+        private string cardId_;
+        public string CardId
         {
-            get { return createdAt_; }
+            get { return cardId_; }
             set
             {
-                if (value != createdAt_)
+                if (value != cardId_)
                 {
-                    createdAt_ = value;
+                    cardId_ = value;
+                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(null));
+                }
+            }
+        }
+
+        private int credit_;
+        public int Credit
+        {
+            get { return credit_; }
+            set
+            {
+                if (value != credit_)
+                {
+                    credit_ = value;
                     PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(null));
                 }
             }

@@ -228,7 +228,7 @@ namespace LessonManager.ViewModels
                 var result = t.Result;
                 if (result.IsSuccess)
                 {
-                    staff.ID = staff.ID;
+                    staff.ID = result.SuccessData.ID;
                     SnackbarMessageQueue.Instance().Enqueue("スタッフを新たに登録しました");
                 }
                 else

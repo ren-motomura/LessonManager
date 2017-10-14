@@ -157,6 +157,7 @@
       <DependentUpon>StudiosView.xaml</DependentUpon>
     </Compile>
     <Compile Include="WebAPIs\Client.cs" />
+    <Compile Include="WebAPIs\Customer.cs" />
     <Compile Include="WebAPIs\FailData.cs" />
     <Compile Include="WebAPIs\Image.cs" />
     <Compile Include="WebAPIs\Result.cs" />

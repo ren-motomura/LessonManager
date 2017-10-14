@@ -34,6 +34,12 @@ namespace LessonManager.ViewModels
             // for debug
             SignInParameter.EmailAddress = "sample@example.com";
             SignInParameter.Password = "password";
+
+            // for debug
+            SignUpParameter.Name = "Sample";
+            SignUpParameter.EmailAddress = "sample@example.com";
+            SignUpParameter.Password = "password";
+            SignUpParameter.Password2 = "password";
         }
     }
 }
