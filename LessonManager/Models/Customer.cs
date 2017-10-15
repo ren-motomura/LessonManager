@@ -11,8 +11,8 @@ namespace LessonManager.Models
     {
         public event PropertyChangedEventHandler PropertyChanged;
 
-        private long id_;
-        public long ID
+        private int id_;
+        public int ID
         {
             get { return id_; }
             set
@@ -79,6 +79,15 @@ namespace LessonManager.Models
                     PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(null));
                 }
             }
+        }
+
+        public Customer()
+        {
+            ID = 0;
+            Name = "";
+            Description = "";
+            CardId = "";
+            Credit = 0;
         }
     }
 }

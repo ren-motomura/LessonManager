@@ -67,14 +67,17 @@ namespace Protobufs {
             "Eh0KBGNhcmQYAyABKAsyDy5wcm90b2J1ZnMuQ2FyZCI/ChZDcmVhdGVDdXN0",
             "b21lclJlc3BvbnNlEiUKCGN1c3RvbWVyGAEgASgLMhMucHJvdG9idWZzLkN1",
             "c3RvbWVyIiMKFURlbGV0ZUN1c3RvbWVyUmVxdWVzdBIKCgJpZBgBIAEoBSIp",
-            "ChZEZWxldGVDdXN0b21lclJlc3BvbnNlEg8KB3N1Y2Nlc3MYASABKAgiTQoY",
-            "U2V0Q2FyZE9uQ3VzdG9tZXJSZXF1ZXN0EhIKCmN1c3RvbWVySWQYASABKAUS",
-            "HQoEY2FyZBgCIAEoCzIPLnByb3RvYnVmcy5DYXJkIkIKGVNldENhcmRPbkN1",
-            "c3RvbWVyUmVzcG9uc2USJQoIY3VzdG9tZXIYASABKAsyEy5wcm90b2J1ZnMu",
-            "Q3VzdG9tZXIqiQEKCUVycm9yVHlwZRIaChZJTlZBTElEX1JFUVVFU1RfRk9S",
-            "TUFUEAASDQoJTk9UX0ZPVU5EEAESEQoNQUxSRUFEWV9FWElTVBACEhQKEElO",
-            "VkFMSURfUEFTU1dPUkQQAxIZChVJTlRFUk5BTF9TRVJWRVJfRVJST1IQBBIN",
-            "CglGT1JCSURERU4QBWIGcHJvdG8z"));
+            "ChZEZWxldGVDdXN0b21lclJlc3BvbnNlEg8KB3N1Y2Nlc3MYASABKAgiPgoV",
+            "VXBkYXRlQ3VzdG9tZXJSZXF1ZXN0EiUKCGN1c3RvbWVyGAEgASgLMhMucHJv",
+            "dG9idWZzLkN1c3RvbWVyIj8KFlVwZGF0ZUN1c3RvbWVyUmVzcG9uc2USJQoI",
+            "Y3VzdG9tZXIYASABKAsyEy5wcm90b2J1ZnMuQ3VzdG9tZXIiTQoYU2V0Q2Fy",
+            "ZE9uQ3VzdG9tZXJSZXF1ZXN0EhIKCmN1c3RvbWVySWQYASABKAUSHQoEY2Fy",
+            "ZBgCIAEoCzIPLnByb3RvYnVmcy5DYXJkIkIKGVNldENhcmRPbkN1c3RvbWVy",
+            "UmVzcG9uc2USJQoIY3VzdG9tZXIYASABKAsyEy5wcm90b2J1ZnMuQ3VzdG9t",
+            "ZXIqlwEKCUVycm9yVHlwZRIaChZJTlZBTElEX1JFUVVFU1RfRk9STUFUEAAS",
+            "DQoJTk9UX0ZPVU5EEAESEQoNQUxSRUFEWV9FWElTVBACEhQKEElOVkFMSURf",
+            "UEFTU1dPUkQQAxIZChVJTlRFUk5BTF9TRVJWRVJfRVJST1IQBBINCglGT1JC",
+            "SURERU4QBRIMCghDT05GTElDVBAGYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Protobufs.ErrorType), }, new pbr::GeneratedClrTypeInfo[] {
@@ -111,6 +114,8 @@ namespace Protobufs {
             new pbr::GeneratedClrTypeInfo(typeof(global::Protobufs.CreateCustomerResponse), global::Protobufs.CreateCustomerResponse.Parser, new[]{ "Customer" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Protobufs.DeleteCustomerRequest), global::Protobufs.DeleteCustomerRequest.Parser, new[]{ "Id" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Protobufs.DeleteCustomerResponse), global::Protobufs.DeleteCustomerResponse.Parser, new[]{ "Success" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Protobufs.UpdateCustomerRequest), global::Protobufs.UpdateCustomerRequest.Parser, new[]{ "Customer" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Protobufs.UpdateCustomerResponse), global::Protobufs.UpdateCustomerResponse.Parser, new[]{ "Customer" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Protobufs.SetCardOnCustomerRequest), global::Protobufs.SetCardOnCustomerRequest.Parser, new[]{ "CustomerId", "Card" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Protobufs.SetCardOnCustomerResponse), global::Protobufs.SetCardOnCustomerResponse.Parser, new[]{ "Customer" }, null, null, null)
           }));
@@ -126,6 +131,7 @@ namespace Protobufs {
     [pbr::OriginalName("INVALID_PASSWORD")] InvalidPassword = 3,
     [pbr::OriginalName("INTERNAL_SERVER_ERROR")] InternalServerError = 4,
     [pbr::OriginalName("FORBIDDEN")] Forbidden = 5,
+    [pbr::OriginalName("CONFLICT")] Conflict = 6,
   }
 
   #endregion
@@ -4774,6 +4780,252 @@ namespace Protobufs {
 
   }
 
+  public sealed partial class UpdateCustomerRequest : pb::IMessage<UpdateCustomerRequest> {
+    private static readonly pb::MessageParser<UpdateCustomerRequest> _parser = new pb::MessageParser<UpdateCustomerRequest>(() => new UpdateCustomerRequest());
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<UpdateCustomerRequest> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Protobufs.AllReflection.Descriptor.MessageTypes[33]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public UpdateCustomerRequest() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public UpdateCustomerRequest(UpdateCustomerRequest other) : this() {
+      Customer = other.customer_ != null ? other.Customer.Clone() : null;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public UpdateCustomerRequest Clone() {
+      return new UpdateCustomerRequest(this);
+    }
+
+    /// <summary>Field number for the "customer" field.</summary>
+    public const int CustomerFieldNumber = 1;
+    private global::Protobufs.Customer customer_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::Protobufs.Customer Customer {
+      get { return customer_; }
+      set {
+        customer_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as UpdateCustomerRequest);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(UpdateCustomerRequest other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (!object.Equals(Customer, other.Customer)) return false;
+      return true;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (customer_ != null) hash ^= Customer.GetHashCode();
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (customer_ != null) {
+        output.WriteRawTag(10);
+        output.WriteMessage(Customer);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (customer_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Customer);
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(UpdateCustomerRequest other) {
+      if (other == null) {
+        return;
+      }
+      if (other.customer_ != null) {
+        if (customer_ == null) {
+          customer_ = new global::Protobufs.Customer();
+        }
+        Customer.MergeFrom(other.Customer);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            input.SkipLastField();
+            break;
+          case 10: {
+            if (customer_ == null) {
+              customer_ = new global::Protobufs.Customer();
+            }
+            input.ReadMessage(customer_);
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  public sealed partial class UpdateCustomerResponse : pb::IMessage<UpdateCustomerResponse> {
+    private static readonly pb::MessageParser<UpdateCustomerResponse> _parser = new pb::MessageParser<UpdateCustomerResponse>(() => new UpdateCustomerResponse());
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<UpdateCustomerResponse> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Protobufs.AllReflection.Descriptor.MessageTypes[34]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public UpdateCustomerResponse() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public UpdateCustomerResponse(UpdateCustomerResponse other) : this() {
+      Customer = other.customer_ != null ? other.Customer.Clone() : null;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public UpdateCustomerResponse Clone() {
+      return new UpdateCustomerResponse(this);
+    }
+
+    /// <summary>Field number for the "customer" field.</summary>
+    public const int CustomerFieldNumber = 1;
+    private global::Protobufs.Customer customer_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::Protobufs.Customer Customer {
+      get { return customer_; }
+      set {
+        customer_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as UpdateCustomerResponse);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(UpdateCustomerResponse other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (!object.Equals(Customer, other.Customer)) return false;
+      return true;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (customer_ != null) hash ^= Customer.GetHashCode();
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (customer_ != null) {
+        output.WriteRawTag(10);
+        output.WriteMessage(Customer);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (customer_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Customer);
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(UpdateCustomerResponse other) {
+      if (other == null) {
+        return;
+      }
+      if (other.customer_ != null) {
+        if (customer_ == null) {
+          customer_ = new global::Protobufs.Customer();
+        }
+        Customer.MergeFrom(other.Customer);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            input.SkipLastField();
+            break;
+          case 10: {
+            if (customer_ == null) {
+              customer_ = new global::Protobufs.Customer();
+            }
+            input.ReadMessage(customer_);
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
   public sealed partial class SetCardOnCustomerRequest : pb::IMessage<SetCardOnCustomerRequest> {
     private static readonly pb::MessageParser<SetCardOnCustomerRequest> _parser = new pb::MessageParser<SetCardOnCustomerRequest>(() => new SetCardOnCustomerRequest());
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -4781,7 +5033,7 @@ namespace Protobufs {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Protobufs.AllReflection.Descriptor.MessageTypes[33]; }
+      get { return global::Protobufs.AllReflection.Descriptor.MessageTypes[35]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -4932,7 +5184,7 @@ namespace Protobufs {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Protobufs.AllReflection.Descriptor.MessageTypes[34]; }
+      get { return global::Protobufs.AllReflection.Descriptor.MessageTypes[36]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

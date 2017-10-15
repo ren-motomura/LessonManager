@@ -116,9 +116,11 @@
     <Compile Include="Models\Staff.cs" />
     <Compile Include="Models\Studio.cs" />
     <Compile Include="Protobufs\All.cs" />
+    <Compile Include="Utils\NFC.cs" />
     <Compile Include="Utils\Time.cs" />
     <Compile Include="ViewModels\CompanyViewModel.cs" />
     <Compile Include="ViewModels\CustomersViewModel.cs" />
+    <Compile Include="ViewModels\Domain\WaitCardModalViewModel.cs" />
     <Compile Include="ViewModels\SigninViewModel.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />
     <Compile Include="ViewModels\StaffsViewModel.cs" />
@@ -145,6 +147,9 @@
     <Compile Include="Views\Domain\PasswordBoxHelper.cs" />
     <Compile Include="Views\Domain\PleaseWait.xaml.cs">
       <DependentUpon>PleaseWait.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Domain\WaitCardModal.xaml.cs">
+      <DependentUpon>WaitCardModal.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Domain\WheelScrollKillBehavior.cs" />
     <Compile Include="Views\SigninView.xaml.cs">
@@ -190,6 +195,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\Domain\PleaseWait.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Domain\WaitCardModal.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -257,6 +266,11 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\background3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="OrangeOneStopEasyAPI.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -69,7 +69,15 @@
                 <DataGridTemplateColumn CanUserResize="False" Width="40">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <Button Height="Auto" Padding="0" Style="{StaticResource MaterialDesignFlatButton}" ToolTip="カードを登録します（顧客情報はサーバーに保存されます）">
+                            <Button Height="Auto" Padding="0" Style="{StaticResource MaterialDesignFlatButton}" ToolTip="カードを登録します"
+                                    CommandParameter="{Binding}">
+                                <Button.Command>
+                                    <Binding Path="DataContext.AddCardCommand">
+                                        <Binding.RelativeSource>
+                                            <RelativeSource Mode="FindAncestor" AncestorType="{x:Type UserControl}"/>
+                                        </Binding.RelativeSource>
+                                    </Binding>
+                                </Button.Command>
                                 <materialDesign:PackIcon Kind="CreditCard"/>
                             </Button>
                         </DataTemplate>
@@ -79,7 +87,7 @@
                 <DataGridTemplateColumn CanUserResize="False" Width="40">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <Button Height="Auto" Padding="0" Style="{StaticResource MaterialDesignFlatButton}" ToolTip="登録されているカードにクレジットを追加します（顧客情報はサーバーに保存されます）">
+                            <Button Height="Auto" Padding="0" Style="{StaticResource MaterialDesignFlatButton}" ToolTip="登録されているカードにクレジットを追加します">
                                 <materialDesign:PackIcon Kind="CreditCardPlus"/>
                             </Button>
                         </DataTemplate>
