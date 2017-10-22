@@ -65,7 +65,7 @@
                 </DataGridTemplateColumn>
                 <DataGridTextColumn Header="ID" Binding="{Binding ID}" IsReadOnly="True"/>
                 <DataGridTextColumn Header="名前" Binding="{Binding Name}"/>
-                <DataGridTextColumn Header="説明" Binding="{Binding Description}" Width="*"/>
+                <DataGridTextColumn Header="説明" Binding="{Binding Description}"/>
                 <DataGridTemplateColumn CanUserResize="False" Width="40">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
@@ -87,7 +87,15 @@
                 <DataGridTemplateColumn CanUserResize="False" Width="40">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <Button Height="Auto" Padding="0" Style="{StaticResource MaterialDesignFlatButton}" ToolTip="登録されているカードにクレジットを追加します">
+                            <Button Height="Auto" Padding="0" Style="{StaticResource MaterialDesignFlatButton}" ToolTip="登録されているカードにクレジットを追加します"
+                                    CommandParameter="{Binding}">
+                                <Button.Command>
+                                    <Binding Path="DataContext.AddCreditCommand">
+                                        <Binding.RelativeSource>
+                                            <RelativeSource Mode="FindAncestor" AncestorType="{x:Type UserControl}"/>
+                                        </Binding.RelativeSource>
+                                    </Binding>
+                                </Button.Command>
                                 <materialDesign:PackIcon Kind="CreditCardPlus"/>
                             </Button>
                         </DataTemplate>

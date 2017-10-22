@@ -74,10 +74,13 @@ namespace Protobufs {
             "ZE9uQ3VzdG9tZXJSZXF1ZXN0EhIKCmN1c3RvbWVySWQYASABKAUSHQoEY2Fy",
             "ZBgCIAEoCzIPLnByb3RvYnVmcy5DYXJkIkIKGVNldENhcmRPbkN1c3RvbWVy",
             "UmVzcG9uc2USJQoIY3VzdG9tZXIYASABKAsyEy5wcm90b2J1ZnMuQ3VzdG9t",
-            "ZXIqlwEKCUVycm9yVHlwZRIaChZJTlZBTElEX1JFUVVFU1RfRk9STUFUEAAS",
-            "DQoJTk9UX0ZPVU5EEAESEQoNQUxSRUFEWV9FWElTVBACEhQKEElOVkFMSURf",
-            "UEFTU1dPUkQQAxIZChVJTlRFUk5BTF9TRVJWRVJfRVJST1IQBBINCglGT1JC",
-            "SURERU4QBRIMCghDT05GTElDVBAGYgZwcm90bzM="));
+            "ZXIiNgoQQWRkQ3JlZGl0UmVxdWVzdBISCgpjdXN0b21lcklkGAEgASgFEg4K",
+            "BmFtb3VudBgCIAEoBSI6ChFBZGRDcmVkaXRSZXNwb25zZRIlCghjdXN0b21l",
+            "chgBIAEoCzITLnByb3RvYnVmcy5DdXN0b21lciqwAQoJRXJyb3JUeXBlEhoK",
+            "FklOVkFMSURfUkVRVUVTVF9GT1JNQVQQABINCglOT1RfRk9VTkQQARIRCg1B",
+            "TFJFQURZX0VYSVNUEAISFAoQSU5WQUxJRF9QQVNTV09SRBADEhkKFUlOVEVS",
+            "TkFMX1NFUlZFUl9FUlJPUhAEEg0KCUZPUkJJRERFThAFEgwKCENPTkZMSUNU",
+            "EAYSFwoTQ0FSRF9OT1RfUkVHSVNURVJFRBAHYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Protobufs.ErrorType), }, new pbr::GeneratedClrTypeInfo[] {
@@ -117,7 +120,9 @@ namespace Protobufs {
             new pbr::GeneratedClrTypeInfo(typeof(global::Protobufs.UpdateCustomerRequest), global::Protobufs.UpdateCustomerRequest.Parser, new[]{ "Customer" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Protobufs.UpdateCustomerResponse), global::Protobufs.UpdateCustomerResponse.Parser, new[]{ "Customer" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Protobufs.SetCardOnCustomerRequest), global::Protobufs.SetCardOnCustomerRequest.Parser, new[]{ "CustomerId", "Card" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Protobufs.SetCardOnCustomerResponse), global::Protobufs.SetCardOnCustomerResponse.Parser, new[]{ "Customer" }, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Protobufs.SetCardOnCustomerResponse), global::Protobufs.SetCardOnCustomerResponse.Parser, new[]{ "Customer" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Protobufs.AddCreditRequest), global::Protobufs.AddCreditRequest.Parser, new[]{ "CustomerId", "Amount" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Protobufs.AddCreditResponse), global::Protobufs.AddCreditResponse.Parser, new[]{ "Customer" }, null, null, null)
           }));
     }
     #endregion
@@ -132,6 +137,7 @@ namespace Protobufs {
     [pbr::OriginalName("INTERNAL_SERVER_ERROR")] InternalServerError = 4,
     [pbr::OriginalName("FORBIDDEN")] Forbidden = 5,
     [pbr::OriginalName("CONFLICT")] Conflict = 6,
+    [pbr::OriginalName("CARD_NOT_REGISTERED")] CardNotRegistered = 7,
   }
 
   #endregion
@@ -5268,6 +5274,274 @@ namespace Protobufs {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(SetCardOnCustomerResponse other) {
+      if (other == null) {
+        return;
+      }
+      if (other.customer_ != null) {
+        if (customer_ == null) {
+          customer_ = new global::Protobufs.Customer();
+        }
+        Customer.MergeFrom(other.Customer);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            input.SkipLastField();
+            break;
+          case 10: {
+            if (customer_ == null) {
+              customer_ = new global::Protobufs.Customer();
+            }
+            input.ReadMessage(customer_);
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  public sealed partial class AddCreditRequest : pb::IMessage<AddCreditRequest> {
+    private static readonly pb::MessageParser<AddCreditRequest> _parser = new pb::MessageParser<AddCreditRequest>(() => new AddCreditRequest());
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<AddCreditRequest> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Protobufs.AllReflection.Descriptor.MessageTypes[37]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public AddCreditRequest() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public AddCreditRequest(AddCreditRequest other) : this() {
+      customerId_ = other.customerId_;
+      amount_ = other.amount_;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public AddCreditRequest Clone() {
+      return new AddCreditRequest(this);
+    }
+
+    /// <summary>Field number for the "customerId" field.</summary>
+    public const int CustomerIdFieldNumber = 1;
+    private int customerId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CustomerId {
+      get { return customerId_; }
+      set {
+        customerId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "amount" field.</summary>
+    public const int AmountFieldNumber = 2;
+    private int amount_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int Amount {
+      get { return amount_; }
+      set {
+        amount_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as AddCreditRequest);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(AddCreditRequest other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (CustomerId != other.CustomerId) return false;
+      if (Amount != other.Amount) return false;
+      return true;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (CustomerId != 0) hash ^= CustomerId.GetHashCode();
+      if (Amount != 0) hash ^= Amount.GetHashCode();
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (CustomerId != 0) {
+        output.WriteRawTag(8);
+        output.WriteInt32(CustomerId);
+      }
+      if (Amount != 0) {
+        output.WriteRawTag(16);
+        output.WriteInt32(Amount);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (CustomerId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(CustomerId);
+      }
+      if (Amount != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Amount);
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(AddCreditRequest other) {
+      if (other == null) {
+        return;
+      }
+      if (other.CustomerId != 0) {
+        CustomerId = other.CustomerId;
+      }
+      if (other.Amount != 0) {
+        Amount = other.Amount;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            input.SkipLastField();
+            break;
+          case 8: {
+            CustomerId = input.ReadInt32();
+            break;
+          }
+          case 16: {
+            Amount = input.ReadInt32();
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  public sealed partial class AddCreditResponse : pb::IMessage<AddCreditResponse> {
+    private static readonly pb::MessageParser<AddCreditResponse> _parser = new pb::MessageParser<AddCreditResponse>(() => new AddCreditResponse());
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<AddCreditResponse> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Protobufs.AllReflection.Descriptor.MessageTypes[38]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public AddCreditResponse() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public AddCreditResponse(AddCreditResponse other) : this() {
+      Customer = other.customer_ != null ? other.Customer.Clone() : null;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public AddCreditResponse Clone() {
+      return new AddCreditResponse(this);
+    }
+
+    /// <summary>Field number for the "customer" field.</summary>
+    public const int CustomerFieldNumber = 1;
+    private global::Protobufs.Customer customer_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::Protobufs.Customer Customer {
+      get { return customer_; }
+      set {
+        customer_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as AddCreditResponse);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(AddCreditResponse other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (!object.Equals(Customer, other.Customer)) return false;
+      return true;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (customer_ != null) hash ^= Customer.GetHashCode();
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (customer_ != null) {
+        output.WriteRawTag(10);
+        output.WriteMessage(Customer);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (customer_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Customer);
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(AddCreditResponse other) {
       if (other == null) {
         return;
       }

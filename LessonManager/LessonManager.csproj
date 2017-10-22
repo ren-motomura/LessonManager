@@ -131,6 +131,9 @@
     <Compile Include="Views\CustomersView.xaml.cs">
       <DependentUpon>CustomersView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\Domain\AddCreditModal.xaml.cs">
+      <DependentUpon>AddCreditModal.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\Domain\CompanyImage.xaml.cs">
       <DependentUpon>CompanyImage.xaml</DependentUpon>
     </Compile>
@@ -175,6 +178,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\CustomersView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Domain\AddCreditModal.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

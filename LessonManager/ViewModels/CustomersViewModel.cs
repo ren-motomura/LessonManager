@@ -29,6 +29,9 @@ namespace LessonManager.ViewModels
             AddCardCommand = new DelegateCommand();
             AddCardCommand.ExecuteHandler = AddCardCommandExecute;
 
+            AddCreditCommand = new DelegateCommand();
+            AddCreditCommand.ExecuteHandler = AddCreditCommandExecute;
+
             LoadCustomers();
             Models.Company.ChangeCurrentCompanyEvent += (c) =>
             {
@@ -227,6 +230,75 @@ namespace LessonManager.ViewModels
                     {
                         SnackbarMessageQueue.Instance().Enqueue("不明なエラー");
                     }
+                }
+            }
+        }
+
+        public DelegateCommand AddCreditCommand { get; set; }
+        private async void AddCreditCommandExecute(object parameter)
+        {
+            var target = parameter as Customer;
+            if (target.ID == 0)
+            {
+                SnackbarMessageQueue.Instance().Enqueue("先に顧客情報を保存してから実行してください");
+                return;
+            }
+
+            if (target.CardId == "")
+            {
+                SnackbarMessageQueue.Instance().Enqueue("先にカードを登録してから実行してください");
+                return;
+            }
+
+            var addCreditModal = new Views.Domain.AddCreditModal();
+            object addCreditModalResult = await MaterialDesignThemes.Wpf.DialogHost.Show(addCreditModal);
+            int amount = System.Convert.ToInt32(addCreditModalResult);
+
+            if (amount == 0)
+            {
+                SnackbarMessageQueue.Instance().Enqueue("キャンセルしました");
+                return;
+            }
+
+            { // 確認
+                var confirm = new Views.Domain.ConfirmModal();
+                confirm.DataContext = amount > 0
+                    ? String.Format("クレジットを {0} 追加します。本当によろしいですか？", amount)
+                    : String.Format("!!! クレジットを {0} 【減らします】。本当によろしいですか？ !!!", -amount);
+
+                object confirmResult = await MaterialDesignThemes.Wpf.DialogHost.Show(confirm);
+                if (!(bool)confirmResult)
+                {
+                    SnackbarMessageQueue.Instance().Enqueue("キャンセルしました");
+                    return;
+                }
+            }
+
+
+            PleaseWaitVisibility.Instance().IsVisible = true;
+            var result = await WebAPIs.Customer.AddCredit(target.ID, amount);
+            PleaseWaitVisibility.Instance().IsVisible = false;
+            if (result.IsSuccess)
+            {
+                target.Credit = result.SuccessData.Credit;
+                if (amount > 0)
+                {
+                    SnackbarMessageQueue.Instance().Enqueue("クレジットを追加しました");
+                }
+                else
+                {
+                    SnackbarMessageQueue.Instance().Enqueue("クレジットを減らしました");
+                }
+            }
+            else
+            {
+                if (result.FailData.Body.ErrorType == Protobufs.ErrorType.CardNotRegistered) 
+                {
+                    SnackbarMessageQueue.Instance().Enqueue("先にカードを登録してから実行してください");
+                }
+                else
+                {
+                    SnackbarMessageQueue.Instance().Enqueue("不明なエラー");
                 }
             }
         }
