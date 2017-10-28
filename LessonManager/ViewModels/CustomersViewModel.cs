@@ -92,10 +92,35 @@ namespace LessonManager.ViewModels
         }
 
         public DelegateCommand DeleteCustomerCommand { get; set; }
-        private void DeleteCustomerCommandExecute(object parameter)
+        private async void DeleteCustomerCommandExecute(object parameter)
         {
             var target = parameter as Customer;
-            Customers = Customers.Remove(target);
+            if (Customers.IndexOf(target) == -1)
+                return;
+
+            var view = new Views.Domain.ConfirmModal();
+            view.DataContext = "顧客情報を削除します。この操作は取り消せません。\nよろしいですか？";
+
+            object confirmResult = await MaterialDesignThemes.Wpf.DialogHost.Show(view);
+            if ((bool)confirmResult)
+            {
+                PleaseWaitVisibility.Instance().IsVisible = true;
+                var result = await WebAPIs.Customer.Delete(target.ID);
+                PleaseWaitVisibility.Instance().IsVisible = false;
+                if (result.IsSuccess)
+                {
+                    Customers = Customers.Remove(target);
+                    SnackbarMessageQueue.Instance().Enqueue("顧客情報を削除しました");
+                }
+                else
+                {
+                    SnackbarMessageQueue.Instance().Enqueue("不明なエラー");
+                }
+            }
+            else
+            {
+                SnackbarMessageQueue.Instance().Enqueue("キャンセルしました");
+            }
         }
 
         public DelegateCommand CreateOrUpdateCustomerCommand { get; set; }
@@ -149,7 +174,7 @@ namespace LessonManager.ViewModels
                 }
                 else
                 {
-                    if (result.FailData.Body.ErrorType == Protobufs.ErrorType.AlreadyExist)
+                    if (result.FailData.Body.ErrorType == Protobufs.ErrorType.DuplicateNameExist)
                     {
                         SnackbarMessageQueue.Instance().Enqueue("その名前は既に使われています");
                     }
@@ -174,7 +199,14 @@ namespace LessonManager.ViewModels
                 }
                 else
                 {
-                    SnackbarMessageQueue.Instance().Enqueue("不明なエラー");
+                    if (result.FailData.Body.ErrorType == Protobufs.ErrorType.DuplicateNameExist)
+                    {
+                        SnackbarMessageQueue.Instance().Enqueue("その名前は既に使われています");
+                    }
+                    else
+                    {
+                        SnackbarMessageQueue.Instance().Enqueue("不明なエラー");
+                    }
                 }
             });
         }

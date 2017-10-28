@@ -76,11 +76,12 @@ namespace Protobufs {
             "UmVzcG9uc2USJQoIY3VzdG9tZXIYASABKAsyEy5wcm90b2J1ZnMuQ3VzdG9t",
             "ZXIiNgoQQWRkQ3JlZGl0UmVxdWVzdBISCgpjdXN0b21lcklkGAEgASgFEg4K",
             "BmFtb3VudBgCIAEoBSI6ChFBZGRDcmVkaXRSZXNwb25zZRIlCghjdXN0b21l",
-            "chgBIAEoCzITLnByb3RvYnVmcy5DdXN0b21lciqwAQoJRXJyb3JUeXBlEhoK",
+            "chgBIAEoCzITLnByb3RvYnVmcy5DdXN0b21lcirKAQoJRXJyb3JUeXBlEhoK",
             "FklOVkFMSURfUkVRVUVTVF9GT1JNQVQQABINCglOT1RfRk9VTkQQARIRCg1B",
             "TFJFQURZX0VYSVNUEAISFAoQSU5WQUxJRF9QQVNTV09SRBADEhkKFUlOVEVS",
             "TkFMX1NFUlZFUl9FUlJPUhAEEg0KCUZPUkJJRERFThAFEgwKCENPTkZMSUNU",
-            "EAYSFwoTQ0FSRF9OT1RfUkVHSVNURVJFRBAHYgZwcm90bzM="));
+            "EAYSFwoTQ0FSRF9OT1RfUkVHSVNURVJFRBAHEhgKFERVUExJQ0FURV9OQU1F",
+            "X0VYSVNUEAhiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Protobufs.ErrorType), }, new pbr::GeneratedClrTypeInfo[] {
@@ -138,6 +139,7 @@ namespace Protobufs {
     [pbr::OriginalName("FORBIDDEN")] Forbidden = 5,
     [pbr::OriginalName("CONFLICT")] Conflict = 6,
     [pbr::OriginalName("CARD_NOT_REGISTERED")] CardNotRegistered = 7,
+    [pbr::OriginalName("DUPLICATE_NAME_EXIST")] DuplicateNameExist = 8,
   }
 
   #endregion

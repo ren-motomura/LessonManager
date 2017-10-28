@@ -133,6 +133,37 @@ namespace LessonManager.WebAPIs
             );
         }
 
+        public static async Task<Result<bool>> Delete(int id)
+        {
+            var req = new DeleteCustomerRequest();
+            req.Id = id;
+
+            var reqData = req.ToByteArray();
+
+            var responseMessage = await Client.Instance.Request("DeleteCustomer", reqData).ConfigureAwait(false);
+            var responseDataStream = new MemoryStream((int)responseMessage.Content.Headers.ContentLength); // long から int への cast は避けるべきだが...
+            await responseMessage.Content.CopyToAsync(responseDataStream).ConfigureAwait(false);
+
+            if (!responseMessage.IsSuccessStatusCode)
+            {
+                return new Result<bool>(
+                    false,
+                    false,
+                    new FailData(
+                        responseMessage.StatusCode, ErrorResponse.Parser.ParseFrom(responseDataStream.ToArray())
+                    )
+                );
+            }
+
+            var res = CreateCustomerResponse.Parser.ParseFrom(responseDataStream.ToArray());
+
+            return new Result<bool>(
+                true,
+                true,
+                null
+            );
+        }
+
         public static async Task<Result<Models.Customer>> SetCard(int customerID, string cardID, int credit)
         {
             var req = new SetCardOnCustomerRequest();
