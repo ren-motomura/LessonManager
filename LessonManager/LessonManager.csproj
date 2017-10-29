@@ -151,6 +151,9 @@
     <Compile Include="Views\Domain\PleaseWait.xaml.cs">
       <DependentUpon>PleaseWait.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\Domain\SearchBox.xaml.cs">
+      <DependentUpon>SearchBox.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\Domain\WaitCardModal.xaml.cs">
       <DependentUpon>WaitCardModal.xaml</DependentUpon>
     </Compile>
@@ -202,6 +205,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\Domain\PleaseWait.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Domain\SearchBox.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

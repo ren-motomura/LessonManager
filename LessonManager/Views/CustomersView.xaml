@@ -17,6 +17,7 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
         <Grid>
             <TextBlock Style="{StaticResource MaterialDesignHeadlineTextBlock}" TextAlignment="Center" Margin="0 0 0 8">顧客管理</TextBlock>
@@ -29,7 +30,19 @@
                 <materialDesign:PackIcon Kind="Plus" />
             </Button>
         </Grid>
-        <DataGrid Margin="20 40 20 0" MaxHeight="560" ItemsSource="{Binding Customers}" CanUserSortColumns="False" CanUserAddRows="False" Grid.Row="1" AutoGenerateColumns="False" VerticalScrollBarVisibility="Visible">
+        <Grid Grid.Row="1" Margin="20 40 20 0">
+            <domain:SearchBox Height="30" Width="250" HorizontalAlignment="Left"
+                              MagnifyButtonCommand="{Binding SearchFromNameOrDescriptionCommand}"
+                              MagnifyButtonCommandParameter="{Binding RelativeSource={RelativeSource Self}}"
+                              MagnifyButtonToolTip="名前や説明から顧客を検索します"
+                              CardButtonCommand="{Binding SearchFromCardCommand}"
+                              CardButtonCommandParameter="{Binding RelativeSource={RelativeSource Self}}"
+                              CardButtonToolTip="カードをかざして顧客を検索します"
+                              CloseButtonCommand="{Binding SearchConditionRemoveCommand}"
+                              CloseButtonCommandParameter="{Binding RelativeSource={RelativeSource Self}}"
+                              CloseButtonToolTip="検索条件を削除します"/>
+        </Grid>
+        <DataGrid Margin="20 10 20 0" MaxHeight="560" ItemsSource="{Binding Customers}" CanUserSortColumns="False" CanUserAddRows="False" Grid.Row="2" AutoGenerateColumns="False" VerticalScrollBarVisibility="Visible">
             <DataGrid.Columns>
                 <DataGridTemplateColumn CanUserResize="False">
                     <DataGridTemplateColumn.CellTemplate>

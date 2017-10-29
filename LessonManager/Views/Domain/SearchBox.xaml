@@ -1,0 +1,110 @@
+﻿<UserControl x:Class="LessonManager.Views.Domain.SearchBox"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:LessonManager.Views.Domain"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             mc:Ignorable="d" 
+             d:DesignHeight="100" d:DesignWidth="200" Height="30" Width="200">
+    <Grid>
+        <TextBox>
+            <TextBox.Resources>
+                <Style TargetType="{x:Type TextBox}">
+                    <Setter Property="BorderThickness" Value="1 1 1 1"/>
+                    <Setter Property="VerticalContentAlignment" Value="Center"/>
+                    <Setter Property="Padding" Value="10 0 55 0"/>
+                </Style>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="15"/>
+                    <Setter Property="Background" Value="White"/>
+                </Style>
+            </TextBox.Resources>
+            <TextBox.Text>
+                <Binding Mode="TwoWay" Path="SearchText">
+                    <Binding.RelativeSource>
+                        <RelativeSource Mode="FindAncestor" AncestorType="{x:Type UserControl}"/>
+                    </Binding.RelativeSource>
+                </Binding>
+            </TextBox.Text>
+        </TextBox>
+        <Button Height="Auto" Padding="0" Style="{StaticResource MaterialDesignToolButton}"
+                HorizontalAlignment="Right"
+                Margin="0 0 25 0">
+            <Button.ToolTip>
+                <Binding Path="CardButtonToolTip">
+                    <Binding.RelativeSource>
+                        <RelativeSource Mode="FindAncestor" AncestorType="{x:Type UserControl}"/>
+                    </Binding.RelativeSource>
+                </Binding>
+            </Button.ToolTip>
+            <Button.Command>
+                <Binding Path="CardButtonCommand">
+                    <Binding.RelativeSource>
+                        <RelativeSource Mode="FindAncestor" AncestorType="{x:Type UserControl}"/>
+                    </Binding.RelativeSource>
+                </Binding>
+            </Button.Command>
+            <Button.CommandParameter>
+                <Binding Path="CardButtonCommandParameter">
+                    <Binding.RelativeSource>
+                        <RelativeSource Mode="FindAncestor" AncestorType="{x:Type UserControl}"/>
+                    </Binding.RelativeSource>
+                </Binding>
+            </Button.CommandParameter>
+            <materialDesign:PackIcon Kind="CreditCard"/>
+        </Button>
+        <Button Height="Auto" Padding="0" Style="{StaticResource MaterialDesignToolButton}"
+                HorizontalAlignment="Right"
+                Margin="0 0 40 0">
+            <Button.ToolTip>
+                <Binding Path="MagnifyButtonToolTip">
+                    <Binding.RelativeSource>
+                        <RelativeSource Mode="FindAncestor" AncestorType="{x:Type UserControl}"/>
+                    </Binding.RelativeSource>
+                </Binding>
+            </Button.ToolTip>
+            <Button.Command>
+                <Binding Path="MagnifyButtonCommand">
+                    <Binding.RelativeSource>
+                        <RelativeSource Mode="FindAncestor" AncestorType="{x:Type UserControl}"/>
+                    </Binding.RelativeSource>
+                </Binding>
+            </Button.Command>
+            <Button.CommandParameter>
+                <Binding Path="MagnifyButtonCommandParameter">
+                    <Binding.RelativeSource>
+                        <RelativeSource Mode="FindAncestor" AncestorType="{x:Type UserControl}"/>
+                    </Binding.RelativeSource>
+                </Binding>
+            </Button.CommandParameter>
+            <materialDesign:PackIcon Kind="Magnify"/>
+        </Button>
+        <Button Height="Auto" Padding="0" Style="{StaticResource MaterialDesignToolButton}"
+                HorizontalAlignment="Right"
+                Margin="0 0 10 0">
+            <Button.ToolTip>
+                <Binding Path="CloseButtonToolTip">
+                    <Binding.RelativeSource>
+                        <RelativeSource Mode="FindAncestor" AncestorType="{x:Type UserControl}"/>
+                    </Binding.RelativeSource>
+                </Binding>
+            </Button.ToolTip>
+            <Button.Command>
+                <Binding Path="CloseButtonCommand">
+                    <Binding.RelativeSource>
+                        <RelativeSource Mode="FindAncestor" AncestorType="{x:Type UserControl}"/>
+                    </Binding.RelativeSource>
+                </Binding>
+            </Button.Command>
+            <Button.CommandParameter>
+                <Binding Path="CloseButtonCommandParameter">
+                    <Binding.RelativeSource>
+                        <RelativeSource Mode="FindAncestor" AncestorType="{x:Type UserControl}"/>
+                    </Binding.RelativeSource>
+                </Binding>
+            </Button.CommandParameter>
+            <materialDesign:PackIcon Kind="Close"/>
+        </Button>
+    </Grid>
+</UserControl>

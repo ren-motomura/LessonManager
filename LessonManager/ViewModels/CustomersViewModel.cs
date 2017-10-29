@@ -32,6 +32,15 @@ namespace LessonManager.ViewModels
             AddCreditCommand = new DelegateCommand();
             AddCreditCommand.ExecuteHandler = AddCreditCommandExecute;
 
+            SearchFromNameOrDescriptionCommand = new DelegateCommand();
+            SearchFromNameOrDescriptionCommand.ExecuteHandler = SearchFromNameOrDescriptionCommandExecute;
+
+            SearchFromCardCommand = new DelegateCommand();
+            SearchFromCardCommand.ExecuteHandler = SearchFromCardCommandExecute;
+
+            SearchConditionRemoveCommand = new DelegateCommand();
+            SearchConditionRemoveCommand.ExecuteHandler = SearchConditionRemoveCommandExecute;
+
             LoadCustomers();
             Models.Company.ChangeCurrentCompanyEvent += (c) =>
             {
@@ -39,7 +48,7 @@ namespace LessonManager.ViewModels
             };
         }
 
-        public void LoadCustomers()
+        public async Task LoadCustomers()
         {
             if (!Models.Company.IsSignedIn())
             {
@@ -47,19 +56,16 @@ namespace LessonManager.ViewModels
                 return;
             }
 
-            WebAPIs.Customer.GetAll().ContinueWith(t =>
+            var result = await WebAPIs.Customer.GetAll();
+            if (result.IsSuccess)
             {
-                var result = t.Result;
-                if (result.IsSuccess)
-                {
-                    Customers = result.SuccessData.ToImmutableList();
-                }
-                else
-                {
-                    // TODO
-                    SnackbarMessageQueue.Instance().Enqueue(String.Format("失敗したみたい {0:D}", result.FailData.Status));
-                }
-            });
+                Customers = result.SuccessData.ToImmutableList();
+            }
+            else
+            {
+                // TODO
+                SnackbarMessageQueue.Instance().Enqueue(String.Format("失敗したみたい {0:D}", result.FailData.Status));
+            }
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
@@ -333,6 +339,57 @@ namespace LessonManager.ViewModels
                     SnackbarMessageQueue.Instance().Enqueue("不明なエラー");
                 }
             }
+        }
+
+        public DelegateCommand SearchFromNameOrDescriptionCommand { get; set; }
+        private async void SearchFromNameOrDescriptionCommandExecute(object parameter)
+        {
+            // TODO: だいぶ雑な作り
+            var searchBox = parameter as Views.Domain.SearchBox;
+            string searchText = searchBox.SearchText;
+            if (searchText == null || searchText == "")
+            {
+                return;
+            }
+
+            await LoadCustomers();
+            Customers = Customers.FindAll((Customer c) =>
+            {
+                return c.Name.Contains(searchText) || c.Description.Contains(searchText);
+            });
+        }
+
+        public DelegateCommand SearchFromCardCommand { get; set; }
+        private async void SearchFromCardCommandExecute(object parameter)
+        {
+            // TODO: だいぶ雑な作り
+            var cardModal = new Views.Domain.WaitCardModal();
+            object cardModalResult = await MaterialDesignThemes.Wpf.DialogHost.Show(cardModal);
+            string cardID = cardModalResult as string;
+            if (cardID == "")
+            {
+                SnackbarMessageQueue.Instance().Enqueue("キャンセルしました");
+                return;
+            }
+
+            var searchBox = parameter as Views.Domain.SearchBox;
+            searchBox.SearchText = cardID;
+
+            await LoadCustomers();
+            Customers = Customers.FindAll((Customer c) =>
+            {
+                return c.CardId == cardID;
+            });
+        }
+
+        public DelegateCommand SearchConditionRemoveCommand { get; set; }
+        private async void SearchConditionRemoveCommandExecute(object parameter)
+        {
+            // TODO: だいぶ雑な作り
+            var searchBox = parameter as Views.Domain.SearchBox;
+            searchBox.SearchText = "";
+
+            await LoadCustomers();
         }
     }
 }
