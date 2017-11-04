@@ -115,39 +115,19 @@ namespace LessonManager.ViewModels
                 ExecuteHandler = DeleteStaffCommandConfirm
             };
 
-            LoadStaffAndImages();
-            Models.Company.ChangeCurrentCompanyEvent += (c) =>
+            StaffAndImages = new List<StaffAndImage>().ToImmutableList();
+            Storage.GetInstance().PropertyChanged += (object sender, PropertyChangedEventArgs e) =>
             {
-                LoadStaffAndImages();
-            };
-        }
-
-        public void LoadStaffAndImages()
-        {
-            if (!Models.Company.IsSignedIn())
-            {
-                StaffAndImages = new List<StaffAndImage>().ToImmutableList();
-                return;
-            }
-
-            WebAPIs.Staff.GetAll().ContinueWith(t =>
-            {
-                var result = t.Result;
-                if (result.IsSuccess)
+                if (e.PropertyName == "Staffs")
                 {
                     var builder = ImmutableList.CreateBuilder<StaffAndImage>();
-                    result.SuccessData.ForEach((s) =>
+                    Storage.GetInstance().Staffs.ForEach((s) =>
                     {
                         builder.Add(new StaffAndImage(s));
                     });
                     StaffAndImages = builder.ToImmutableList();
                 }
-                else
-                {
-                    // TODO
-                    SnackbarMessageQueue.Instance().Enqueue(String.Format("失敗したみたい {0:D}", result.FailData.Status));
-                }
-            });
+            };
         }
 
         public DelegateCommand AddStaffCommand { get; set; } 
@@ -229,6 +209,7 @@ namespace LessonManager.ViewModels
                 if (result.IsSuccess)
                 {
                     staff.ID = result.SuccessData.ID;
+                    Storage.GetInstance().LoadStaffs();
                     SnackbarMessageQueue.Instance().Enqueue("スタッフを新たに登録しました");
                 }
                 else
@@ -301,8 +282,9 @@ namespace LessonManager.ViewModels
                 {
                     StaffAndImages = StaffAndImages.RemoveAll((s) =>
                     {
-                        return s.Staff.ID == staff.ID;
+                        return s.Staff == staff;
                     });
+                    Storage.GetInstance().LoadStaffs();
                     SnackbarMessageQueue.Instance().Enqueue("スタッフを登録抹消しました");
                 }
                 else

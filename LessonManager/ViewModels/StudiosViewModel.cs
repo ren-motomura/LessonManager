@@ -109,39 +109,19 @@ namespace LessonManager.ViewModels
             UploadImageCommand = new DelegateCommand();
             UploadImageCommand.ExecuteHandler = UploadImageExecute;
 
-            Models.Company.ChangeCurrentCompanyEvent += (c) =>
+            StudioAndImages = new List<StudioAndImage>().ToImmutableList();
+            Storage.GetInstance().PropertyChanged += (object sender, PropertyChangedEventArgs e) =>
             {
-                LoadStudioAndImages();
-            };
-        }
-
-        public void LoadStudioAndImages()
-        {
-            if (!Models.Company.IsSignedIn())
-            {
-                StudioAndImages = new List<StudioAndImage>().ToImmutableList();
-                return;
-            }
-
-            WebAPIs.Studio.GetAll().ContinueWith(t =>
-            {
-                var result = t.Result;
-                if (result.IsSuccess)
+                if (e.PropertyName == "Studios")
                 {
                     var builder = ImmutableList.CreateBuilder<StudioAndImage>();
-                    result.SuccessData.ForEach((s) =>
+                    Storage.GetInstance().Studios.ForEach((s) =>
                     {
                         builder.Add(new StudioAndImage(s));
                     });
                     StudioAndImages = builder.ToImmutableList();
                 }
-                else
-                {
-                    // TODO
-                    SnackbarMessageQueue.Instance().Enqueue(String.Format("失敗したみたい {0:D}", result.FailData.Status));
-                }
-            });
-
+            };
         }
 
         private async void CreateOrUpdateStudioExecuteConfirm(object parameter)
@@ -192,6 +172,7 @@ namespace LessonManager.ViewModels
                 if (result.IsSuccess)
                 {
                     targetStudio.ID = result.SuccessData.ID;
+                    Storage.GetInstance().LoadStudios();
                     SnackbarMessageQueue.Instance().Enqueue("スタジオを新たに作成しました");
                 }
                 else
@@ -266,8 +247,9 @@ namespace LessonManager.ViewModels
                 {
                     StudioAndImages = StudioAndImages.RemoveAll((s) =>
                     {
-                        return s.Studio.ID == targetStudio.ID;
+                        return s.Studio == targetStudio;
                     });
+                    Storage.GetInstance().LoadStudios();
                     SnackbarMessageQueue.Instance().Enqueue("スタジオを削除しました");
                 }
                 else

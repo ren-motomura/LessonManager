@@ -41,31 +41,14 @@ namespace LessonManager.ViewModels
             SearchConditionRemoveCommand = new DelegateCommand();
             SearchConditionRemoveCommand.ExecuteHandler = SearchConditionRemoveCommandExecute;
 
-            LoadCustomers();
-            Models.Company.ChangeCurrentCompanyEvent += (c) =>
+            Customers = new List<Customer>().ToImmutableList();
+            Storage.GetInstance().PropertyChanged += (object sender, PropertyChangedEventArgs e) =>
             {
-                LoadCustomers();
+                if (e.PropertyName == "Customers")
+                {
+                    Customers = Storage.GetInstance().Customers;
+                }
             };
-        }
-
-        public async Task LoadCustomers()
-        {
-            if (!Models.Company.IsSignedIn())
-            {
-                Customers = new List<Customer>().ToImmutableList();
-                return;
-            }
-
-            var result = await WebAPIs.Customer.GetAll();
-            if (result.IsSuccess)
-            {
-                Customers = result.SuccessData.ToImmutableList();
-            }
-            else
-            {
-                // TODO
-                SnackbarMessageQueue.Instance().Enqueue(String.Format("失敗したみたい {0:D}", result.FailData.Status));
-            }
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
@@ -116,6 +99,7 @@ namespace LessonManager.ViewModels
                 if (result.IsSuccess)
                 {
                     Customers = Customers.Remove(target);
+                    Storage.GetInstance().LoadCustomers();
                     SnackbarMessageQueue.Instance().Enqueue("顧客情報を削除しました");
                 }
                 else
@@ -176,6 +160,7 @@ namespace LessonManager.ViewModels
                 if (result.IsSuccess)
                 {
                     customer.ID = result.SuccessData.ID;
+                    Storage.GetInstance().LoadCustomers();
                     SnackbarMessageQueue.Instance().Enqueue("顧客情報を新たに登録しました");
                 }
                 else
@@ -342,7 +327,7 @@ namespace LessonManager.ViewModels
         }
 
         public DelegateCommand SearchFromNameOrDescriptionCommand { get; set; }
-        private async void SearchFromNameOrDescriptionCommandExecute(object parameter)
+        private void SearchFromNameOrDescriptionCommandExecute(object parameter)
         {
             // TODO: だいぶ雑な作り
             var searchBox = parameter as Views.Domain.SearchBox;
@@ -352,7 +337,7 @@ namespace LessonManager.ViewModels
                 return;
             }
 
-            await LoadCustomers();
+            Customers = Storage.GetInstance().Customers;
             Customers = Customers.FindAll((Customer c) =>
             {
                 return c.Name.Contains(searchText) || c.Description.Contains(searchText);
@@ -375,7 +360,7 @@ namespace LessonManager.ViewModels
             var searchBox = parameter as Views.Domain.SearchBox;
             searchBox.SearchText = cardID;
 
-            await LoadCustomers();
+            Customers = Storage.GetInstance().Customers;
             Customers = Customers.FindAll((Customer c) =>
             {
                 return c.CardId == cardID;
@@ -383,13 +368,13 @@ namespace LessonManager.ViewModels
         }
 
         public DelegateCommand SearchConditionRemoveCommand { get; set; }
-        private async void SearchConditionRemoveCommandExecute(object parameter)
+        private void SearchConditionRemoveCommandExecute(object parameter)
         {
             // TODO: だいぶ雑な作り
             var searchBox = parameter as Views.Domain.SearchBox;
             searchBox.SearchText = "";
 
-            await LoadCustomers();
+            Customers = Storage.GetInstance().Customers;
         }
     }
 }

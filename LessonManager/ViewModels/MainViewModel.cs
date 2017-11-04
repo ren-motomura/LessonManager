@@ -56,6 +56,8 @@ namespace LessonManager.ViewModels
 
             SignOutCommand = new SignOutCommand();
             SnackbarMessageQueue = SnackbarMessageQueue.Instance();
+            ReloadCommand = new DelegateCommand();
+            ReloadCommand.ExecuteHandler = ReloadCommandExecute;
 
             PleaseWaitVisibility = PleaseWaitVisibility.Instance();
         }
@@ -79,6 +81,12 @@ namespace LessonManager.ViewModels
 
         public SignOutCommand SignOutCommand { get; set; }
         public SnackbarMessageQueue SnackbarMessageQueue { get; set; }
+        public DelegateCommand ReloadCommand { get; set; }
+
+        private void ReloadCommandExecute(object paramter)
+        {
+            Storage.GetInstance().LoadAll();
+        }
 
         public PleaseWaitVisibility PleaseWaitVisibility { get; set; }
     }

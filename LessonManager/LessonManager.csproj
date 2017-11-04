@@ -114,6 +114,7 @@
     <Compile Include="Models\PleaseWaitVisibility.cs" />
     <Compile Include="Models\SnackbarMessageQueue.cs" />
     <Compile Include="Models\Staff.cs" />
+    <Compile Include="Models\Storage.cs" />
     <Compile Include="Models\Studio.cs" />
     <Compile Include="Protobufs\All.cs" />
     <Compile Include="Utils\NFC.cs" />

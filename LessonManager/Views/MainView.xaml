@@ -58,6 +58,7 @@
                             <materialDesign:PopupBox DockPanel.Dock="Right" PlacementMode="BottomAndAlignRightEdges" StaysOpen="False">
                                 <StackPanel>
                                     <Button Content="サインアウト" Command="{Binding SignOutCommand}"/>
+                                    <Button Content="データリロード" Command="{Binding ReloadCommand}"/>
                                 </StackPanel>
                             </materialDesign:PopupBox>
                             <TextBlock VerticalAlignment="Center" Margin="16 0 0 0">Lesson Manager</TextBlock>
