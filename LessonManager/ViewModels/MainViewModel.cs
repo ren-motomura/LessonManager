@@ -31,6 +31,14 @@ namespace LessonManager.ViewModels
                 new MenuItem("顧客管理", new CustomersView())
                 {
                     VerticalScrollBarVisibilityRequirement = System.Windows.Controls.ScrollBarVisibility.Disabled
+                },
+                new MenuItem("レッスン検索", new LessonsView())
+                {
+                    VerticalScrollBarVisibilityRequirement = System.Windows.Controls.ScrollBarVisibility.Disabled
+                },
+                new MenuItem("レッスン登録", new RegisterLesson())
+                {
+                    VerticalScrollBarVisibilityRequirement = System.Windows.Controls.ScrollBarVisibility.Disabled
                 }
             };
             this.menuItemsWhenUnauthorized_ = new List<MenuItem>

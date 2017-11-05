@@ -122,6 +122,7 @@
     <Compile Include="ViewModels\CompanyViewModel.cs" />
     <Compile Include="ViewModels\CustomersViewModel.cs" />
     <Compile Include="ViewModels\Domain\WaitCardModalViewModel.cs" />
+    <Compile Include="ViewModels\RegisterLessonViewModel.cs" />
     <Compile Include="ViewModels\SigninViewModel.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />
     <Compile Include="ViewModels\StaffsViewModel.cs" />
@@ -152,6 +153,9 @@
     <Compile Include="Views\Domain\PleaseWait.xaml.cs">
       <DependentUpon>PleaseWait.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\Domain\RegisterLesson.xaml.cs">
+      <DependentUpon>RegisterLesson.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\Domain\SearchBox.xaml.cs">
       <DependentUpon>SearchBox.xaml</DependentUpon>
     </Compile>
@@ -159,6 +163,9 @@
       <DependentUpon>WaitCardModal.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Domain\WheelScrollKillBehavior.cs" />
+    <Compile Include="Views\LessonsView.xaml.cs">
+      <DependentUpon>LessonsView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\SigninView.xaml.cs">
       <DependentUpon>SigninView.xaml</DependentUpon>
     </Compile>
@@ -209,11 +216,19 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\Domain\RegisterLesson.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\Domain\SearchBox.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\Domain\WaitCardModal.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\LessonsView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

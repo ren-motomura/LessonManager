@@ -1,0 +1,129 @@
+﻿<UserControl x:Class="LessonManager.Views.Domain.RegisterLesson"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:LessonManager.Views.Domain"
+             xmlns:domain="clr-namespace:LessonManager.Views.Domain"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             xmlns:vm="clr-namespace:LessonManager.ViewModels"
+             mc:Ignorable="d" 
+             d:DesignHeight="700" d:DesignWidth="1000">
+    <UserControl.DataContext>
+        <vm:RegisterLessonViewModel/>
+    </UserControl.DataContext>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid>
+            <TextBlock Style="{StaticResource MaterialDesignHeadlineTextBlock}" TextAlignment="Center" Margin="0 0 0 8">レッスン登録</TextBlock>
+            <Border BorderBrush="{DynamicResource MaterialDesignDivider}" BorderThickness="0 0 0 1" />
+        </Grid>
+        <materialDesign:Card Grid.Row="1" Margin="0 10 0 0" Padding="20 40 20 40" Width="800" VerticalAlignment="Center">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="150"/>
+                    <ColumnDefinition Width="10"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="40"/>
+                    <RowDefinition Height="40"/>
+                    <RowDefinition Height="40"/>
+                    <RowDefinition Height="40"/>
+                    <RowDefinition Height="40"/>
+                    <RowDefinition Height="40"/>
+                    <RowDefinition Height="100"/>
+                    <RowDefinition Height="40"/>
+                </Grid.RowDefinitions>
+
+                <TextBlock Grid.Row="0" Grid.Column="0"
+                           Text="日時" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+                <StackPanel Grid.Row="0" Grid.Column="2" Orientation="Horizontal">
+                    <DatePicker Width="100" Style="{StaticResource MaterialDesignDatePicker}" VerticalAlignment="Center" SelectedDate="{Binding TakenAt, Mode=TwoWay}"/>
+                    <materialDesign:TimePicker Width="100" Margin="10 0 0 0" Style="{StaticResource MaterialDesignTimePicker}" VerticalAlignment="Center" SelectedTime="{Binding TakenAt, Mode=TwoWay}"/>
+                    <Button Margin="10 0 0 0" Style="{StaticResource MaterialDesignToolButton}" VerticalAlignment="Center" ToolTip="現在時刻に設定します"
+                            Command="{Binding SetTakenAtNowCommand}">
+                        <materialDesign:PackIcon Kind="Clock"/>
+                    </Button>
+                </StackPanel>
+
+                <TextBlock Grid.Row="1" Grid.Column="0"
+                           Text="スタジオ" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+                <ComboBox Grid.Row="1" Grid.Column="2"
+                          Width="150" Style="{StaticResource MaterialDesignComboBox}"
+                          ItemsSource="{Binding Studios}"
+                          SelectedValuePath="ID"
+                          HorizontalAlignment="Left">
+                    <ComboBox.ItemTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Name}"/>
+                        </DataTemplate>
+                    </ComboBox.ItemTemplate>
+                </ComboBox>
+
+                <TextBlock Grid.Row="2" Grid.Column="0"
+                           Text="スタッフ" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+                <ComboBox Grid.Row="2" Grid.Column="2"
+                          Width="150" Style="{StaticResource MaterialDesignComboBox}"
+                          ItemsSource="{Binding Staffs}"
+                          SelectedValuePath="ID"
+                          HorizontalAlignment="Left">
+                    <ComboBox.ItemTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Name}"/>
+                        </DataTemplate>
+                    </ComboBox.ItemTemplate>
+                </ComboBox>
+
+                <TextBlock Grid.Row="3" Grid.Column="0"
+                           Text="顧客" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+                <StackPanel Grid.Row="3" Grid.Column="2" Orientation="Horizontal">
+                    <TextBox Width="150" IsReadOnly="True" materialDesign:HintAssist.Hint="顧客を検索してください"
+                             VerticalAlignment="Center"/>
+                    <Button Style="{StaticResource MaterialDesignToolButton}" ToolTip="氏名または説明文から検索します">
+                        <materialDesign:PackIcon Kind="Magnify"/>
+                    </Button>
+                    <Button Style="{StaticResource MaterialDesignToolButton}" ToolTip="カードをかざして検索します">
+                        <materialDesign:PackIcon Kind="CreditCard"/>
+                    </Button>
+                </StackPanel>
+
+                <TextBlock Grid.Row="4" Grid.Column="0"
+                           Text="料金" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+                <StackPanel Grid.Row="4" Grid.Column="2" Orientation="Horizontal">
+                    <TextBlock VerticalAlignment="Center" Margin="0 0 10 0">¥-</TextBlock>
+                    <TextBox Grid.Row="4" Grid.Column="2"
+                             Width="100" VerticalAlignment="Center" TextAlignment="Right" PreviewTextInput="TextBox_PreviewTextInput"/>
+                </StackPanel>
+
+                <TextBlock Grid.Row="5" Grid.Column="0"
+                           Text="支払いタイプ" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+                <ComboBox Grid.Row="5" Grid.Column="2"
+                          Width="150" Style="{StaticResource MaterialDesignComboBox}"
+                          ItemsSource="{Binding PaymentTypes}"
+                          SelectedValuePath="ID"
+                          HorizontalAlignment="Left">
+                    <ComboBox.ItemTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Name}"/>
+                        </DataTemplate>
+                    </ComboBox.ItemTemplate>
+                </ComboBox>
+
+                <TextBlock Grid.Row="6" Grid.Column="0"
+                           Text="備考" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+                <TextBox Grid.Row="6" Grid.Column="2" Style="{StaticResource MaterialDesignTextFieldBoxTextBox}"
+                         materialDesign:HintAssist.Hint="任意入力"
+                         Height="100" AcceptsReturn="True" TextWrapping="Wrap" VerticalScrollBarVisibility="Auto"/>
+
+                <Button Grid.Row="7" Grid.Column="2" Style="{StaticResource MaterialDesignRaisedAccentButton}"
+                        Width="100" HorizontalAlignment="Left" Margin="0 5 0 0">
+                    支払い
+                </Button>
+            </Grid>
+        </materialDesign:Card>
+    </Grid>
+</UserControl>

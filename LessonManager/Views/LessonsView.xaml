@@ -1,0 +1,156 @@
+﻿<UserControl x:Class="LessonManager.Views.LessonsView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:LessonManager.Views"
+             xmlns:domain="clr-namespace:LessonManager.Views.Domain"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             xmlns:vm="clr-namespace:LessonManager.ViewModels"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="1000">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Grid>
+            <TextBlock Style="{StaticResource MaterialDesignHeadlineTextBlock}" TextAlignment="Center" Margin="0 0 0 8">レッスン検索</TextBlock>
+            <Border BorderBrush="{DynamicResource MaterialDesignDivider}" BorderThickness="0 0 0 1" />
+            <Button Grid.Row="0" Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" 
+                    HorizontalAlignment="Right" VerticalAlignment="Bottom"
+                    Margin="0 0 20 -20"
+                    ToolTip="顧客を追加します"
+                    Command="{Binding AddCustomerCommand}">
+                <materialDesign:PackIcon Kind="Plus" />
+            </Button>
+        </Grid>
+        <Grid Grid.Row="1" Margin="20 40 20 0">
+            <StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <DatePicker Width="100" HorizontalAlignment="Left" materialDesign:HintAssist.Hint="検索開始日" Style="{StaticResource MaterialDesignFloatingHintDatePicker}"/>
+                    <DatePicker Width="100" Margin="10 0 0 0" HorizontalAlignment="Left" materialDesign:HintAssist.Hint="検索終了日" Style="{StaticResource MaterialDesignFloatingHintDatePicker}"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <ComboBox materialDesign:HintAssist.Hint="スタジオ"
+                              materialDesign:HintAssist.HintOpacity=".50"
+                              Width="100" Style="{StaticResource MaterialDesignComboBox}"
+                              ItemsSource="{Binding Studios}"
+                              SelectedValuePath="ID"
+                              HorizontalAlignment="Left">
+                        <ComboBox.ItemTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding Name}"/>
+                            </DataTemplate>
+                        </ComboBox.ItemTemplate>
+                    </ComboBox>
+                    <ComboBox materialDesign:HintAssist.Hint="スタッフ"
+                              materialDesign:HintAssist.HintOpacity=".50"
+                              Width="100" Style="{StaticResource MaterialDesignComboBox}"
+                              ItemsSource="{Binding Staffs}"
+                              SelectedValuePath="ID"
+                              HorizontalAlignment="Left"
+                              Margin="10 0 0 0">
+                        <ComboBox.ItemTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding Name}"/>
+                            </DataTemplate>
+                        </ComboBox.ItemTemplate>
+                    </ComboBox>
+                    <ComboBox materialDesign:HintAssist.Hint="顧客"
+                              materialDesign:HintAssist.HintOpacity=".50"
+                              Width="100" Style="{StaticResource MaterialDesignComboBox}"
+                              ItemsSource="{Binding Customers}"
+                              SelectedValuePath="ID"
+                              HorizontalAlignment="Left"
+                              Margin="10 0 0 0">
+                        <ComboBox.ItemTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding Name}"/>
+                            </DataTemplate>
+                        </ComboBox.ItemTemplate>
+                    </ComboBox>
+                </StackPanel>
+                <Button Width="50" Margin="0 10 0 0" HorizontalAlignment="Left" Style="{StaticResource MaterialDesignRaisedAccentButton}" FontSize="15">
+                    <materialDesign:PackIcon Kind="Magnify"/>
+                </Button>
+            </StackPanel>
+        </Grid>
+        <DataGrid Margin="20 10 20 0" MaxHeight="560" ItemsSource="{Binding Customers}" CanUserSortColumns="False" CanUserAddRows="False" Grid.Row="2" AutoGenerateColumns="False" VerticalScrollBarVisibility="Visible">
+            <DataGrid.Columns>
+                <DataGridTemplateColumn CanUserResize="False">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Height="Auto" Padding="0" Style="{StaticResource MaterialDesignFlatButton}" CommandParameter="{Binding}" ToolTip="この顧客を削除します">
+                                <Button.Command>
+                                    <Binding Path="DataContext.DeleteCustomerCommand">
+                                        <Binding.RelativeSource>
+                                            <RelativeSource Mode="FindAncestor" AncestorType="{x:Type UserControl}"/>
+                                        </Binding.RelativeSource>
+                                    </Binding>
+                                </Button.Command>
+                                <materialDesign:PackIcon Kind="CloseCircle"/>
+                            </Button>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn CanUserResize="False" Width="40">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Height="Auto" Padding="0" Style="{StaticResource MaterialDesignFlatButton}" CommandParameter="{Binding}" ToolTip="この顧客情報を保存します">
+                                <Button.Command>
+                                    <Binding Path="DataContext.CreateOrUpdateCustomerCommand">
+                                        <Binding.RelativeSource>
+                                            <RelativeSource Mode="FindAncestor" AncestorType="{x:Type UserControl}"/>
+                                        </Binding.RelativeSource>
+                                    </Binding>
+                                </Button.Command>
+                                <materialDesign:PackIcon Kind="ContentSave"/>
+                            </Button>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTextColumn Header="ID" Binding="{Binding ID}" IsReadOnly="True"/>
+                <DataGridTextColumn Header="名前" Binding="{Binding Name}"/>
+                <DataGridTextColumn Header="説明" Binding="{Binding Description}"/>
+                <DataGridTemplateColumn CanUserResize="False" Width="40">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Height="Auto" Padding="0" Style="{StaticResource MaterialDesignFlatButton}" ToolTip="カードを登録します"
+                                    CommandParameter="{Binding}">
+                                <Button.Command>
+                                    <Binding Path="DataContext.AddCardCommand">
+                                        <Binding.RelativeSource>
+                                            <RelativeSource Mode="FindAncestor" AncestorType="{x:Type UserControl}"/>
+                                        </Binding.RelativeSource>
+                                    </Binding>
+                                </Button.Command>
+                                <materialDesign:PackIcon Kind="CreditCard"/>
+                            </Button>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTextColumn Header="カードID" Binding="{Binding CardId}" IsReadOnly="True"/>
+                <DataGridTemplateColumn CanUserResize="False" Width="40">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Height="Auto" Padding="0" Style="{StaticResource MaterialDesignFlatButton}" ToolTip="登録されているカードにクレジットを追加します"
+                                    CommandParameter="{Binding}">
+                                <Button.Command>
+                                    <Binding Path="DataContext.AddCreditCommand">
+                                        <Binding.RelativeSource>
+                                            <RelativeSource Mode="FindAncestor" AncestorType="{x:Type UserControl}"/>
+                                        </Binding.RelativeSource>
+                                    </Binding>
+                                </Button.Command>
+                                <materialDesign:PackIcon Kind="CreditCardPlus"/>
+                            </Button>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTextColumn Header="カード残高" Binding="{Binding Credit}" IsReadOnly="True"/>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</UserControl>
