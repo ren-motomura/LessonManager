@@ -64,13 +64,8 @@ namespace LessonManager.ViewModels
             get { return customers_; }
             set
             {
-                var orgCount = customers_ == null ? 0 : customers_.Count;
-                var newCount = value == null ? 0 : value.Count;
                 customers_ = value;
-                if (newCount != orgCount) // 数が変わったときだけ発火する
-                {
-                    RaisePropertyChanged();
-                }
+                RaisePropertyChanged();
             }
         }
 

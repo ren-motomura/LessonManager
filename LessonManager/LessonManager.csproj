@@ -111,6 +111,7 @@
     <Compile Include="Commands\SignOutCommand.cs" />
     <Compile Include="Commands\SignUpCommand.cs" />
     <Compile Include="Models\Customer.cs" />
+    <Compile Include="Models\Lesson.cs" />
     <Compile Include="Models\PleaseWaitVisibility.cs" />
     <Compile Include="Models\SnackbarMessageQueue.cs" />
     <Compile Include="Models\Staff.cs" />
@@ -186,6 +187,7 @@
     <Compile Include="WebAPIs\Customer.cs" />
     <Compile Include="WebAPIs\FailData.cs" />
     <Compile Include="WebAPIs\Image.cs" />
+    <Compile Include="WebAPIs\Lesson.cs" />
     <Compile Include="WebAPIs\Result.cs" />
     <Compile Include="WebAPIs\Session.cs" />
     <Compile Include="WebAPIs\Company.cs" />

@@ -84,13 +84,8 @@ namespace LessonManager.ViewModels
             get { return staffAndImages_; }
             set
             {
-                var orgCount = staffAndImages_ == null ? 0 : staffAndImages_.Count;
-                var newCount = value == null ? 0 : value.Count;
                 staffAndImages_ = value;
-                if (newCount != orgCount) // 数が変わったときだけ発火する
-                {
-                    RaisePropertyChanged();
-                }
+                RaisePropertyChanged();
             }
         }
 

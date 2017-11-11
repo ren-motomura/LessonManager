@@ -29,8 +29,26 @@ namespace LessonManager.Views.Domain
         {
             var textBox = sender as TextBox;
             var tmpStr = textBox.Text + e.Text;
-            float xx;
-            e.Handled = !(Single.TryParse(tmpStr, out xx));
+            int xx;
+            e.Handled = !(Int32.TryParse(tmpStr, out xx));
+        }
+
+        private void TextBox_PreviewKeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key != Key.Up && e.Key != Key.Down)
+                return;
+
+            var textBox = sender as TextBox;
+            var tmpStr = textBox.Text;
+            int xx = 0;
+            Int32.TryParse(tmpStr, out xx);
+
+            if (e.Key == Key.Up)
+                xx += 500;
+            else
+                xx = Math.Max(0, xx - 500);
+
+            textBox.Text = xx.ToString();
         }
     }
 }

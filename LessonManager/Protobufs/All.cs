@@ -76,15 +76,27 @@ namespace Protobufs {
             "UmVzcG9uc2USJQoIY3VzdG9tZXIYASABKAsyEy5wcm90b2J1ZnMuQ3VzdG9t",
             "ZXIiNgoQQWRkQ3JlZGl0UmVxdWVzdBISCgpjdXN0b21lcklkGAEgASgFEg4K",
             "BmFtb3VudBgCIAEoBSI6ChFBZGRDcmVkaXRSZXNwb25zZRIlCghjdXN0b21l",
-            "chgBIAEoCzITLnByb3RvYnVmcy5DdXN0b21lcirKAQoJRXJyb3JUeXBlEhoK",
-            "FklOVkFMSURfUkVRVUVTVF9GT1JNQVQQABINCglOT1RfRk9VTkQQARIRCg1B",
-            "TFJFQURZX0VYSVNUEAISFAoQSU5WQUxJRF9QQVNTV09SRBADEhkKFUlOVEVS",
-            "TkFMX1NFUlZFUl9FUlJPUhAEEg0KCUZPUkJJRERFThAFEgwKCENPTkZMSUNU",
-            "EAYSFwoTQ0FSRF9OT1RfUkVHSVNURVJFRBAHEhgKFERVUExJQ0FURV9OQU1F",
-            "X0VYSVNUEAhiBnByb3RvMw=="));
+            "chgBIAEoCzITLnByb3RvYnVmcy5DdXN0b21lciKWAQoGTGVzc29uEgoKAmlk",
+            "GAEgASgFEhAKCHN0dWRpb0lkGAIgASgFEg8KB3N0YWZmSWQYAyABKAUSEgoK",
+            "Y3VzdG9tZXJJZBgEIAEoBRILCgNmZWUYBSABKAUSKwoLcGF5bWVudFR5cGUY",
+            "BiABKA4yFi5wcm90b2J1ZnMuUGF5bWVudFR5cGUSDwoHdGFrZW5BdBgHIAEo",
+            "AyKZAQoVUmVnaXN0ZXJMZXNzb25SZXF1ZXN0EhAKCHN0dWRpb0lkGAIgASgF",
+            "Eg8KB3N0YWZmSWQYAyABKAUSEgoKY3VzdG9tZXJJZBgEIAEoBRILCgNmZWUY",
+            "BSABKAUSKwoLcGF5bWVudFR5cGUYBiABKA4yFi5wcm90b2J1ZnMuUGF5bWVu",
+            "dFR5cGUSDwoHdGFrZW5BdBgHIAEoAyJiChZSZWdpc3Rlckxlc3NvblJlc3Bv",
+            "bnNlEiEKBmxlc3NvbhgBIAEoCzIRLnByb3RvYnVmcy5MZXNzb24SJQoIY3Vz",
+            "dG9tZXIYAiABKAsyEy5wcm90b2J1ZnMuQ3VzdG9tZXIqogIKCUVycm9yVHlw",
+            "ZRIaChZJTlZBTElEX1JFUVVFU1RfRk9STUFUEAASDQoJTk9UX0ZPVU5EEAES",
+            "EQoNQUxSRUFEWV9FWElTVBACEhQKEElOVkFMSURfUEFTU1dPUkQQAxIZChVJ",
+            "TlRFUk5BTF9TRVJWRVJfRVJST1IQBBINCglGT1JCSURERU4QBRIMCghDT05G",
+            "TElDVBAGEhcKE0NBUkRfTk9UX1JFR0lTVEVSRUQQBxIYChREVVBMSUNBVEVf",
+            "TkFNRV9FWElTVBAIEhQKEFNUVURJT19OT1RfRk9VTkQQCRITCg9TVEFGRl9O",
+            "T1RfRk9VTkQQChIWChJDVVNUT01FUl9OT1RfRk9VTkQQCxITCg9DUkVESVRf",
+            "U0hPUlRBR0UQDColCgtQYXltZW50VHlwZRIKCgZCeUNhc2gQABIKCgZCeUNh",
+            "cmQQAWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
-          new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Protobufs.ErrorType), }, new pbr::GeneratedClrTypeInfo[] {
+          new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Protobufs.ErrorType), typeof(global::Protobufs.PaymentType), }, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::Protobufs.ErrorResponse), global::Protobufs.ErrorResponse.Parser, new[]{ "ErrorType", "Message" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Protobufs.Company), global::Protobufs.Company.Parser, new[]{ "Id", "Name", "EmailAddress", "CreatedAt", "ImageLInk" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Protobufs.CreateSessionRequest), global::Protobufs.CreateSessionRequest.Parser, new[]{ "EmailAddress", "Password" }, null, null, null),
@@ -123,7 +135,10 @@ namespace Protobufs {
             new pbr::GeneratedClrTypeInfo(typeof(global::Protobufs.SetCardOnCustomerRequest), global::Protobufs.SetCardOnCustomerRequest.Parser, new[]{ "CustomerId", "Card" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Protobufs.SetCardOnCustomerResponse), global::Protobufs.SetCardOnCustomerResponse.Parser, new[]{ "Customer" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Protobufs.AddCreditRequest), global::Protobufs.AddCreditRequest.Parser, new[]{ "CustomerId", "Amount" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Protobufs.AddCreditResponse), global::Protobufs.AddCreditResponse.Parser, new[]{ "Customer" }, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Protobufs.AddCreditResponse), global::Protobufs.AddCreditResponse.Parser, new[]{ "Customer" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Protobufs.Lesson), global::Protobufs.Lesson.Parser, new[]{ "Id", "StudioId", "StaffId", "CustomerId", "Fee", "PaymentType", "TakenAt" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Protobufs.RegisterLessonRequest), global::Protobufs.RegisterLessonRequest.Parser, new[]{ "StudioId", "StaffId", "CustomerId", "Fee", "PaymentType", "TakenAt" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Protobufs.RegisterLessonResponse), global::Protobufs.RegisterLessonResponse.Parser, new[]{ "Lesson", "Customer" }, null, null, null)
           }));
     }
     #endregion
@@ -140,6 +155,15 @@ namespace Protobufs {
     [pbr::OriginalName("CONFLICT")] Conflict = 6,
     [pbr::OriginalName("CARD_NOT_REGISTERED")] CardNotRegistered = 7,
     [pbr::OriginalName("DUPLICATE_NAME_EXIST")] DuplicateNameExist = 8,
+    [pbr::OriginalName("STUDIO_NOT_FOUND")] StudioNotFound = 9,
+    [pbr::OriginalName("STAFF_NOT_FOUND")] StaffNotFound = 10,
+    [pbr::OriginalName("CUSTOMER_NOT_FOUND")] CustomerNotFound = 11,
+    [pbr::OriginalName("CREDIT_SHORTAGE")] CreditShortage = 12,
+  }
+
+  public enum PaymentType {
+    [pbr::OriginalName("ByCash")] ByCash = 0,
+    [pbr::OriginalName("ByCard")] ByCard = 1,
   }
 
   #endregion
@@ -5564,6 +5588,705 @@ namespace Protobufs {
             input.SkipLastField();
             break;
           case 10: {
+            if (customer_ == null) {
+              customer_ = new global::Protobufs.Customer();
+            }
+            input.ReadMessage(customer_);
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  public sealed partial class Lesson : pb::IMessage<Lesson> {
+    private static readonly pb::MessageParser<Lesson> _parser = new pb::MessageParser<Lesson>(() => new Lesson());
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<Lesson> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Protobufs.AllReflection.Descriptor.MessageTypes[39]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public Lesson() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public Lesson(Lesson other) : this() {
+      id_ = other.id_;
+      studioId_ = other.studioId_;
+      staffId_ = other.staffId_;
+      customerId_ = other.customerId_;
+      fee_ = other.fee_;
+      paymentType_ = other.paymentType_;
+      takenAt_ = other.takenAt_;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public Lesson Clone() {
+      return new Lesson(this);
+    }
+
+    /// <summary>Field number for the "id" field.</summary>
+    public const int IdFieldNumber = 1;
+    private int id_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int Id {
+      get { return id_; }
+      set {
+        id_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "studioId" field.</summary>
+    public const int StudioIdFieldNumber = 2;
+    private int studioId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int StudioId {
+      get { return studioId_; }
+      set {
+        studioId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "staffId" field.</summary>
+    public const int StaffIdFieldNumber = 3;
+    private int staffId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int StaffId {
+      get { return staffId_; }
+      set {
+        staffId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "customerId" field.</summary>
+    public const int CustomerIdFieldNumber = 4;
+    private int customerId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CustomerId {
+      get { return customerId_; }
+      set {
+        customerId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "fee" field.</summary>
+    public const int FeeFieldNumber = 5;
+    private int fee_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int Fee {
+      get { return fee_; }
+      set {
+        fee_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "paymentType" field.</summary>
+    public const int PaymentTypeFieldNumber = 6;
+    private global::Protobufs.PaymentType paymentType_ = 0;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::Protobufs.PaymentType PaymentType {
+      get { return paymentType_; }
+      set {
+        paymentType_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "takenAt" field.</summary>
+    public const int TakenAtFieldNumber = 7;
+    private long takenAt_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public long TakenAt {
+      get { return takenAt_; }
+      set {
+        takenAt_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as Lesson);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(Lesson other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (Id != other.Id) return false;
+      if (StudioId != other.StudioId) return false;
+      if (StaffId != other.StaffId) return false;
+      if (CustomerId != other.CustomerId) return false;
+      if (Fee != other.Fee) return false;
+      if (PaymentType != other.PaymentType) return false;
+      if (TakenAt != other.TakenAt) return false;
+      return true;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (Id != 0) hash ^= Id.GetHashCode();
+      if (StudioId != 0) hash ^= StudioId.GetHashCode();
+      if (StaffId != 0) hash ^= StaffId.GetHashCode();
+      if (CustomerId != 0) hash ^= CustomerId.GetHashCode();
+      if (Fee != 0) hash ^= Fee.GetHashCode();
+      if (PaymentType != 0) hash ^= PaymentType.GetHashCode();
+      if (TakenAt != 0L) hash ^= TakenAt.GetHashCode();
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (Id != 0) {
+        output.WriteRawTag(8);
+        output.WriteInt32(Id);
+      }
+      if (StudioId != 0) {
+        output.WriteRawTag(16);
+        output.WriteInt32(StudioId);
+      }
+      if (StaffId != 0) {
+        output.WriteRawTag(24);
+        output.WriteInt32(StaffId);
+      }
+      if (CustomerId != 0) {
+        output.WriteRawTag(32);
+        output.WriteInt32(CustomerId);
+      }
+      if (Fee != 0) {
+        output.WriteRawTag(40);
+        output.WriteInt32(Fee);
+      }
+      if (PaymentType != 0) {
+        output.WriteRawTag(48);
+        output.WriteEnum((int) PaymentType);
+      }
+      if (TakenAt != 0L) {
+        output.WriteRawTag(56);
+        output.WriteInt64(TakenAt);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (Id != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Id);
+      }
+      if (StudioId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(StudioId);
+      }
+      if (StaffId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(StaffId);
+      }
+      if (CustomerId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(CustomerId);
+      }
+      if (Fee != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Fee);
+      }
+      if (PaymentType != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) PaymentType);
+      }
+      if (TakenAt != 0L) {
+        size += 1 + pb::CodedOutputStream.ComputeInt64Size(TakenAt);
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(Lesson other) {
+      if (other == null) {
+        return;
+      }
+      if (other.Id != 0) {
+        Id = other.Id;
+      }
+      if (other.StudioId != 0) {
+        StudioId = other.StudioId;
+      }
+      if (other.StaffId != 0) {
+        StaffId = other.StaffId;
+      }
+      if (other.CustomerId != 0) {
+        CustomerId = other.CustomerId;
+      }
+      if (other.Fee != 0) {
+        Fee = other.Fee;
+      }
+      if (other.PaymentType != 0) {
+        PaymentType = other.PaymentType;
+      }
+      if (other.TakenAt != 0L) {
+        TakenAt = other.TakenAt;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            input.SkipLastField();
+            break;
+          case 8: {
+            Id = input.ReadInt32();
+            break;
+          }
+          case 16: {
+            StudioId = input.ReadInt32();
+            break;
+          }
+          case 24: {
+            StaffId = input.ReadInt32();
+            break;
+          }
+          case 32: {
+            CustomerId = input.ReadInt32();
+            break;
+          }
+          case 40: {
+            Fee = input.ReadInt32();
+            break;
+          }
+          case 48: {
+            paymentType_ = (global::Protobufs.PaymentType) input.ReadEnum();
+            break;
+          }
+          case 56: {
+            TakenAt = input.ReadInt64();
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  public sealed partial class RegisterLessonRequest : pb::IMessage<RegisterLessonRequest> {
+    private static readonly pb::MessageParser<RegisterLessonRequest> _parser = new pb::MessageParser<RegisterLessonRequest>(() => new RegisterLessonRequest());
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<RegisterLessonRequest> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Protobufs.AllReflection.Descriptor.MessageTypes[40]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public RegisterLessonRequest() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public RegisterLessonRequest(RegisterLessonRequest other) : this() {
+      studioId_ = other.studioId_;
+      staffId_ = other.staffId_;
+      customerId_ = other.customerId_;
+      fee_ = other.fee_;
+      paymentType_ = other.paymentType_;
+      takenAt_ = other.takenAt_;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public RegisterLessonRequest Clone() {
+      return new RegisterLessonRequest(this);
+    }
+
+    /// <summary>Field number for the "studioId" field.</summary>
+    public const int StudioIdFieldNumber = 2;
+    private int studioId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int StudioId {
+      get { return studioId_; }
+      set {
+        studioId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "staffId" field.</summary>
+    public const int StaffIdFieldNumber = 3;
+    private int staffId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int StaffId {
+      get { return staffId_; }
+      set {
+        staffId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "customerId" field.</summary>
+    public const int CustomerIdFieldNumber = 4;
+    private int customerId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CustomerId {
+      get { return customerId_; }
+      set {
+        customerId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "fee" field.</summary>
+    public const int FeeFieldNumber = 5;
+    private int fee_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int Fee {
+      get { return fee_; }
+      set {
+        fee_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "paymentType" field.</summary>
+    public const int PaymentTypeFieldNumber = 6;
+    private global::Protobufs.PaymentType paymentType_ = 0;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::Protobufs.PaymentType PaymentType {
+      get { return paymentType_; }
+      set {
+        paymentType_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "takenAt" field.</summary>
+    public const int TakenAtFieldNumber = 7;
+    private long takenAt_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public long TakenAt {
+      get { return takenAt_; }
+      set {
+        takenAt_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as RegisterLessonRequest);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(RegisterLessonRequest other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (StudioId != other.StudioId) return false;
+      if (StaffId != other.StaffId) return false;
+      if (CustomerId != other.CustomerId) return false;
+      if (Fee != other.Fee) return false;
+      if (PaymentType != other.PaymentType) return false;
+      if (TakenAt != other.TakenAt) return false;
+      return true;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (StudioId != 0) hash ^= StudioId.GetHashCode();
+      if (StaffId != 0) hash ^= StaffId.GetHashCode();
+      if (CustomerId != 0) hash ^= CustomerId.GetHashCode();
+      if (Fee != 0) hash ^= Fee.GetHashCode();
+      if (PaymentType != 0) hash ^= PaymentType.GetHashCode();
+      if (TakenAt != 0L) hash ^= TakenAt.GetHashCode();
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (StudioId != 0) {
+        output.WriteRawTag(16);
+        output.WriteInt32(StudioId);
+      }
+      if (StaffId != 0) {
+        output.WriteRawTag(24);
+        output.WriteInt32(StaffId);
+      }
+      if (CustomerId != 0) {
+        output.WriteRawTag(32);
+        output.WriteInt32(CustomerId);
+      }
+      if (Fee != 0) {
+        output.WriteRawTag(40);
+        output.WriteInt32(Fee);
+      }
+      if (PaymentType != 0) {
+        output.WriteRawTag(48);
+        output.WriteEnum((int) PaymentType);
+      }
+      if (TakenAt != 0L) {
+        output.WriteRawTag(56);
+        output.WriteInt64(TakenAt);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (StudioId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(StudioId);
+      }
+      if (StaffId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(StaffId);
+      }
+      if (CustomerId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(CustomerId);
+      }
+      if (Fee != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Fee);
+      }
+      if (PaymentType != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) PaymentType);
+      }
+      if (TakenAt != 0L) {
+        size += 1 + pb::CodedOutputStream.ComputeInt64Size(TakenAt);
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(RegisterLessonRequest other) {
+      if (other == null) {
+        return;
+      }
+      if (other.StudioId != 0) {
+        StudioId = other.StudioId;
+      }
+      if (other.StaffId != 0) {
+        StaffId = other.StaffId;
+      }
+      if (other.CustomerId != 0) {
+        CustomerId = other.CustomerId;
+      }
+      if (other.Fee != 0) {
+        Fee = other.Fee;
+      }
+      if (other.PaymentType != 0) {
+        PaymentType = other.PaymentType;
+      }
+      if (other.TakenAt != 0L) {
+        TakenAt = other.TakenAt;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            input.SkipLastField();
+            break;
+          case 16: {
+            StudioId = input.ReadInt32();
+            break;
+          }
+          case 24: {
+            StaffId = input.ReadInt32();
+            break;
+          }
+          case 32: {
+            CustomerId = input.ReadInt32();
+            break;
+          }
+          case 40: {
+            Fee = input.ReadInt32();
+            break;
+          }
+          case 48: {
+            paymentType_ = (global::Protobufs.PaymentType) input.ReadEnum();
+            break;
+          }
+          case 56: {
+            TakenAt = input.ReadInt64();
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  public sealed partial class RegisterLessonResponse : pb::IMessage<RegisterLessonResponse> {
+    private static readonly pb::MessageParser<RegisterLessonResponse> _parser = new pb::MessageParser<RegisterLessonResponse>(() => new RegisterLessonResponse());
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<RegisterLessonResponse> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Protobufs.AllReflection.Descriptor.MessageTypes[41]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public RegisterLessonResponse() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public RegisterLessonResponse(RegisterLessonResponse other) : this() {
+      Lesson = other.lesson_ != null ? other.Lesson.Clone() : null;
+      Customer = other.customer_ != null ? other.Customer.Clone() : null;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public RegisterLessonResponse Clone() {
+      return new RegisterLessonResponse(this);
+    }
+
+    /// <summary>Field number for the "lesson" field.</summary>
+    public const int LessonFieldNumber = 1;
+    private global::Protobufs.Lesson lesson_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::Protobufs.Lesson Lesson {
+      get { return lesson_; }
+      set {
+        lesson_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "customer" field.</summary>
+    public const int CustomerFieldNumber = 2;
+    private global::Protobufs.Customer customer_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::Protobufs.Customer Customer {
+      get { return customer_; }
+      set {
+        customer_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as RegisterLessonResponse);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(RegisterLessonResponse other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (!object.Equals(Lesson, other.Lesson)) return false;
+      if (!object.Equals(Customer, other.Customer)) return false;
+      return true;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (lesson_ != null) hash ^= Lesson.GetHashCode();
+      if (customer_ != null) hash ^= Customer.GetHashCode();
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (lesson_ != null) {
+        output.WriteRawTag(10);
+        output.WriteMessage(Lesson);
+      }
+      if (customer_ != null) {
+        output.WriteRawTag(18);
+        output.WriteMessage(Customer);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (lesson_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Lesson);
+      }
+      if (customer_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Customer);
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(RegisterLessonResponse other) {
+      if (other == null) {
+        return;
+      }
+      if (other.lesson_ != null) {
+        if (lesson_ == null) {
+          lesson_ = new global::Protobufs.Lesson();
+        }
+        Lesson.MergeFrom(other.Lesson);
+      }
+      if (other.customer_ != null) {
+        if (customer_ == null) {
+          customer_ = new global::Protobufs.Customer();
+        }
+        Customer.MergeFrom(other.Customer);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            input.SkipLastField();
+            break;
+          case 10: {
+            if (lesson_ == null) {
+              lesson_ = new global::Protobufs.Lesson();
+            }
+            input.ReadMessage(lesson_);
+            break;
+          }
+          case 18: {
             if (customer_ == null) {
               customer_ = new global::Protobufs.Customer();
             }

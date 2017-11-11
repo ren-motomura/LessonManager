@@ -13,5 +13,9 @@ namespace LessonManager.Utils
         {
             return epoch.Add(new TimeSpan(timestamp)).ToLocalTime();
         }
+        public static long DateTimeToTimestamp(DateTime dt)
+        {
+            return Convert.ToInt64(dt.Subtract(epoch).TotalSeconds);
+        }
     }
 }

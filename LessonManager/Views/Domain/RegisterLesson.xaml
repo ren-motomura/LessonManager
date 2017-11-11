@@ -7,6 +7,7 @@
              xmlns:domain="clr-namespace:LessonManager.Views.Domain"
              xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
              xmlns:vm="clr-namespace:LessonManager.ViewModels"
+             xmlns:sys="clr-namespace:System;assembly=mscorlib"
              mc:Ignorable="d" 
              d:DesignHeight="700" d:DesignWidth="1000">
     <UserControl.DataContext>
@@ -55,6 +56,7 @@
                 <ComboBox Grid.Row="1" Grid.Column="2"
                           Width="150" Style="{StaticResource MaterialDesignComboBox}"
                           ItemsSource="{Binding Studios}"
+                          SelectedItem="{Binding SelectedStudio, Mode=TwoWay}"
                           SelectedValuePath="ID"
                           HorizontalAlignment="Left">
                     <ComboBox.ItemTemplate>
@@ -69,6 +71,7 @@
                 <ComboBox Grid.Row="2" Grid.Column="2"
                           Width="150" Style="{StaticResource MaterialDesignComboBox}"
                           ItemsSource="{Binding Staffs}"
+                          SelectedItem="{Binding SelectedStaff, Mode=TwoWay}"
                           SelectedValuePath="ID"
                           HorizontalAlignment="Left">
                     <ComboBox.ItemTemplate>
@@ -98,7 +101,8 @@
                 <StackPanel Grid.Row="4" Grid.Column="2" Orientation="Horizontal">
                     <TextBlock VerticalAlignment="Center" Margin="0 0 10 0">¥-</TextBlock>
                     <TextBox Grid.Row="4" Grid.Column="2"
-                             Width="100" VerticalAlignment="Center" TextAlignment="Right" PreviewTextInput="TextBox_PreviewTextInput"/>
+                             Width="100" VerticalAlignment="Center" TextAlignment="Right" PreviewTextInput="TextBox_PreviewTextInput" PreviewKeyDown="TextBox_PreviewKeyDown"
+                             Text="{Binding Fee, Mode=TwoWay}"/>
                 </StackPanel>
 
                 <TextBlock Grid.Row="5" Grid.Column="0"
@@ -106,15 +110,14 @@
                 <ComboBox Grid.Row="5" Grid.Column="2"
                           Width="150" Style="{StaticResource MaterialDesignComboBox}"
                           ItemsSource="{Binding PaymentTypes}"
-                          SelectedValuePath="ID"
+                          SelectedValuePath="Value"
+                          SelectedValue="{Binding SelectedPaymentType, Mode=TwoWay}"
                           HorizontalAlignment="Left">
                     <ComboBox.ItemTemplate>
                         <DataTemplate>
                             <TextBlock Text="{Binding Name}"/>
                         </DataTemplate>
                     </ComboBox.ItemTemplate>
-                    <ComboBoxItem Tag="0" Content="現金"/>
-                    <ComboBoxItem Tag="1" Content="カード"/>
                 </ComboBox>
 
                 <TextBlock Grid.Row="6" Grid.Column="0"
@@ -124,7 +127,8 @@
                          Height="100" AcceptsReturn="True" TextWrapping="Wrap" VerticalScrollBarVisibility="Auto"/>
 
                 <Button Grid.Row="7" Grid.Column="2" Style="{StaticResource MaterialDesignRaisedAccentButton}"
-                        Width="100" HorizontalAlignment="Left" Margin="0 5 0 0">
+                        Width="100" HorizontalAlignment="Left" Margin="0 5 0 0"
+                        Command="{Binding RegisterLessonCommand}">
                     支払い
                 </Button>
             </Grid>
