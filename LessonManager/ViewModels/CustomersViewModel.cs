@@ -330,7 +330,7 @@ namespace LessonManager.ViewModels
         private void SearchFromNameOrDescriptionCommandExecute(object parameter)
         {
             // TODO: だいぶ雑な作り
-            var searchBox = parameter as Views.Domain.SearchBox;
+            var searchBox = parameter as Views.Domain.SearchBoxWithCard;
             string searchText = searchBox.SearchText;
             if (searchText == null || searchText == "")
             {
@@ -357,7 +357,7 @@ namespace LessonManager.ViewModels
                 return;
             }
 
-            var searchBox = parameter as Views.Domain.SearchBox;
+            var searchBox = parameter as Views.Domain.SearchBoxWithCard;
             searchBox.SearchText = cardID;
 
             Customers = Storage.GetInstance().Customers;
@@ -371,7 +371,7 @@ namespace LessonManager.ViewModels
         private void SearchConditionRemoveCommandExecute(object parameter)
         {
             // TODO: だいぶ雑な作り
-            var searchBox = parameter as Views.Domain.SearchBox;
+            var searchBox = parameter as Views.Domain.SearchBoxWithCard;
             searchBox.SearchText = "";
 
             Customers = Storage.GetInstance().Customers;

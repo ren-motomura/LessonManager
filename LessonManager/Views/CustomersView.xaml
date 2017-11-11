@@ -31,7 +31,7 @@
             </Button>
         </Grid>
         <Grid Grid.Row="1" Margin="20 40 20 0">
-            <domain:SearchBox Height="30" Width="250" HorizontalAlignment="Left"
+            <domain:SearchBoxWithCard Height="30" Width="250" HorizontalAlignment="Left"
                               MagnifyButtonCommand="{Binding SearchFromNameOrDescriptionCommand}"
                               MagnifyButtonCommandParameter="{Binding RelativeSource={RelativeSource Self}}"
                               MagnifyButtonToolTip="名前や説明から顧客を検索します"

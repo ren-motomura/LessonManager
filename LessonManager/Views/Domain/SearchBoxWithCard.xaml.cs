@@ -19,7 +19,7 @@ namespace LessonManager.Views.Domain
     /// <summary>
     /// UserControl1.xaml の相互作用ロジック
     /// </summary>
-    public partial class SearchBox : UserControl, INotifyPropertyChanged
+    public partial class SearchBoxWithCard : UserControl, INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
         private void RaisePropertyChanged()
@@ -27,7 +27,7 @@ namespace LessonManager.Views.Domain
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(null));
         }
 
-        public SearchBox()
+        public SearchBoxWithCard()
         {
             InitializeComponent();
             SearchText = "";
@@ -47,10 +47,43 @@ namespace LessonManager.Views.Domain
             }
         }
 
+        public static readonly DependencyProperty CardButtonCommandProperty =
+            DependencyProperty.Register("CardButtonCommand",
+                typeof(ICommand),
+                typeof(SearchBoxWithCard),
+                new FrameworkPropertyMetadata());
+        public ICommand CardButtonCommand
+        {
+            get { return (ICommand)GetValue(CardButtonCommandProperty); }
+            set { SetValue(CardButtonCommandProperty, value); RaisePropertyChanged(); }
+        }
+
+        public static readonly DependencyProperty CardButtonCommandParameterProperty =
+            DependencyProperty.Register("CardButtonCommandParameter",
+                typeof(object),
+                typeof(SearchBoxWithCard),
+                new FrameworkPropertyMetadata());
+        public object CardButtonCommandParameter
+        {
+            get { return (object)GetValue(CardButtonCommandParameterProperty); }
+            set { SetValue(CardButtonCommandParameterProperty, value); RaisePropertyChanged(); }
+        }
+
+        public static readonly DependencyProperty CardButtonToolTipProperty =
+            DependencyProperty.Register("CardButtonToolTip",
+                typeof(object),
+                typeof(SearchBoxWithCard),
+                new FrameworkPropertyMetadata());
+        public object CardButtonToolTip
+        {
+            get { return (object)GetValue(CardButtonToolTipProperty); }
+            set { SetValue(CardButtonToolTipProperty, value); RaisePropertyChanged(); }
+        }
+
         public static readonly DependencyProperty MagnifyButtonCommandProperty =
             DependencyProperty.Register("MagnifyButtonCommand",
                 typeof(ICommand),
-                typeof(SearchBox),
+                typeof(SearchBoxWithCard),
                 new FrameworkPropertyMetadata());
         public ICommand MagnifyButtonCommand
         {
@@ -61,7 +94,7 @@ namespace LessonManager.Views.Domain
         public static readonly DependencyProperty MagnifyButtonCommandParameterProperty =
             DependencyProperty.Register("MagnifyButtonCommandParameter",
                 typeof(object),
-                typeof(SearchBox),
+                typeof(SearchBoxWithCard),
                 new FrameworkPropertyMetadata());
         public object MagnifyButtonCommandParameter
         {
@@ -72,7 +105,7 @@ namespace LessonManager.Views.Domain
         public static readonly DependencyProperty MagnifyButtonToolTipProperty =
             DependencyProperty.Register("MagnifyButtonToolTip",
                 typeof(object),
-                typeof(SearchBox),
+                typeof(SearchBoxWithCard),
                 new FrameworkPropertyMetadata());
         public object MagnifyButtonToolTip
         {
@@ -83,7 +116,7 @@ namespace LessonManager.Views.Domain
         public static readonly DependencyProperty CloseButtonCommandProperty =
             DependencyProperty.Register("CloseButtonCommand",
                 typeof(ICommand),
-                typeof(SearchBox),
+                typeof(SearchBoxWithCard),
                 new FrameworkPropertyMetadata());
         public ICommand CloseButtonCommand
         {
@@ -94,7 +127,7 @@ namespace LessonManager.Views.Domain
         public static readonly DependencyProperty CloseButtonCommandParameterProperty =
             DependencyProperty.Register("CloseButtonCommandParameter",
                 typeof(object),
-                typeof(SearchBox),
+                typeof(SearchBoxWithCard),
                 new FrameworkPropertyMetadata());
         public object CloseButtonCommandParameter
         {
@@ -105,7 +138,7 @@ namespace LessonManager.Views.Domain
         public static readonly DependencyProperty CloseButtonToolTipProperty =
             DependencyProperty.Register("CloseButtonToolTip",
                 typeof(object),
-                typeof(SearchBox),
+                typeof(SearchBoxWithCard),
                 new FrameworkPropertyMetadata());
         public object CloseButtonToolTip
         {

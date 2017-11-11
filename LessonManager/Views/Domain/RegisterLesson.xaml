@@ -82,11 +82,13 @@
                            Text="顧客" HorizontalAlignment="Right" VerticalAlignment="Center"/>
                 <StackPanel Grid.Row="3" Grid.Column="2" Orientation="Horizontal">
                     <TextBox Width="150" IsReadOnly="True" materialDesign:HintAssist.Hint="顧客を検索してください"
-                             VerticalAlignment="Center"/>
-                    <Button Style="{StaticResource MaterialDesignToolButton}" ToolTip="氏名または説明文から検索します">
+                             VerticalAlignment="Center" Text="{Binding SelectedCustomer.Name}"/>
+                    <Button Style="{StaticResource MaterialDesignToolButton}" ToolTip="氏名または説明文から検索します"
+                            Command="{Binding SearchCustomerCommand}">
                         <materialDesign:PackIcon Kind="Magnify"/>
                     </Button>
-                    <Button Style="{StaticResource MaterialDesignToolButton}" ToolTip="カードをかざして検索します">
+                    <Button Style="{StaticResource MaterialDesignToolButton}" ToolTip="カードをかざして検索します"
+                            Command="{Binding SearchCustomerByCardCommand}">
                         <materialDesign:PackIcon Kind="CreditCard"/>
                     </Button>
                 </StackPanel>
@@ -111,6 +113,8 @@
                             <TextBlock Text="{Binding Name}"/>
                         </DataTemplate>
                     </ComboBox.ItemTemplate>
+                    <ComboBoxItem Tag="0" Content="現金"/>
+                    <ComboBoxItem Tag="1" Content="カード"/>
                 </ComboBox>
 
                 <TextBlock Grid.Row="6" Grid.Column="0"

@@ -23,6 +23,12 @@ namespace LessonManager.ViewModels
             SetTakenAtNowCommand = new DelegateCommand();
             SetTakenAtNowCommand.ExecuteHandler = SetTakenAtNowCommandExecute;
 
+            SearchCustomerCommand = new DelegateCommand();
+            SearchCustomerCommand.ExecuteHandler = SearchCustomerCommandExecute;
+
+            SearchCustomerByCardCommand = new DelegateCommand();
+            SearchCustomerByCardCommand.ExecuteHandler = SearchCustomerByCardCommandExecute;
+
             Studios = Storage.GetInstance().Studios;
             Staffs = Storage.GetInstance().Staffs;
 
@@ -72,10 +78,52 @@ namespace LessonManager.ViewModels
             }
         }
 
+        private Customer selectedCustomer_;
+        public Customer SelectedCustomer
+        {
+            get { return selectedCustomer_; }
+            set
+            {
+                selectedCustomer_ = value;
+                RaisePropertyChanged();
+            }
+        }
+
         public DelegateCommand SetTakenAtNowCommand { get; set; }
         private void SetTakenAtNowCommandExecute(object parameter)
         {
             TakenAt = DateTime.Now;
+        }
+
+        public DelegateCommand SearchCustomerCommand { get; set; }
+        private async void SearchCustomerCommandExecute(object paramter)
+        {
+            var modal = new Views.Domain.SearchCustomerModal();
+            object result = await MaterialDesignThemes.Wpf.DialogHost.Show(modal);
+            SelectedCustomer = result as Customer;
+        }
+
+        public DelegateCommand SearchCustomerByCardCommand { get; set; }
+        private async void SearchCustomerByCardCommandExecute(object paramter)
+        {
+            var modal = new Views.Domain.WaitCardModal();
+            object result = await MaterialDesignThemes.Wpf.DialogHost.Show(modal);
+            var cardID = result as string;
+            if (cardID == null)
+            {
+                SnackbarMessageQueue.Instance().Enqueue("キャンセルしました");
+                return;
+            }
+
+            SelectedCustomer = Storage.GetInstance().Customers.Find((c) =>
+            {
+                return c.CardId == cardID;
+            });
+            if (SelectedCustomer == null)
+            {
+                SnackbarMessageQueue.Instance().Enqueue("該当する顧客が見つかりませんでした");
+                return;
+            }
         }
     }
 }

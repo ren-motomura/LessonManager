@@ -121,6 +121,7 @@
     <Compile Include="Utils\Time.cs" />
     <Compile Include="ViewModels\CompanyViewModel.cs" />
     <Compile Include="ViewModels\CustomersViewModel.cs" />
+    <Compile Include="ViewModels\Domain\SearchCustomerModalViewModel.cs" />
     <Compile Include="ViewModels\Domain\WaitCardModalViewModel.cs" />
     <Compile Include="ViewModels\RegisterLessonViewModel.cs" />
     <Compile Include="ViewModels\SigninViewModel.cs" />
@@ -156,8 +157,14 @@
     <Compile Include="Views\Domain\RegisterLesson.xaml.cs">
       <DependentUpon>RegisterLesson.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\Domain\SearchBoxWithCard.xaml.cs">
+      <DependentUpon>SearchBoxWithCard.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\Domain\SearchBox.xaml.cs">
       <DependentUpon>SearchBox.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Domain\SearchCustomerModal.xaml.cs">
+      <DependentUpon>SearchCustomerModal.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Domain\WaitCardModal.xaml.cs">
       <DependentUpon>WaitCardModal.xaml</DependentUpon>
@@ -220,7 +227,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\Domain\SearchBoxWithCard.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Views\Domain\SearchBox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Domain\SearchCustomerModal.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
