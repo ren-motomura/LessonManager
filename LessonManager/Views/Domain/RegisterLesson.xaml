@@ -36,7 +36,6 @@
                     <RowDefinition Height="40"/>
                     <RowDefinition Height="40"/>
                     <RowDefinition Height="40"/>
-                    <RowDefinition Height="100"/>
                     <RowDefinition Height="40"/>
                 </Grid.RowDefinitions>
 
@@ -120,13 +119,7 @@
                     </ComboBox.ItemTemplate>
                 </ComboBox>
 
-                <TextBlock Grid.Row="6" Grid.Column="0"
-                           Text="備考" HorizontalAlignment="Right" VerticalAlignment="Center"/>
-                <TextBox Grid.Row="6" Grid.Column="2" Style="{StaticResource MaterialDesignTextFieldBoxTextBox}"
-                         materialDesign:HintAssist.Hint="任意入力"
-                         Height="100" AcceptsReturn="True" TextWrapping="Wrap" VerticalScrollBarVisibility="Auto"/>
-
-                <Button Grid.Row="7" Grid.Column="2" Style="{StaticResource MaterialDesignRaisedAccentButton}"
+                <Button Grid.Row="6" Grid.Column="2" Style="{StaticResource MaterialDesignRaisedAccentButton}"
                         Width="100" HorizontalAlignment="Left" Margin="0 5 0 0"
                         Command="{Binding RegisterLessonCommand}">
                     支払い

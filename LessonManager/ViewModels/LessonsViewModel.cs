@@ -35,6 +35,9 @@ namespace LessonManager.ViewModels
             ResetCommand = new DelegateCommand();
             ResetCommand.ExecuteHandler = ResetCommandExecute;
 
+            DeleteLessonCommand = new DelegateCommand();
+            DeleteLessonCommand.ExecuteHandler = DeleteLessonCommandExecute;
+
             Studios = Storage.GetInstance().Studios;
             Staffs = Storage.GetInstance().Staffs;
 
@@ -211,6 +214,39 @@ namespace LessonManager.ViewModels
         private void ResetCommandExecute(object parameter)
         {
             ResetConditions();
+        }
+
+        public DelegateCommand DeleteLessonCommand { get; set; }
+        private async void DeleteLessonCommandExecute(object parameter)
+        {
+            // confirmation
+            {
+                var view = new Views.Domain.ConfirmModal();
+                view.DataContext = String.Format(@"レッスンを削除します。
+この操作は取り消せません。
+本当によろしいですか？");
+
+                object confirmResult = await MaterialDesignThemes.Wpf.DialogHost.Show(view);
+                if (!(bool)confirmResult)
+                {
+                    SnackbarMessageQueue.Instance().Enqueue("キャンセルしました");
+                    return;
+                }
+            }
+
+            var target = parameter as Lesson;
+            PleaseWaitVisibility.Instance().IsVisible = true;
+            var result = await WebAPIs.Lesson.Delete(target.ID);
+            PleaseWaitVisibility.Instance().IsVisible = false;
+            if (result.IsSuccess)
+            {
+                Lessons = Lessons.Remove(target);
+                SnackbarMessageQueue.Instance().Enqueue("レッスンを削除しました");
+            }
+            else
+            {
+                SnackbarMessageQueue.Instance().Enqueue("検索に失敗しました");
+            }
         }
     }
 }

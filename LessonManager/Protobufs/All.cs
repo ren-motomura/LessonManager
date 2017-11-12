@@ -89,15 +89,16 @@ namespace Protobufs {
             "c29uc1JlcXVlc3QSEAoIc3R1ZGlvSWQYASABKAUSDwoHc3RhZmZJZBgCIAEo",
             "BRISCgpjdXN0b21lcklkGAMgASgFEhMKC3Rha2VuQXRGcm9tGAQgASgDEhEK",
             "CXRha2VuQXRUbxgFIAEoAyI7ChVTZWFyY2hMZXNzb25zUmVzcG9uc2USIgoH",
-            "bGVzc29ucxgBIAMoCzIRLnByb3RvYnVmcy5MZXNzb24qogIKCUVycm9yVHlw",
-            "ZRIaChZJTlZBTElEX1JFUVVFU1RfRk9STUFUEAASDQoJTk9UX0ZPVU5EEAES",
-            "EQoNQUxSRUFEWV9FWElTVBACEhQKEElOVkFMSURfUEFTU1dPUkQQAxIZChVJ",
-            "TlRFUk5BTF9TRVJWRVJfRVJST1IQBBINCglGT1JCSURERU4QBRIMCghDT05G",
-            "TElDVBAGEhcKE0NBUkRfTk9UX1JFR0lTVEVSRUQQBxIYChREVVBMSUNBVEVf",
-            "TkFNRV9FWElTVBAIEhQKEFNUVURJT19OT1RfRk9VTkQQCRITCg9TVEFGRl9O",
-            "T1RfRk9VTkQQChIWChJDVVNUT01FUl9OT1RfRk9VTkQQCxITCg9DUkVESVRf",
-            "U0hPUlRBR0UQDColCgtQYXltZW50VHlwZRIKCgZCeUNhc2gQABIKCgZCeUNh",
-            "cmQQAWIGcHJvdG8z"));
+            "bGVzc29ucxgBIAMoCzIRLnByb3RvYnVmcy5MZXNzb24iIQoTRGVsZXRlTGVz",
+            "c29uUmVxdWVzdBIKCgJpZBgBIAEoBSInChREZWxldGVMZXNzb25SZXNwb25z",
+            "ZRIPCgdzdWNjZXNzGAEgASgIKqICCglFcnJvclR5cGUSGgoWSU5WQUxJRF9S",
+            "RVFVRVNUX0ZPUk1BVBAAEg0KCU5PVF9GT1VORBABEhEKDUFMUkVBRFlfRVhJ",
+            "U1QQAhIUChBJTlZBTElEX1BBU1NXT1JEEAMSGQoVSU5URVJOQUxfU0VSVkVS",
+            "X0VSUk9SEAQSDQoJRk9SQklEREVOEAUSDAoIQ09ORkxJQ1QQBhIXChNDQVJE",
+            "X05PVF9SRUdJU1RFUkVEEAcSGAoURFVQTElDQVRFX05BTUVfRVhJU1QQCBIU",
+            "ChBTVFVESU9fTk9UX0ZPVU5EEAkSEwoPU1RBRkZfTk9UX0ZPVU5EEAoSFgoS",
+            "Q1VTVE9NRVJfTk9UX0ZPVU5EEAsSEwoPQ1JFRElUX1NIT1JUQUdFEAwqJQoL",
+            "UGF5bWVudFR5cGUSCgoGQnlDYXNoEAASCgoGQnlDYXJkEAFiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Protobufs.ErrorType), typeof(global::Protobufs.PaymentType), }, new pbr::GeneratedClrTypeInfo[] {
@@ -144,7 +145,9 @@ namespace Protobufs {
             new pbr::GeneratedClrTypeInfo(typeof(global::Protobufs.RegisterLessonRequest), global::Protobufs.RegisterLessonRequest.Parser, new[]{ "StudioId", "StaffId", "CustomerId", "Fee", "PaymentType", "TakenAt" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Protobufs.RegisterLessonResponse), global::Protobufs.RegisterLessonResponse.Parser, new[]{ "Lesson", "Customer" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Protobufs.SearchLessonsRequest), global::Protobufs.SearchLessonsRequest.Parser, new[]{ "StudioId", "StaffId", "CustomerId", "TakenAtFrom", "TakenAtTo" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Protobufs.SearchLessonsResponse), global::Protobufs.SearchLessonsResponse.Parser, new[]{ "Lessons" }, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Protobufs.SearchLessonsResponse), global::Protobufs.SearchLessonsResponse.Parser, new[]{ "Lessons" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Protobufs.DeleteLessonRequest), global::Protobufs.DeleteLessonRequest.Parser, new[]{ "Id" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Protobufs.DeleteLessonResponse), global::Protobufs.DeleteLessonResponse.Parser, new[]{ "Success" }, null, null, null)
           }));
     }
     #endregion
@@ -6635,6 +6638,240 @@ namespace Protobufs {
             break;
           case 10: {
             lessons_.AddEntriesFrom(input, _repeated_lessons_codec);
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  public sealed partial class DeleteLessonRequest : pb::IMessage<DeleteLessonRequest> {
+    private static readonly pb::MessageParser<DeleteLessonRequest> _parser = new pb::MessageParser<DeleteLessonRequest>(() => new DeleteLessonRequest());
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<DeleteLessonRequest> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Protobufs.AllReflection.Descriptor.MessageTypes[44]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public DeleteLessonRequest() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public DeleteLessonRequest(DeleteLessonRequest other) : this() {
+      id_ = other.id_;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public DeleteLessonRequest Clone() {
+      return new DeleteLessonRequest(this);
+    }
+
+    /// <summary>Field number for the "id" field.</summary>
+    public const int IdFieldNumber = 1;
+    private int id_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int Id {
+      get { return id_; }
+      set {
+        id_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as DeleteLessonRequest);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(DeleteLessonRequest other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (Id != other.Id) return false;
+      return true;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (Id != 0) hash ^= Id.GetHashCode();
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (Id != 0) {
+        output.WriteRawTag(8);
+        output.WriteInt32(Id);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (Id != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Id);
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(DeleteLessonRequest other) {
+      if (other == null) {
+        return;
+      }
+      if (other.Id != 0) {
+        Id = other.Id;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            input.SkipLastField();
+            break;
+          case 8: {
+            Id = input.ReadInt32();
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  public sealed partial class DeleteLessonResponse : pb::IMessage<DeleteLessonResponse> {
+    private static readonly pb::MessageParser<DeleteLessonResponse> _parser = new pb::MessageParser<DeleteLessonResponse>(() => new DeleteLessonResponse());
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<DeleteLessonResponse> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Protobufs.AllReflection.Descriptor.MessageTypes[45]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public DeleteLessonResponse() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public DeleteLessonResponse(DeleteLessonResponse other) : this() {
+      success_ = other.success_;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public DeleteLessonResponse Clone() {
+      return new DeleteLessonResponse(this);
+    }
+
+    /// <summary>Field number for the "success" field.</summary>
+    public const int SuccessFieldNumber = 1;
+    private bool success_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Success {
+      get { return success_; }
+      set {
+        success_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as DeleteLessonResponse);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(DeleteLessonResponse other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (Success != other.Success) return false;
+      return true;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (Success != false) hash ^= Success.GetHashCode();
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (Success != false) {
+        output.WriteRawTag(8);
+        output.WriteBool(Success);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (Success != false) {
+        size += 1 + 1;
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(DeleteLessonResponse other) {
+      if (other == null) {
+        return;
+      }
+      if (other.Success != false) {
+        Success = other.Success;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            input.SkipLastField();
+            break;
+          case 8: {
+            Success = input.ReadBool();
             break;
           }
         }

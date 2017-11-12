@@ -92,7 +92,7 @@
                         <DataTemplate>
                             <Button Height="Auto" Padding="0" Style="{StaticResource MaterialDesignFlatButton}" CommandParameter="{Binding}" ToolTip="このレッスンを削除します">
                                 <Button.Command>
-                                    <Binding Path="DataContext.DeleteCustomerCommand">
+                                    <Binding Path="DataContext.DeleteLessonCommand">
                                         <Binding.RelativeSource>
                                             <RelativeSource Mode="FindAncestor" AncestorType="{x:Type UserControl}"/>
                                         </Binding.RelativeSource>

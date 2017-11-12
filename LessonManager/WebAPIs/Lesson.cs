@@ -101,5 +101,34 @@ namespace LessonManager.WebAPIs
                 null
             );
         }
+
+        public static async Task<Result<bool>> Delete(int id)
+        {
+            var req = new DeleteLessonRequest();
+            req.Id = id;
+
+            var reqData = req.ToByteArray();
+
+            var responseMessage = await Client.Instance.Request("DeleteLesson", reqData).ConfigureAwait(false);
+            var responseDataStream = new MemoryStream((int)responseMessage.Content.Headers.ContentLength); // long から int への cast は避けるべきだが...
+            await responseMessage.Content.CopyToAsync(responseDataStream).ConfigureAwait(false);
+
+            if (!responseMessage.IsSuccessStatusCode)
+            {
+                return new Result<bool>(
+                    false,
+                    false,
+                    new FailData(
+                        responseMessage.StatusCode, ErrorResponse.Parser.ParseFrom(responseDataStream.ToArray())
+                    )
+                );
+            }
+
+            return new Result<bool>(
+                true,
+                true,
+                null
+            );
+        }
     }
 }
