@@ -11,7 +11,7 @@ namespace LessonManager.Utils
         private static DateTime epoch = new DateTime(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc);
         public static DateTime TimestampToDateTime(long timestamp)
         {
-            return epoch.Add(new TimeSpan(timestamp)).ToLocalTime();
+            return epoch.Add(TimeSpan.FromSeconds(timestamp)).ToLocalTime();
         }
         public static long DateTimeToTimestamp(DateTime dt)
         {

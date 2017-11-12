@@ -124,6 +124,7 @@
     <Compile Include="ViewModels\CustomersViewModel.cs" />
     <Compile Include="ViewModels\Domain\SearchCustomerModalViewModel.cs" />
     <Compile Include="ViewModels\Domain\WaitCardModalViewModel.cs" />
+    <Compile Include="ViewModels\LessonsViewModel.cs" />
     <Compile Include="ViewModels\RegisterLessonViewModel.cs" />
     <Compile Include="ViewModels\SigninViewModel.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />

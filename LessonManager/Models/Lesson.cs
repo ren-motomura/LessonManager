@@ -43,6 +43,14 @@ namespace LessonManager.Models
             }
         }
 
+        public string StudioName {
+            get
+            {
+                var studio = Storage.GetInstance().Studios.Find((s) => { return s.ID == StudioID; });
+                return studio != null ? studio.Name : "";
+            }
+        }
+
         private int staffID_;
         public int StaffID
         {
@@ -54,6 +62,14 @@ namespace LessonManager.Models
             }
         }
 
+        public string StaffName {
+            get
+            {
+                var staff = Storage.GetInstance().Staffs.Find((s) => { return s.ID == StaffID; });
+                return staff != null ? staff.Name : "";
+            }
+        }
+
         private int customerID_;
         public int CustomerID
         {
@@ -62,6 +78,14 @@ namespace LessonManager.Models
             {
                 customerID_ = value;
                 RaisePropertyChanged();
+            }
+        }
+
+        public string CustomerName {
+            get
+            {
+                var customer = Storage.GetInstance().Customers.Find((s) => { return s.ID == CustomerID; });
+                return customer != null ? customer.Name : "";
             }
         }
 

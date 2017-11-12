@@ -80,12 +80,16 @@ namespace Protobufs {
             "GAEgASgFEhAKCHN0dWRpb0lkGAIgASgFEg8KB3N0YWZmSWQYAyABKAUSEgoK",
             "Y3VzdG9tZXJJZBgEIAEoBRILCgNmZWUYBSABKAUSKwoLcGF5bWVudFR5cGUY",
             "BiABKA4yFi5wcm90b2J1ZnMuUGF5bWVudFR5cGUSDwoHdGFrZW5BdBgHIAEo",
-            "AyKZAQoVUmVnaXN0ZXJMZXNzb25SZXF1ZXN0EhAKCHN0dWRpb0lkGAIgASgF",
-            "Eg8KB3N0YWZmSWQYAyABKAUSEgoKY3VzdG9tZXJJZBgEIAEoBRILCgNmZWUY",
-            "BSABKAUSKwoLcGF5bWVudFR5cGUYBiABKA4yFi5wcm90b2J1ZnMuUGF5bWVu",
-            "dFR5cGUSDwoHdGFrZW5BdBgHIAEoAyJiChZSZWdpc3Rlckxlc3NvblJlc3Bv",
+            "AyKZAQoVUmVnaXN0ZXJMZXNzb25SZXF1ZXN0EhAKCHN0dWRpb0lkGAEgASgF",
+            "Eg8KB3N0YWZmSWQYAiABKAUSEgoKY3VzdG9tZXJJZBgDIAEoBRILCgNmZWUY",
+            "BCABKAUSKwoLcGF5bWVudFR5cGUYBSABKA4yFi5wcm90b2J1ZnMuUGF5bWVu",
+            "dFR5cGUSDwoHdGFrZW5BdBgGIAEoAyJiChZSZWdpc3Rlckxlc3NvblJlc3Bv",
             "bnNlEiEKBmxlc3NvbhgBIAEoCzIRLnByb3RvYnVmcy5MZXNzb24SJQoIY3Vz",
-            "dG9tZXIYAiABKAsyEy5wcm90b2J1ZnMuQ3VzdG9tZXIqogIKCUVycm9yVHlw",
+            "dG9tZXIYAiABKAsyEy5wcm90b2J1ZnMuQ3VzdG9tZXIidQoUU2VhcmNoTGVz",
+            "c29uc1JlcXVlc3QSEAoIc3R1ZGlvSWQYASABKAUSDwoHc3RhZmZJZBgCIAEo",
+            "BRISCgpjdXN0b21lcklkGAMgASgFEhMKC3Rha2VuQXRGcm9tGAQgASgDEhEK",
+            "CXRha2VuQXRUbxgFIAEoAyI7ChVTZWFyY2hMZXNzb25zUmVzcG9uc2USIgoH",
+            "bGVzc29ucxgBIAMoCzIRLnByb3RvYnVmcy5MZXNzb24qogIKCUVycm9yVHlw",
             "ZRIaChZJTlZBTElEX1JFUVVFU1RfRk9STUFUEAASDQoJTk9UX0ZPVU5EEAES",
             "EQoNQUxSRUFEWV9FWElTVBACEhQKEElOVkFMSURfUEFTU1dPUkQQAxIZChVJ",
             "TlRFUk5BTF9TRVJWRVJfRVJST1IQBBINCglGT1JCSURERU4QBRIMCghDT05G",
@@ -138,7 +142,9 @@ namespace Protobufs {
             new pbr::GeneratedClrTypeInfo(typeof(global::Protobufs.AddCreditResponse), global::Protobufs.AddCreditResponse.Parser, new[]{ "Customer" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Protobufs.Lesson), global::Protobufs.Lesson.Parser, new[]{ "Id", "StudioId", "StaffId", "CustomerId", "Fee", "PaymentType", "TakenAt" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Protobufs.RegisterLessonRequest), global::Protobufs.RegisterLessonRequest.Parser, new[]{ "StudioId", "StaffId", "CustomerId", "Fee", "PaymentType", "TakenAt" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Protobufs.RegisterLessonResponse), global::Protobufs.RegisterLessonResponse.Parser, new[]{ "Lesson", "Customer" }, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Protobufs.RegisterLessonResponse), global::Protobufs.RegisterLessonResponse.Parser, new[]{ "Lesson", "Customer" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Protobufs.SearchLessonsRequest), global::Protobufs.SearchLessonsRequest.Parser, new[]{ "StudioId", "StaffId", "CustomerId", "TakenAtFrom", "TakenAtTo" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Protobufs.SearchLessonsResponse), global::Protobufs.SearchLessonsResponse.Parser, new[]{ "Lessons" }, null, null, null)
           }));
     }
     #endregion
@@ -5923,7 +5929,7 @@ namespace Protobufs {
     }
 
     /// <summary>Field number for the "studioId" field.</summary>
-    public const int StudioIdFieldNumber = 2;
+    public const int StudioIdFieldNumber = 1;
     private int studioId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int StudioId {
@@ -5934,7 +5940,7 @@ namespace Protobufs {
     }
 
     /// <summary>Field number for the "staffId" field.</summary>
-    public const int StaffIdFieldNumber = 3;
+    public const int StaffIdFieldNumber = 2;
     private int staffId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int StaffId {
@@ -5945,7 +5951,7 @@ namespace Protobufs {
     }
 
     /// <summary>Field number for the "customerId" field.</summary>
-    public const int CustomerIdFieldNumber = 4;
+    public const int CustomerIdFieldNumber = 3;
     private int customerId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CustomerId {
@@ -5956,7 +5962,7 @@ namespace Protobufs {
     }
 
     /// <summary>Field number for the "fee" field.</summary>
-    public const int FeeFieldNumber = 5;
+    public const int FeeFieldNumber = 4;
     private int fee_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int Fee {
@@ -5967,7 +5973,7 @@ namespace Protobufs {
     }
 
     /// <summary>Field number for the "paymentType" field.</summary>
-    public const int PaymentTypeFieldNumber = 6;
+    public const int PaymentTypeFieldNumber = 5;
     private global::Protobufs.PaymentType paymentType_ = 0;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::Protobufs.PaymentType PaymentType {
@@ -5978,7 +5984,7 @@ namespace Protobufs {
     }
 
     /// <summary>Field number for the "takenAt" field.</summary>
-    public const int TakenAtFieldNumber = 7;
+    public const int TakenAtFieldNumber = 6;
     private long takenAt_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public long TakenAt {
@@ -6030,27 +6036,27 @@ namespace Protobufs {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
       if (StudioId != 0) {
-        output.WriteRawTag(16);
+        output.WriteRawTag(8);
         output.WriteInt32(StudioId);
       }
       if (StaffId != 0) {
-        output.WriteRawTag(24);
+        output.WriteRawTag(16);
         output.WriteInt32(StaffId);
       }
       if (CustomerId != 0) {
-        output.WriteRawTag(32);
+        output.WriteRawTag(24);
         output.WriteInt32(CustomerId);
       }
       if (Fee != 0) {
-        output.WriteRawTag(40);
+        output.WriteRawTag(32);
         output.WriteInt32(Fee);
       }
       if (PaymentType != 0) {
-        output.WriteRawTag(48);
+        output.WriteRawTag(40);
         output.WriteEnum((int) PaymentType);
       }
       if (TakenAt != 0L) {
-        output.WriteRawTag(56);
+        output.WriteRawTag(48);
         output.WriteInt64(TakenAt);
       }
     }
@@ -6112,27 +6118,27 @@ namespace Protobufs {
           default:
             input.SkipLastField();
             break;
-          case 16: {
+          case 8: {
             StudioId = input.ReadInt32();
             break;
           }
-          case 24: {
+          case 16: {
             StaffId = input.ReadInt32();
             break;
           }
-          case 32: {
+          case 24: {
             CustomerId = input.ReadInt32();
             break;
           }
-          case 40: {
+          case 32: {
             Fee = input.ReadInt32();
             break;
           }
-          case 48: {
+          case 40: {
             paymentType_ = (global::Protobufs.PaymentType) input.ReadEnum();
             break;
           }
-          case 56: {
+          case 48: {
             TakenAt = input.ReadInt64();
             break;
           }
@@ -6291,6 +6297,344 @@ namespace Protobufs {
               customer_ = new global::Protobufs.Customer();
             }
             input.ReadMessage(customer_);
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  public sealed partial class SearchLessonsRequest : pb::IMessage<SearchLessonsRequest> {
+    private static readonly pb::MessageParser<SearchLessonsRequest> _parser = new pb::MessageParser<SearchLessonsRequest>(() => new SearchLessonsRequest());
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<SearchLessonsRequest> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Protobufs.AllReflection.Descriptor.MessageTypes[42]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public SearchLessonsRequest() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public SearchLessonsRequest(SearchLessonsRequest other) : this() {
+      studioId_ = other.studioId_;
+      staffId_ = other.staffId_;
+      customerId_ = other.customerId_;
+      takenAtFrom_ = other.takenAtFrom_;
+      takenAtTo_ = other.takenAtTo_;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public SearchLessonsRequest Clone() {
+      return new SearchLessonsRequest(this);
+    }
+
+    /// <summary>Field number for the "studioId" field.</summary>
+    public const int StudioIdFieldNumber = 1;
+    private int studioId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int StudioId {
+      get { return studioId_; }
+      set {
+        studioId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "staffId" field.</summary>
+    public const int StaffIdFieldNumber = 2;
+    private int staffId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int StaffId {
+      get { return staffId_; }
+      set {
+        staffId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "customerId" field.</summary>
+    public const int CustomerIdFieldNumber = 3;
+    private int customerId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CustomerId {
+      get { return customerId_; }
+      set {
+        customerId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "takenAtFrom" field.</summary>
+    public const int TakenAtFromFieldNumber = 4;
+    private long takenAtFrom_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public long TakenAtFrom {
+      get { return takenAtFrom_; }
+      set {
+        takenAtFrom_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "takenAtTo" field.</summary>
+    public const int TakenAtToFieldNumber = 5;
+    private long takenAtTo_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public long TakenAtTo {
+      get { return takenAtTo_; }
+      set {
+        takenAtTo_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as SearchLessonsRequest);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(SearchLessonsRequest other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (StudioId != other.StudioId) return false;
+      if (StaffId != other.StaffId) return false;
+      if (CustomerId != other.CustomerId) return false;
+      if (TakenAtFrom != other.TakenAtFrom) return false;
+      if (TakenAtTo != other.TakenAtTo) return false;
+      return true;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (StudioId != 0) hash ^= StudioId.GetHashCode();
+      if (StaffId != 0) hash ^= StaffId.GetHashCode();
+      if (CustomerId != 0) hash ^= CustomerId.GetHashCode();
+      if (TakenAtFrom != 0L) hash ^= TakenAtFrom.GetHashCode();
+      if (TakenAtTo != 0L) hash ^= TakenAtTo.GetHashCode();
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (StudioId != 0) {
+        output.WriteRawTag(8);
+        output.WriteInt32(StudioId);
+      }
+      if (StaffId != 0) {
+        output.WriteRawTag(16);
+        output.WriteInt32(StaffId);
+      }
+      if (CustomerId != 0) {
+        output.WriteRawTag(24);
+        output.WriteInt32(CustomerId);
+      }
+      if (TakenAtFrom != 0L) {
+        output.WriteRawTag(32);
+        output.WriteInt64(TakenAtFrom);
+      }
+      if (TakenAtTo != 0L) {
+        output.WriteRawTag(40);
+        output.WriteInt64(TakenAtTo);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (StudioId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(StudioId);
+      }
+      if (StaffId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(StaffId);
+      }
+      if (CustomerId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(CustomerId);
+      }
+      if (TakenAtFrom != 0L) {
+        size += 1 + pb::CodedOutputStream.ComputeInt64Size(TakenAtFrom);
+      }
+      if (TakenAtTo != 0L) {
+        size += 1 + pb::CodedOutputStream.ComputeInt64Size(TakenAtTo);
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(SearchLessonsRequest other) {
+      if (other == null) {
+        return;
+      }
+      if (other.StudioId != 0) {
+        StudioId = other.StudioId;
+      }
+      if (other.StaffId != 0) {
+        StaffId = other.StaffId;
+      }
+      if (other.CustomerId != 0) {
+        CustomerId = other.CustomerId;
+      }
+      if (other.TakenAtFrom != 0L) {
+        TakenAtFrom = other.TakenAtFrom;
+      }
+      if (other.TakenAtTo != 0L) {
+        TakenAtTo = other.TakenAtTo;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            input.SkipLastField();
+            break;
+          case 8: {
+            StudioId = input.ReadInt32();
+            break;
+          }
+          case 16: {
+            StaffId = input.ReadInt32();
+            break;
+          }
+          case 24: {
+            CustomerId = input.ReadInt32();
+            break;
+          }
+          case 32: {
+            TakenAtFrom = input.ReadInt64();
+            break;
+          }
+          case 40: {
+            TakenAtTo = input.ReadInt64();
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  public sealed partial class SearchLessonsResponse : pb::IMessage<SearchLessonsResponse> {
+    private static readonly pb::MessageParser<SearchLessonsResponse> _parser = new pb::MessageParser<SearchLessonsResponse>(() => new SearchLessonsResponse());
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<SearchLessonsResponse> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Protobufs.AllReflection.Descriptor.MessageTypes[43]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public SearchLessonsResponse() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public SearchLessonsResponse(SearchLessonsResponse other) : this() {
+      lessons_ = other.lessons_.Clone();
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public SearchLessonsResponse Clone() {
+      return new SearchLessonsResponse(this);
+    }
+
+    /// <summary>Field number for the "lessons" field.</summary>
+    public const int LessonsFieldNumber = 1;
+    private static readonly pb::FieldCodec<global::Protobufs.Lesson> _repeated_lessons_codec
+        = pb::FieldCodec.ForMessage(10, global::Protobufs.Lesson.Parser);
+    private readonly pbc::RepeatedField<global::Protobufs.Lesson> lessons_ = new pbc::RepeatedField<global::Protobufs.Lesson>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public pbc::RepeatedField<global::Protobufs.Lesson> Lessons {
+      get { return lessons_; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as SearchLessonsResponse);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(SearchLessonsResponse other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if(!lessons_.Equals(other.lessons_)) return false;
+      return true;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      hash ^= lessons_.GetHashCode();
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      lessons_.WriteTo(output, _repeated_lessons_codec);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      size += lessons_.CalculateSize(_repeated_lessons_codec);
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(SearchLessonsResponse other) {
+      if (other == null) {
+        return;
+      }
+      lessons_.Add(other.lessons_);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            input.SkipLastField();
+            break;
+          case 10: {
+            lessons_.AddEntriesFrom(input, _repeated_lessons_codec);
             break;
           }
         }
