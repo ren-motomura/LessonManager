@@ -22,7 +22,8 @@ namespace LessonManager.Models
         {
             pageMap_ = new Dictionary<string, UserControl>();
             pageMap_.Add("Signin", new SigninView());
-            pageMap_.Add("Main", new MainMenu());
+            pageMap_.Add("Main", new MainMenuView());
+            pageMap_.Add("Lessons", new LessonsView());
 
             CurrentPage = pageMap_["Signin"];
         }

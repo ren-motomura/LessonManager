@@ -21,6 +21,11 @@
         <Grid>
             <TextBlock Style="{StaticResource MaterialDesignHeadlineTextBlock}" TextAlignment="Center" Margin="0 0 0 8">レッスン検索</TextBlock>
             <Border BorderBrush="{DynamicResource MaterialDesignDivider}" BorderThickness="0 0 0 1" />
+            <Button Margin="24 0 0 0" HorizontalAlignment="Left" Style="{StaticResource MaterialDesignFlatButton}"
+                    Command="{Binding MovePageCommand}"
+                    CommandParameter="Main">
+                <materialDesign:PackIcon Kind="ArrowLeftBold" Height="24" Width="24"/>
+            </Button>
         </Grid>
         <materialDesign:Card Grid.Row="1" Margin="10 10 10 0">
             <Grid Margin="20 30 20 20">

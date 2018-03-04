@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace LessonManager.Views
 {
     /// <summary>
-    /// MainMenu.xaml の相互作用ロジック
+    /// MainMenuView.xaml の相互作用ロジック
     /// </summary>
-    public partial class MainMenu : UserControl
+    public partial class MainMenuView : UserControl
     {
-        public MainMenu()
+        public MainMenuView()
         {
             InitializeComponent();
         }

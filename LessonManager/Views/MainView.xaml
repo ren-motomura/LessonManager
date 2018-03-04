@@ -31,15 +31,13 @@
 
     <materialDesign:DialogHost>
         <Grid>
-            <DockPanel>
-                <Grid>
-                    <ScrollViewer>
-                        <ContentControl Content="{Binding Content}" />
-                    </ScrollViewer>
+            <Grid>
+                <ScrollViewer Margin="0 30 0 0">
+                    <ContentControl Content="{Binding Content}" />
+                </ScrollViewer>
 
-                    <materialDesign:Snackbar MessageQueue="{Binding SnackbarMessageQueue}" x:Name="MainSnackbar"/>
-                </Grid>
-            </DockPanel>
+                <materialDesign:Snackbar MessageQueue="{Binding SnackbarMessageQueue}" x:Name="MainSnackbar"/>
+            </Grid>
 
             <Grid DataContext="{Binding PleaseWaitVisibility}" Visibility="{Binding Visibility}">
                 <Grid.Background>

@@ -31,7 +31,6 @@ namespace LessonManager.ViewModels
             SignInCommand = new SignInCommand();
             SignUpCommand = new SignUpCommand();
 
-            /*
             // for debug
             SignInParameter.EmailAddress = "sample@example.com";
             SignInParameter.Password = "password";
@@ -41,7 +40,6 @@ namespace LessonManager.ViewModels
             SignUpParameter.EmailAddress = "sample@example.com";
             SignUpParameter.Password = "password";
             SignUpParameter.Password2 = "password";
-            */
         }
     }
 }

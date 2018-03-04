@@ -41,6 +41,8 @@ namespace LessonManager.ViewModels
             SendMailCommand = new DelegateCommand();
             SendMailCommand.ExecuteHandler = SendMailCommandExecute;
 
+            MovePageCommand = new MovePageCommand();
+
             Studios = Storage.GetInstance().Studios;
             Staffs = Storage.GetInstance().Staffs;
 
@@ -353,5 +355,7 @@ namespace LessonManager.ViewModels
                 }
             }
         }
+
+        public MovePageCommand MovePageCommand { get; private set; }
     }
 }
