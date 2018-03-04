@@ -30,65 +30,28 @@
     </Window.Resources>
 
     <materialDesign:DialogHost>
-        <materialDesign:DrawerHost IsLeftDrawerOpen="{Binding ElementName=MenuToggleButton, Path=IsChecked}">
-            <materialDesign:DrawerHost.LeftDrawerContent>
-                <DockPanel MinWidth="212">
-                    <ToggleButton Style="{StaticResource MaterialDesignHamburgerToggleButton}" 
-                                        DockPanel.Dock="Top"
-                                        HorizontalAlignment="Right" Margin="16"
-                                        IsChecked="{Binding ElementName=MenuToggleButton, Path=IsChecked, Mode=TwoWay}" />
-                    <ListBox x:Name="MenuItems" Margin="0 16 0 16" SelectedIndex="0"                         
-                             ItemsSource="{Binding MenuItems}"
-                             PreviewMouseLeftButtonUp="UIElement_OnPreviewMouseLeftButtonUp"
-                             IsSynchronizedWithCurrentItem="True">
-                        <ListBox.ItemTemplate>
-                            <DataTemplate DataType="domain:MenuItem">
-                                <TextBlock Text="{Binding Name}" Margin="32 0 32 0" />
-                            </DataTemplate>
-                        </ListBox.ItemTemplate>
-                    </ListBox>
-                </DockPanel>
-            </materialDesign:DrawerHost.LeftDrawerContent>
-            <Grid>
-                <DockPanel>
-                    <materialDesign:ColorZone Padding="16" materialDesign:ShadowAssist.ShadowDepth="Depth2"
-                                                    Mode="PrimaryMid" DockPanel.Dock="Top">
-                        <DockPanel>
-                            <ToggleButton DockPanel.Dock="Left" Style="{DynamicResource MaterialDesignHamburgerToggleButton}" x:Name="MenuToggleButton" />
-                            <materialDesign:PopupBox DockPanel.Dock="Right" PlacementMode="BottomAndAlignRightEdges" StaysOpen="False">
-                                <StackPanel>
-                                    <Button Content="サインアウト" Command="{Binding SignOutCommand}"/>
-                                    <Button Content="データリロード" Command="{Binding ReloadCommand}"/>
-                                </StackPanel>
-                            </materialDesign:PopupBox>
-                            <TextBlock VerticalAlignment="Center" Margin="16 0 0 0">Lesson Manager</TextBlock>
-                        </DockPanel>
-                    </materialDesign:ColorZone>
+        <Grid>
+            <DockPanel>
+                <Grid>
+                    <ScrollViewer>
+                        <ContentControl Content="{Binding Content}" />
+                    </ScrollViewer>
 
-                    <Grid>
-                        <ScrollViewer 
-                             HorizontalScrollBarVisibility="{Binding ElementName=MenuItems, Path=SelectedItem.HorizontalScrollBarVisibilityRequirement}"
-                             VerticalScrollBarVisibility="{Binding ElementName=MenuItems, Path=SelectedItem.VerticalScrollBarVisibilityRequirement}" 
-                             Padding="{Binding ElementName=MenuItems, Path=SelectedItem.MarginRequirement}">
-                            <ContentControl Content="{Binding ElementName=MenuItems, Path=SelectedItem.Content}" />
-                        </ScrollViewer>
-
-                        <materialDesign:Snackbar MessageQueue="{Binding SnackbarMessageQueue}" x:Name="MainSnackbar"/>
-                    </Grid>
-                </DockPanel>
-
-                <Grid DataContext="{Binding PleaseWaitVisibility}" Visibility="{Binding Visibility}">
-                    <Grid.Background>
-                        <SolidColorBrush Color="Black" Opacity="0.3"/>
-                    </Grid.Background>
-                    <materialDesign:Card Width="100" Height="Auto" VerticalAlignment="Center" HorizontalAlignment="Center">
-                        <StackPanel Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Center">
-                            <ProgressBar Style="{DynamicResource MaterialDesignCircularProgressBar}" Margin="16" IsIndeterminate="True" Value="0" />
-                            <TextBlock Margin="0 0 0 4">Please Wait</TextBlock>
-                        </StackPanel>
-                    </materialDesign:Card>
+                    <materialDesign:Snackbar MessageQueue="{Binding SnackbarMessageQueue}" x:Name="MainSnackbar"/>
                 </Grid>
+            </DockPanel>
+
+            <Grid DataContext="{Binding PleaseWaitVisibility}" Visibility="{Binding Visibility}">
+                <Grid.Background>
+                    <SolidColorBrush Color="Black" Opacity="0.3"/>
+                </Grid.Background>
+                <materialDesign:Card Width="100" Height="Auto" VerticalAlignment="Center" HorizontalAlignment="Center">
+                    <StackPanel Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Center">
+                        <ProgressBar Style="{DynamicResource MaterialDesignCircularProgressBar}" Margin="16" IsIndeterminate="True" Value="0" />
+                        <TextBlock Margin="0 0 0 4">Please Wait</TextBlock>
+                    </StackPanel>
+                </materialDesign:Card>
             </Grid>
-        </materialDesign:DrawerHost>
+        </Grid>
     </materialDesign:DialogHost>
 </Window>

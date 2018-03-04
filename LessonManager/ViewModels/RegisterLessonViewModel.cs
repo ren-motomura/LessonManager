@@ -58,6 +58,10 @@ namespace LessonManager.ViewModels
             };
 
             ResetAll();
+            Company.ChangeCurrentCompanyEvent += (c) =>
+            {
+                ResetAll();
+            };
         }
 
         private void ResetAll()

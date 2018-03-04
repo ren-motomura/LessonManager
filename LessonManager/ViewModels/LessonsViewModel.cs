@@ -38,6 +38,9 @@ namespace LessonManager.ViewModels
             DeleteLessonCommand = new DelegateCommand();
             DeleteLessonCommand.ExecuteHandler = DeleteLessonCommandExecute;
 
+            SendMailCommand = new DelegateCommand();
+            SendMailCommand.ExecuteHandler = SendMailCommandExecute;
+
             Studios = Storage.GetInstance().Studios;
             Staffs = Storage.GetInstance().Staffs;
 
@@ -246,6 +249,108 @@ namespace LessonManager.ViewModels
             else
             {
                 SnackbarMessageQueue.Instance().Enqueue("検索に失敗しました");
+            }
+        }
+
+        public DelegateCommand SendMailCommand { get; set; }
+        private async void SendMailCommandExecute(object parameter)
+        {
+            Mail mail = new Mail();
+
+            while (true)
+            {
+                { // modal
+                    var view = new Views.Domain.SendMailModal();
+                    (view.DataContext as ViewModels.Domain.SendMailModalViewModel).Mail = mail;
+                    object result = await MaterialDesignThemes.Wpf.DialogHost.Show(view);
+                    mail = result as Mail;
+
+                    if (mail == null)
+                    {
+                        SnackbarMessageQueue.Instance().Enqueue("キャンセルしました");
+                        return;
+                    }
+                }
+
+                if (mail.ToAddresses.Count == 0)
+                {
+                    var view = new Views.Domain.ConfirmModal();
+                    view.DataContext = String.Format("宛先を指定してください");
+                    object result = await MaterialDesignThemes.Wpf.DialogHost.Show(view);
+                    if (!(bool)result)
+                    {
+                        SnackbarMessageQueue.Instance().Enqueue("キャンセルしました");
+                        return;
+                    }
+                    continue;
+                }
+                
+                if (!mail.IsAllAddressValid())
+                {
+                    var view = new Views.Domain.ConfirmModal();
+                    view.DataContext = String.Format("宛先にメールアドレスとして正しくないものが含まれています。\n宛先を修正してください");
+                    object result = await MaterialDesignThemes.Wpf.DialogHost.Show(view);
+                    if (!(bool)result)
+                    {
+                        SnackbarMessageQueue.Instance().Enqueue("キャンセルしました");
+                        return;
+                    }
+                    continue;
+                }
+
+                if (mail.Subject == "" || mail.Body == "")
+                {
+                    var view = new Views.Domain.ConfirmModal();
+                    var emptyThing =
+                        mail.Subject == "" && mail.Body == "" ? "件名と本文" :
+                        mail.Subject == "" ? "件名" : "本文";
+                    view.DataContext = String.Format(@"{0:s}が空です。内容を追加してください", emptyThing);
+                    object result = await MaterialDesignThemes.Wpf.DialogHost.Show(view);
+                    if (!(bool)result)
+                    {
+                        SnackbarMessageQueue.Instance().Enqueue("キャンセルしました");
+                        return;
+                    }
+                    continue;
+                }
+
+                break;
+            }
+
+            { // CSVを添付
+                var sb = new StringBuilder();
+                sb.AppendLine("ID,スタジオ,スタッフ,顧客,料金,支払いタイプ,実施日時");
+                Lessons.ForEach((lesson) =>
+                {
+                    sb.AppendFormat(
+                        "{0:d},{1},{2},{3},{4:d},{5},{6}\n",
+                        lesson.ID, 
+                        lesson.StudioName,
+                        lesson.StaffName,
+                        lesson.CustomerName, 
+                        lesson.Fee,
+                        lesson.PaymentType,
+                        lesson.TakenAt.ToString("G")
+                    );
+                });
+                mail.Attachments = mail.Attachments.Add(new Mail.Attachment() {
+                    Name = String.Format("lessons-{0}.csv", DateTime.Now.ToString("yyyyMMdd")),
+                    Data = Encoding.UTF8.GetBytes(sb.ToString())
+                });
+            }
+
+            {
+                PleaseWaitVisibility.Instance().IsVisible = true;
+                var result = await WebAPIs.Mail.Send(mail);
+                PleaseWaitVisibility.Instance().IsVisible = false;
+                if (result.IsSuccess)
+                {
+                    SnackbarMessageQueue.Instance().Enqueue("メールを送信しました");
+                }
+                else
+                {
+                    SnackbarMessageQueue.Instance().Enqueue("メールの送信に失敗しました");
+                }
             }
         }
     }

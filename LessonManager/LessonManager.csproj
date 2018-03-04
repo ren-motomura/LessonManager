@@ -81,9 +81,11 @@
       <HintPath>..\packages\System.Collections.Immutable.1.4.0\lib\portable-net45+win8+wp8+wpa81\System.Collections.Immutable.dll</HintPath>
     </Reference>
     <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Interactive.Async, Version=3.0.1000.0, Culture=neutral, PublicKeyToken=94bc3704cddfc263, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Interactive.Async.3.1.1\lib\net45\System.Interactive.Async.dll</HintPath>
     </Reference>
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Windows.Interactivity, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Windows.Interactivity.WPF.2.0.20525\lib\net40\System.Windows.Interactivity.dll</HintPath>
     </Reference>
@@ -112,6 +114,7 @@
     <Compile Include="Commands\SignUpCommand.cs" />
     <Compile Include="Models\Customer.cs" />
     <Compile Include="Models\Lesson.cs" />
+    <Compile Include="Models\Mail.cs" />
     <Compile Include="Models\PleaseWaitVisibility.cs" />
     <Compile Include="Models\SnackbarMessageQueue.cs" />
     <Compile Include="Models\Staff.cs" />
@@ -123,6 +126,7 @@
     <Compile Include="ViewModels\CompanyViewModel.cs" />
     <Compile Include="ViewModels\CustomersViewModel.cs" />
     <Compile Include="ViewModels\Domain\SearchCustomerModalViewModel.cs" />
+    <Compile Include="ViewModels\Domain\SendMailModalViewModel.cs" />
     <Compile Include="ViewModels\Domain\WaitCardModalViewModel.cs" />
     <Compile Include="ViewModels\LessonsViewModel.cs" />
     <Compile Include="ViewModels\RegisterLessonViewModel.cs" />
@@ -168,12 +172,18 @@
     <Compile Include="Views\Domain\SearchCustomerModal.xaml.cs">
       <DependentUpon>SearchCustomerModal.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\Domain\SendMailModal.xaml.cs">
+      <DependentUpon>SendMailModal.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\Domain\WaitCardModal.xaml.cs">
       <DependentUpon>WaitCardModal.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Domain\WheelScrollKillBehavior.cs" />
     <Compile Include="Views\LessonsView.xaml.cs">
       <DependentUpon>LessonsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MainMenu.xaml.cs">
+      <DependentUpon>MainMenu.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\SigninView.xaml.cs">
       <DependentUpon>SigninView.xaml</DependentUpon>
@@ -189,6 +199,7 @@
     <Compile Include="WebAPIs\FailData.cs" />
     <Compile Include="WebAPIs\Image.cs" />
     <Compile Include="WebAPIs\Lesson.cs" />
+    <Compile Include="WebAPIs\Mail.cs" />
     <Compile Include="WebAPIs\Result.cs" />
     <Compile Include="WebAPIs\Session.cs" />
     <Compile Include="WebAPIs\Company.cs" />
@@ -242,11 +253,19 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\Domain\SendMailModal.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\Domain\WaitCardModal.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\LessonsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\MainMenu.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -1,0 +1,60 @@
+﻿<UserControl x:Class="LessonManager.Views.Domain.SendMailModal"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:LessonManager.Views.Domain"
+             mc:Ignorable="d" 
+             xmlns:domain="clr-namespace:LessonManager.Views.Domain"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             xmlns:vm="clr-namespace:LessonManager.ViewModels.Domain"
+             d:DesignHeight="400" d:DesignWidth="400" Background="White">
+    <UserControl.DataContext>
+        <vm:SendMailModalViewModel/>
+    </UserControl.DataContext>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="270"/>
+            <RowDefinition Height="40"/>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0" Background="#2f2f2f">
+            <TextBlock Text="新規メッセージ" Foreground="White" VerticalAlignment="Center" Margin="5 0 0 0"/>
+            <Button Style="{StaticResource MaterialDesignToolButton}" HorizontalAlignment="Right" VerticalAlignment="Center"
+                    Command="{x:Static materialDesign:DialogHost.CloseDialogCommand}">
+                <Button.CommandParameter>
+                    <x:Null/>
+                </Button.CommandParameter>
+                <materialDesign:PackIcon Kind="Close" Height="15"/>
+            </Button>
+        </Grid>
+
+        <StackPanel Grid.Row="1" Orientation="Horizontal">
+            <TextBox materialDesign:HintAssist.Hint="To" Padding="3 0 3 0" Width="400" ToolTip="カンマつなぎで複数指定できます"
+                     Text="{Binding Mail.ToAddressesStr, Mode=TwoWay}"/>
+        </StackPanel>
+
+        <StackPanel Grid.Row="2" Orientation="Horizontal">
+            <TextBox materialDesign:HintAssist.Hint="件名" Padding="3 0 3 0" Width="400"
+                     Text="{Binding Mail.Subject, Mode=TwoWay}"/>
+        </StackPanel>
+
+        <StackPanel Grid.Row="3" Orientation="Horizontal">
+            <TextBox Height="270" materialDesign:HintAssist.Hint="本文" Padding="3 0 3 0" Width="400" VerticalAlignment="Top"
+                     AcceptsReturn="True" TextWrapping="Wrap" VerticalScrollBarVisibility="Auto" VerticalContentAlignment="Top"
+                     Text="{Binding Mail.Body, Mode=TwoWay}"/>
+        </StackPanel>
+
+        <StackPanel Grid.Row="4" Orientation="Horizontal">
+            <Button Height="30" Margin="5 5 5 5"
+                    Command="{x:Static materialDesign:DialogHost.CloseDialogCommand}"
+                    CommandParameter="{Binding Mail}"
+                    Style="{StaticResource MaterialDesignRaisedAccentButton}">
+                送信
+            </Button>
+        </StackPanel>
+    </Grid>
+</UserControl>

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Controls;
 using System.ComponentModel;
 using LessonManager.Commands;
 using LessonManager.Models;
@@ -17,38 +18,10 @@ namespace LessonManager.ViewModels
 
         public MainViewModel()
         {
-            this.menuItemsWhenAuthorized_ = new List<MenuItem>
-            {
-                new MenuItem("カンパニー設定", new CompanyView()),
-                new MenuItem("スタジオ管理", new StudiosView())
-                {
-                    VerticalScrollBarVisibilityRequirement = System.Windows.Controls.ScrollBarVisibility.Auto
-                },
-                new MenuItem("スタッフ管理", new StaffsView())
-                {
-                    VerticalScrollBarVisibilityRequirement = System.Windows.Controls.ScrollBarVisibility.Auto
-                },
-                new MenuItem("顧客管理", new CustomersView())
-                {
-                    VerticalScrollBarVisibilityRequirement = System.Windows.Controls.ScrollBarVisibility.Disabled
-                },
-                new MenuItem("レッスン検索", new LessonsView())
-                {
-                    VerticalScrollBarVisibilityRequirement = System.Windows.Controls.ScrollBarVisibility.Disabled
-                },
-                new MenuItem("レッスン登録", new RegisterLesson())
-                {
-                    VerticalScrollBarVisibilityRequirement = System.Windows.Controls.ScrollBarVisibility.Disabled
-                }
-            };
-            this.menuItemsWhenUnauthorized_ = new List<MenuItem>
-            {
-                new MenuItem("ログイン", new SigninView())
-            };
+            //this.Content = new SigninView();
+            this.Content = new MainMenu();
 
-            // TODO: ログイン状態を見て切り替える
-            this.MenuItems = this.menuItemsWhenUnauthorized_;
-
+            /*
             // current company の変更を watch する
             Models.Company.ChangeCurrentCompanyEvent += (company) =>
             {
@@ -61,6 +34,7 @@ namespace LessonManager.ViewModels
                     this.MenuItems = this.menuItemsWhenUnauthorized_;
                 }
             };
+            */
 
             SignOutCommand = new SignOutCommand();
             SnackbarMessageQueue = SnackbarMessageQueue.Instance();
@@ -70,22 +44,19 @@ namespace LessonManager.ViewModels
             PleaseWaitVisibility = PleaseWaitVisibility.Instance();
         }
 
-        private List<MenuItem> menuItems_;
-        public List<MenuItem> MenuItems
+        private UserControl content_;
+        public UserControl Content
         {
-            get { return menuItems_; }
+            get { return content_; }
             set
             {
-                if (value != menuItems_)
+                if (value != content_)
                 {
-                    menuItems_ = value;
+                    content_ = value;
                     PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(null));
                 }
             }
         }
-
-        private List<MenuItem> menuItemsWhenUnauthorized_ { get; set; }
-        private List<MenuItem> menuItemsWhenAuthorized_ { get; set; }
 
         public SignOutCommand SignOutCommand { get; set; }
         public SnackbarMessageQueue SnackbarMessageQueue { get; set; }

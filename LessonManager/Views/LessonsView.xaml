@@ -81,6 +81,10 @@
                                 Command="{Binding ResetCommand}">
                                 検索条件をリセット
                         </Button>
+                        <Button Width="Auto" Margin="10 0 0 0" HorizontalAlignment="Left" Style="{StaticResource MaterialDesignRaisedLightButton}" FontSize="15"
+                                Command="{Binding SendMailCommand}" ToolTip="現在【表示中】のリストをメールで送信します">
+                            <materialDesign:PackIcon Kind="EmailOutline"/>
+                        </Button>
                     </StackPanel>
                 </StackPanel>
             </Grid>

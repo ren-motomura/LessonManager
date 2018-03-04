@@ -15,7 +15,7 @@ namespace LessonManager.Utils
         }
         public static long DateTimeToTimestamp(DateTime dt)
         {
-            return Convert.ToInt64(dt.Subtract(epoch).TotalSeconds);
+            return Convert.ToInt64(TimeZoneInfo.ConvertTimeToUtc(dt).Subtract(epoch).TotalSeconds);
         }
     }
 }

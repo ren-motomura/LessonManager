@@ -91,14 +91,19 @@ namespace Protobufs {
             "CXRha2VuQXRUbxgFIAEoAyI7ChVTZWFyY2hMZXNzb25zUmVzcG9uc2USIgoH",
             "bGVzc29ucxgBIAMoCzIRLnByb3RvYnVmcy5MZXNzb24iIQoTRGVsZXRlTGVz",
             "c29uUmVxdWVzdBIKCgJpZBgBIAEoBSInChREZWxldGVMZXNzb25SZXNwb25z",
-            "ZRIPCgdzdWNjZXNzGAEgASgIKqICCglFcnJvclR5cGUSGgoWSU5WQUxJRF9S",
-            "RVFVRVNUX0ZPUk1BVBAAEg0KCU5PVF9GT1VORBABEhEKDUFMUkVBRFlfRVhJ",
-            "U1QQAhIUChBJTlZBTElEX1BBU1NXT1JEEAMSGQoVSU5URVJOQUxfU0VSVkVS",
-            "X0VSUk9SEAQSDQoJRk9SQklEREVOEAUSDAoIQ09ORkxJQ1QQBhIXChNDQVJE",
-            "X05PVF9SRUdJU1RFUkVEEAcSGAoURFVQTElDQVRFX05BTUVfRVhJU1QQCBIU",
-            "ChBTVFVESU9fTk9UX0ZPVU5EEAkSEwoPU1RBRkZfTk9UX0ZPVU5EEAoSFgoS",
-            "Q1VTVE9NRVJfTk9UX0ZPVU5EEAsSEwoPQ1JFRElUX1NIT1JUQUdFEAwqJQoL",
-            "UGF5bWVudFR5cGUSCgoGQnlDYXNoEAASCgoGQnlDYXJkEAFiBnByb3RvMw=="));
+            "ZRIPCgdzdWNjZXNzGAEgASgIIiwKDk1haWxBdHRhY2htZW50EgwKBG5hbWUY",
+            "ASABKAkSDAoEZGF0YRgCIAEoDCJ2ChBTZW5kRW1haWxSZXF1ZXN0Eg8KB3N1",
+            "YmplY3QYASABKAkSDAoEYm9keRgCIAEoCRITCgt0b0FkZHJlc3NlcxgDIAMo",
+            "CRIuCgthdHRhY2htZW50cxgEIAMoCzIZLnByb3RvYnVmcy5NYWlsQXR0YWNo",
+            "bWVudCIkChFTZW5kRW1haWxSZXNwb25zZRIPCgdzdWNjZXNzGAEgASgIKrMC",
+            "CglFcnJvclR5cGUSGgoWSU5WQUxJRF9SRVFVRVNUX0ZPUk1BVBAAEg0KCU5P",
+            "VF9GT1VORBABEhEKDUFMUkVBRFlfRVhJU1QQAhIUChBJTlZBTElEX1BBU1NX",
+            "T1JEEAMSGQoVSU5URVJOQUxfU0VSVkVSX0VSUk9SEAQSDQoJRk9SQklEREVO",
+            "EAUSDAoIQ09ORkxJQ1QQBhIXChNDQVJEX05PVF9SRUdJU1RFUkVEEAcSGAoU",
+            "RFVQTElDQVRFX05BTUVfRVhJU1QQCBIUChBTVFVESU9fTk9UX0ZPVU5EEAkS",
+            "EwoPU1RBRkZfTk9UX0ZPVU5EEAoSFgoSQ1VTVE9NRVJfTk9UX0ZPVU5EEAsS",
+            "EwoPQ1JFRElUX1NIT1JUQUdFEAwSDwoLQkFEX1JFUVVFU1QQDSolCgtQYXlt",
+            "ZW50VHlwZRIKCgZCeUNhc2gQABIKCgZCeUNhcmQQAWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Protobufs.ErrorType), typeof(global::Protobufs.PaymentType), }, new pbr::GeneratedClrTypeInfo[] {
@@ -147,7 +152,10 @@ namespace Protobufs {
             new pbr::GeneratedClrTypeInfo(typeof(global::Protobufs.SearchLessonsRequest), global::Protobufs.SearchLessonsRequest.Parser, new[]{ "StudioId", "StaffId", "CustomerId", "TakenAtFrom", "TakenAtTo" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Protobufs.SearchLessonsResponse), global::Protobufs.SearchLessonsResponse.Parser, new[]{ "Lessons" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Protobufs.DeleteLessonRequest), global::Protobufs.DeleteLessonRequest.Parser, new[]{ "Id" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Protobufs.DeleteLessonResponse), global::Protobufs.DeleteLessonResponse.Parser, new[]{ "Success" }, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Protobufs.DeleteLessonResponse), global::Protobufs.DeleteLessonResponse.Parser, new[]{ "Success" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Protobufs.MailAttachment), global::Protobufs.MailAttachment.Parser, new[]{ "Name", "Data" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Protobufs.SendEmailRequest), global::Protobufs.SendEmailRequest.Parser, new[]{ "Subject", "Body", "ToAddresses", "Attachments" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Protobufs.SendEmailResponse), global::Protobufs.SendEmailResponse.Parser, new[]{ "Success" }, null, null, null)
           }));
     }
     #endregion
@@ -168,6 +176,7 @@ namespace Protobufs {
     [pbr::OriginalName("STAFF_NOT_FOUND")] StaffNotFound = 10,
     [pbr::OriginalName("CUSTOMER_NOT_FOUND")] CustomerNotFound = 11,
     [pbr::OriginalName("CREDIT_SHORTAGE")] CreditShortage = 12,
+    [pbr::OriginalName("BAD_REQUEST")] BadRequest = 13,
   }
 
   public enum PaymentType {
@@ -6854,6 +6863,453 @@ namespace Protobufs {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(DeleteLessonResponse other) {
+      if (other == null) {
+        return;
+      }
+      if (other.Success != false) {
+        Success = other.Success;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            input.SkipLastField();
+            break;
+          case 8: {
+            Success = input.ReadBool();
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  public sealed partial class MailAttachment : pb::IMessage<MailAttachment> {
+    private static readonly pb::MessageParser<MailAttachment> _parser = new pb::MessageParser<MailAttachment>(() => new MailAttachment());
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<MailAttachment> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Protobufs.AllReflection.Descriptor.MessageTypes[46]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public MailAttachment() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public MailAttachment(MailAttachment other) : this() {
+      name_ = other.name_;
+      data_ = other.data_;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public MailAttachment Clone() {
+      return new MailAttachment(this);
+    }
+
+    /// <summary>Field number for the "name" field.</summary>
+    public const int NameFieldNumber = 1;
+    private string name_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string Name {
+      get { return name_; }
+      set {
+        name_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "data" field.</summary>
+    public const int DataFieldNumber = 2;
+    private pb::ByteString data_ = pb::ByteString.Empty;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public pb::ByteString Data {
+      get { return data_; }
+      set {
+        data_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as MailAttachment);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(MailAttachment other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (Name != other.Name) return false;
+      if (Data != other.Data) return false;
+      return true;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (Name.Length != 0) hash ^= Name.GetHashCode();
+      if (Data.Length != 0) hash ^= Data.GetHashCode();
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (Name.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(Name);
+      }
+      if (Data.Length != 0) {
+        output.WriteRawTag(18);
+        output.WriteBytes(Data);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (Name.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Name);
+      }
+      if (Data.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeBytesSize(Data);
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(MailAttachment other) {
+      if (other == null) {
+        return;
+      }
+      if (other.Name.Length != 0) {
+        Name = other.Name;
+      }
+      if (other.Data.Length != 0) {
+        Data = other.Data;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            input.SkipLastField();
+            break;
+          case 10: {
+            Name = input.ReadString();
+            break;
+          }
+          case 18: {
+            Data = input.ReadBytes();
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  public sealed partial class SendEmailRequest : pb::IMessage<SendEmailRequest> {
+    private static readonly pb::MessageParser<SendEmailRequest> _parser = new pb::MessageParser<SendEmailRequest>(() => new SendEmailRequest());
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<SendEmailRequest> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Protobufs.AllReflection.Descriptor.MessageTypes[47]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public SendEmailRequest() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public SendEmailRequest(SendEmailRequest other) : this() {
+      subject_ = other.subject_;
+      body_ = other.body_;
+      toAddresses_ = other.toAddresses_.Clone();
+      attachments_ = other.attachments_.Clone();
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public SendEmailRequest Clone() {
+      return new SendEmailRequest(this);
+    }
+
+    /// <summary>Field number for the "subject" field.</summary>
+    public const int SubjectFieldNumber = 1;
+    private string subject_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string Subject {
+      get { return subject_; }
+      set {
+        subject_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "body" field.</summary>
+    public const int BodyFieldNumber = 2;
+    private string body_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string Body {
+      get { return body_; }
+      set {
+        body_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "toAddresses" field.</summary>
+    public const int ToAddressesFieldNumber = 3;
+    private static readonly pb::FieldCodec<string> _repeated_toAddresses_codec
+        = pb::FieldCodec.ForString(26);
+    private readonly pbc::RepeatedField<string> toAddresses_ = new pbc::RepeatedField<string>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public pbc::RepeatedField<string> ToAddresses {
+      get { return toAddresses_; }
+    }
+
+    /// <summary>Field number for the "attachments" field.</summary>
+    public const int AttachmentsFieldNumber = 4;
+    private static readonly pb::FieldCodec<global::Protobufs.MailAttachment> _repeated_attachments_codec
+        = pb::FieldCodec.ForMessage(34, global::Protobufs.MailAttachment.Parser);
+    private readonly pbc::RepeatedField<global::Protobufs.MailAttachment> attachments_ = new pbc::RepeatedField<global::Protobufs.MailAttachment>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public pbc::RepeatedField<global::Protobufs.MailAttachment> Attachments {
+      get { return attachments_; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as SendEmailRequest);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(SendEmailRequest other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (Subject != other.Subject) return false;
+      if (Body != other.Body) return false;
+      if(!toAddresses_.Equals(other.toAddresses_)) return false;
+      if(!attachments_.Equals(other.attachments_)) return false;
+      return true;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (Subject.Length != 0) hash ^= Subject.GetHashCode();
+      if (Body.Length != 0) hash ^= Body.GetHashCode();
+      hash ^= toAddresses_.GetHashCode();
+      hash ^= attachments_.GetHashCode();
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (Subject.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(Subject);
+      }
+      if (Body.Length != 0) {
+        output.WriteRawTag(18);
+        output.WriteString(Body);
+      }
+      toAddresses_.WriteTo(output, _repeated_toAddresses_codec);
+      attachments_.WriteTo(output, _repeated_attachments_codec);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (Subject.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Subject);
+      }
+      if (Body.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Body);
+      }
+      size += toAddresses_.CalculateSize(_repeated_toAddresses_codec);
+      size += attachments_.CalculateSize(_repeated_attachments_codec);
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(SendEmailRequest other) {
+      if (other == null) {
+        return;
+      }
+      if (other.Subject.Length != 0) {
+        Subject = other.Subject;
+      }
+      if (other.Body.Length != 0) {
+        Body = other.Body;
+      }
+      toAddresses_.Add(other.toAddresses_);
+      attachments_.Add(other.attachments_);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            input.SkipLastField();
+            break;
+          case 10: {
+            Subject = input.ReadString();
+            break;
+          }
+          case 18: {
+            Body = input.ReadString();
+            break;
+          }
+          case 26: {
+            toAddresses_.AddEntriesFrom(input, _repeated_toAddresses_codec);
+            break;
+          }
+          case 34: {
+            attachments_.AddEntriesFrom(input, _repeated_attachments_codec);
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  public sealed partial class SendEmailResponse : pb::IMessage<SendEmailResponse> {
+    private static readonly pb::MessageParser<SendEmailResponse> _parser = new pb::MessageParser<SendEmailResponse>(() => new SendEmailResponse());
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<SendEmailResponse> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Protobufs.AllReflection.Descriptor.MessageTypes[48]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public SendEmailResponse() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public SendEmailResponse(SendEmailResponse other) : this() {
+      success_ = other.success_;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public SendEmailResponse Clone() {
+      return new SendEmailResponse(this);
+    }
+
+    /// <summary>Field number for the "success" field.</summary>
+    public const int SuccessFieldNumber = 1;
+    private bool success_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Success {
+      get { return success_; }
+      set {
+        success_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as SendEmailResponse);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(SendEmailResponse other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (Success != other.Success) return false;
+      return true;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (Success != false) hash ^= Success.GetHashCode();
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (Success != false) {
+        output.WriteRawTag(8);
+        output.WriteBool(Success);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (Success != false) {
+        size += 1 + 1;
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(SendEmailResponse other) {
       if (other == null) {
         return;
       }

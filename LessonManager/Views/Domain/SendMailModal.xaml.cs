@@ -12,16 +12,15 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using System.Windows.Controls.Primitives;
 
-namespace LessonManager
+namespace LessonManager.Views.Domain
 {
     /// <summary>
-    /// MainWindow.xaml の相互作用ロジック
+    /// SendMailModal.xaml の相互作用ロジック
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class SendMailModal : UserControl
     {
-        public MainWindow()
+        public SendMailModal()
         {
             InitializeComponent();
         }
