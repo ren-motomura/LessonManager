@@ -18,23 +18,24 @@ namespace LessonManager.ViewModels
 
         public MainViewModel()
         {
-            //this.Content = new SigninView();
-            this.Content = new MainMenu();
+            this.Content = PageManager.Instance().CurrentPage;
+            PageManager.Instance().ChangeCurrentPageEvent += (currentPage) =>
+            {
+                this.Content = currentPage;
+            };
 
-            /*
             // current company の変更を watch する
             Models.Company.ChangeCurrentCompanyEvent += (company) =>
             {
                 if (company != null)
                 {
-                    this.MenuItems = this.menuItemsWhenAuthorized_;
+                    PageManager.Instance().SetCurrentPageByKey("Main");
                 }
                 else
                 {
-                    this.MenuItems = this.menuItemsWhenUnauthorized_;
+                    PageManager.Instance().SetCurrentPageByKey("Signin");
                 }
             };
-            */
 
             SignOutCommand = new SignOutCommand();
             SnackbarMessageQueue = SnackbarMessageQueue.Instance();

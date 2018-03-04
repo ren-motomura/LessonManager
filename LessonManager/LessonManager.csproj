@@ -109,12 +109,14 @@
     </ApplicationDefinition>
     <Compile Include="Commands\CreateCompanyCommand.cs" />
     <Compile Include="Commands\DelegateCommand.cs" />
+    <Compile Include="Commands\MovePageCommand.cs" />
     <Compile Include="Commands\SignInCommand.cs" />
     <Compile Include="Commands\SignOutCommand.cs" />
     <Compile Include="Commands\SignUpCommand.cs" />
     <Compile Include="Models\Customer.cs" />
     <Compile Include="Models\Lesson.cs" />
     <Compile Include="Models\Mail.cs" />
+    <Compile Include="Models\PageManager.cs" />
     <Compile Include="Models\PleaseWaitVisibility.cs" />
     <Compile Include="Models\SnackbarMessageQueue.cs" />
     <Compile Include="Models\Staff.cs" />
@@ -129,6 +131,7 @@
     <Compile Include="ViewModels\Domain\SendMailModalViewModel.cs" />
     <Compile Include="ViewModels\Domain\WaitCardModalViewModel.cs" />
     <Compile Include="ViewModels\LessonsViewModel.cs" />
+    <Compile Include="ViewModels\MainMenuViewModel.cs" />
     <Compile Include="ViewModels\RegisterLessonViewModel.cs" />
     <Compile Include="ViewModels\SigninViewModel.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />
