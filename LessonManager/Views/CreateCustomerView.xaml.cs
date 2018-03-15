@@ -16,18 +16,13 @@ using System.Windows.Shapes;
 namespace LessonManager.Views
 {
     /// <summary>
-    /// CustomersView.xaml の相互作用ロジック
+    /// CreateCustomerView.xaml の相互作用ロジック
     /// </summary>
-    public partial class CustomersView : UserControl
+    public partial class CreateCustomerView : UserControl
     {
-        public CustomersView()
+        public CreateCustomerView()
         {
             InitializeComponent();
-        }
-
-        private void DataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-
         }
     }
 }

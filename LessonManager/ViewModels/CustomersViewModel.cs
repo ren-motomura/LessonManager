@@ -17,6 +17,8 @@ namespace LessonManager.ViewModels
             var builder = ImmutableList.CreateBuilder<Customer>();
             Customers = builder.ToImmutable();
 
+            MovePageCommand = new MovePageCommand();
+
             AddCustomerCommand = new DelegateCommand();
             AddCustomerCommand.ExecuteHandler = AddCustomerCommandExecute;
 
@@ -68,6 +70,8 @@ namespace LessonManager.ViewModels
                 RaisePropertyChanged();
             }
         }
+
+        public MovePageCommand MovePageCommand { get; private set; }
 
         public DelegateCommand AddCustomerCommand { get; set; }
         private void AddCustomerCommandExecute(object parameter)
@@ -147,6 +151,7 @@ namespace LessonManager.ViewModels
         }
         private void CreateCustomer(Customer customer)
         {
+            /*
             PleaseWaitVisibility.Instance().IsVisible = true;
             WebAPIs.Customer.Create(customer.Name, customer.Description).ContinueWith(t =>
             {
@@ -170,6 +175,7 @@ namespace LessonManager.ViewModels
                     }
                 }
             });
+            */
         }
         private void UpdateCustomer(Customer customer)
         {

@@ -59,51 +59,62 @@ namespace Protobufs {
             "VXBkYXRlU3RhZmZSZXF1ZXN0Eh8KBXN0YWZmGAEgASgLMhAucHJvdG9idWZz",
             "LlN0YWZmIjYKE1VwZGF0ZVN0YWZmUmVzcG9uc2USHwoFc3RhZmYYASABKAsy",
             "EC5wcm90b2J1ZnMuU3RhZmYiIgoEQ2FyZBIKCgJpZBgBIAEoCRIOCgZjcmVk",
-            "aXQYAiABKAUiWAoIQ3VzdG9tZXISCgoCaWQYASABKAUSDAoEbmFtZRgCIAEo",
-            "CRITCgtkZXNjcmlwdGlvbhgDIAEoCRIdCgRjYXJkGAQgASgLMg8ucHJvdG9i",
-            "dWZzLkNhcmQiQQoXU2VsZWN0Q3VzdG9tZXJzUmVzcG9uc2USJgoJY3VzdG9t",
-            "ZXJzGAEgAygLMhMucHJvdG9idWZzLkN1c3RvbWVyIlkKFUNyZWF0ZUN1c3Rv",
-            "bWVyUmVxdWVzdBIMCgRuYW1lGAEgASgJEhMKC2Rlc2NyaXB0aW9uGAIgASgJ",
-            "Eh0KBGNhcmQYAyABKAsyDy5wcm90b2J1ZnMuQ2FyZCI/ChZDcmVhdGVDdXN0",
-            "b21lclJlc3BvbnNlEiUKCGN1c3RvbWVyGAEgASgLMhMucHJvdG9idWZzLkN1",
-            "c3RvbWVyIiMKFURlbGV0ZUN1c3RvbWVyUmVxdWVzdBIKCgJpZBgBIAEoBSIp",
-            "ChZEZWxldGVDdXN0b21lclJlc3BvbnNlEg8KB3N1Y2Nlc3MYASABKAgiPgoV",
-            "VXBkYXRlQ3VzdG9tZXJSZXF1ZXN0EiUKCGN1c3RvbWVyGAEgASgLMhMucHJv",
-            "dG9idWZzLkN1c3RvbWVyIj8KFlVwZGF0ZUN1c3RvbWVyUmVzcG9uc2USJQoI",
-            "Y3VzdG9tZXIYASABKAsyEy5wcm90b2J1ZnMuQ3VzdG9tZXIiTQoYU2V0Q2Fy",
-            "ZE9uQ3VzdG9tZXJSZXF1ZXN0EhIKCmN1c3RvbWVySWQYASABKAUSHQoEY2Fy",
-            "ZBgCIAEoCzIPLnByb3RvYnVmcy5DYXJkIkIKGVNldENhcmRPbkN1c3RvbWVy",
-            "UmVzcG9uc2USJQoIY3VzdG9tZXIYASABKAsyEy5wcm90b2J1ZnMuQ3VzdG9t",
-            "ZXIiNgoQQWRkQ3JlZGl0UmVxdWVzdBISCgpjdXN0b21lcklkGAEgASgFEg4K",
-            "BmFtb3VudBgCIAEoBSI6ChFBZGRDcmVkaXRSZXNwb25zZRIlCghjdXN0b21l",
-            "chgBIAEoCzITLnByb3RvYnVmcy5DdXN0b21lciKWAQoGTGVzc29uEgoKAmlk",
-            "GAEgASgFEhAKCHN0dWRpb0lkGAIgASgFEg8KB3N0YWZmSWQYAyABKAUSEgoK",
-            "Y3VzdG9tZXJJZBgEIAEoBRILCgNmZWUYBSABKAUSKwoLcGF5bWVudFR5cGUY",
-            "BiABKA4yFi5wcm90b2J1ZnMuUGF5bWVudFR5cGUSDwoHdGFrZW5BdBgHIAEo",
-            "AyKZAQoVUmVnaXN0ZXJMZXNzb25SZXF1ZXN0EhAKCHN0dWRpb0lkGAEgASgF",
-            "Eg8KB3N0YWZmSWQYAiABKAUSEgoKY3VzdG9tZXJJZBgDIAEoBRILCgNmZWUY",
-            "BCABKAUSKwoLcGF5bWVudFR5cGUYBSABKA4yFi5wcm90b2J1ZnMuUGF5bWVu",
-            "dFR5cGUSDwoHdGFrZW5BdBgGIAEoAyJiChZSZWdpc3Rlckxlc3NvblJlc3Bv",
-            "bnNlEiEKBmxlc3NvbhgBIAEoCzIRLnByb3RvYnVmcy5MZXNzb24SJQoIY3Vz",
-            "dG9tZXIYAiABKAsyEy5wcm90b2J1ZnMuQ3VzdG9tZXIidQoUU2VhcmNoTGVz",
-            "c29uc1JlcXVlc3QSEAoIc3R1ZGlvSWQYASABKAUSDwoHc3RhZmZJZBgCIAEo",
-            "BRISCgpjdXN0b21lcklkGAMgASgFEhMKC3Rha2VuQXRGcm9tGAQgASgDEhEK",
-            "CXRha2VuQXRUbxgFIAEoAyI7ChVTZWFyY2hMZXNzb25zUmVzcG9uc2USIgoH",
-            "bGVzc29ucxgBIAMoCzIRLnByb3RvYnVmcy5MZXNzb24iIQoTRGVsZXRlTGVz",
-            "c29uUmVxdWVzdBIKCgJpZBgBIAEoBSInChREZWxldGVMZXNzb25SZXNwb25z",
-            "ZRIPCgdzdWNjZXNzGAEgASgIIiwKDk1haWxBdHRhY2htZW50EgwKBG5hbWUY",
-            "ASABKAkSDAoEZGF0YRgCIAEoDCJ2ChBTZW5kRW1haWxSZXF1ZXN0Eg8KB3N1",
-            "YmplY3QYASABKAkSDAoEYm9keRgCIAEoCRITCgt0b0FkZHJlc3NlcxgDIAMo",
-            "CRIuCgthdHRhY2htZW50cxgEIAMoCzIZLnByb3RvYnVmcy5NYWlsQXR0YWNo",
-            "bWVudCIkChFTZW5kRW1haWxSZXNwb25zZRIPCgdzdWNjZXNzGAEgASgIKrMC",
-            "CglFcnJvclR5cGUSGgoWSU5WQUxJRF9SRVFVRVNUX0ZPUk1BVBAAEg0KCU5P",
-            "VF9GT1VORBABEhEKDUFMUkVBRFlfRVhJU1QQAhIUChBJTlZBTElEX1BBU1NX",
-            "T1JEEAMSGQoVSU5URVJOQUxfU0VSVkVSX0VSUk9SEAQSDQoJRk9SQklEREVO",
-            "EAUSDAoIQ09ORkxJQ1QQBhIXChNDQVJEX05PVF9SRUdJU1RFUkVEEAcSGAoU",
-            "RFVQTElDQVRFX05BTUVfRVhJU1QQCBIUChBTVFVESU9fTk9UX0ZPVU5EEAkS",
-            "EwoPU1RBRkZfTk9UX0ZPVU5EEAoSFgoSQ1VTVE9NRVJfTk9UX0ZPVU5EEAsS",
-            "EwoPQ1JFRElUX1NIT1JUQUdFEAwSDwoLQkFEX1JFUVVFU1QQDSolCgtQYXlt",
-            "ZW50VHlwZRIKCgZCeUNhc2gQABIKCgZCeUNhcmQQAWIGcHJvdG8z"));
+            "aXQYAiABKAUivAIKCEN1c3RvbWVyEgoKAmlkGAEgASgFEgwKBG5hbWUYAiAB",
+            "KAkSDAoEa2FuYRgDIAEoCRIQCghiaXJ0aGRheRgEIAEoAxIOCgZnZW5kZXIY",
+            "BSABKAUSFAoMcG9zdGFsX2NvZGUxGAYgASgJEhQKDHBvc3RhbF9jb2RlMhgH",
+            "IAEoCRIPCgdhZGRyZXNzGAggASgJEhQKDHBob25lX251bWJlchgJIAEoCRIR",
+            "Cglqb2luX2RhdGUYCiABKAMSFQoNZW1haWxfYWRkcmVzcxgLIAEoCRIQCghj",
+            "YW5fbWFpbBgMIAEoCBIRCgljYW5fZW1haWwYDSABKAgSEAoIY2FuX2NhbGwY",
+            "DiABKAgSEwoLZGVzY3JpcHRpb24YDyABKAkSHQoEY2FyZBgQIAEoCzIPLnBy",
+            "b3RvYnVmcy5DYXJkIkEKF1NlbGVjdEN1c3RvbWVyc1Jlc3BvbnNlEiYKCWN1",
+            "c3RvbWVycxgBIAMoCzITLnByb3RvYnVmcy5DdXN0b21lciK9AgoVQ3JlYXRl",
+            "Q3VzdG9tZXJSZXF1ZXN0EgwKBG5hbWUYASABKAkSDAoEa2FuYRgCIAEoCRIQ",
+            "CghiaXJ0aGRheRgDIAEoAxIOCgZnZW5kZXIYBCABKAUSFAoMcG9zdGFsX2Nv",
+            "ZGUxGAUgASgJEhQKDHBvc3RhbF9jb2RlMhgGIAEoCRIPCgdhZGRyZXNzGAcg",
+            "ASgJEhQKDHBob25lX251bWJlchgIIAEoCRIRCglqb2luX2RhdGUYCSABKAMS",
+            "FQoNZW1haWxfYWRkcmVzcxgKIAEoCRIQCghjYW5fbWFpbBgLIAEoCBIRCglj",
+            "YW5fZW1haWwYDCABKAgSEAoIY2FuX2NhbGwYDSABKAgSEwoLZGVzY3JpcHRp",
+            "b24YDiABKAkSHQoEY2FyZBgPIAEoCzIPLnByb3RvYnVmcy5DYXJkIj8KFkNy",
+            "ZWF0ZUN1c3RvbWVyUmVzcG9uc2USJQoIY3VzdG9tZXIYASABKAsyEy5wcm90",
+            "b2J1ZnMuQ3VzdG9tZXIiIwoVRGVsZXRlQ3VzdG9tZXJSZXF1ZXN0EgoKAmlk",
+            "GAEgASgFIikKFkRlbGV0ZUN1c3RvbWVyUmVzcG9uc2USDwoHc3VjY2VzcxgB",
+            "IAEoCCI+ChVVcGRhdGVDdXN0b21lclJlcXVlc3QSJQoIY3VzdG9tZXIYASAB",
+            "KAsyEy5wcm90b2J1ZnMuQ3VzdG9tZXIiPwoWVXBkYXRlQ3VzdG9tZXJSZXNw",
+            "b25zZRIlCghjdXN0b21lchgBIAEoCzITLnByb3RvYnVmcy5DdXN0b21lciJN",
+            "ChhTZXRDYXJkT25DdXN0b21lclJlcXVlc3QSEgoKY3VzdG9tZXJJZBgBIAEo",
+            "BRIdCgRjYXJkGAIgASgLMg8ucHJvdG9idWZzLkNhcmQiQgoZU2V0Q2FyZE9u",
+            "Q3VzdG9tZXJSZXNwb25zZRIlCghjdXN0b21lchgBIAEoCzITLnByb3RvYnVm",
+            "cy5DdXN0b21lciI2ChBBZGRDcmVkaXRSZXF1ZXN0EhIKCmN1c3RvbWVySWQY",
+            "ASABKAUSDgoGYW1vdW50GAIgASgFIjoKEUFkZENyZWRpdFJlc3BvbnNlEiUK",
+            "CGN1c3RvbWVyGAEgASgLMhMucHJvdG9idWZzLkN1c3RvbWVyIpYBCgZMZXNz",
+            "b24SCgoCaWQYASABKAUSEAoIc3R1ZGlvSWQYAiABKAUSDwoHc3RhZmZJZBgD",
+            "IAEoBRISCgpjdXN0b21lcklkGAQgASgFEgsKA2ZlZRgFIAEoBRIrCgtwYXlt",
+            "ZW50VHlwZRgGIAEoDjIWLnByb3RvYnVmcy5QYXltZW50VHlwZRIPCgd0YWtl",
+            "bkF0GAcgASgDIpkBChVSZWdpc3Rlckxlc3NvblJlcXVlc3QSEAoIc3R1ZGlv",
+            "SWQYASABKAUSDwoHc3RhZmZJZBgCIAEoBRISCgpjdXN0b21lcklkGAMgASgF",
+            "EgsKA2ZlZRgEIAEoBRIrCgtwYXltZW50VHlwZRgFIAEoDjIWLnByb3RvYnVm",
+            "cy5QYXltZW50VHlwZRIPCgd0YWtlbkF0GAYgASgDImIKFlJlZ2lzdGVyTGVz",
+            "c29uUmVzcG9uc2USIQoGbGVzc29uGAEgASgLMhEucHJvdG9idWZzLkxlc3Nv",
+            "bhIlCghjdXN0b21lchgCIAEoCzITLnByb3RvYnVmcy5DdXN0b21lciJ1ChRT",
+            "ZWFyY2hMZXNzb25zUmVxdWVzdBIQCghzdHVkaW9JZBgBIAEoBRIPCgdzdGFm",
+            "ZklkGAIgASgFEhIKCmN1c3RvbWVySWQYAyABKAUSEwoLdGFrZW5BdEZyb20Y",
+            "BCABKAMSEQoJdGFrZW5BdFRvGAUgASgDIjsKFVNlYXJjaExlc3NvbnNSZXNw",
+            "b25zZRIiCgdsZXNzb25zGAEgAygLMhEucHJvdG9idWZzLkxlc3NvbiIhChNE",
+            "ZWxldGVMZXNzb25SZXF1ZXN0EgoKAmlkGAEgASgFIicKFERlbGV0ZUxlc3Nv",
+            "blJlc3BvbnNlEg8KB3N1Y2Nlc3MYASABKAgiLAoOTWFpbEF0dGFjaG1lbnQS",
+            "DAoEbmFtZRgBIAEoCRIMCgRkYXRhGAIgASgMInYKEFNlbmRFbWFpbFJlcXVl",
+            "c3QSDwoHc3ViamVjdBgBIAEoCRIMCgRib2R5GAIgASgJEhMKC3RvQWRkcmVz",
+            "c2VzGAMgAygJEi4KC2F0dGFjaG1lbnRzGAQgAygLMhkucHJvdG9idWZzLk1h",
+            "aWxBdHRhY2htZW50IiQKEVNlbmRFbWFpbFJlc3BvbnNlEg8KB3N1Y2Nlc3MY",
+            "ASABKAgqswIKCUVycm9yVHlwZRIaChZJTlZBTElEX1JFUVVFU1RfRk9STUFU",
+            "EAASDQoJTk9UX0ZPVU5EEAESEQoNQUxSRUFEWV9FWElTVBACEhQKEElOVkFM",
+            "SURfUEFTU1dPUkQQAxIZChVJTlRFUk5BTF9TRVJWRVJfRVJST1IQBBINCglG",
+            "T1JCSURERU4QBRIMCghDT05GTElDVBAGEhcKE0NBUkRfTk9UX1JFR0lTVEVS",
+            "RUQQBxIYChREVVBMSUNBVEVfTkFNRV9FWElTVBAIEhQKEFNUVURJT19OT1Rf",
+            "Rk9VTkQQCRITCg9TVEFGRl9OT1RfRk9VTkQQChIWChJDVVNUT01FUl9OT1Rf",
+            "Rk9VTkQQCxITCg9DUkVESVRfU0hPUlRBR0UQDBIPCgtCQURfUkVRVUVTVBAN",
+            "KiUKC1BheW1lbnRUeXBlEgoKBkJ5Q2FzaBAAEgoKBkJ5Q2FyZBABYgZwcm90",
+            "bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Protobufs.ErrorType), typeof(global::Protobufs.PaymentType), }, new pbr::GeneratedClrTypeInfo[] {
@@ -134,9 +145,9 @@ namespace Protobufs {
             new pbr::GeneratedClrTypeInfo(typeof(global::Protobufs.UpdateStaffRequest), global::Protobufs.UpdateStaffRequest.Parser, new[]{ "Staff" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Protobufs.UpdateStaffResponse), global::Protobufs.UpdateStaffResponse.Parser, new[]{ "Staff" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Protobufs.Card), global::Protobufs.Card.Parser, new[]{ "Id", "Credit" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Protobufs.Customer), global::Protobufs.Customer.Parser, new[]{ "Id", "Name", "Description", "Card" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Protobufs.Customer), global::Protobufs.Customer.Parser, new[]{ "Id", "Name", "Kana", "Birthday", "Gender", "PostalCode1", "PostalCode2", "Address", "PhoneNumber", "JoinDate", "EmailAddress", "CanMail", "CanEmail", "CanCall", "Description", "Card" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Protobufs.SelectCustomersResponse), global::Protobufs.SelectCustomersResponse.Parser, new[]{ "Customers" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Protobufs.CreateCustomerRequest), global::Protobufs.CreateCustomerRequest.Parser, new[]{ "Name", "Description", "Card" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Protobufs.CreateCustomerRequest), global::Protobufs.CreateCustomerRequest.Parser, new[]{ "Name", "Kana", "Birthday", "Gender", "PostalCode1", "PostalCode2", "Address", "PhoneNumber", "JoinDate", "EmailAddress", "CanMail", "CanEmail", "CanCall", "Description", "Card" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Protobufs.CreateCustomerResponse), global::Protobufs.CreateCustomerResponse.Parser, new[]{ "Customer" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Protobufs.DeleteCustomerRequest), global::Protobufs.DeleteCustomerRequest.Parser, new[]{ "Id" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Protobufs.DeleteCustomerResponse), global::Protobufs.DeleteCustomerResponse.Parser, new[]{ "Success" }, null, null, null),
@@ -4004,6 +4015,18 @@ namespace Protobufs {
     public Customer(Customer other) : this() {
       id_ = other.id_;
       name_ = other.name_;
+      kana_ = other.kana_;
+      birthday_ = other.birthday_;
+      gender_ = other.gender_;
+      postalCode1_ = other.postalCode1_;
+      postalCode2_ = other.postalCode2_;
+      address_ = other.address_;
+      phoneNumber_ = other.phoneNumber_;
+      joinDate_ = other.joinDate_;
+      emailAddress_ = other.emailAddress_;
+      canMail_ = other.canMail_;
+      canEmail_ = other.canEmail_;
+      canCall_ = other.canCall_;
       description_ = other.description_;
       Card = other.card_ != null ? other.Card.Clone() : null;
     }
@@ -4035,8 +4058,140 @@ namespace Protobufs {
       }
     }
 
+    /// <summary>Field number for the "kana" field.</summary>
+    public const int KanaFieldNumber = 3;
+    private string kana_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string Kana {
+      get { return kana_; }
+      set {
+        kana_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "birthday" field.</summary>
+    public const int BirthdayFieldNumber = 4;
+    private long birthday_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public long Birthday {
+      get { return birthday_; }
+      set {
+        birthday_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "gender" field.</summary>
+    public const int GenderFieldNumber = 5;
+    private int gender_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int Gender {
+      get { return gender_; }
+      set {
+        gender_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "postal_code1" field.</summary>
+    public const int PostalCode1FieldNumber = 6;
+    private string postalCode1_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string PostalCode1 {
+      get { return postalCode1_; }
+      set {
+        postalCode1_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "postal_code2" field.</summary>
+    public const int PostalCode2FieldNumber = 7;
+    private string postalCode2_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string PostalCode2 {
+      get { return postalCode2_; }
+      set {
+        postalCode2_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "address" field.</summary>
+    public const int AddressFieldNumber = 8;
+    private string address_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string Address {
+      get { return address_; }
+      set {
+        address_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "phone_number" field.</summary>
+    public const int PhoneNumberFieldNumber = 9;
+    private string phoneNumber_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string PhoneNumber {
+      get { return phoneNumber_; }
+      set {
+        phoneNumber_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "join_date" field.</summary>
+    public const int JoinDateFieldNumber = 10;
+    private long joinDate_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public long JoinDate {
+      get { return joinDate_; }
+      set {
+        joinDate_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "email_address" field.</summary>
+    public const int EmailAddressFieldNumber = 11;
+    private string emailAddress_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string EmailAddress {
+      get { return emailAddress_; }
+      set {
+        emailAddress_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "can_mail" field.</summary>
+    public const int CanMailFieldNumber = 12;
+    private bool canMail_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool CanMail {
+      get { return canMail_; }
+      set {
+        canMail_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "can_email" field.</summary>
+    public const int CanEmailFieldNumber = 13;
+    private bool canEmail_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool CanEmail {
+      get { return canEmail_; }
+      set {
+        canEmail_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "can_call" field.</summary>
+    public const int CanCallFieldNumber = 14;
+    private bool canCall_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool CanCall {
+      get { return canCall_; }
+      set {
+        canCall_ = value;
+      }
+    }
+
     /// <summary>Field number for the "description" field.</summary>
-    public const int DescriptionFieldNumber = 3;
+    public const int DescriptionFieldNumber = 15;
     private string description_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public string Description {
@@ -4047,7 +4202,7 @@ namespace Protobufs {
     }
 
     /// <summary>Field number for the "card" field.</summary>
-    public const int CardFieldNumber = 4;
+    public const int CardFieldNumber = 16;
     private global::Protobufs.Card card_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::Protobufs.Card Card {
@@ -4072,6 +4227,18 @@ namespace Protobufs {
       }
       if (Id != other.Id) return false;
       if (Name != other.Name) return false;
+      if (Kana != other.Kana) return false;
+      if (Birthday != other.Birthday) return false;
+      if (Gender != other.Gender) return false;
+      if (PostalCode1 != other.PostalCode1) return false;
+      if (PostalCode2 != other.PostalCode2) return false;
+      if (Address != other.Address) return false;
+      if (PhoneNumber != other.PhoneNumber) return false;
+      if (JoinDate != other.JoinDate) return false;
+      if (EmailAddress != other.EmailAddress) return false;
+      if (CanMail != other.CanMail) return false;
+      if (CanEmail != other.CanEmail) return false;
+      if (CanCall != other.CanCall) return false;
       if (Description != other.Description) return false;
       if (!object.Equals(Card, other.Card)) return false;
       return true;
@@ -4082,6 +4249,18 @@ namespace Protobufs {
       int hash = 1;
       if (Id != 0) hash ^= Id.GetHashCode();
       if (Name.Length != 0) hash ^= Name.GetHashCode();
+      if (Kana.Length != 0) hash ^= Kana.GetHashCode();
+      if (Birthday != 0L) hash ^= Birthday.GetHashCode();
+      if (Gender != 0) hash ^= Gender.GetHashCode();
+      if (PostalCode1.Length != 0) hash ^= PostalCode1.GetHashCode();
+      if (PostalCode2.Length != 0) hash ^= PostalCode2.GetHashCode();
+      if (Address.Length != 0) hash ^= Address.GetHashCode();
+      if (PhoneNumber.Length != 0) hash ^= PhoneNumber.GetHashCode();
+      if (JoinDate != 0L) hash ^= JoinDate.GetHashCode();
+      if (EmailAddress.Length != 0) hash ^= EmailAddress.GetHashCode();
+      if (CanMail != false) hash ^= CanMail.GetHashCode();
+      if (CanEmail != false) hash ^= CanEmail.GetHashCode();
+      if (CanCall != false) hash ^= CanCall.GetHashCode();
       if (Description.Length != 0) hash ^= Description.GetHashCode();
       if (card_ != null) hash ^= Card.GetHashCode();
       return hash;
@@ -4102,12 +4281,60 @@ namespace Protobufs {
         output.WriteRawTag(18);
         output.WriteString(Name);
       }
-      if (Description.Length != 0) {
+      if (Kana.Length != 0) {
         output.WriteRawTag(26);
+        output.WriteString(Kana);
+      }
+      if (Birthday != 0L) {
+        output.WriteRawTag(32);
+        output.WriteInt64(Birthday);
+      }
+      if (Gender != 0) {
+        output.WriteRawTag(40);
+        output.WriteInt32(Gender);
+      }
+      if (PostalCode1.Length != 0) {
+        output.WriteRawTag(50);
+        output.WriteString(PostalCode1);
+      }
+      if (PostalCode2.Length != 0) {
+        output.WriteRawTag(58);
+        output.WriteString(PostalCode2);
+      }
+      if (Address.Length != 0) {
+        output.WriteRawTag(66);
+        output.WriteString(Address);
+      }
+      if (PhoneNumber.Length != 0) {
+        output.WriteRawTag(74);
+        output.WriteString(PhoneNumber);
+      }
+      if (JoinDate != 0L) {
+        output.WriteRawTag(80);
+        output.WriteInt64(JoinDate);
+      }
+      if (EmailAddress.Length != 0) {
+        output.WriteRawTag(90);
+        output.WriteString(EmailAddress);
+      }
+      if (CanMail != false) {
+        output.WriteRawTag(96);
+        output.WriteBool(CanMail);
+      }
+      if (CanEmail != false) {
+        output.WriteRawTag(104);
+        output.WriteBool(CanEmail);
+      }
+      if (CanCall != false) {
+        output.WriteRawTag(112);
+        output.WriteBool(CanCall);
+      }
+      if (Description.Length != 0) {
+        output.WriteRawTag(122);
         output.WriteString(Description);
       }
       if (card_ != null) {
-        output.WriteRawTag(34);
+        output.WriteRawTag(130, 1);
         output.WriteMessage(Card);
       }
     }
@@ -4121,11 +4348,47 @@ namespace Protobufs {
       if (Name.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Name);
       }
+      if (Kana.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Kana);
+      }
+      if (Birthday != 0L) {
+        size += 1 + pb::CodedOutputStream.ComputeInt64Size(Birthday);
+      }
+      if (Gender != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Gender);
+      }
+      if (PostalCode1.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(PostalCode1);
+      }
+      if (PostalCode2.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(PostalCode2);
+      }
+      if (Address.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Address);
+      }
+      if (PhoneNumber.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(PhoneNumber);
+      }
+      if (JoinDate != 0L) {
+        size += 1 + pb::CodedOutputStream.ComputeInt64Size(JoinDate);
+      }
+      if (EmailAddress.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(EmailAddress);
+      }
+      if (CanMail != false) {
+        size += 1 + 1;
+      }
+      if (CanEmail != false) {
+        size += 1 + 1;
+      }
+      if (CanCall != false) {
+        size += 1 + 1;
+      }
       if (Description.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Description);
       }
       if (card_ != null) {
-        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Card);
+        size += 2 + pb::CodedOutputStream.ComputeMessageSize(Card);
       }
       return size;
     }
@@ -4140,6 +4403,42 @@ namespace Protobufs {
       }
       if (other.Name.Length != 0) {
         Name = other.Name;
+      }
+      if (other.Kana.Length != 0) {
+        Kana = other.Kana;
+      }
+      if (other.Birthday != 0L) {
+        Birthday = other.Birthday;
+      }
+      if (other.Gender != 0) {
+        Gender = other.Gender;
+      }
+      if (other.PostalCode1.Length != 0) {
+        PostalCode1 = other.PostalCode1;
+      }
+      if (other.PostalCode2.Length != 0) {
+        PostalCode2 = other.PostalCode2;
+      }
+      if (other.Address.Length != 0) {
+        Address = other.Address;
+      }
+      if (other.PhoneNumber.Length != 0) {
+        PhoneNumber = other.PhoneNumber;
+      }
+      if (other.JoinDate != 0L) {
+        JoinDate = other.JoinDate;
+      }
+      if (other.EmailAddress.Length != 0) {
+        EmailAddress = other.EmailAddress;
+      }
+      if (other.CanMail != false) {
+        CanMail = other.CanMail;
+      }
+      if (other.CanEmail != false) {
+        CanEmail = other.CanEmail;
+      }
+      if (other.CanCall != false) {
+        CanCall = other.CanCall;
       }
       if (other.Description.Length != 0) {
         Description = other.Description;
@@ -4169,10 +4468,58 @@ namespace Protobufs {
             break;
           }
           case 26: {
+            Kana = input.ReadString();
+            break;
+          }
+          case 32: {
+            Birthday = input.ReadInt64();
+            break;
+          }
+          case 40: {
+            Gender = input.ReadInt32();
+            break;
+          }
+          case 50: {
+            PostalCode1 = input.ReadString();
+            break;
+          }
+          case 58: {
+            PostalCode2 = input.ReadString();
+            break;
+          }
+          case 66: {
+            Address = input.ReadString();
+            break;
+          }
+          case 74: {
+            PhoneNumber = input.ReadString();
+            break;
+          }
+          case 80: {
+            JoinDate = input.ReadInt64();
+            break;
+          }
+          case 90: {
+            EmailAddress = input.ReadString();
+            break;
+          }
+          case 96: {
+            CanMail = input.ReadBool();
+            break;
+          }
+          case 104: {
+            CanEmail = input.ReadBool();
+            break;
+          }
+          case 112: {
+            CanCall = input.ReadBool();
+            break;
+          }
+          case 122: {
             Description = input.ReadString();
             break;
           }
-          case 34: {
+          case 130: {
             if (card_ == null) {
               card_ = new global::Protobufs.Card();
             }
@@ -4319,6 +4666,18 @@ namespace Protobufs {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public CreateCustomerRequest(CreateCustomerRequest other) : this() {
       name_ = other.name_;
+      kana_ = other.kana_;
+      birthday_ = other.birthday_;
+      gender_ = other.gender_;
+      postalCode1_ = other.postalCode1_;
+      postalCode2_ = other.postalCode2_;
+      address_ = other.address_;
+      phoneNumber_ = other.phoneNumber_;
+      joinDate_ = other.joinDate_;
+      emailAddress_ = other.emailAddress_;
+      canMail_ = other.canMail_;
+      canEmail_ = other.canEmail_;
+      canCall_ = other.canCall_;
       description_ = other.description_;
       Card = other.card_ != null ? other.Card.Clone() : null;
     }
@@ -4339,8 +4698,140 @@ namespace Protobufs {
       }
     }
 
+    /// <summary>Field number for the "kana" field.</summary>
+    public const int KanaFieldNumber = 2;
+    private string kana_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string Kana {
+      get { return kana_; }
+      set {
+        kana_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "birthday" field.</summary>
+    public const int BirthdayFieldNumber = 3;
+    private long birthday_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public long Birthday {
+      get { return birthday_; }
+      set {
+        birthday_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "gender" field.</summary>
+    public const int GenderFieldNumber = 4;
+    private int gender_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int Gender {
+      get { return gender_; }
+      set {
+        gender_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "postal_code1" field.</summary>
+    public const int PostalCode1FieldNumber = 5;
+    private string postalCode1_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string PostalCode1 {
+      get { return postalCode1_; }
+      set {
+        postalCode1_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "postal_code2" field.</summary>
+    public const int PostalCode2FieldNumber = 6;
+    private string postalCode2_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string PostalCode2 {
+      get { return postalCode2_; }
+      set {
+        postalCode2_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "address" field.</summary>
+    public const int AddressFieldNumber = 7;
+    private string address_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string Address {
+      get { return address_; }
+      set {
+        address_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "phone_number" field.</summary>
+    public const int PhoneNumberFieldNumber = 8;
+    private string phoneNumber_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string PhoneNumber {
+      get { return phoneNumber_; }
+      set {
+        phoneNumber_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "join_date" field.</summary>
+    public const int JoinDateFieldNumber = 9;
+    private long joinDate_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public long JoinDate {
+      get { return joinDate_; }
+      set {
+        joinDate_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "email_address" field.</summary>
+    public const int EmailAddressFieldNumber = 10;
+    private string emailAddress_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string EmailAddress {
+      get { return emailAddress_; }
+      set {
+        emailAddress_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "can_mail" field.</summary>
+    public const int CanMailFieldNumber = 11;
+    private bool canMail_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool CanMail {
+      get { return canMail_; }
+      set {
+        canMail_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "can_email" field.</summary>
+    public const int CanEmailFieldNumber = 12;
+    private bool canEmail_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool CanEmail {
+      get { return canEmail_; }
+      set {
+        canEmail_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "can_call" field.</summary>
+    public const int CanCallFieldNumber = 13;
+    private bool canCall_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool CanCall {
+      get { return canCall_; }
+      set {
+        canCall_ = value;
+      }
+    }
+
     /// <summary>Field number for the "description" field.</summary>
-    public const int DescriptionFieldNumber = 2;
+    public const int DescriptionFieldNumber = 14;
     private string description_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public string Description {
@@ -4351,7 +4842,7 @@ namespace Protobufs {
     }
 
     /// <summary>Field number for the "card" field.</summary>
-    public const int CardFieldNumber = 3;
+    public const int CardFieldNumber = 15;
     private global::Protobufs.Card card_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::Protobufs.Card Card {
@@ -4375,6 +4866,18 @@ namespace Protobufs {
         return true;
       }
       if (Name != other.Name) return false;
+      if (Kana != other.Kana) return false;
+      if (Birthday != other.Birthday) return false;
+      if (Gender != other.Gender) return false;
+      if (PostalCode1 != other.PostalCode1) return false;
+      if (PostalCode2 != other.PostalCode2) return false;
+      if (Address != other.Address) return false;
+      if (PhoneNumber != other.PhoneNumber) return false;
+      if (JoinDate != other.JoinDate) return false;
+      if (EmailAddress != other.EmailAddress) return false;
+      if (CanMail != other.CanMail) return false;
+      if (CanEmail != other.CanEmail) return false;
+      if (CanCall != other.CanCall) return false;
       if (Description != other.Description) return false;
       if (!object.Equals(Card, other.Card)) return false;
       return true;
@@ -4384,6 +4887,18 @@ namespace Protobufs {
     public override int GetHashCode() {
       int hash = 1;
       if (Name.Length != 0) hash ^= Name.GetHashCode();
+      if (Kana.Length != 0) hash ^= Kana.GetHashCode();
+      if (Birthday != 0L) hash ^= Birthday.GetHashCode();
+      if (Gender != 0) hash ^= Gender.GetHashCode();
+      if (PostalCode1.Length != 0) hash ^= PostalCode1.GetHashCode();
+      if (PostalCode2.Length != 0) hash ^= PostalCode2.GetHashCode();
+      if (Address.Length != 0) hash ^= Address.GetHashCode();
+      if (PhoneNumber.Length != 0) hash ^= PhoneNumber.GetHashCode();
+      if (JoinDate != 0L) hash ^= JoinDate.GetHashCode();
+      if (EmailAddress.Length != 0) hash ^= EmailAddress.GetHashCode();
+      if (CanMail != false) hash ^= CanMail.GetHashCode();
+      if (CanEmail != false) hash ^= CanEmail.GetHashCode();
+      if (CanCall != false) hash ^= CanCall.GetHashCode();
       if (Description.Length != 0) hash ^= Description.GetHashCode();
       if (card_ != null) hash ^= Card.GetHashCode();
       return hash;
@@ -4400,12 +4915,60 @@ namespace Protobufs {
         output.WriteRawTag(10);
         output.WriteString(Name);
       }
-      if (Description.Length != 0) {
+      if (Kana.Length != 0) {
         output.WriteRawTag(18);
+        output.WriteString(Kana);
+      }
+      if (Birthday != 0L) {
+        output.WriteRawTag(24);
+        output.WriteInt64(Birthday);
+      }
+      if (Gender != 0) {
+        output.WriteRawTag(32);
+        output.WriteInt32(Gender);
+      }
+      if (PostalCode1.Length != 0) {
+        output.WriteRawTag(42);
+        output.WriteString(PostalCode1);
+      }
+      if (PostalCode2.Length != 0) {
+        output.WriteRawTag(50);
+        output.WriteString(PostalCode2);
+      }
+      if (Address.Length != 0) {
+        output.WriteRawTag(58);
+        output.WriteString(Address);
+      }
+      if (PhoneNumber.Length != 0) {
+        output.WriteRawTag(66);
+        output.WriteString(PhoneNumber);
+      }
+      if (JoinDate != 0L) {
+        output.WriteRawTag(72);
+        output.WriteInt64(JoinDate);
+      }
+      if (EmailAddress.Length != 0) {
+        output.WriteRawTag(82);
+        output.WriteString(EmailAddress);
+      }
+      if (CanMail != false) {
+        output.WriteRawTag(88);
+        output.WriteBool(CanMail);
+      }
+      if (CanEmail != false) {
+        output.WriteRawTag(96);
+        output.WriteBool(CanEmail);
+      }
+      if (CanCall != false) {
+        output.WriteRawTag(104);
+        output.WriteBool(CanCall);
+      }
+      if (Description.Length != 0) {
+        output.WriteRawTag(114);
         output.WriteString(Description);
       }
       if (card_ != null) {
-        output.WriteRawTag(26);
+        output.WriteRawTag(122);
         output.WriteMessage(Card);
       }
     }
@@ -4415,6 +4978,42 @@ namespace Protobufs {
       int size = 0;
       if (Name.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Name);
+      }
+      if (Kana.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Kana);
+      }
+      if (Birthday != 0L) {
+        size += 1 + pb::CodedOutputStream.ComputeInt64Size(Birthday);
+      }
+      if (Gender != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Gender);
+      }
+      if (PostalCode1.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(PostalCode1);
+      }
+      if (PostalCode2.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(PostalCode2);
+      }
+      if (Address.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Address);
+      }
+      if (PhoneNumber.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(PhoneNumber);
+      }
+      if (JoinDate != 0L) {
+        size += 1 + pb::CodedOutputStream.ComputeInt64Size(JoinDate);
+      }
+      if (EmailAddress.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(EmailAddress);
+      }
+      if (CanMail != false) {
+        size += 1 + 1;
+      }
+      if (CanEmail != false) {
+        size += 1 + 1;
+      }
+      if (CanCall != false) {
+        size += 1 + 1;
       }
       if (Description.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Description);
@@ -4432,6 +5031,42 @@ namespace Protobufs {
       }
       if (other.Name.Length != 0) {
         Name = other.Name;
+      }
+      if (other.Kana.Length != 0) {
+        Kana = other.Kana;
+      }
+      if (other.Birthday != 0L) {
+        Birthday = other.Birthday;
+      }
+      if (other.Gender != 0) {
+        Gender = other.Gender;
+      }
+      if (other.PostalCode1.Length != 0) {
+        PostalCode1 = other.PostalCode1;
+      }
+      if (other.PostalCode2.Length != 0) {
+        PostalCode2 = other.PostalCode2;
+      }
+      if (other.Address.Length != 0) {
+        Address = other.Address;
+      }
+      if (other.PhoneNumber.Length != 0) {
+        PhoneNumber = other.PhoneNumber;
+      }
+      if (other.JoinDate != 0L) {
+        JoinDate = other.JoinDate;
+      }
+      if (other.EmailAddress.Length != 0) {
+        EmailAddress = other.EmailAddress;
+      }
+      if (other.CanMail != false) {
+        CanMail = other.CanMail;
+      }
+      if (other.CanEmail != false) {
+        CanEmail = other.CanEmail;
+      }
+      if (other.CanCall != false) {
+        CanCall = other.CanCall;
       }
       if (other.Description.Length != 0) {
         Description = other.Description;
@@ -4457,10 +5092,58 @@ namespace Protobufs {
             break;
           }
           case 18: {
+            Kana = input.ReadString();
+            break;
+          }
+          case 24: {
+            Birthday = input.ReadInt64();
+            break;
+          }
+          case 32: {
+            Gender = input.ReadInt32();
+            break;
+          }
+          case 42: {
+            PostalCode1 = input.ReadString();
+            break;
+          }
+          case 50: {
+            PostalCode2 = input.ReadString();
+            break;
+          }
+          case 58: {
+            Address = input.ReadString();
+            break;
+          }
+          case 66: {
+            PhoneNumber = input.ReadString();
+            break;
+          }
+          case 72: {
+            JoinDate = input.ReadInt64();
+            break;
+          }
+          case 82: {
+            EmailAddress = input.ReadString();
+            break;
+          }
+          case 88: {
+            CanMail = input.ReadBool();
+            break;
+          }
+          case 96: {
+            CanEmail = input.ReadBool();
+            break;
+          }
+          case 104: {
+            CanCall = input.ReadBool();
+            break;
+          }
+          case 114: {
             Description = input.ReadString();
             break;
           }
-          case 26: {
+          case 122: {
             if (card_ == null) {
               card_ = new global::Protobufs.Card();
             }

@@ -32,8 +32,10 @@ namespace LessonManager.Commands
         public void Execute(object parameter)
         {
             var p = parameter as Parameter;
+            PleaseWaitVisibility.Instance().IsVisible = true;
             WebAPIs.Session.Create(p.EmailAddress, p.Password).ContinueWith((t) =>
             {
+                PleaseWaitVisibility.Instance().IsVisible = false;
                 Result<Models.Company> result = t.Result;
                 if (result.IsSuccess)
                 {

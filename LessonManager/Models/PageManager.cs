@@ -23,6 +23,8 @@ namespace LessonManager.Models
             pageMap_ = new Dictionary<string, UserControl>();
             pageMap_.Add("Signin", new SigninView());
             pageMap_.Add("Main", new MainMenuView());
+            pageMap_.Add("CreateCustomer", new CreateCustomerView());
+            pageMap_.Add("Customers", new CustomersView());
             pageMap_.Add("Lessons", new LessonsView());
 
             CurrentPage = pageMap_["Signin"];

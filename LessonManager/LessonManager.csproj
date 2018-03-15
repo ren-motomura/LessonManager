@@ -126,6 +126,7 @@
     <Compile Include="Utils\NFC.cs" />
     <Compile Include="Utils\Time.cs" />
     <Compile Include="ViewModels\CompanyViewModel.cs" />
+    <Compile Include="ViewModels\CreateCustomerViewModel.cs" />
     <Compile Include="ViewModels\CustomersViewModel.cs" />
     <Compile Include="ViewModels\Domain\SearchCustomerModalViewModel.cs" />
     <Compile Include="ViewModels\Domain\SendMailModalViewModel.cs" />
@@ -139,6 +140,9 @@
     <Compile Include="ViewModels\StudiosViewModel.cs" />
     <Compile Include="Views\CompanyView.xaml.cs">
       <DependentUpon>CompanyView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CreateCustomerView.xaml.cs">
+      <DependentUpon>CreateCustomerView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\CustomersView.xaml.cs">
       <DependentUpon>CustomersView.xaml</DependentUpon>
@@ -208,7 +212,15 @@
     <Compile Include="WebAPIs\Company.cs" />
     <Compile Include="WebAPIs\Staff.cs" />
     <Compile Include="WebAPIs\Studio.cs" />
+    <Page Include="Styles\StyleDictionary.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\CompanyView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\CreateCustomerView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

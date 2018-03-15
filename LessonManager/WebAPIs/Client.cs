@@ -17,8 +17,8 @@ namespace LessonManager.WebAPIs
             get { return instance; }
         }
 
-        private const string host = "https://third-being-175805.appspot.com/"; // 設定ファイルに切り出す？
-        //private const string host = "http://localhost:8080/"; // 設定ファイルに切り出す？
+        //private const string host = "https://third-being-175805.appspot.com/"; // 設定ファイルに切り出す？
+        private const string host = "http://localhost:8080/"; // 設定ファイルに切り出す？
         private const string funcNameHeader = "X-Lessonmanager-Funcname";
 
         private HttpClient client;

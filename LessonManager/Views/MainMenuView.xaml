@@ -38,6 +38,18 @@
 
             <Button Margin="10" Grid.Column="0" Grid.Row="0" Height="Auto"
                     Command="{Binding MovePageCommand}"
+                    CommandParameter="CreateCustomer">
+                お客様登録
+            </Button>
+
+            <Button Margin="10" Grid.Column="1" Grid.Row="0" Height="Auto"
+                    Command="{Binding MovePageCommand}"
+                    CommandParameter="Customers">
+                お客様一覧
+            </Button>
+
+            <Button Margin="10" Grid.Column="2" Grid.Row="0" Height="Auto"
+                    Command="{Binding MovePageCommand}"
                     CommandParameter="Lessons">
                 レッスン
             </Button>

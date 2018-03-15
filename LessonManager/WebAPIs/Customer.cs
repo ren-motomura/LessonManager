@@ -31,16 +31,7 @@ namespace LessonManager.WebAPIs
             var res = SelectCustomersResponse.Parser.ParseFrom(responseDataStream.ToArray());
             var customers = res.Customers.Select(c =>
             {
-                var customer = new Models.Customer();
-                customer.ID = c.Id;
-                customer.Name = c.Name;
-                customer.Description = c.Description;
-                if (c.Card != null)
-                {
-                    customer.CardId = c.Card.Id;
-                    customer.Credit = c.Card.Credit;
-                }
-                return customer;
+                return ConvertCustomer(c);
             }).ToList();
 
             return new Result<List<Models.Customer>>(
@@ -51,10 +42,37 @@ namespace LessonManager.WebAPIs
 
         }
 
-        public static async Task<Result<Models.Customer>> Create(string name, string description)
+        public static async Task<Result<Models.Customer>> Create(
+            string name,
+            string kana,
+            DateTime birthday,
+            int gender,
+            string postalCode1,
+            string postalCode2,
+            string address,
+            string phoneNumber,
+            DateTime joinDate,
+            string emailAddress,
+            bool canMail,
+            bool canEmail,
+            bool canCall,
+            string description
+        )
         {
             var req = new CreateCustomerRequest();
             req.Name = name;
+            req.Kana = kana;
+            req.Birthday = Utils.Time.DateTimeToTimestamp(birthday);
+            req.Gender = gender;
+            req.PostalCode1 = postalCode1;
+            req.PostalCode2 = postalCode2;
+            req.Address = address;
+            req.PhoneNumber = phoneNumber;
+            req.JoinDate = Utils.Time.DateTimeToTimestamp(joinDate);
+            req.EmailAddress = emailAddress;
+            req.CanMail = canMail;
+            req.CanEmail = canEmail;
+            req.CanCall = canCall;
             req.Description = description;
 
             var reqData = req.ToByteArray();
@@ -76,12 +94,7 @@ namespace LessonManager.WebAPIs
 
             var res = CreateCustomerResponse.Parser.ParseFrom(responseDataStream.ToArray());
 
-            var customer = new Models.Customer();
-            customer.ID = res.Customer.Id;
-            customer.Name = res.Customer.Name;
-            customer.Description = res.Customer.Description;
-            customer.CardId = res.Customer.Card != null ? res.Customer.Card.Id : "";
-            customer.Credit = res.Customer.Card != null ? res.Customer.Card.Credit : 0;
+            var customer = ConvertCustomer(res.Customer);
 
             return new Result<Models.Customer>(
                 true,
@@ -119,12 +132,7 @@ namespace LessonManager.WebAPIs
 
             var res = CreateCustomerResponse.Parser.ParseFrom(responseDataStream.ToArray());
 
-            var customer = new Models.Customer();
-            customer.ID = res.Customer.Id;
-            customer.Name = res.Customer.Name;
-            customer.Description = res.Customer.Description;
-            customer.CardId = res.Customer.Card != null ? res.Customer.Card.Id : "";
-            customer.Credit = res.Customer.Card != null ? res.Customer.Card.Credit : 0;
+            var customer = ConvertCustomer(res.Customer);
 
             return new Result<Models.Customer>(
                 true,
@@ -189,12 +197,7 @@ namespace LessonManager.WebAPIs
 
             var res = CreateCustomerResponse.Parser.ParseFrom(responseDataStream.ToArray());
 
-            var customer = new Models.Customer();
-            customer.ID = res.Customer.Id;
-            customer.Name = res.Customer.Name;
-            customer.Description = res.Customer.Description;
-            customer.CardId = res.Customer.Card != null ? res.Customer.Card.Id : "";
-            customer.Credit = res.Customer.Card != null ? res.Customer.Card.Credit : 0;
+            var customer = ConvertCustomer(res.Customer);
 
             return new Result<Models.Customer>(
                 true,
@@ -228,18 +231,39 @@ namespace LessonManager.WebAPIs
 
             var res = AddCreditResponse.Parser.ParseFrom(responseDataStream.ToArray());
 
-            var customer = new Models.Customer();
-            customer.ID = res.Customer.Id;
-            customer.Name = res.Customer.Name;
-            customer.Description = res.Customer.Description;
-            customer.CardId = res.Customer.Card != null ? res.Customer.Card.Id : "";
-            customer.Credit = res.Customer.Card != null ? res.Customer.Card.Credit : 0;
+            var customer = ConvertCustomer(res.Customer);
 
             return new Result<Models.Customer>(
                 true,
                 customer,
                 null
             );
+        }
+
+        private static Models.Customer ConvertCustomer(Protobufs.Customer c)
+        {
+            var customer = new Models.Customer();
+            customer.ID = c.Id;
+            customer.Name = c.Name;
+            customer.Kana = c.Kana;
+            customer.Birthday = Utils.Time.TimestampToDateTime(c.Birthday);
+            customer.Gender = c.Gender;
+            customer.PostalCode1 = c.PostalCode1;
+            customer.PostalCode2 = c.PostalCode2;
+            customer.Address = c.Address;
+            customer.PhoneNumber = c.PhoneNumber;
+            customer.JoinDate = Utils.Time.TimestampToDateTime(c.JoinDate);
+            customer.EmailAddress = c.EmailAddress;
+            customer.CanMail = c.CanMail;
+            customer.CanEmail = c.CanEmail;
+            customer.CanCall = c.CanCall;
+            customer.Description = c.Description;
+            if (c.Card != null)
+            {
+                customer.CardId = c.Card.Id;
+                customer.Credit = c.Card.Credit;
+            }
+            return customer;
         }
     }
 }
