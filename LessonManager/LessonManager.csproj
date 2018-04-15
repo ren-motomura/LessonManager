@@ -150,6 +150,9 @@
     <Compile Include="Views\Domain\AddCreditModal.xaml.cs">
       <DependentUpon>AddCreditModal.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\Domain\CardPicker.xaml.cs">
+      <DependentUpon>CardPicker.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\Domain\CompanyImage.xaml.cs">
       <DependentUpon>CompanyImage.xaml</DependentUpon>
     </Compile>
@@ -229,6 +232,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\Domain\AddCreditModal.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Domain\CardPicker.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

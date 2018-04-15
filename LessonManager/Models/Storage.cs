@@ -29,11 +29,15 @@ namespace LessonManager.Models
             return instance_;
         }
 
-        public void LoadAll()
+        public async Task LoadAll()
         {
-            LoadCustomers();
-            LoadStaffs();
-            LoadStudios();
+            await Task.Run(() =>
+            {
+                Task t1 = LoadCustomers();
+                Task t2 = LoadStaffs();
+                Task t3 = LoadStudios();
+                Task.WaitAll(t1, t2, t3);
+            });
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
@@ -72,7 +76,7 @@ namespace LessonManager.Models
             }
         }
 
-        public async void LoadCustomers()
+        public async Task LoadCustomers()
         {
             if (!Models.Company.IsSignedIn())
             {
@@ -91,7 +95,7 @@ namespace LessonManager.Models
             }
         }
 
-        public async void LoadStaffs()
+        public async Task LoadStaffs()
         {
             if (!Models.Company.IsSignedIn())
             {
@@ -110,7 +114,7 @@ namespace LessonManager.Models
             }
         }
 
-        public async void LoadStudios()
+        public async Task LoadStudios()
         {
             if (!Models.Company.IsSignedIn())
             {

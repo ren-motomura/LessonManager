@@ -39,6 +39,9 @@
                               CloseButtonCommand="{Binding SearchConditionRemoveCommand}"
                               CloseButtonCommandParameter="{Binding RelativeSource={RelativeSource Self}}"
                               CloseButtonToolTip="検索条件を削除します"/>
+            <Button Style="{StaticResource MaterialDesignToolButton}" VerticalAlignment="Center" HorizontalAlignment="Right" Command="{Binding RefleshCustomersCommand}">
+                <materialDesign:PackIcon Kind="Refresh" Width="40" Height="20"/>
+            </Button>
         </Grid>
         <DataGrid Margin="20 10 20 0" MaxHeight="560" ItemsSource="{Binding Customers}" CanUserSortColumns="False" CanUserAddRows="False" Grid.Row="2" AutoGenerateColumns="False" VerticalScrollBarVisibility="Visible" IsReadOnly="True" SelectionChanged="DataGrid_SelectionChanged">
             <DataGrid.Columns>

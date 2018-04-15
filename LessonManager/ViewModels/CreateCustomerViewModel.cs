@@ -9,7 +9,7 @@ using LessonManager.Models;
 
 namespace LessonManager.ViewModels
 {
-    class CreateCustomerViewModel
+    class CreateCustomerViewModel : INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
         public void RaisePropertyChanged()
@@ -25,6 +25,9 @@ namespace LessonManager.ViewModels
 
             CreateCustomerCommand = new DelegateCommand();
             CreateCustomerCommand.ExecuteHandler = CreateCustomerCommandExecute;
+
+            PickCardCommand = new DelegateCommand();
+            PickCardCommand.ExecuteHandler = PickCardCommandExecute;
 
             ResetAllProperties();
         }
@@ -47,6 +50,11 @@ namespace LessonManager.ViewModels
                 SnackbarMessageQueue.Instance().Enqueue("かなを入力してください");
                 return;
             }
+            if (CardID == "")
+            {
+                SnackbarMessageQueue.Instance().Enqueue("カードを設定してください");
+                return;
+            }
 
             // confirmation
             {
@@ -65,19 +73,34 @@ namespace LessonManager.ViewModels
             {
                 PleaseWaitVisibility.Instance().IsVisible = true;
                 var result = await WebAPIs.Customer.Create(
-                    Name, Kana, Birthday, Gender, PostalCode1, PostalCode2, Address, PhoneNumber, JoinDate, EmailAddress, CanMail, CanEmail, CanCall, Description
+                    Name, Kana, Birthday, Gender, PostalCode1, PostalCode2, Address, PhoneNumber, JoinDate, EmailAddress, CanMail, CanEmail, CanCall, Description, CardID
                 );
                 PleaseWaitVisibility.Instance().IsVisible = false;
                 if (result.IsSuccess)
                 {
                     SnackbarMessageQueue.Instance().Enqueue("お客様情報を新たに登録しました");
                     ResetAllProperties();
+                    return;
                 }
                 else
                 {
+                    if (result.FailData.Body.ErrorType == Protobufs.ErrorType.AlreadyExist)
+                    {
+                        SnackbarMessageQueue.Instance().Enqueue("既に使われているカードです");
+                        return;
+                    }
                     SnackbarMessageQueue.Instance().Enqueue("不明なエラー");
+                    return;
                 }
             }
+        }
+
+        public DelegateCommand PickCardCommand { get; private set; }
+        private async void PickCardCommandExecute(object parameter)
+        {
+            var cardModal = new Views.Domain.WaitCardModal();
+            object cardModalResult = await MaterialDesignThemes.Wpf.DialogHost.Show(cardModal);
+            CardID = cardModalResult as string;
         }
 
         // </commands>
@@ -108,6 +131,17 @@ namespace LessonManager.ViewModels
             set
             {
                 kana_ = value;
+                RaisePropertyChanged();
+            }
+        }
+
+        private string cardID_;
+        public string CardID
+        {
+            get { return cardID_; }
+            set
+            {
+                cardID_ = value;
                 RaisePropertyChanged();
             }
         }
@@ -252,6 +286,7 @@ namespace LessonManager.ViewModels
         {
             Name = "";
             Kana = "";
+            CardID = "";
             Birthday = new DateTime(1970, 1, 1); 
             Gender = 0;
             PostalCode1 = "";

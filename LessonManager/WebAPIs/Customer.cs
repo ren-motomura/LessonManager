@@ -56,7 +56,8 @@ namespace LessonManager.WebAPIs
             bool canMail,
             bool canEmail,
             bool canCall,
-            string description
+            string description,
+            string cardID
         )
         {
             var req = new CreateCustomerRequest();
@@ -74,6 +75,7 @@ namespace LessonManager.WebAPIs
             req.CanEmail = canEmail;
             req.CanCall = canCall;
             req.Description = description;
+            req.Card = new Card() { Id = cardID, Credit = 0 };
 
             var reqData = req.ToByteArray();
 

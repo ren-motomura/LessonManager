@@ -19,14 +19,14 @@ namespace LessonManager.ViewModels
 
             MovePageCommand = new MovePageCommand();
 
+            RefleshCustomersCommand = new DelegateCommand();
+            RefleshCustomersCommand.ExecuteHandler = RefleshCustomersCommendExecute;
+
             AddCustomerCommand = new DelegateCommand();
             AddCustomerCommand.ExecuteHandler = AddCustomerCommandExecute;
 
             DeleteCustomerCommand = new DelegateCommand();
             DeleteCustomerCommand.ExecuteHandler = DeleteCustomerCommandExecute;
-
-            CreateOrUpdateCustomerCommand = new DelegateCommand();
-            CreateOrUpdateCustomerCommand.ExecuteHandler = CreateOrUpdateCustomerCommandExecute;
 
             AddCardCommand = new DelegateCommand();
             AddCardCommand.ExecuteHandler = AddCardCommandExecute;
@@ -73,6 +73,14 @@ namespace LessonManager.ViewModels
 
         public MovePageCommand MovePageCommand { get; private set; }
 
+        public DelegateCommand RefleshCustomersCommand { get; set; }
+        private async void RefleshCustomersCommendExecute(object parameter)
+        {
+            PleaseWaitVisibility.Instance().IsVisible = true;
+            await Storage.GetInstance().LoadCustomers();
+            PleaseWaitVisibility.Instance().IsVisible = false;
+        }
+
         public DelegateCommand AddCustomerCommand { get; set; }
         private void AddCustomerCommandExecute(object parameter)
         {
@@ -110,97 +118,6 @@ namespace LessonManager.ViewModels
             {
                 SnackbarMessageQueue.Instance().Enqueue("キャンセルしました");
             }
-        }
-
-        public DelegateCommand CreateOrUpdateCustomerCommand { get; set; }
-        private async void CreateOrUpdateCustomerCommandExecute(object parameter)
-        {
-            var target = parameter as Customer;
-            if (target.ID == 0)
-            {
-                // Create
-                var view = new Views.Domain.ConfirmModal();
-                view.DataContext = "顧客情報を登録します。\nよろしいですか？";
-
-                object result = await MaterialDesignThemes.Wpf.DialogHost.Show(view);
-                if ((bool)result)
-                {
-                    CreateCustomer(target);
-                }
-                else
-                {
-                    SnackbarMessageQueue.Instance().Enqueue("キャンセルしました");
-                }
-            }
-            else
-            {
-                // Update
-                var view = new Views.Domain.ConfirmModal();
-                view.DataContext = "顧客情報を更新します。\nよろしいですか？";
-
-                object result = await MaterialDesignThemes.Wpf.DialogHost.Show(view);
-                if ((bool)result)
-                {
-                    UpdateCustomer(target);
-                }
-                else
-                {
-                    SnackbarMessageQueue.Instance().Enqueue("キャンセルしました");
-                }
-            }
-        }
-        private void CreateCustomer(Customer customer)
-        {
-            /*
-            PleaseWaitVisibility.Instance().IsVisible = true;
-            WebAPIs.Customer.Create(customer.Name, customer.Description).ContinueWith(t =>
-            {
-                PleaseWaitVisibility.Instance().IsVisible = false;
-                var result = t.Result;
-                if (result.IsSuccess)
-                {
-                    customer.ID = result.SuccessData.ID;
-                    Storage.GetInstance().LoadCustomers();
-                    SnackbarMessageQueue.Instance().Enqueue("顧客情報を新たに登録しました");
-                }
-                else
-                {
-                    if (result.FailData.Body.ErrorType == Protobufs.ErrorType.DuplicateNameExist)
-                    {
-                        SnackbarMessageQueue.Instance().Enqueue("その名前は既に使われています");
-                    }
-                    else
-                    {
-                        SnackbarMessageQueue.Instance().Enqueue("不明なエラー");
-                    }
-                }
-            });
-            */
-        }
-        private void UpdateCustomer(Customer customer)
-        {
-            PleaseWaitVisibility.Instance().IsVisible = true;
-            WebAPIs.Customer.Update(customer.ID, customer.Name, customer.Description).ContinueWith(t =>
-            {
-                PleaseWaitVisibility.Instance().IsVisible = false;
-                var result = t.Result;
-                if (result.IsSuccess)
-                {
-                    customer.ID = result.SuccessData.ID;
-                    SnackbarMessageQueue.Instance().Enqueue("顧客情報を更新しました");
-                }
-                else
-                {
-                    if (result.FailData.Body.ErrorType == Protobufs.ErrorType.DuplicateNameExist)
-                    {
-                        SnackbarMessageQueue.Instance().Enqueue("その名前は既に使われています");
-                    }
-                    else
-                    {
-                        SnackbarMessageQueue.Instance().Enqueue("不明なエラー");
-                    }
-                }
-            });
         }
 
         public DelegateCommand AddCardCommand { get; set; }
